@@ -402,59 +402,62 @@ export default function VocabularyLibrary({ embedded = false }: VocabularyLibrar
                 style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                 onClick={() => handleFlipCard(currentWord.id)}
               >
-                <div className="card-elevated p-8 h-full flex flex-col space-y-4 bg-cream-50">
+                <div className="card-elevated p-4 h-full flex flex-col bg-cream-50 overflow-hidden">
                   {/* Word (small) */}
-                  <div className="text-center border-b border-cream-300 pb-3">
-                    <h3 className="text-2xl font-display font-bold text-navy-900">
+                  <div className="text-center border-b border-cream-300 pb-2 flex-shrink-0">
+                    <h3 className="text-xl font-display font-bold text-navy-900">
                       {currentWord.word}
                     </h3>
-                    <p className="text-sm font-mono text-navy-500">{currentWord.ipa}</p>
+                    <p className="text-xs font-mono text-navy-500">{currentWord.ipa}</p>
                   </div>
 
-                  {/* Definitions */}
-                  <div>
-                    <p className="text-xs font-medium text-navy-500 uppercase tracking-wide mb-2">
-                      Definitions
-                    </p>
-                    {currentWord.definitions.map((def, idx) => (
-                      <div key={idx} className="mb-3 last:mb-0">
-                        <p className="text-navy-900">{def.meaning}</p>
-                        {def.turkishMeaning && (
-                          <p className="text-navy-600 text-sm mt-1">{def.turkishMeaning}</p>
-                        )}
-                        <p className="text-navy-700 italic text-sm mt-1">"{def.example}"</p>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            handleSpeak(def.example)
-                          }}
-                          className="mt-1 text-sm text-racing-700 hover:text-racing-800 flex items-center gap-1"
-                        >
-                          <Volume2 className="w-4 h-4" />
-                          Listen
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Collocations */}
-                  {currentWord.collocations && currentWord.collocations.length > 0 && (
+                  {/* Scrollable content */}
+                  <div className="flex-1 overflow-y-auto py-2 space-y-2">
+                    {/* Definitions */}
                     <div>
                       <p className="text-xs font-medium text-navy-500 uppercase tracking-wide mb-1">
-                        Common Phrases
+                        Definitions
                       </p>
-                      <div className="flex flex-wrap gap-1">
-                        {currentWord.collocations.map((collocation, i) => (
-                          <span key={i} className="px-2 py-1 bg-navy-100 text-navy-700 text-xs rounded">
-                            {collocation}
-                          </span>
-                        ))}
-                      </div>
+                      {currentWord.definitions.slice(0, 1).map((def, idx) => (
+                        <div key={idx}>
+                          <p className="text-sm text-navy-900">{def.meaning}</p>
+                          {def.turkishMeaning && (
+                            <p className="text-navy-600 text-xs mt-0.5">{def.turkishMeaning}</p>
+                          )}
+                          <p className="text-navy-700 italic text-xs mt-0.5">"{def.example}"</p>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              handleSpeak(def.example)
+                            }}
+                            className="mt-1 text-xs text-racing-700 hover:text-racing-800 flex items-center gap-1"
+                          >
+                            <Volume2 className="w-3 h-3" />
+                            Listen
+                          </button>
+                        </div>
+                      ))}
                     </div>
-                  )}
+
+                    {/* Collocations */}
+                    {currentWord.collocations && currentWord.collocations.length > 0 && (
+                      <div>
+                        <p className="text-xs font-medium text-navy-500 uppercase tracking-wide mb-1">
+                          Common Phrases
+                        </p>
+                        <div className="flex flex-wrap gap-1">
+                          {currentWord.collocations.slice(0, 3).map((collocation, i) => (
+                            <span key={i} className="px-2 py-0.5 bg-navy-100 text-navy-700 text-xs rounded">
+                              {collocation}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
 
                   {/* Tap instruction */}
-                  <p className="text-xs text-navy-400 text-center mt-auto">Tap card to flip back</p>
+                  <p className="text-xs text-navy-400 text-center flex-shrink-0 pt-1">Tap to flip</p>
                 </div>
               </div>
             </motion.div>
