@@ -1436,6 +1436,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Technical specification',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Süspansiyon sistemi ağır hizmet uygulamaları için özel olarak tasarlanmıştır.',
+    keyWords: [
+      { word: 'suspension system', translation: 'süspansiyon sistemi' },
+      { word: 'heavy-duty', translation: 'ağır hizmet' },
+      { word: 'specifically designed', translation: 'özel olarak tasarlanmış' },
+    ],
   },
   {
     id: 102,
@@ -1444,6 +1450,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Material description',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Yapım boyunca gelişmiş korozyona dayanıklı malzemeler kullanıyoruz.',
+    keyWords: [
+      { word: 'corrosion-resistant', translation: 'korozyona dayanıklı' },
+      { word: 'advanced', translation: 'gelişmiş' },
+      { word: 'construction', translation: 'yapım' },
+    ],
   },
   {
     id: 103,
@@ -1452,6 +1464,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Safety compliance',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Fren sistemi tüm Avrupa güvenlik yönetmeliklerine uygundur.',
+    keyWords: [
+      { word: 'braking system', translation: 'fren sistemi' },
+      { word: 'complies with', translation: 'uygun olmak' },
+      { word: 'safety regulations', translation: 'güvenlik yönetmelikleri' },
+    ],
   },
   {
     id: 104,
@@ -1460,6 +1478,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Customisation options',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Aks konfigürasyonu ihtiyaçlarınıza göre özelleştirilebilir.',
+    keyWords: [
+      { word: 'axle configuration', translation: 'aks konfigürasyonu' },
+      { word: 'customised', translation: 'özelleştirilmiş' },
+      { word: 'according to', translation: 'göre' },
+    ],
   },
   {
     id: 105,
@@ -1468,6 +1492,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Product options',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Hem havalı süspansiyon hem de mekanik süspansiyon seçenekleri sunuyoruz.',
+    keyWords: [
+      { word: 'air suspension', translation: 'havalı süspansiyon' },
+      { word: 'mechanical suspension', translation: 'mekanik süspansiyon' },
+      { word: 'options', translation: 'seçenekler' },
+    ],
   },
   {
     id: 106,
@@ -1476,6 +1506,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Manufacturing process',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Kaynak işlemi sertifikalı uzmanlar tarafından gerçekleştirilmektedir.',
+    keyWords: [
+      { word: 'welding process', translation: 'kaynak işlemi' },
+      { word: 'certified specialists', translation: 'sertifikalı uzmanlar' },
+      { word: 'carried out', translation: 'gerçekleştirilmek' },
+    ],
   },
   {
     id: 107,
@@ -1484,6 +1520,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Quality control',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Her birim sevkiyat öncesi titiz testlerden geçer.',
+    keyWords: [
+      { word: 'rigorous testing', translation: 'titiz testler' },
+      { word: 'before dispatch', translation: 'sevkiyat öncesi' },
+      { word: 'undergoes', translation: 'geçmek' },
+    ],
   },
   {
     id: 108,
@@ -1492,6 +1534,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Technical specification',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Brüt araç ağırlığı kırk dört ton ile sınırlıdır.',
+    keyWords: [
+      { word: 'gross vehicle weight', translation: 'brüt araç ağırlığı' },
+      { word: 'limited to', translation: 'ile sınırlı' },
+      { word: 'forty-four tonnes', translation: 'kırk dört ton' },
+    ],
   },
   {
     id: 109,
@@ -1500,6 +1548,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Optional features',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Talep üzerine hidrolik kaldırma sistemleri kurabiliriz.',
+    keyWords: [
+      { word: 'hydraulic lift', translation: 'hidrolik kaldırma' },
+      { word: 'upon request', translation: 'talep üzerine' },
+      { word: 'install', translation: 'kurmak' },
+    ],
   },
   {
     id: 110,
@@ -1508,6 +1562,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Performance improvement',
     difficulty: 'B1',
     category: 'technical',
+    turkishTranslation: 'Yük kapasitesi yüzde yirmi oranında artırıldı.',
+    keyWords: [
+      { word: 'load capacity', translation: 'yük kapasitesi' },
+      { word: 'increased by', translation: 'artırıldı' },
+      { word: 'twenty percent', translation: 'yüzde yirmi' },
+    ],
   },
   {
     id: 111,
@@ -1516,6 +1576,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Technical feature',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Tüm elektrik bileşenleri su girişine karşı korunmaktadır.',
+    keyWords: [
+      { word: 'electrical components', translation: 'elektrik bileşenleri' },
+      { word: 'water ingress', translation: 'su girişi' },
+      { word: 'protected against', translation: 'karşı korunmak' },
+    ],
   },
   {
     id: 112,
@@ -1524,6 +1590,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Standard equipment',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Lastik basıncı izleme sistemi standart olarak takılmıştır.',
+    keyWords: [
+      { word: 'tyre pressure monitoring', translation: 'lastik basıncı izleme' },
+      { word: 'fitted as standard', translation: 'standart olarak takılmış' },
+      { word: 'system', translation: 'sistem' },
+    ],
   },
   {
     id: 113,
@@ -1532,6 +1604,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Manufacturing process',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Hassas üretim için lazer kesim teknolojisi kullanıyoruz.',
+    keyWords: [
+      { word: 'laser cutting', translation: 'lazer kesim' },
+      { word: 'precision manufacturing', translation: 'hassas üretim' },
+      { word: 'technology', translation: 'teknoloji' },
+    ],
   },
   {
     id: 114,
@@ -1540,6 +1618,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Safety feature',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'ABS fren sistemi acil duruşlarda tekerlek kilitlenmesini önler.',
+    keyWords: [
+      { word: 'anti-lock braking', translation: 'ABS fren' },
+      { word: 'wheel lockup', translation: 'tekerlek kilitlenmesi' },
+      { word: 'emergency stops', translation: 'acil duruşlar' },
+    ],
   },
   {
     id: 115,
@@ -1548,6 +1632,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Surface treatment',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Toz kaplama çizilmelere ve korozyona karşı mükemmel direnç sağlar.',
+    keyWords: [
+      { word: 'powder coating', translation: 'toz kaplama' },
+      { word: 'scratches', translation: 'çizikler' },
+      { word: 'resistance', translation: 'direnç' },
+    ],
   },
   {
     id: 116,
@@ -1556,6 +1646,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Technical documentation',
     difficulty: 'B1',
     category: 'technical',
+    turkishTranslation: 'Üç iş günü içinde ayrıntılı bir teknik çizim sağlayabiliriz.',
+    keyWords: [
+      { word: 'technical drawing', translation: 'teknik çizim' },
+      { word: 'working days', translation: 'iş günü' },
+      { word: 'within', translation: 'içinde' },
+    ],
   },
   {
     id: 117,
@@ -1564,6 +1660,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Maintenance schedule',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Önerilen bakım aralığı her on iki bin kilometredir.',
+    keyWords: [
+      { word: 'maintenance interval', translation: 'bakım aralığı' },
+      { word: 'recommended', translation: 'önerilen' },
+      { word: 'kilometres', translation: 'kilometre' },
+    ],
   },
   {
     id: 118,
@@ -1572,6 +1674,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'After-sales service',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Tüm yedek parçalar dağıtım ağımızdan hemen temin edilebilir.',
+    keyWords: [
+      { word: 'spare parts', translation: 'yedek parçalar' },
+      { word: 'readily available', translation: 'hemen temin edilebilir' },
+      { word: 'distribution network', translation: 'dağıtım ağı' },
+    ],
   },
   {
     id: 119,
@@ -1580,6 +1688,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Material advantage',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Alüminyum gövde mukavemetten ödün vermeden ağırlığı azaltır.',
+    keyWords: [
+      { word: 'aluminium body', translation: 'alüminyum gövde' },
+      { word: 'reduces weight', translation: 'ağırlığı azaltır' },
+      { word: 'without compromising', translation: 'ödün vermeden' },
+    ],
   },
   {
     id: 120,
@@ -1588,6 +1702,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Quality assurance',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Üretim boyunca sıkı ISO kalite yönetim standartlarına uyuyoruz.',
+    keyWords: [
+      { word: 'ISO quality', translation: 'ISO kalite' },
+      { word: 'management standards', translation: 'yönetim standartları' },
+      { word: 'throughout production', translation: 'üretim boyunca' },
+    ],
   },
   {
     id: 121,
@@ -1596,6 +1716,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Design feature',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Dönüş yarıçapı kentsel dağıtım rotaları için optimize edilmiştir.',
+    keyWords: [
+      { word: 'turning radius', translation: 'dönüş yarıçapı' },
+      { word: 'urban delivery', translation: 'kentsel dağıtım' },
+      { word: 'optimised', translation: 'optimize edilmiş' },
+    ],
   },
   {
     id: 122,
@@ -1604,6 +1730,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Service offering',
     difficulty: 'B1',
     category: 'technical',
+    turkishTranslation: 'Bakım ekibiniz için kapsamlı eğitim sunuyoruz.',
+    keyWords: [
+      { word: 'comprehensive training', translation: 'kapsamlı eğitim' },
+      { word: 'maintenance team', translation: 'bakım ekibi' },
+      { word: 'offer', translation: 'sunmak' },
+    ],
   },
   {
     id: 123,
@@ -1612,6 +1744,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Safety technology',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Elektronik stabilite kontrol sistemi olumsuz koşullarda güvenliği artırır.',
+    keyWords: [
+      { word: 'electronic stability', translation: 'elektronik stabilite' },
+      { word: 'adverse conditions', translation: 'olumsuz koşullar' },
+      { word: 'enhances safety', translation: 'güvenliği artırır' },
+    ],
   },
   {
     id: 124,
@@ -1620,6 +1758,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Testing procedure',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Uygun olduğunuz zaman fabrika kabul testleri düzenleyebiliriz.',
+    keyWords: [
+      { word: 'factory acceptance testing', translation: 'fabrika kabul testleri' },
+      { word: 'at your convenience', translation: 'uygun olduğunuz zaman' },
+      { word: 'arrange', translation: 'düzenlemek' },
+    ],
   },
   {
     id: 125,
@@ -1628,6 +1772,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Supply chain',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Bileşenler sertifikalı Avrupa tedarikçilerinden temin edilmektedir.',
+    keyWords: [
+      { word: 'components', translation: 'bileşenler' },
+      { word: 'certified suppliers', translation: 'sertifikalı tedarikçiler' },
+      { word: 'sourced from', translation: 'temin etmek' },
+    ],
   },
   {
     id: 126,
@@ -1636,6 +1786,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Maintenance feature',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Bilgisayarlı teşhis sistemi sorun gidermeyi basitleştirir.',
+    keyWords: [
+      { word: 'computerised diagnostic', translation: 'bilgisayarlı teşhis' },
+      { word: 'troubleshooting', translation: 'sorun giderme' },
+      { word: 'simplifies', translation: 'basitleştirmek' },
+    ],
   },
   {
     id: 127,
@@ -1644,6 +1800,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Delivery guarantee',
     difficulty: 'B2',
     category: 'technical',
+    turkishTranslation: 'Kararlaştırılan süre içinde teslimatı garanti ediyoruz, aksi halde indirim alırsınız.',
+    keyWords: [
+      { word: 'guarantee delivery', translation: 'teslimatı garanti etmek' },
+      { word: 'agreed timeframe', translation: 'kararlaştırılan süre' },
+      { word: 'discount', translation: 'indirim' },
+    ],
   },
 
   // ============================================
@@ -1656,6 +1818,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Business proposal',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Sizin özel distrübitörünüz olma olasılığını görüşmek istiyorum.',
+    keyWords: [
+      { word: 'exclusive distributor', translation: 'özel distrübitör' },
+      { word: 'possibility', translation: 'olasılık' },
+      { word: 'becoming', translation: 'olmak' },
+    ],
   },
   {
     id: 129,
@@ -1664,6 +1832,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Price negotiation',
     difficulty: 'B1',
     category: 'business',
+    turkishTranslation: 'Toplu siparişler için ne tür hacim indirimleri sunuyorsunuz?',
+    keyWords: [
+      { word: 'volume discounts', translation: 'hacim indirimleri' },
+      { word: 'bulk orders', translation: 'toplu siparişler' },
+      { word: 'what kind of', translation: 'ne tür' },
+    ],
   },
   {
     id: 130,
@@ -1672,6 +1846,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Business commitment',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Yılda minimum iki yüz adetlik siparişi taahhüt etmeye hazırız.',
+    keyWords: [
+      { word: 'commit to', translation: 'taahhüt etmek' },
+      { word: 'minimum annual order', translation: 'minimum yıllık sipariş' },
+      { word: 'two hundred units', translation: 'iki yüz adet' },
+    ],
   },
   {
     id: 131,
@@ -1680,6 +1860,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Contract clarification',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Geç ödeme cezalarına ilişkin koşulları açıklayabilir misiniz?',
+    keyWords: [
+      { word: 'clarify', translation: 'açıklamak' },
+      { word: 'late payment penalties', translation: 'geç ödeme cezaları' },
+      { word: 'regarding', translation: 'ile ilgili' },
+    ],
   },
   {
     id: 132,
@@ -1688,6 +1874,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Payment negotiation',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Teslimattan itibaren altmış gün ödeme koşulları müzakere etmeyi tercih ederdik.',
+    keyWords: [
+      { word: 'payment terms', translation: 'ödeme koşulları' },
+      { word: 'sixty days', translation: 'altmış gün' },
+      { word: 'negotiate', translation: 'müzakere etmek' },
+    ],
   },
   {
     id: 133,
@@ -1696,6 +1888,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Decision-making process',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Devam etmeden önce yönetim kurulumuzdan onay almam gerekiyor.',
+    keyWords: [
+      { word: 'approval', translation: 'onay' },
+      { word: 'board of directors', translation: 'yönetim kurulu' },
+      { word: 'before proceeding', translation: 'devam etmeden önce' },
+    ],
   },
   {
     id: 134,
@@ -1704,6 +1902,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Factory visit request',
     difficulty: 'B1',
     category: 'business',
+    turkishTranslation: 'Üretim tesislerinizi görmek için bir saha ziyareti planlayabilir miyiz?',
+    keyWords: [
+      { word: 'site visit', translation: 'saha ziyareti' },
+      { word: 'production facilities', translation: 'üretim tesisleri' },
+      { word: 'schedule', translation: 'planlamak' },
+    ],
   },
   {
     id: 135,
@@ -1712,6 +1916,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Business plan',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Önümüzdeki iki yıl içinde filomuzu önemli ölçüde genişletmek istiyoruz.',
+    keyWords: [
+      { word: 'expand our fleet', translation: 'filomuzu genişletmek' },
+      { word: 'significantly', translation: 'önemli ölçüde' },
+      { word: 'next two years', translation: 'önümüzdeki iki yıl' },
+    ],
   },
   {
     id: 136,
@@ -1720,6 +1930,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Due diligence',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Bölgemizdeki mevcut müşterilerden hangi referansları sağlayabilirsiniz?',
+    keyWords: [
+      { word: 'references', translation: 'referanslar' },
+      { word: 'existing customers', translation: 'mevcut müşteriler' },
+      { word: 'region', translation: 'bölge' },
+    ],
   },
   {
     id: 137,
@@ -1728,6 +1944,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Authority declaration',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Şirket adına sözleşmeyi imzalamaya yetkiliyim.',
+    keyWords: [
+      { word: 'authorised', translation: 'yetkili' },
+      { word: 'sign the contract', translation: 'sözleşmeyi imzalamak' },
+      { word: 'on behalf of', translation: 'adına' },
+    ],
   },
   {
     id: 138,
@@ -1736,6 +1958,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Quotation process',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Kesin bir teklif sunmadan önce özellikleri netleştirmemiz gerekiyor.',
+    keyWords: [
+      { word: 'finalise', translation: 'netleştirmek' },
+      { word: 'specifications', translation: 'özellikler' },
+      { word: 'firm quote', translation: 'kesin teklif' },
+    ],
   },
   {
     id: 139,
@@ -1744,6 +1972,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Contract review',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Hukuk ekibimiz sözleşmeyi inceleyecek ve kısa sürede size dönecektir.',
+    keyWords: [
+      { word: 'legal team', translation: 'hukuk ekibi' },
+      { word: 'review', translation: 'incelemek' },
+      { word: 'get back to you', translation: 'size dönmek' },
+    ],
   },
   {
     id: 140,
@@ -1752,6 +1986,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Product demonstration',
     difficulty: 'B1',
     category: 'business',
+    turkishTranslation: 'Ürünün çalışır halinin video gösterimini ayarlayabilir miyiz?',
+    keyWords: [
+      { word: 'video demonstration', translation: 'video gösterimi' },
+      { word: 'in operation', translation: 'çalışır halde' },
+      { word: 'arrange', translation: 'ayarlamak' },
+    ],
   },
   {
     id: 141,
@@ -1760,6 +2000,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Procurement process',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Şu anda birkaç tedarikçiden gelen teklifleri değerlendiriyoruz.',
+    keyWords: [
+      { word: 'evaluating', translation: 'değerlendirmek' },
+      { word: 'proposals', translation: 'teklifler' },
+      { word: 'several suppliers', translation: 'birkaç tedarikçi' },
+    ],
   },
   {
     id: 142,
@@ -1768,6 +2014,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Warranty discussion',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Garanti talepleri ve onarımlarla ilgili koşullarınız nelerdir?',
+    keyWords: [
+      { word: 'warranty claims', translation: 'garanti talepleri' },
+      { word: 'repairs', translation: 'onarımlar' },
+      { word: 'terms', translation: 'koşullar' },
+    ],
   },
   {
     id: 143,
@@ -1776,6 +2028,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Internal process',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Teklifinizi değerlendirme için satın alma departmanımıza ileteceğim.',
+    keyWords: [
+      { word: 'forward', translation: 'iletmek' },
+      { word: 'purchasing department', translation: 'satın alma departmanı' },
+      { word: 'for consideration', translation: 'değerlendirme için' },
+    ],
   },
   {
     id: 144,
@@ -1784,6 +2042,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Partnership proposal',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Tek seferlik bir satın alma yerine uzun vadeli bir ortaklık kurmak istiyoruz.',
+    keyWords: [
+      { word: 'long-term partnership', translation: 'uzun vadeli ortaklık' },
+      { word: 'one-off purchase', translation: 'tek seferlik satın alma' },
+      { word: 'establish', translation: 'kurmak' },
+    ],
   },
   {
     id: 145,
@@ -1792,6 +2056,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Cost clarification',
     difficulty: 'B1',
     category: 'business',
+    turkishTranslation: 'Teslimat dahil toplam maliyetin dökümünü sağlayabilir misiniz?',
+    keyWords: [
+      { word: 'breakdown', translation: 'döküm' },
+      { word: 'total cost', translation: 'toplam maliyet' },
+      { word: 'including delivery', translation: 'teslimat dahil' },
+    ],
   },
   {
     id: 146,
@@ -1800,6 +2070,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Marketing opportunity',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Ortak markalaşma fırsatlarını keşfetmekle ilgileniyoruz.',
+    keyWords: [
+      { word: 'co-branding', translation: 'ortak markalaşma' },
+      { word: 'opportunities', translation: 'fırsatlar' },
+      { word: 'exploring', translation: 'keşfetmek' },
+    ],
   },
   {
     id: 147,
@@ -1808,6 +2084,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Delivery enquiry',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Özel konfigürasyonlar için ne kadar teslim süresi beklemeliyiz?',
+    keyWords: [
+      { word: 'lead time', translation: 'teslim süresi' },
+      { word: 'custom configurations', translation: 'özel konfigürasyonlar' },
+      { word: 'expect', translation: 'beklemek' },
+    ],
   },
   {
     id: 148,
@@ -1816,6 +2098,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Acceptance notification',
     difficulty: 'B1',
     category: 'business',
+    turkishTranslation: 'Teklifinizi kabul etmeye karar verdiğimizi bildirmekten memnuniyet duyarım.',
+    keyWords: [
+      { word: 'pleased to inform', translation: 'bildirmekten memnuniyet duyarım' },
+      { word: 'decided to accept', translation: 'kabul etmeye karar verdik' },
+      { word: 'offer', translation: 'teklif' },
+    ],
   },
   {
     id: 149,
@@ -1824,6 +2112,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Logistics planning',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Gönderi için uygun sigorta kapsamı ayarlamamız gerekecek.',
+    keyWords: [
+      { word: 'insurance cover', translation: 'sigorta kapsamı' },
+      { word: 'shipment', translation: 'gönderi' },
+      { word: 'arrange', translation: 'ayarlamak' },
+    ],
   },
   {
     id: 150,
@@ -1832,6 +2126,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Terms negotiation',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Daha büyük siparişler için daha uygun ödeme koşulları müzakere edebilir miyiz?',
+    keyWords: [
+      { word: 'more favourable', translation: 'daha uygun' },
+      { word: 'larger orders', translation: 'daha büyük siparişler' },
+      { word: 'negotiate', translation: 'müzakere etmek' },
+    ],
   },
   {
     id: 151,
