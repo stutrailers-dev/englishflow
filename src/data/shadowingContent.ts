@@ -2852,6 +2852,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - scientific fact',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Eğer çeliği yüksek sıcaklıklara ısıtırsanız, genleşir.',
+    keyWords: [
+      { word: 'heat', translation: 'ısıtmak' },
+      { word: 'steel', translation: 'çelik' },
+      { word: 'expands', translation: 'genleşmek' },
+    ],
   },
   {
     id: 202,
@@ -2860,6 +2866,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - business policy',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Eğer ödeme gecikirse, ceza ücreti alırız.',
+    keyWords: [
+      { word: 'payment is late', translation: 'ödeme gecikirse' },
+      { word: 'charge', translation: 'ücret almak' },
+      { word: 'penalty fee', translation: 'ceza ücreti' },
+    ],
   },
   {
     id: 203,
@@ -2868,6 +2880,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - general rule',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Müşteriler on adetten fazla sipariş verdiğinde indirim alırlar.',
+    keyWords: [
+      { word: 'order', translation: 'sipariş vermek' },
+      { word: 'receive', translation: 'almak' },
+      { word: 'discount', translation: 'indirim' },
+    ],
   },
   {
     id: 204,
@@ -2876,6 +2894,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - technical fact',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Eğer treyler aşırı yüklenirse, frenleme performansını etkiler.',
+    keyWords: [
+      { word: 'overloaded', translation: 'aşırı yüklenmiş' },
+      { word: 'affects', translation: 'etkilemek' },
+      { word: 'braking performance', translation: 'frenleme performansı' },
+    ],
   },
   {
     id: 205,
@@ -2884,6 +2908,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - operation',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Bu düğmeye basarsanız, sistem otomatik olarak başlar.',
+    keyWords: [
+      { word: 'press', translation: 'basmak' },
+      { word: 'system', translation: 'sistem' },
+      { word: 'automatically starts', translation: 'otomatik olarak başlar' },
+    ],
   },
   {
     id: 206,
@@ -2892,6 +2922,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - procedure',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Sıcaklık sıfırın altına düştüğünde üretimi durdururuz.',
+    keyWords: [
+      { word: 'temperature drops', translation: 'sıcaklık düşer' },
+      { word: 'below zero', translation: 'sıfırın altına' },
+      { word: 'stop production', translation: 'üretimi durdurmak' },
+    ],
   },
   {
     id: 207,
@@ -2900,6 +2936,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - quality control',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Kalite standartları karşılanmazsa, gönderiyi reddederiz.',
+    keyWords: [
+      { word: 'quality standards', translation: 'kalite standartları' },
+      { word: 'not met', translation: 'karşılanmamak' },
+      { word: 'reject', translation: 'reddetmek' },
+    ],
   },
   {
     id: 208,
@@ -2908,6 +2950,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - business practice',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Sipariş kapasitemizi aşarsa, teslim süresini uzatırız.',
+    keyWords: [
+      { word: 'exceeds', translation: 'aşmak' },
+      { word: 'capacity', translation: 'kapasite' },
+      { word: 'extend', translation: 'uzatmak' },
+    ],
   },
   {
     id: 209,
@@ -2916,6 +2964,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - pricing',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Bu bileşeni eklediğinizde, maliyet önemli ölçüde artar.',
+    keyWords: [
+      { word: 'add', translation: 'eklemek' },
+      { word: 'component', translation: 'bileşen' },
+      { word: 'increases significantly', translation: 'önemli ölçüde artar' },
+    ],
   },
   {
     id: 210,
@@ -2924,6 +2978,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Zero conditional - standard procedure',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Müşteriler değişiklik talep ederse, yeni bir teklif hazırlarız.',
+    keyWords: [
+      { word: 'request modifications', translation: 'değişiklik talep etmek' },
+      { word: 'prepare', translation: 'hazırlamak' },
+      { word: 'quotation', translation: 'teklif' },
+    ],
   },
 
   // First Conditional (211-220)
@@ -2934,6 +2994,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - future promise',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Siparişinizi bugün alırsak, yarın sabah kargoya veririz.',
+    keyWords: [
+      { word: 'receive order', translation: 'sipariş almak' },
+      { word: 'ship', translation: 'kargoya vermek/göndermek' },
+      { word: 'tomorrow morning', translation: 'yarın sabah' },
+    ],
   },
   {
     id: 212,
@@ -2942,14 +3008,26 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - business commitment',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Sözleşmeyi bu hafta imzalarsanız, üretime hemen başlarız.',
+    keyWords: [
+      { word: 'sign the contract', translation: 'sözleşmeyi imzalamak' },
+      { word: 'start production', translation: 'üretime başlamak' },
+      { word: 'immediately', translation: 'hemen' },
+    ],
   },
   {
     id: 213,
     text: "If the quality is not satisfactory, we will offer a full refund.",
     ipa: '/ɪf ðə ˈkwɒləti ɪz nɒt ˌsætɪsˈfæktəri wiː wɪl ˈɒfər ə fʊl ˈriːfʌnd/',
     context: 'First conditional - guarantee',
-    difficulty: 'B2',
+    difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Kalite tatmin edici değilse, tam geri ödeme teklif edeceğiz.',
+    keyWords: [
+      { word: 'satisfactory', translation: 'tatmin edici' },
+      { word: 'offer', translation: 'teklif etmek' },
+      { word: 'full refund', translation: 'tam geri ödeme' },
+    ],
   },
   {
     id: 214,
@@ -2958,6 +3036,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - future possibility',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Teklifimizi kabul ederlerse, onların tek tedarikçisi olacağız.',
+    keyWords: [
+      { word: 'accept', translation: 'kabul etmek' },
+      { word: 'proposal', translation: 'teklif' },
+      { word: 'exclusive supplier', translation: 'tek/özel tedarikçi' },
+    ],
   },
   {
     id: 215,
@@ -2966,6 +3050,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - service offer',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Herhangi bir teknik desteğe ihtiyacınız olursa, mühendislerimizi göndereceğiz.',
+    keyWords: [
+      { word: 'technical support', translation: 'teknik destek' },
+      { word: 'send', translation: 'göndermek' },
+      { word: 'engineers', translation: 'mühendisler' },
+    ],
   },
   {
     id: 216,
@@ -2974,6 +3064,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - compensation promise',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Gönderi geç ulaşırsa, sizi buna göre tazmin edeceğiz.',
+    keyWords: [
+      { word: 'shipment', translation: 'gönderi' },
+      { word: 'compensate', translation: 'tazmin etmek/karşılamak' },
+      { word: 'accordingly', translation: 'buna göre' },
+    ],
   },
   {
     id: 217,
@@ -2982,6 +3078,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - future plan',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Fabrikamızı genişletirsek, daha yüksek talebi karşılayabileceğiz.',
+    keyWords: [
+      { word: 'expand', translation: 'genişletmek' },
+      { word: 'meet demand', translation: 'talebi karşılamak' },
+      { word: 'higher', translation: 'daha yüksek' },
+    ],
   },
   {
     id: 218,
@@ -2990,6 +3092,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - special offer',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Toplu sipariş verirseniz, size yüzde yirmi indirim yapacağız.',
+    keyWords: [
+      { word: 'place a bulk order', translation: 'toplu sipariş vermek' },
+      { word: 'give a discount', translation: 'indirim yapmak' },
+      { word: 'twenty percent', translation: 'yüzde yirmi' },
+    ],
   },
   {
     id: 219,
@@ -2998,6 +3106,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - product launch',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Testler başarılı olursa, yeni modeli bir sonraki çeyrekte piyasaya süreceğiz.',
+    keyWords: [
+      { word: 'successful', translation: 'başarılı' },
+      { word: 'launch', translation: 'piyasaya sürmek/başlatmak' },
+      { word: 'next quarter', translation: 'bir sonraki çeyrek' },
+    ],
   },
   {
     id: 220,
@@ -3006,6 +3120,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First conditional - request',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Spesifikasyonları sağlarsanız, ayrıntılı bir teklif hazırlayacağız.',
+    keyWords: [
+      { word: 'provide', translation: 'sağlamak/temin etmek' },
+      { word: 'specifications', translation: 'spesifikasyonlar/özellikler' },
+      { word: 'detailed quotation', translation: 'ayrıntılı teklif' },
+    ],
   },
 
   // Second Conditional (221-230)
@@ -3016,6 +3136,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - hypothetical',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Daha büyük bir fabrikamız olsaydı, iki kat daha fazla treyler üretirdik.',
+    keyWords: [
+      { word: 'had a bigger factory', translation: 'daha büyük bir fabrikamız olsaydı' },
+      { word: 'produce', translation: 'üretmek' },
+      { word: 'twice as many', translation: 'iki kat daha fazla' },
+    ],
   },
   {
     id: 222,
@@ -3024,6 +3150,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - advice',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Senin yerinde olsaydım, tekliflerini derhal kabul ederdim.',
+    keyWords: [
+      { word: 'If I were you', translation: 'Senin yerinde olsaydım' },
+      { word: 'accept', translation: 'kabul etmek' },
+      { word: 'immediately', translation: 'derhal/hemen' },
+    ],
   },
   {
     id: 223,
@@ -3032,6 +3164,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - negotiation',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Fiyatı yüzde on düşürselerdi, beş yüz adet sipariş verirdik.',
+    keyWords: [
+      { word: 'reduced', translation: 'düşürmek/azaltmak' },
+      { word: 'by ten percent', translation: 'yüzde on' },
+      { word: 'order', translation: 'sipariş vermek' },
+    ],
   },
   {
     id: 224,
@@ -3040,6 +3178,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - improvement',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Yeni teknolojiye yatırım yapsaydık, üretimimiz daha verimli olurdu.',
+    keyWords: [
+      { word: 'invested in', translation: 'yatırım yapmak' },
+      { word: 'production', translation: 'üretim' },
+      { word: 'efficient', translation: 'verimli' },
+    ],
   },
   {
     id: 225,
@@ -3048,6 +3192,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - ability',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'Daha fazla tecrübem olsaydı, bu projeyi kendim hallederdim.',
+    keyWords: [
+      { word: 'had more experience', translation: 'daha fazla tecrübem olsaydı' },
+      { word: 'handle', translation: 'halletmek/üstesinden gelmek' },
+      { word: 'myself', translation: 'kendim' },
+    ],
   },
   {
     id: 226,
@@ -3056,6 +3206,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - business strategy',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Piyasa koşulları daha iyi olsaydı, uluslararası alanda genişlerdik.',
+    keyWords: [
+      { word: 'market conditions', translation: 'piyasa koşulları' },
+      { word: 'expand', translation: 'genişlemek' },
+      { word: 'internationally', translation: 'uluslararası alanda' },
+    ],
   },
   {
     id: 227,
@@ -3064,6 +3220,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - capacity',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Daha fazla depolama alanımız olsaydı, daha büyük envanterler tutabilirdik.',
+    keyWords: [
+      { word: 'storage space', translation: 'depolama alanı' },
+      { word: 'keep', translation: 'tutmak/saklamak' },
+      { word: 'larger inventories', translation: 'daha büyük envanterler' },
+    ],
   },
   {
     id: 228,
@@ -3072,6 +3234,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - economic impact',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Ekonomi daha güçlü olsaydı, müşteriler daha büyük siparişler verirdi.',
+    keyWords: [
+      { word: 'economy', translation: 'ekonomi' },
+      { word: 'stronger', translation: 'daha güçlü' },
+      { word: 'place bigger orders', translation: 'daha büyük siparişler vermek' },
+    ],
   },
   {
     id: 229,
@@ -3080,14 +3248,26 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Second conditional - missing information',
     difficulty: 'B1',
     category: 'conditional',
+    turkishTranslation: 'İletişim bilgilerine sahip olsaydık, onlara kataloğu gönderirdik.',
+    keyWords: [
+      { word: 'contact details', translation: 'iletişim bilgileri' },
+      { word: 'send', translation: 'göndermek' },
+      { word: 'catalogue', translation: 'katalog' },
+    ],
   },
   {
     id: 230,
     text: "If transport costs were lower, our products would be more competitive.",
-    ipa: '/ɪf ˈtrænspɔːt kɒsts wɜː ˈləʊə aʊə ˈprɒdʌkts wʊd biː mɔː kəmˈpetətɪv/',
-    context: 'Second conditional - pricing',
+    ipa: '/ɪf ˈtrænspɔːt kɒsts wɜː ˈləʊə aʊə ˈprɒdʌkts wʊd biː mɔː kəmˈpetɪtɪv/',
+    context: 'Second conditional - pricing strategy',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Nakliye maliyetleri daha düşük olsaydı, ürünlerimiz daha rekabetçi olurdu.',
+    keyWords: [
+      { word: 'transport costs', translation: 'nakliye maliyetleri' },
+      { word: 'lower', translation: 'daha düşük' },
+      { word: 'competitive', translation: 'rekabetçi' },
+    ],
   },
 
   // Third Conditional (231-240)
@@ -3098,6 +3278,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - regret',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Siparişi daha erken alsaydık, zamanında teslim ederdik.',
+    keyWords: [
+      { word: 'received earlier', translation: 'daha erken almak' },
+      { word: 'delivered', translation: 'teslim etmek' },
+      { word: 'on time', translation: 'zamanında' },
+    ],
   },
   {
     id: 232,
@@ -3106,6 +3292,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - missed opportunity',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Teklifimizi kabul etselerdi, üretime geçen ay başlardık.',
+    keyWords: [
+      { word: 'accepted', translation: 'kabul etmek' },
+      { word: 'started production', translation: 'üretime başlamak' },
+      { word: 'last month', translation: 'geçen ay' },
+    ],
   },
   {
     id: 233,
@@ -3114,6 +3306,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - past mistake',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Toplantıdan haberim olsaydı, kaçırmazdım.',
+    keyWords: [
+      { word: 'known about', translation: 'haberi olmak / bilmek' },
+      { word: 'meeting', translation: 'toplantı' },
+      { word: 'missed it', translation: 'kaçırmak' },
+    ],
   },
   {
     id: 234,
@@ -3122,6 +3320,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - past decision',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Otomasyona yatırım yapsaydık, çok para tasarruf ederdik.',
+    keyWords: [
+      { word: 'invested in', translation: 'yatırım yapmak' },
+      { word: 'automation', translation: 'otomasyon' },
+      { word: 'saved money', translation: 'para tasarruf etmek' },
+    ],
   },
   {
     id: 235,
@@ -3130,6 +3334,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - consequence',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Gönderi gecikmeseydi, müşteri memnun olurdu.',
+    keyWords: [
+      { word: 'shipment', translation: 'gönderi' },
+      { word: 'delayed', translation: 'gecikmek' },
+      { word: 'satisfied', translation: 'memnun' },
+    ],
   },
   {
     id: 236,
@@ -3138,6 +3348,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - quality issue',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Kaliteyi daha önce kontrol etseydik, kusurları yakalardık.',
+    keyWords: [
+      { word: 'checked', translation: 'kontrol etmek' },
+      { word: 'caught', translation: 'yakalamak/tespit etmek' },
+      { word: 'defects', translation: 'kusurlar/hatalar' },
+    ],
   },
   {
     id: 237,
@@ -3146,6 +3362,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - communication',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Bizi daha erken bilgilendirselerdi, programı ayarlardık.',
+    keyWords: [
+      { word: 'informed', translation: 'bilgilendirmek' },
+      { word: 'sooner', translation: 'daha erken' },
+      { word: 'adjusted', translation: 'ayarlamak' },
+    ],
   },
   {
     id: 238,
@@ -3154,6 +3376,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - oversight',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Sözleşmeyi dikkatlice okusaydım, hatayı fark ederdim.',
+    keyWords: [
+      { word: 'read carefully', translation: 'dikkatlice okumak' },
+      { word: 'noticed', translation: 'fark etmek' },
+      { word: 'mistake', translation: 'hata' },
+    ],
   },
   {
     id: 239,
@@ -3162,6 +3390,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - business outcome',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Daha iyi şartlar müzakere etseydik, daha fazla kar ederdik.',
+    keyWords: [
+      { word: 'negotiated', translation: 'müzakere etmek' },
+      { word: 'terms', translation: 'şartlar' },
+      { word: 'made profit', translation: 'kar etmek' },
+    ],
   },
   {
     id: 240,
@@ -3170,6 +3404,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Third conditional - market conditions',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Piyasa daha güçlü olsaydı, çok daha hızlı genişlerdik.',
+    keyWords: [
+      { word: 'market had been stronger', translation: 'piyasa daha güçlü olsaydı' },
+      { word: 'expanded', translation: 'genişlemek' },
+      { word: 'much faster', translation: 'çok daha hızlı' },
+    ],
   },
 
   // Mixed Conditional (241-250)
@@ -3180,6 +3420,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - past to present',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Sözleşmeyi geçen yıl imzalasaydık, şimdi onların tedarikçisi olurduk.',
+    keyWords: [
+      { word: 'signed', translation: 'imzalamak' },
+      { word: 'last year', translation: 'geçen yıl' },
+      { word: 'supplier now', translation: 'şimdi tedarikçi' },
+    ],
   },
   {
     id: 242,
@@ -3188,6 +3434,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - education',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Mühendislik okusaydım, şimdi bu özellikleri anlardım.',
+    keyWords: [
+      { word: 'studied engineering', translation: 'mühendislik okumak' },
+      { word: 'understand', translation: 'anlamak' },
+      { word: 'specifications', translation: 'özellikler/spesifikasyonlar' },
+    ],
   },
   {
     id: 243,
@@ -3196,6 +3448,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - business decision',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Pazarlamaya yatırım yapsaydık, bugün daha fazla müşterimiz olurdu.',
+    keyWords: [
+      { word: 'invested in', translation: 'yatırım yapmak' },
+      { word: 'marketing', translation: 'pazarlama' },
+      { word: 'more customers', translation: 'daha fazla müşteri' },
+    ],
   },
   {
     id: 244,
@@ -3204,6 +3462,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - partnership',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Şirketimizi seçselerdi, hala birlikte çalışıyor olurduk.',
+    keyWords: [
+      { word: 'chosen', translation: 'seçmek' },
+      { word: 'still be working', translation: 'hala çalışıyor olmak' },
+      { word: 'together', translation: 'birlikte' },
+    ],
   },
   {
     id: 245,
@@ -3212,6 +3476,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - expansion',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Londra\'da bir şube açsaydık, şimdi daha iyi erişimimiz olurdu.',
+    keyWords: [
+      { word: 'opened a branch', translation: 'şube açmak' },
+      { word: 'better access', translation: 'daha iyi erişim' },
+      { word: 'now', translation: 'şimdi' },
+    ],
   },
   {
     id: 246,
@@ -3220,6 +3490,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - career choice',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'O iş teklifini kabul etseydim, şimdi Manchester\'da yaşıyor olurdum.',
+    keyWords: [
+      { word: 'taken job offer', translation: 'iş teklifini kabul etmek' },
+      { word: 'living', translation: 'yaşamak' },
+      { word: 'now', translation: 'şimdi' },
+    ],
   },
   {
     id: 247,
@@ -3228,6 +3504,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - innovation',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'O patenti geliştirseydik, bugün teknolojiye sahip olurduk.',
+    keyWords: [
+      { word: 'developed', translation: 'geliştirmek' },
+      { word: 'patent', translation: 'patent' },
+      { word: 'own', translation: 'sahip olmak' },
+    ],
   },
   {
     id: 248,
@@ -3236,6 +3518,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - training',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Personellerini düzgün eğitmiş olsalardı, şimdi daha az sorunları olurdu.',
+    keyWords: [
+      { word: 'trained', translation: 'eğitmek' },
+      { word: 'properly', translation: 'düzgün/doğru şekilde' },
+      { word: 'fewer problems', translation: 'daha az sorun' },
+    ],
   },
   {
     id: 249,
@@ -3244,6 +3532,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - growth',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'O sözleşmeyi garantileseydik, şirketimiz bugün çok daha büyük olurdu.',
+    keyWords: [
+      { word: 'secured contract', translation: 'sözleşmeyi garantilemek/almak' },
+      { word: 'much larger', translation: 'çok daha büyük' },
+      { word: 'today', translation: 'bugün' },
+    ],
   },
   {
     id: 250,
@@ -3252,5 +3546,11 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Mixed conditional - language skills',
     difficulty: 'B2',
     category: 'conditional',
+    turkishTranslation: 'Çince konuşmayı öğrenseydim, şimdi Şangay\'da çalışıyor olurdum.',
+    keyWords: [
+      { word: 'learned to speak', translation: 'konuşmayı öğrenmek' },
+      { word: 'working', translation: 'çalışmak' },
+      { word: 'Shanghai', translation: 'Şangay' },
+    ],
   },
 ]
