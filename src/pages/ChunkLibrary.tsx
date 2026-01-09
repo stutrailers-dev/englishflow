@@ -46,17 +46,18 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
   const [expandedChunk, setExpandedChunk] = useState<string | null>(null)
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
   const expandedChunkRef = useRef<HTMLDivElement>(null)
+  const buttonsRef = useRef<HTMLDivElement>(null)
 
-  // Scroll to expanded chunk when it changes
+  // Scroll to show buttons when chunk expands
   useEffect(() => {
-    if (expandedChunk && expandedChunkRef.current) {
+    if (expandedChunk && buttonsRef.current) {
       // Wait for expand animation to complete
       setTimeout(() => {
-        expandedChunkRef.current?.scrollIntoView({
+        buttonsRef.current?.scrollIntoView({
           behavior: 'smooth',
-          block: 'center'
+          block: 'nearest'
         })
-      }, 300)
+      }, 350)
     }
   }, [expandedChunk])
 
@@ -388,7 +389,10 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
                         </div>
 
                         {/* Fixed action buttons at bottom */}
-                        <div className="p-4 pt-2 border-t border-cream-200 dark:border-neutral-700 bg-cream-50 dark:bg-neutral-800">
+                        <div
+                          ref={isExpanded ? buttonsRef : null}
+                          className="p-4 pt-2 border-t border-cream-200 dark:border-neutral-700 bg-cream-50 dark:bg-neutral-800"
+                        >
                           {(() => {
                             console.log('🎯 isCurrentReview:', isCurrentReview, 'reviewMode:', reviewMode, 'chunk:', chunk.id)
                             return isCurrentReview ? (
