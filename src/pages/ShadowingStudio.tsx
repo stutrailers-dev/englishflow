@@ -38,6 +38,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
   const [showIPA, setShowIPA] = useState(true)
   const [finalTranscript, setFinalTranscript] = useState('')
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all')
+  const [isCardFlipped, setIsCardFlipped] = useState(false)
 
   // Track if we were listening to detect when recording stops
   const wasListeningRef = useRef(false)
@@ -117,6 +118,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
     resetTranscript()
     cancel()
     wasListeningRef.current = false
+    setIsCardFlipped(false)
   }, [resetTranscript, cancel])
 
   const handleNext = useCallback(() => {
@@ -204,34 +206,103 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
         </div>
       </div>
 
-      {/* Main Card */}
-      <div className="card-elevated p-6">
-        {/* Context Badge */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <span className="badge-navy">{currentItem.context}</span>
-            <span className="badge-green">{currentItem.difficulty}</span>
-            <span className="px-2 py-0.5 text-xs bg-cream-200 text-navy-600 rounded-full">
-              {categoryLabels[currentItem.category as CategoryFilter]}
-            </span>
+      {/* Main Flip Card */}
+      <div
+        className="relative min-h-[200px] cursor-pointer"
+        style={{ perspective: '1000px' }}
+        onClick={() => setIsCardFlipped(!isCardFlipped)}
+      >
+        <motion.div
+          className="w-full h-full"
+          animate={{ rotateY: isCardFlipped ? 180 : 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          {/* Front of Card - English */}
+          <div
+            className={clsx(
+              'absolute inset-0 backface-hidden',
+              isCardFlipped && 'pointer-events-none'
+            )}
+            style={{ backfaceVisibility: 'hidden' }}
+          >
+            <div className="card-elevated p-5 h-full">
+              {/* Context Badge */}
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="badge-navy">{currentItem.context}</span>
+                  <span className="badge-green">{currentItem.difficulty}</span>
+                  <span className="px-2 py-0.5 text-xs bg-cream-200 text-navy-600 rounded-full">
+                    {categoryLabels[currentItem.category as CategoryFilter]}
+                  </span>
+                </div>
+                <span className="text-sm text-navy-500">
+                  {currentIndex + 1} / {filteredContent.length}
+                </span>
+              </div>
+
+              {/* Original Text */}
+              <div className="text-center">
+                <p className="text-lg font-display text-navy-900 leading-relaxed">
+                  "{currentItem.text}"
+                </p>
+                {showIPA && (
+                  <p className="font-mono text-xs text-navy-500 mt-2">
+                    {currentItem.ipa}
+                  </p>
+                )}
+              </div>
+
+              <p className="text-xs text-navy-400 text-center mt-3">Çevirmek için kartı çevir</p>
+            </div>
           </div>
-          <span className="text-sm text-navy-500">
-            {currentIndex + 1} / {filteredContent.length}
-          </span>
-        </div>
 
-        {/* Original Text */}
-        <div className="text-center mb-5">
-          <p className="text-xl font-display text-navy-900 leading-relaxed">
-            "{currentItem.text}"
-          </p>
-          {showIPA && (
-            <p className="font-mono text-sm text-navy-500 mt-3">
-              {currentItem.ipa}
-            </p>
-          )}
-        </div>
+          {/* Back of Card - Turkish Translation & Key Words */}
+          <div
+            className={clsx(
+              'absolute inset-0 backface-hidden',
+              !isCardFlipped && 'pointer-events-none'
+            )}
+            style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+          >
+            <div className="card-elevated p-5 h-full bg-cream-50">
+              {/* Header */}
+              <div className="text-center border-b border-cream-300 pb-3 mb-3">
+                <h3 className="text-base font-display font-bold text-navy-900">Türkçe Çeviri</h3>
+              </div>
 
+              {/* Turkish Translation */}
+              <div className="mb-4">
+                <p className="text-navy-800 text-center leading-relaxed">
+                  {currentItem.turkishTranslation || 'Çeviri henüz eklenmedi'}
+                </p>
+              </div>
+
+              {/* Key Words */}
+              {currentItem.keyWords && currentItem.keyWords.length > 0 && (
+                <div>
+                  <p className="text-xs font-medium text-navy-500 uppercase tracking-wide mb-2">
+                    Önemli Kelimeler
+                  </p>
+                  <div className="space-y-1">
+                    {currentItem.keyWords.map((kw, i) => (
+                      <div key={i} className="flex justify-between items-center bg-white rounded-lg px-3 py-1.5">
+                        <span className="text-sm font-medium text-navy-900">{kw.word}</span>
+                        <span className="text-sm text-navy-600">{kw.translation}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <p className="text-xs text-navy-400 text-center mt-3">Geri dönmek için kartı çevir</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Controls Card */}
+      <div className="card-elevated p-5">
         {/* Phase Indicator */}
         <div className="flex justify-center gap-2 mb-5">
           {[
@@ -429,8 +500,8 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
                     {compareTexts()}%
                   </p>
                   <p className="text-sm text-navy-500 mt-2">
-                    {compareTexts() >= 80 
-                      ? 'Excellent! Your pronunciation is very close.' 
+                    {compareTexts() >= 80
+                      ? 'Excellent! Your pronunciation is very close.'
                       : compareTexts() >= 60
                         ? 'Good effort! Keep practicing.'
                         : 'Keep trying! Listen and practice more.'}
@@ -487,6 +558,6 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
           <ChevronRight className="w-4 h-4 ml-1" />
         </button>
       </div>
-    </motion.div>
+    </motion.div >
   )
 }

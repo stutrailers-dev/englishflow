@@ -5,6 +5,8 @@ export interface ShadowingItem {
   context: string
   difficulty: 'A2' | 'B1' | 'B2'
   category: 'travel' | 'technical' | 'social' | 'business' | 'daily' | 'conditional'
+  turkishTranslation?: string
+  keyWords?: { word: string; translation: string }[]
 }
 
 export const shadowingContent: ShadowingItem[] = [
@@ -18,6 +20,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Airport check-in',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: "Günaydın. İstanbul'a olan uçuşum için check-in yapmak istiyorum, lütfen.",
+    keyWords: [
+      { word: 'check in', translation: 'giriş yapmak' },
+      { word: 'flight', translation: 'uçuş' },
+      { word: "I'd like to", translation: 'istiyorum' },
+    ],
   },
   {
     id: 2,
@@ -26,6 +34,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Airport check-in',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Cam kenarı bir koltuk alabilir miyim, lütfen? Mümkünse öne yakın bir tane tercih ederim.',
+    keyWords: [
+      { word: 'window seat', translation: 'cam kenarı koltuk' },
+      { word: 'prefer', translation: 'tercih etmek' },
+      { word: 'if possible', translation: 'mümkünse' },
+    ],
   },
   {
     id: 3,
@@ -34,6 +48,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Airport check-in',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Korkarım sadece el bagajım var. Üst bagaj bölmesine sığar mı?',
+    keyWords: [
+      { word: "I'm afraid", translation: 'korkarım ki' },
+      { word: 'hand luggage', translation: 'el bagajı' },
+      { word: 'overhead locker', translation: 'üst bagaj bölmesi' },
+    ],
   },
   {
     id: 4,
@@ -42,6 +62,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Airport navigation',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Affedersiniz, BA yedi yirmi üç uçuşu için kalkış kapısını nerede bulabilirim?',
+    keyWords: [
+      { word: 'excuse me', translation: 'affedersiniz' },
+      { word: 'departure gate', translation: 'kalkış kapısı' },
+      { word: 'find', translation: 'bulmak' },
+    ],
   },
   {
     id: 5,
@@ -50,6 +76,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Airport navigation',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Güvenlik kontrolünden geçmenin ne kadar sürdüğünü söyleyebilir misiniz?',
+    keyWords: [
+      { word: 'how long', translation: 'ne kadar süre' },
+      { word: 'security', translation: 'güvenlik' },
+      { word: 'get through', translation: 'geçmek' },
+    ],
   },
   {
     id: 6,
@@ -58,6 +90,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Flight changes',
     difficulty: 'B2',
     category: 'travel',
+    turkishTranslation: 'Aktarmalı uçuşumun rötar yaptığını düşünüyorum. Seçeneklerim neler?',
+    keyWords: [
+      { word: 'connecting flight', translation: 'aktarmalı uçuş' },
+      { word: 'delayed', translation: 'gecikmiş' },
+      { word: 'options', translation: 'seçenekler' },
+    ],
   },
   {
     id: 7,
@@ -66,6 +104,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Passport control',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'İş için buradayım. Yaklaşık bir hafta kalacağım.',
+    keyWords: [
+      { word: 'on business', translation: 'iş için' },
+      { word: 'staying', translation: 'kalmak' },
+      { word: 'approximately', translation: 'yaklaşık' },
+    ],
   },
   {
     id: 8,
@@ -74,6 +118,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Passport control',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: "Ziyaretimin amacı Birmingham'daki bir ticaret fuarına katılmak.",
+    keyWords: [
+      { word: 'purpose', translation: 'amaç' },
+      { word: 'attend', translation: 'katılmak' },
+      { word: 'trade fair', translation: 'ticaret fuarı' },
+    ],
   },
   {
     id: 9,
@@ -82,6 +132,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Passport control',
     difficulty: 'A2',
     category: 'travel',
+    turkishTranslation: "Londra merkezindeki Hilton Otel'de kalacağım.",
+    keyWords: [
+      { word: 'staying', translation: 'kalmak' },
+      { word: 'central', translation: 'merkez' },
+      { word: 'hotel', translation: 'otel' },
+    ],
   },
   {
     id: 10,
@@ -90,6 +146,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Baggage claim',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Affedersiniz, bagajımla ilgili bir sorun olabilir. Henüz gelmedi.',
+    keyWords: [
+      { word: 'baggage', translation: 'bagaj' },
+      { word: 'arrived', translation: 'varmak/gelmek' },
+      { word: 'problem', translation: 'sorun' },
+    ],
   },
   {
     id: 11,
@@ -98,6 +160,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Baggage claim',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Bavulumun bir sonraki uçuşta olup olmadığını kontrol edebilir misiniz?',
+    keyWords: [
+      { word: 'suitcase', translation: 'bavul' },
+      { word: 'check', translation: 'kontrol etmek' },
+      { word: 'next flight', translation: 'sonraki uçuş' },
+    ],
   },
   {
     id: 12,
@@ -106,6 +174,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Car rental',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Üç günlüğüne araba kiralamak istiyorum. Müsait arabanız var mı?',
+    keyWords: [
+      { word: 'hire', translation: 'kiralamak' },
+      { word: 'available', translation: 'müsait/uygun' },
+      { word: 'for three days', translation: 'üç günlüğüne' },
+    ],
   },
   {
     id: 13,
@@ -114,6 +188,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Transportation',
     difficulty: 'A2',
     category: 'travel',
+    turkishTranslation: 'Buradan şehir merkezine gitmenin en iyi yolu nedir?',
+    keyWords: [
+      { word: 'best way', translation: 'en iyi yol' },
+      { word: 'city centre', translation: 'şehir merkezi' },
+      { word: 'get to', translation: 'ulaşmak' },
+    ],
   },
   {
     id: 14,
@@ -122,6 +202,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Transportation',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: "Manchester'a direkt tren var mı, yoksa aktarma yapmam mı gerekiyor?",
+    keyWords: [
+      { word: 'direct train', translation: 'direkt tren' },
+      { word: 'change', translation: 'aktarma yapmak' },
+      { word: 'need to', translation: 'gerekiyor' },
+    ],
   },
   {
     id: 15,
@@ -130,6 +216,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Hotel services',
     difficulty: 'A2',
     category: 'travel',
+    turkishTranslation: 'Otelin yakınında iyi bir restoran önerebilir misiniz?',
+    keyWords: [
+      { word: 'recommend', translation: 'önermek' },
+      { word: 'near', translation: 'yakınında' },
+      { word: 'restaurant', translation: 'restoran' },
+    ],
   },
   {
     id: 16,
