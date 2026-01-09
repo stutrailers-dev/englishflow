@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useSearchParams, Link } from 'react-router-dom'
 import {
@@ -45,6 +45,20 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
   const [searchQuery] = useState('')
   const [expandedChunk, setExpandedChunk] = useState<string | null>(null)
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
+  const expandedChunkRef = useRef<HTMLDivElement>(null)
+
+  // Scroll to expanded chunk when it changes
+  useEffect(() => {
+    if (expandedChunk && expandedChunkRef.current) {
+      // Small delay to allow animation to start
+      setTimeout(() => {
+        expandedChunkRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }, 100)
+    }
+  }, [expandedChunk])
 
   // Load learned chunks from localStorage
   const [learnedChunks, setLearnedChunks] = useState<Set<string>>(() => {
@@ -273,6 +287,7 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
             return (
               <motion.div
                 key={chunk.id}
+                ref={isExpanded ? expandedChunkRef : null}
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
