@@ -1,0 +1,2644 @@
+[
+  {
+    "id": "airport_checkin_001_turn_1",
+    "filename": "scenarios/airport_checkin_001/turn_1.mp3",
+    "text": "Good morning, sir. May I see your passport and booking reference, please?",
+    "category": "scenario",
+    "scenarioId": "airport_checkin_001"
+  },
+  {
+    "id": "airport_checkin_001_turn_3",
+    "filename": "scenarios/airport_checkin_001/turn_3.mp3",
+    "text": "Thank you, Mr. Lewis. I can see you're on flight BA678 to London Heathrow, departing at 10:45. Would you like a window or aisle seat?",
+    "category": "scenario",
+    "scenarioId": "airport_checkin_001"
+  },
+  {
+    "id": "airport_checkin_001_turn_5",
+    "filename": "scenarios/airport_checkin_001/turn_5.mp3",
+    "text": "Certainly. I've allocated you seat 14A, which is by the window. Are you checking in any luggage today?",
+    "category": "scenario",
+    "scenarioId": "airport_checkin_001"
+  },
+  {
+    "id": "airport_checkin_001_turn_7",
+    "filename": "scenarios/airport_checkin_001/turn_7.mp3",
+    "text": "Perfect. Please place it on the belt. Your allowance is 23 kilograms. It weighs 19.5 kilograms, so that's fine. Here's your boarding pass. Boarding starts at 10:15 from Gate B24. Have a pleasant flight.",
+    "category": "scenario",
+    "scenarioId": "airport_checkin_001"
+  },
+  {
+    "id": "passport_control_001_turn_1",
+    "filename": "scenarios/passport_control_001/turn_1.mp3",
+    "text": "Good afternoon. Passport, please. What is the purpose of your visit to the United Kingdom?",
+    "category": "scenario",
+    "scenarioId": "passport_control_001"
+  },
+  {
+    "id": "passport_control_001_turn_3",
+    "filename": "scenarios/passport_control_001/turn_3.mp3",
+    "text": "I see. And how long are you planning to stay in the UK?",
+    "category": "scenario",
+    "scenarioId": "passport_control_001"
+  },
+  {
+    "id": "passport_control_001_turn_5",
+    "filename": "scenarios/passport_control_001/turn_5.mp3",
+    "text": "Where will you be staying during your visit?",
+    "category": "scenario",
+    "scenarioId": "passport_control_001"
+  },
+  {
+    "id": "passport_control_001_turn_7",
+    "filename": "scenarios/passport_control_001/turn_7.mp3",
+    "text": "And what company do you work for?",
+    "category": "scenario",
+    "scenarioId": "passport_control_001"
+  },
+  {
+    "id": "passport_control_001_turn_9",
+    "filename": "scenarios/passport_control_001/turn_9.mp3",
+    "text": "Is this your first visit to the UK?",
+    "category": "scenario",
+    "scenarioId": "passport_control_001"
+  },
+  {
+    "id": "passport_control_001_turn_11",
+    "filename": "scenarios/passport_control_001/turn_11.mp3",
+    "text": "Very well. Do you have anything to declare? Any goods over the duty-free allowance?",
+    "category": "scenario",
+    "scenarioId": "passport_control_001"
+  },
+  {
+    "id": "passport_control_001_turn_13",
+    "filename": "scenarios/passport_control_001/turn_13.mp3",
+    "text": "That's fine. Welcome to the United Kingdom. Enjoy your stay.",
+    "category": "scenario",
+    "scenarioId": "passport_control_001"
+  },
+  {
+    "id": "airport_security_001_turn_1",
+    "filename": "scenarios/airport_security_001/turn_1.mp3",
+    "text": "Please remove your laptop and any liquids from your bag. Place them in a separate tray.",
+    "category": "scenario",
+    "scenarioId": "airport_security_001"
+  },
+  {
+    "id": "airport_security_001_turn_3",
+    "filename": "scenarios/airport_security_001/turn_3.mp3",
+    "text": "Is this your bag, sir? We need to check it. There seems to be something metallic inside.",
+    "category": "scenario",
+    "scenarioId": "airport_security_001"
+  },
+  {
+    "id": "airport_security_001_turn_5",
+    "filename": "scenarios/airport_security_001/turn_5.mp3",
+    "text": "Ah yes, it's a power bank. That's fine. You're all clear. Have a good flight.",
+    "category": "scenario",
+    "scenarioId": "airport_security_001"
+  },
+  {
+    "id": "business_meeting_001_turn_1",
+    "filename": "scenarios/business_meeting_001/turn_1.mp3",
+    "text": "Good afternoon. You must be from STU Trailer. Please, take a seat. We're looking forward to hearing about your products.",
+    "category": "scenario",
+    "scenarioId": "business_meeting_001"
+  },
+  {
+    "id": "business_meeting_001_turn_3",
+    "filename": "scenarios/business_meeting_001/turn_3.mp3",
+    "text": "Excellent. So, what can you tell us about your concrete mixer range?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_001"
+  },
+  {
+    "id": "business_meeting_001_turn_5",
+    "filename": "scenarios/business_meeting_001/turn_5.mp3",
+    "text": "That's interesting. What's the drum rotation speed, and what kind of discharge rate can we expect?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_001"
+  },
+  {
+    "id": "business_meeting_001_turn_7",
+    "filename": "scenarios/business_meeting_001/turn_7.mp3",
+    "text": "Very good. And what about the hydraulic system? Is it compatible with standard European truck connections?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_001"
+  },
+  {
+    "id": "business_meeting_001_turn_9",
+    "filename": "scenarios/business_meeting_001/turn_9.mp3",
+    "text": "Excellent. That all sounds very promising. Could you send us a detailed quotation by next Friday?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_001"
+  },
+  {
+    "id": "factory_visit_001_turn_1",
+    "filename": "scenarios/factory_visit_001/turn_1.mp3",
+    "text": "Good morning! Thank you for the invitation to visit your facility. I've been looking forward to seeing your production process.",
+    "category": "scenario",
+    "scenarioId": "factory_visit_001"
+  },
+  {
+    "id": "factory_visit_001_turn_3",
+    "filename": "scenarios/factory_visit_001/turn_3.mp3",
+    "text": "This is impressive. Can you tell me about this welding station? What process do you use?",
+    "category": "scenario",
+    "scenarioId": "factory_visit_001"
+  },
+  {
+    "id": "factory_visit_001_turn_5",
+    "filename": "scenarios/factory_visit_001/turn_5.mp3",
+    "text": "I see. And what quality control measures do you have in place?",
+    "category": "scenario",
+    "scenarioId": "factory_visit_001"
+  },
+  {
+    "id": "factory_visit_001_turn_7",
+    "filename": "scenarios/factory_visit_001/turn_7.mp3",
+    "text": "That's reassuring. What's your typical lead time from order to delivery?",
+    "category": "scenario",
+    "scenarioId": "factory_visit_001"
+  },
+  {
+    "id": "restaurant_001_turn_1",
+    "filename": "scenarios/restaurant_001/turn_1.mp3",
+    "text": "This is a lovely restaurant. I come here quite often. Have you decided what you'd like to order?",
+    "category": "scenario",
+    "scenarioId": "restaurant_001"
+  },
+  {
+    "id": "restaurant_001_turn_3",
+    "filename": "scenarios/restaurant_001/turn_3.mp3",
+    "text": "The lamb is excellent here. By the way, how was your journey from Konya? I imagine it's quite a long trip.",
+    "category": "scenario",
+    "scenarioId": "restaurant_001"
+  },
+  {
+    "id": "restaurant_001_turn_5",
+    "filename": "scenarios/restaurant_001/turn_5.mp3",
+    "text": "Would you like some wine with dinner? They have an excellent selection here.",
+    "category": "scenario",
+    "scenarioId": "restaurant_001"
+  },
+  {
+    "id": "restaurant_001_turn_7",
+    "filename": "scenarios/restaurant_001/turn_7.mp3",
+    "text": "Of course, no problem at all. So tell me, how did you get into the trailer manufacturing business?",
+    "category": "scenario",
+    "scenarioId": "restaurant_001"
+  },
+  {
+    "id": "small_talk_001_turn_1",
+    "filename": "scenarios/small_talk_001/turn_1.mp3",
+    "text": "Bit grey today, isn't it? Typical British weather, I'm afraid. Is it very different in Turkey?",
+    "category": "scenario",
+    "scenarioId": "small_talk_001"
+  },
+  {
+    "id": "small_talk_001_turn_3",
+    "filename": "scenarios/small_talk_001/turn_3.mp3",
+    "text": "I've always wanted to visit Turkey. Any plans for the weekend while you're here?",
+    "category": "scenario",
+    "scenarioId": "small_talk_001"
+  },
+  {
+    "id": "small_talk_001_turn_5",
+    "filename": "scenarios/small_talk_001/turn_5.mp3",
+    "text": "Oh, the British Museum is brilliant. Free entry too! Do you follow football at all?",
+    "category": "scenario",
+    "scenarioId": "small_talk_001"
+  },
+  {
+    "id": "small_talk_001_turn_7",
+    "filename": "scenarios/small_talk_001/turn_7.mp3",
+    "text": "I'm a Manchester United fan, for my sins! Anyway, shall we head back? I think they're ready to continue.",
+    "category": "scenario",
+    "scenarioId": "small_talk_001"
+  },
+  {
+    "id": "phone_call_001_turn_1",
+    "filename": "scenarios/phone_call_001/turn_1.mp3",
+    "text": "Hello, Thompson Engineering, Sarah speaking. How can I help you?",
+    "category": "scenario",
+    "scenarioId": "phone_call_001"
+  },
+  {
+    "id": "phone_call_001_turn_3",
+    "filename": "scenarios/phone_call_001/turn_3.mp3",
+    "text": "Of course. Let me check his diary. When would suit you best?",
+    "category": "scenario",
+    "scenarioId": "phone_call_001"
+  },
+  {
+    "id": "phone_call_001_turn_5",
+    "filename": "scenarios/phone_call_001/turn_5.mp3",
+    "text": "Tuesday the 17th looks good. Would 10 o'clock work? We'll need about two hours, I imagine.",
+    "category": "scenario",
+    "scenarioId": "phone_call_001"
+  },
+  {
+    "id": "phone_call_001_turn_7",
+    "filename": "scenarios/phone_call_001/turn_7.mp3",
+    "text": "Excellent. I'll send you a calendar invite and directions to our office. Is there anything you'll need for the presentation?",
+    "category": "scenario",
+    "scenarioId": "phone_call_001"
+  },
+  {
+    "id": "hotel_checkin_001_turn_1",
+    "filename": "scenarios/hotel_checkin_001/turn_1.mp3",
+    "text": "Good evening, sir. Welcome to the Grand Hotel Manchester. Do you have a reservation?",
+    "category": "scenario",
+    "scenarioId": "hotel_checkin_001"
+  },
+  {
+    "id": "hotel_checkin_001_turn_3",
+    "filename": "scenarios/hotel_checkin_001/turn_3.mp3",
+    "text": "Yes, here it is. A standard room for three nights. Would you prefer a higher floor or a quieter room at the back?",
+    "category": "scenario",
+    "scenarioId": "hotel_checkin_001"
+  },
+  {
+    "id": "hotel_checkin_001_turn_5",
+    "filename": "scenarios/hotel_checkin_001/turn_5.mp3",
+    "text": "No problem. I've put you in room 412 on the fourth floor, nice and quiet. Breakfast is served from 6:30 to 10. Is there anything else you need to know?",
+    "category": "scenario",
+    "scenarioId": "hotel_checkin_001"
+  },
+  {
+    "id": "hotel_checkin_001_turn_7",
+    "filename": "scenarios/hotel_checkin_001/turn_7.mp3",
+    "text": "Yes, the gym is on the ground floor, open 24 hours. The Wi-Fi password is on a card in your room. Enjoy your stay!",
+    "category": "scenario",
+    "scenarioId": "hotel_checkin_001"
+  },
+  {
+    "id": "airport_delay_001_turn_1",
+    "filename": "scenarios/airport_delay_001/turn_1.mp3",
+    "text": "Good afternoon. How can I help you today?",
+    "category": "scenario",
+    "scenarioId": "airport_delay_001"
+  },
+  {
+    "id": "airport_delay_001_turn_3",
+    "filename": "scenarios/airport_delay_001/turn_3.mp3",
+    "text": "I'm sorry about that. There's been a technical issue with the aircraft. We're expecting a delay of approximately two hours.",
+    "category": "scenario",
+    "scenarioId": "airport_delay_001"
+  },
+  {
+    "id": "airport_delay_001_turn_5",
+    "filename": "scenarios/airport_delay_001/turn_5.mp3",
+    "text": "Unfortunately, this is the only direct flight today. However, we can offer you a meal voucher for the wait. Would that help?",
+    "category": "scenario",
+    "scenarioId": "airport_delay_001"
+  },
+  {
+    "id": "airport_delay_001_turn_7",
+    "filename": "scenarios/airport_delay_001/turn_7.mp3",
+    "text": "You can use it at any restaurant in Terminal 3. We'll announce boarding as soon as the aircraft is ready. Apologies again for the inconvenience.",
+    "category": "scenario",
+    "scenarioId": "airport_delay_001"
+  },
+  {
+    "id": "hotel_complaint_001_turn_1",
+    "filename": "scenarios/hotel_complaint_001/turn_1.mp3",
+    "text": "Reception, how may I assist you?",
+    "category": "scenario",
+    "scenarioId": "hotel_complaint_001"
+  },
+  {
+    "id": "hotel_complaint_001_turn_3",
+    "filename": "scenarios/hotel_complaint_001/turn_3.mp3",
+    "text": "I'm terribly sorry to hear that, sir. Could you describe what's happening? Is it not turning on at all, or is it making a noise?",
+    "category": "scenario",
+    "scenarioId": "hotel_complaint_001"
+  },
+  {
+    "id": "hotel_complaint_001_turn_5",
+    "filename": "scenarios/hotel_complaint_001/turn_5.mp3",
+    "text": "I understand. I can send our maintenance team up right away, or I can offer you a different room on the same floor. Which would you prefer?",
+    "category": "scenario",
+    "scenarioId": "hotel_complaint_001"
+  },
+  {
+    "id": "hotel_complaint_001_turn_7",
+    "filename": "scenarios/hotel_complaint_001/turn_7.mp3",
+    "text": "Of course. I have room 418 available, which is an identical room with a city view. I'll send someone up to help you move. Again, my sincere apologies.",
+    "category": "scenario",
+    "scenarioId": "hotel_complaint_001"
+  },
+  {
+    "id": "business_meeting_negotiation_001_turn_1",
+    "filename": "scenarios/business_meeting_negotiation_001/turn_1.mp3",
+    "text": "So, let's talk numbers. What kind of pricing are we looking at for a bulk order of curtainsiders?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_negotiation_001"
+  },
+  {
+    "id": "business_meeting_negotiation_001_turn_3",
+    "filename": "scenarios/business_meeting_negotiation_001/turn_3.mp3",
+    "text": "That's a bit higher than we were hoping. Our current supplier offers similar specs at €26,000. Can you match that?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_negotiation_001"
+  },
+  {
+    "id": "business_meeting_negotiation_001_turn_5",
+    "filename": "scenarios/business_meeting_negotiation_001/turn_5.mp3",
+    "text": "The warranty is appealing. If we commit to 20 units this year, what's the best you can do?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_negotiation_001"
+  },
+  {
+    "id": "business_meeting_negotiation_001_turn_7",
+    "filename": "scenarios/business_meeting_negotiation_001/turn_7.mp3",
+    "text": "That sounds reasonable. And what about payment terms? We typically work on 60-day terms.",
+    "category": "scenario",
+    "scenarioId": "business_meeting_negotiation_001"
+  },
+  {
+    "id": "business_meeting_negotiation_001_turn_9",
+    "filename": "scenarios/business_meeting_negotiation_001/turn_9.mp3",
+    "text": "That works for us. Shall we put together a formal proposal then?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_negotiation_001"
+  },
+  {
+    "id": "restaurant_ordering_001_turn_1",
+    "filename": "scenarios/restaurant_ordering_001/turn_1.mp3",
+    "text": "Good evening! Welcome to The Crown. Are you ready to order, or would you like a few more minutes?",
+    "category": "scenario",
+    "scenarioId": "restaurant_ordering_001"
+  },
+  {
+    "id": "restaurant_ordering_001_turn_3",
+    "filename": "scenarios/restaurant_ordering_001/turn_3.mp3",
+    "text": "Today's pie is steak and ale - it's very popular. Comes with mash and gravy. Can I get you some drinks while you decide?",
+    "category": "scenario",
+    "scenarioId": "restaurant_ordering_001"
+  },
+  {
+    "id": "restaurant_ordering_001_turn_5",
+    "filename": "scenarios/restaurant_ordering_001/turn_5.mp3",
+    "text": "Excellent choice. And for your colleagues?",
+    "category": "scenario",
+    "scenarioId": "restaurant_ordering_001"
+  },
+  {
+    "id": "restaurant_ordering_001_turn_7",
+    "filename": "scenarios/restaurant_ordering_001/turn_7.mp3",
+    "text": "It's beer-battered. Lovely and crispy. So that's one pie, one fish and chips. I'll bring your drinks right away.",
+    "category": "scenario",
+    "scenarioId": "restaurant_ordering_001"
+  },
+  {
+    "id": "phone_complaint_001_turn_1",
+    "filename": "scenarios/phone_complaint_001/turn_1.mp3",
+    "text": "Good morning, Harrison Parts, Claire speaking. How can I help?",
+    "category": "scenario",
+    "scenarioId": "phone_complaint_001"
+  },
+  {
+    "id": "phone_complaint_001_turn_3",
+    "filename": "scenarios/phone_complaint_001/turn_3.mp3",
+    "text": "Let me pull that up... Yes, I can see it here. It looks like there was a delay at our warehouse. I'm sorry about that. It's scheduled to ship today.",
+    "category": "scenario",
+    "scenarioId": "phone_complaint_001"
+  },
+  {
+    "id": "phone_complaint_001_turn_5",
+    "filename": "scenarios/phone_complaint_001/turn_5.mp3",
+    "text": "I completely understand. Would express shipping help? We could upgrade to next-day delivery at no extra cost to make up for the delay.",
+    "category": "scenario",
+    "scenarioId": "phone_complaint_001"
+  },
+  {
+    "id": "phone_complaint_001_turn_7",
+    "filename": "scenarios/phone_complaint_001/turn_7.mp3",
+    "text": "Yes, it should arrive Thursday morning your time. I'll email you the tracking number within the hour. Is there anything else I can help with?",
+    "category": "scenario",
+    "scenarioId": "phone_complaint_001"
+  },
+  {
+    "id": "factory_quality_001_turn_1",
+    "filename": "scenarios/factory_quality_001/turn_1.mp3",
+    "text": "This is impressive. Can you walk me through your quality management system? What certifications do you hold?",
+    "category": "scenario",
+    "scenarioId": "factory_quality_001"
+  },
+  {
+    "id": "factory_quality_001_turn_3",
+    "filename": "scenarios/factory_quality_001/turn_3.mp3",
+    "text": "Good to hear. How do you handle non-conformances? What happens if a defect is found during production?",
+    "category": "scenario",
+    "scenarioId": "factory_quality_001"
+  },
+  {
+    "id": "factory_quality_001_turn_5",
+    "filename": "scenarios/factory_quality_001/turn_5.mp3",
+    "text": "I noticed you use both robotic and manual welding. How do you ensure consistent weld quality across both methods?",
+    "category": "scenario",
+    "scenarioId": "factory_quality_001"
+  },
+  {
+    "id": "factory_quality_001_turn_7",
+    "filename": "scenarios/factory_quality_001/turn_7.mp3",
+    "text": "Very thorough. One last question - what's your defect rate, and how has it trended over the past year?",
+    "category": "scenario",
+    "scenarioId": "factory_quality_001"
+  },
+  {
+    "id": "small_talk_networking_001_turn_1",
+    "filename": "scenarios/small_talk_networking_001/turn_1.mp3",
+    "text": "Quite a busy show this year, isn't it? I don't think we've met. I'm James, from Axle Solutions.",
+    "category": "scenario",
+    "scenarioId": "small_talk_networking_001"
+  },
+  {
+    "id": "small_talk_networking_001_turn_3",
+    "filename": "scenarios/small_talk_networking_001/turn_3.mp3",
+    "text": "Turkey! Interesting. The Turkish trailer industry has grown enormously. What type of trailers do you specialise in?",
+    "category": "scenario",
+    "scenarioId": "small_talk_networking_001"
+  },
+  {
+    "id": "small_talk_networking_001_turn_5",
+    "filename": "scenarios/small_talk_networking_001/turn_5.mp3",
+    "text": "We supply axles and suspension systems to trailer manufacturers. Actually, we might be able to work together. Do you source your axles locally or import them?",
+    "category": "scenario",
+    "scenarioId": "small_talk_networking_001"
+  },
+  {
+    "id": "small_talk_networking_001_turn_7",
+    "filename": "scenarios/small_talk_networking_001/turn_7.mp3",
+    "text": "We distribute BPW and SAF-Holland. Look, I'd love to chat more, but I need to get back to the stand. Could I give you my card?",
+    "category": "scenario",
+    "scenarioId": "small_talk_networking_001"
+  },
+  {
+    "id": "technical_presentation_specs_001_turn_1",
+    "filename": "scenarios/technical_presentation_specs_001/turn_1.mp3",
+    "text": "Right, so tell me about this tipper. We need something robust for aggregate transport. What's the body capacity?",
+    "category": "scenario",
+    "scenarioId": "technical_presentation_specs_001"
+  },
+  {
+    "id": "technical_presentation_specs_001_turn_3",
+    "filename": "scenarios/technical_presentation_specs_001/turn_3.mp3",
+    "text": "Hardox is good. What about the tipping mechanism? We've had issues with slow tipping times in the past.",
+    "category": "scenario",
+    "scenarioId": "technical_presentation_specs_001"
+  },
+  {
+    "id": "technical_presentation_specs_001_turn_5",
+    "filename": "scenarios/technical_presentation_specs_001/turn_5.mp3",
+    "text": "That's decent. What's the unladen weight? We need to maximise payload.",
+    "category": "scenario",
+    "scenarioId": "technical_presentation_specs_001"
+  },
+  {
+    "id": "technical_presentation_specs_001_turn_7",
+    "filename": "scenarios/technical_presentation_specs_001/turn_7.mp3",
+    "text": "Good payload. One more thing - what warranty do you offer, and do you have service support in the UK?",
+    "category": "scenario",
+    "scenarioId": "technical_presentation_specs_001"
+  },
+  {
+    "id": "airport_taxi_001_turn_1",
+    "filename": "scenarios/airport_taxi_001/turn_1.mp3",
+    "text": "Hello there! Where can I take you today?",
+    "category": "scenario",
+    "scenarioId": "airport_taxi_001"
+  },
+  {
+    "id": "airport_taxi_001_turn_3",
+    "filename": "scenarios/airport_taxi_001/turn_3.mp3",
+    "text": "The Grand Hotel, yes I know it well. That'll be about 25 pounds. Should take around 20 minutes depending on traffic. Is that alright?",
+    "category": "scenario",
+    "scenarioId": "airport_taxi_001"
+  },
+  {
+    "id": "airport_taxi_001_turn_5",
+    "filename": "scenarios/airport_taxi_001/turn_5.mp3",
+    "text": "Yes, card is fine. So, business or pleasure? You sound like you've travelled a fair way.",
+    "category": "scenario",
+    "scenarioId": "airport_taxi_001"
+  },
+  {
+    "id": "airport_taxi_001_turn_7",
+    "filename": "scenarios/airport_taxi_001/turn_7.mp3",
+    "text": "Turkey, lovely! Right, here we are - the Grand Hotel. That's 24 pounds on the meter. Shall I get your bag from the boot?",
+    "category": "scenario",
+    "scenarioId": "airport_taxi_001"
+  },
+  {
+    "id": "hotel_checkout_001_turn_1",
+    "filename": "scenarios/hotel_checkout_001/turn_1.mp3",
+    "text": "Good morning, sir. Checking out today?",
+    "category": "scenario",
+    "scenarioId": "hotel_checkout_001"
+  },
+  {
+    "id": "hotel_checkout_001_turn_3",
+    "filename": "scenarios/hotel_checkout_001/turn_3.mp3",
+    "text": "Let me pull up your bill. That's three nights, plus the restaurant charges and minibar. The total comes to £485.",
+    "category": "scenario",
+    "scenarioId": "hotel_checkout_001"
+  },
+  {
+    "id": "hotel_checkout_001_turn_5",
+    "filename": "scenarios/hotel_checkout_001/turn_5.mp3",
+    "text": "Of course. Let me check... You're right, that was a system error. I'll remove it. The new total is £467. How would you like to pay?",
+    "category": "scenario",
+    "scenarioId": "hotel_checkout_001"
+  },
+  {
+    "id": "hotel_checkout_001_turn_7",
+    "filename": "scenarios/hotel_checkout_001/turn_7.mp3",
+    "text": "Certainly. Here's your receipt. Is there anything else I can help with? Do you need transport to the airport?",
+    "category": "scenario",
+    "scenarioId": "hotel_checkout_001"
+  },
+  {
+    "id": "hotel_checkout_001_turn_9",
+    "filename": "scenarios/hotel_checkout_001/turn_9.mp3",
+    "text": "I'll book one for 11:30, that should give you plenty of time. It'll wait outside the main entrance. Have a safe journey!",
+    "category": "scenario",
+    "scenarioId": "hotel_checkout_001"
+  },
+  {
+    "id": "business_meeting_followup_001_turn_1",
+    "filename": "scenarios/business_meeting_followup_001/turn_1.mp3",
+    "text": "Thanks for coming in, Lewis. So, where are we with our order? The 15 curtainsiders we ordered last month.",
+    "category": "scenario",
+    "scenarioId": "business_meeting_followup_001"
+  },
+  {
+    "id": "business_meeting_followup_001_turn_3",
+    "filename": "scenarios/business_meeting_followup_001/turn_3.mp3",
+    "text": "Good to hear. We did have one concern though - your quality manager mentioned there was a weld issue on a previous batch. Has that been addressed?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_followup_001"
+  },
+  {
+    "id": "business_meeting_followup_001_turn_5",
+    "filename": "scenarios/business_meeting_followup_001/turn_5.mp3",
+    "text": "That's reassuring. Now, regarding delivery - we're a bit concerned about the timeline. Can you still hit the March 15th deadline?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_followup_001"
+  },
+  {
+    "id": "business_meeting_followup_001_turn_7",
+    "filename": "scenarios/business_meeting_followup_001/turn_7.mp3",
+    "text": "Excellent. One more thing - we're considering increasing next quarter's order to 25 units. Would that be feasible for you?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_followup_001"
+  },
+  {
+    "id": "restaurant_bill_001_turn_1",
+    "filename": "scenarios/restaurant_bill_001/turn_1.mp3",
+    "text": "That was a lovely meal. Shall we get the bill?",
+    "category": "scenario",
+    "scenarioId": "restaurant_bill_001"
+  },
+  {
+    "id": "restaurant_bill_001_turn_3",
+    "filename": "scenarios/restaurant_bill_001/turn_3.mp3",
+    "text": "Oh, that's very kind of you. Are you sure? I'm happy to split it.",
+    "category": "scenario",
+    "scenarioId": "restaurant_bill_001"
+  },
+  {
+    "id": "restaurant_bill_001_turn_5",
+    "filename": "scenarios/restaurant_bill_001/turn_5.mp3",
+    "text": "Well, thank you very much. That's very generous. I've really enjoyed this evening.",
+    "category": "scenario",
+    "scenarioId": "restaurant_bill_001"
+  },
+  {
+    "id": "restaurant_bill_001_turn_7",
+    "filename": "scenarios/restaurant_bill_001/turn_7.mp3",
+    "text": "Definitely. Right, I should probably head off - early start tomorrow. Thank you again for dinner.",
+    "category": "scenario",
+    "scenarioId": "restaurant_bill_001"
+  },
+  {
+    "id": "phone_reschedule_001_turn_1",
+    "filename": "scenarios/phone_reschedule_001/turn_1.mp3",
+    "text": "Good morning, David Richards speaking.",
+    "category": "scenario",
+    "scenarioId": "phone_reschedule_001"
+  },
+  {
+    "id": "phone_reschedule_001_turn_3",
+    "filename": "scenarios/phone_reschedule_001/turn_3.mp3",
+    "text": "Oh, that's a shame. What's happened?",
+    "category": "scenario",
+    "scenarioId": "phone_reschedule_001"
+  },
+  {
+    "id": "phone_reschedule_001_turn_5",
+    "filename": "scenarios/phone_reschedule_001/turn_5.mp3",
+    "text": "These things happen. Don't worry about it. When would you be able to reschedule?",
+    "category": "scenario",
+    "scenarioId": "phone_reschedule_001"
+  },
+  {
+    "id": "phone_reschedule_001_turn_7",
+    "filename": "scenarios/phone_reschedule_001/turn_7.mp3",
+    "text": "Thursday morning would actually work better for me. Shall we say 10 o'clock?",
+    "category": "scenario",
+    "scenarioId": "phone_reschedule_001"
+  },
+  {
+    "id": "small_talk_hotel_breakfast_001_turn_1",
+    "filename": "scenarios/small_talk_hotel_breakfast_001/turn_1.mp3",
+    "text": "Morning! The coffee here is quite good, isn't it?",
+    "category": "scenario",
+    "scenarioId": "small_talk_hotel_breakfast_001"
+  },
+  {
+    "id": "small_talk_hotel_breakfast_001_turn_3",
+    "filename": "scenarios/small_talk_hotel_breakfast_001/turn_3.mp3",
+    "text": "Yes, I'm visiting a supplier in the area. What about you? Your accent - let me guess, somewhere Mediterranean?",
+    "category": "scenario",
+    "scenarioId": "small_talk_hotel_breakfast_001"
+  },
+  {
+    "id": "small_talk_hotel_breakfast_001_turn_5",
+    "filename": "scenarios/small_talk_hotel_breakfast_001/turn_5.mp3",
+    "text": "Trailers? That's interesting. I'm in logistics myself - we run a haulage company. Always looking for reliable equipment.",
+    "category": "scenario",
+    "scenarioId": "small_talk_hotel_breakfast_001"
+  },
+  {
+    "id": "small_talk_hotel_breakfast_001_turn_7",
+    "filename": "scenarios/small_talk_hotel_breakfast_001/turn_7.mp3",
+    "text": "Mostly curtainsiders, actually. We buy about 10 new ones a year. Here's my card - give me a call if you'd like to discuss further.",
+    "category": "scenario",
+    "scenarioId": "small_talk_hotel_breakfast_001"
+  },
+  {
+    "id": "factory_safety_001_turn_1",
+    "filename": "scenarios/factory_safety_001/turn_1.mp3",
+    "text": "Thank you for visiting STU Trailer. Before we start the tour, I believe there's a safety briefing?",
+    "category": "scenario",
+    "scenarioId": "factory_safety_001"
+  },
+  {
+    "id": "factory_safety_001_turn_3",
+    "filename": "scenarios/factory_safety_001/turn_3.mp3",
+    "text": "Of course. What do we need to know?",
+    "category": "scenario",
+    "scenarioId": "factory_safety_001"
+  },
+  {
+    "id": "factory_safety_001_turn_5",
+    "filename": "scenarios/factory_safety_001/turn_5.mp3",
+    "text": "Understood. Are there any particular hazards we should be aware of?",
+    "category": "scenario",
+    "scenarioId": "factory_safety_001"
+  },
+  {
+    "id": "factory_safety_001_turn_7",
+    "filename": "scenarios/factory_safety_001/turn_7.mp3",
+    "text": "Good to know. And if there's an emergency?",
+    "category": "scenario",
+    "scenarioId": "factory_safety_001"
+  },
+  {
+    "id": "technical_presentation_qa_001_turn_1",
+    "filename": "scenarios/technical_presentation_qa_001/turn_1.mp3",
+    "text": "Thank you for that presentation. I have a question about the axle configuration. Can you use disc brakes instead of drum brakes on your trailers?",
+    "category": "scenario",
+    "scenarioId": "technical_presentation_qa_001"
+  },
+  {
+    "id": "technical_presentation_qa_001_turn_3",
+    "filename": "scenarios/technical_presentation_qa_001/turn_3.mp3",
+    "text": "Good to know. Another question - what's the typical lifespan of your trailer floors? We've had issues with rotting on other brands.",
+    "category": "scenario",
+    "scenarioId": "technical_presentation_qa_001"
+  },
+  {
+    "id": "technical_presentation_qa_001_turn_5",
+    "filename": "scenarios/technical_presentation_qa_001/turn_5.mp3",
+    "text": "Impressive. One more - do you have crash test certification for the rear underrun protection?",
+    "category": "scenario",
+    "scenarioId": "technical_presentation_qa_001"
+  },
+  {
+    "id": "technical_presentation_qa_001_turn_7",
+    "filename": "scenarios/technical_presentation_qa_001/turn_7.mp3",
+    "text": "That would be helpful. Are there any other questions from the floor? No? Well, thank you all for your attention.",
+    "category": "scenario",
+    "scenarioId": "technical_presentation_qa_001"
+  },
+  {
+    "id": "airport_lost_luggage_001_turn_1",
+    "filename": "scenarios/airport_lost_luggage_001/turn_1.mp3",
+    "text": "Good evening, sir. How can I help you?",
+    "category": "scenario",
+    "scenarioId": "airport_lost_luggage_001"
+  },
+  {
+    "id": "airport_lost_luggage_001_turn_3",
+    "filename": "scenarios/airport_lost_luggage_001/turn_3.mp3",
+    "text": "I'm sorry to hear that. Can you describe your bag for me? Size, colour, any distinguishing features?",
+    "category": "scenario",
+    "scenarioId": "airport_lost_luggage_001"
+  },
+  {
+    "id": "airport_lost_luggage_001_turn_5",
+    "filename": "scenarios/airport_lost_luggage_001/turn_5.mp3",
+    "text": "Thank you. And do you have your baggage claim ticket? It should be attached to your boarding pass.",
+    "category": "scenario",
+    "scenarioId": "airport_lost_luggage_001"
+  },
+  {
+    "id": "airport_lost_luggage_001_turn_7",
+    "filename": "scenarios/airport_lost_luggage_001/turn_7.mp3",
+    "text": "Perfect. We'll track it down. Where are you staying? We can deliver it once it's located.",
+    "category": "scenario",
+    "scenarioId": "airport_lost_luggage_001"
+  },
+  {
+    "id": "hotel_concierge_001_turn_1",
+    "filename": "scenarios/hotel_concierge_001/turn_1.mp3",
+    "text": "Good afternoon, sir. How may I assist you today?",
+    "category": "scenario",
+    "scenarioId": "hotel_concierge_001"
+  },
+  {
+    "id": "hotel_concierge_001_turn_3",
+    "filename": "scenarios/hotel_concierge_001/turn_3.mp3",
+    "text": "Of course. What type of cuisine does your client prefer? We have excellent Italian, British, and Asian options within walking distance.",
+    "category": "scenario",
+    "scenarioId": "hotel_concierge_001"
+  },
+  {
+    "id": "hotel_concierge_001_turn_5",
+    "filename": "scenarios/hotel_concierge_001/turn_5.mp3",
+    "text": "I'd recommend The Ivy. Excellent British menu, beautiful setting, very popular with business clients. Shall I make a reservation for you?",
+    "category": "scenario",
+    "scenarioId": "hotel_concierge_001"
+  },
+  {
+    "id": "hotel_concierge_001_turn_7",
+    "filename": "scenarios/hotel_concierge_001/turn_7.mp3",
+    "text": "Certainly. And would you like me to arrange anything else? Theatre tickets perhaps, or a car service?",
+    "category": "scenario",
+    "scenarioId": "hotel_concierge_001"
+  },
+  {
+    "id": "restaurant_dietary_001_turn_1",
+    "filename": "scenarios/restaurant_dietary_001/turn_1.mp3",
+    "text": "Good evening. Are you ready to order, or do you have any questions about the menu?",
+    "category": "scenario",
+    "scenarioId": "restaurant_dietary_001"
+  },
+  {
+    "id": "restaurant_dietary_001_turn_3",
+    "filename": "scenarios/restaurant_dietary_001/turn_3.mp3",
+    "text": "Of course, no problem at all. The lamb shank, the grilled salmon, and the chicken supreme are all pork-free. Would any of those interest you?",
+    "category": "scenario",
+    "scenarioId": "restaurant_dietary_001"
+  },
+  {
+    "id": "restaurant_dietary_001_turn_5",
+    "filename": "scenarios/restaurant_dietary_001/turn_5.mp3",
+    "text": "The lamb is slow-cooked in a rosemary and garlic jus - no wine. It comes with roasted vegetables and mashed potato. Shall I put that order in for you?",
+    "category": "scenario",
+    "scenarioId": "restaurant_dietary_001"
+  },
+  {
+    "id": "restaurant_dietary_001_turn_7",
+    "filename": "scenarios/restaurant_dietary_001/turn_7.mp3",
+    "text": "Certainly. Sparkling water and the lamb shank. I'll make a note about your dietary requirements for the kitchen. Is there anything else?",
+    "category": "scenario",
+    "scenarioId": "restaurant_dietary_001"
+  },
+  {
+    "id": "business_closing_deal_001_turn_1",
+    "filename": "scenarios/business_closing_deal_001/turn_1.mp3",
+    "text": "Right, I think we've covered everything. Before we sign, shall we just run through the key terms one more time?",
+    "category": "scenario",
+    "scenarioId": "business_closing_deal_001"
+  },
+  {
+    "id": "business_closing_deal_001_turn_3",
+    "filename": "scenarios/business_closing_deal_001/turn_3.mp3",
+    "text": "That's correct. And the warranty is 3 years on the chassis, 2 years on everything else. One last thing - what happens if there are any quality issues after delivery?",
+    "category": "scenario",
+    "scenarioId": "business_closing_deal_001"
+  },
+  {
+    "id": "business_closing_deal_001_turn_5",
+    "filename": "scenarios/business_closing_deal_001/turn_5.mp3",
+    "text": "That's reassuring. I'm happy with everything. I think we have a deal.",
+    "category": "scenario",
+    "scenarioId": "business_closing_deal_001"
+  },
+  {
+    "id": "business_closing_deal_001_turn_7",
+    "filename": "scenarios/business_closing_deal_001/turn_7.mp3",
+    "text": "Indeed. Let me sign here... and here. There we go. Welcome aboard! Shall we celebrate with a drink?",
+    "category": "scenario",
+    "scenarioId": "business_closing_deal_001"
+  },
+  {
+    "id": "small_talk_weekend_001_turn_1",
+    "filename": "scenarios/small_talk_weekend_001/turn_1.mp3",
+    "text": "Morning Lewis! Good to see you again. Did you have a good weekend? Did you get to do anything nice while you were here?",
+    "category": "scenario",
+    "scenarioId": "small_talk_weekend_001"
+  },
+  {
+    "id": "small_talk_weekend_001_turn_3",
+    "filename": "scenarios/small_talk_weekend_001/turn_3.mp3",
+    "text": "The British Museum is wonderful, isn't it? I spent the weekend with the family - took the kids to a football match on Sunday. Do you follow football?",
+    "category": "scenario",
+    "scenarioId": "small_talk_weekend_001"
+  },
+  {
+    "id": "small_talk_weekend_001_turn_5",
+    "filename": "scenarios/small_talk_weekend_001/turn_5.mp3",
+    "text": "We saw Manchester City play. They won 3-1, so the kids were happy! Anyway, shall we grab a coffee before the others arrive?",
+    "category": "scenario",
+    "scenarioId": "small_talk_weekend_001"
+  },
+  {
+    "id": "small_talk_weekend_001_turn_7",
+    "filename": "scenarios/small_talk_weekend_001/turn_7.mp3",
+    "text": "How do you take yours? Milk? Sugar?",
+    "category": "scenario",
+    "scenarioId": "small_talk_weekend_001"
+  },
+  {
+    "id": "phone_order_confirmation_001_turn_1",
+    "filename": "scenarios/phone_order_confirmation_001/turn_1.mp3",
+    "text": "Hello, Mike Stevens speaking.",
+    "category": "scenario",
+    "scenarioId": "phone_order_confirmation_001"
+  },
+  {
+    "id": "phone_order_confirmation_001_turn_3",
+    "filename": "scenarios/phone_order_confirmation_001/turn_3.mp3",
+    "text": "Ah yes, perfect timing. Go ahead.",
+    "category": "scenario",
+    "scenarioId": "phone_order_confirmation_001"
+  },
+  {
+    "id": "phone_order_confirmation_001_turn_5",
+    "filename": "scenarios/phone_order_confirmation_001/turn_5.mp3",
+    "text": "That's correct, except we'd like to change the colour to RAL 5010 blue. Is that possible at this stage?",
+    "category": "scenario",
+    "scenarioId": "phone_order_confirmation_001"
+  },
+  {
+    "id": "phone_order_confirmation_001_turn_7",
+    "filename": "scenarios/phone_order_confirmation_001/turn_7.mp3",
+    "text": "No, that's everything. When can we expect delivery?",
+    "category": "scenario",
+    "scenarioId": "phone_order_confirmation_001"
+  },
+  {
+    "id": "factory_production_capacity_001_turn_1",
+    "filename": "scenarios/factory_production_capacity_001/turn_1.mp3",
+    "text": "This is an impressive facility. What's your annual production capacity here?",
+    "category": "scenario",
+    "scenarioId": "factory_production_capacity_001"
+  },
+  {
+    "id": "factory_production_capacity_001_turn_3",
+    "filename": "scenarios/factory_production_capacity_001/turn_3.mp3",
+    "text": "That's substantial. If we were to place a large order - say 100 units - what would the lead time be?",
+    "category": "scenario",
+    "scenarioId": "factory_production_capacity_001"
+  },
+  {
+    "id": "factory_production_capacity_001_turn_5",
+    "filename": "scenarios/factory_production_capacity_001/turn_5.mp3",
+    "text": "What if we needed to rush an order? Can you expedite production if we pay extra?",
+    "category": "scenario",
+    "scenarioId": "factory_production_capacity_001"
+  },
+  {
+    "id": "factory_production_capacity_001_turn_7",
+    "filename": "scenarios/factory_production_capacity_001/turn_7.mp3",
+    "text": "Good to know. And your workforce - do you have enough skilled workers to maintain quality at high volumes?",
+    "category": "scenario",
+    "scenarioId": "factory_production_capacity_001"
+  },
+  {
+    "id": "airport_car_rental_001_turn_1",
+    "filename": "scenarios/airport_car_rental_001/turn_1.mp3",
+    "text": "Good afternoon! Welcome to Europcar. Do you have a reservation?",
+    "category": "scenario",
+    "scenarioId": "airport_car_rental_001"
+  },
+  {
+    "id": "airport_car_rental_001_turn_3",
+    "filename": "scenarios/airport_car_rental_001/turn_3.mp3",
+    "text": "Yes, here it is. A Ford Focus for four days, returning Sunday. Can I see your driving licence and a credit card for the deposit?",
+    "category": "scenario",
+    "scenarioId": "airport_car_rental_001"
+  },
+  {
+    "id": "airport_car_rental_001_turn_5",
+    "filename": "scenarios/airport_car_rental_001/turn_5.mp3",
+    "text": "Both would be great, thank you. Now, would you like to add a GPS navigation system? It's £8 per day.",
+    "category": "scenario",
+    "scenarioId": "airport_car_rental_001"
+  },
+  {
+    "id": "airport_car_rental_001_turn_7",
+    "filename": "scenarios/airport_car_rental_001/turn_7.mp3",
+    "text": "Yes, all UK and European maps. One last thing - the fuel policy is full-to-full. Please return it with a full tank to avoid refuelling charges. Any questions?",
+    "category": "scenario",
+    "scenarioId": "airport_car_rental_001"
+  },
+  {
+    "id": "technical_demo_001_turn_1",
+    "filename": "scenarios/technical_demo_001/turn_1.mp3",
+    "text": "This curtainsider looks well-built. Can you show us how the sliding roof works?",
+    "category": "scenario",
+    "scenarioId": "technical_demo_001"
+  },
+  {
+    "id": "technical_demo_001_turn_3",
+    "filename": "scenarios/technical_demo_001/turn_3.mp3",
+    "text": "That is smooth. What about the curtain tensioning system? We've had problems with loose curtains on other trailers.",
+    "category": "scenario",
+    "scenarioId": "technical_demo_001"
+  },
+  {
+    "id": "technical_demo_001_turn_5",
+    "filename": "scenarios/technical_demo_001/turn_5.mp3",
+    "text": "Impressive. And the floor - is it suitable for forklift loading?",
+    "category": "scenario",
+    "scenarioId": "technical_demo_001"
+  },
+  {
+    "id": "technical_demo_001_turn_7",
+    "filename": "scenarios/technical_demo_001/turn_7.mp3",
+    "text": "Very thorough. Do you have any literature we can take away? Spec sheets, pricing?",
+    "category": "scenario",
+    "scenarioId": "technical_demo_001"
+  },
+  {
+    "id": "small_talk_delays_001_turn_1",
+    "filename": "scenarios/small_talk_delays_001/turn_1.mp3",
+    "text": "Sorry I'm late. The M6 was absolutely dreadful this morning. Roadworks everywhere!",
+    "category": "scenario",
+    "scenarioId": "small_talk_delays_001"
+  },
+  {
+    "id": "small_talk_delays_001_turn_3",
+    "filename": "scenarios/small_talk_delays_001/turn_3.mp3",
+    "text": "It is notorious! Do you drive much when you're here, or do you prefer the train?",
+    "category": "scenario",
+    "scenarioId": "small_talk_delays_001"
+  },
+  {
+    "id": "small_talk_delays_001_turn_5",
+    "filename": "scenarios/small_talk_delays_001/turn_5.mp3",
+    "text": "The trains are good, yes. How do you find driving on the left? Must be quite an adjustment!",
+    "category": "scenario",
+    "scenarioId": "small_talk_delays_001"
+  },
+  {
+    "id": "small_talk_delays_001_turn_7",
+    "filename": "scenarios/small_talk_delays_001/turn_7.mp3",
+    "text": "Ha! I can imagine. Oh, looks like the others are arriving now. Shall we head to the meeting room?",
+    "category": "scenario",
+    "scenarioId": "small_talk_delays_001"
+  },
+  {
+    "id": "hotel_room_service_001_turn_1",
+    "filename": "scenarios/hotel_room_service_001/turn_1.mp3",
+    "text": "Room service, good evening. How can I help you?",
+    "category": "scenario",
+    "scenarioId": "hotel_room_service_001"
+  },
+  {
+    "id": "hotel_room_service_001_turn_3",
+    "filename": "scenarios/hotel_room_service_001/turn_3.mp3",
+    "text": "Of course, Mr Lewis. What would you like this evening?",
+    "category": "scenario",
+    "scenarioId": "hotel_room_service_001"
+  },
+  {
+    "id": "hotel_room_service_001_turn_5",
+    "filename": "scenarios/hotel_room_service_001/turn_5.mp3",
+    "text": "Certainly. The grilled chicken with vegetables and a side salad. Any drinks with that?",
+    "category": "scenario",
+    "scenarioId": "hotel_room_service_001"
+  },
+  {
+    "id": "hotel_room_service_001_turn_7",
+    "filename": "scenarios/hotel_room_service_001/turn_7.mp3",
+    "text": "Of course. So that's grilled chicken, side salad, and tea with milk. It'll be with you in about 25 minutes. Is there anything else?",
+    "category": "scenario",
+    "scenarioId": "hotel_room_service_001"
+  },
+  {
+    "id": "phone_support_call_001_turn_1",
+    "filename": "scenarios/phone_support_call_001/turn_1.mp3",
+    "text": "Hello, this is James from Fleet Solutions. I submitted a warranty claim for one of our trailers last week and haven't heard back. Can you help?",
+    "category": "scenario",
+    "scenarioId": "phone_support_call_001"
+  },
+  {
+    "id": "phone_support_call_001_turn_3",
+    "filename": "scenarios/phone_support_call_001/turn_3.mp3",
+    "text": "It's WC-2024-0847. The issue is with the rear door hinges - they're not closing properly.",
+    "category": "scenario",
+    "scenarioId": "phone_support_call_001"
+  },
+  {
+    "id": "phone_support_call_001_turn_5",
+    "filename": "scenarios/phone_support_call_001/turn_5.mp3",
+    "text": "That's a relief. Will someone come to fit them, or do we need to arrange that ourselves?",
+    "category": "scenario",
+    "scenarioId": "phone_support_call_001"
+  },
+  {
+    "id": "phone_support_call_001_turn_7",
+    "filename": "scenarios/phone_support_call_001/turn_7.mp3",
+    "text": "That's excellent service, thank you. Mornings work better for us. Can you send me a confirmation email?",
+    "category": "scenario",
+    "scenarioId": "phone_support_call_001"
+  },
+  {
+    "id": "factory_inspection_001_turn_1",
+    "filename": "scenarios/factory_inspection_001/turn_1.mp3",
+    "text": "Good morning. I'm Sarah Mitchell, Quality Assurance Manager from TransportCo. We're here for the factory inspection we arranged.",
+    "category": "scenario",
+    "scenarioId": "factory_inspection_001"
+  },
+  {
+    "id": "factory_inspection_001_turn_3",
+    "filename": "scenarios/factory_inspection_001/turn_3.mp3",
+    "text": "Thank you. I'd like to see your welding stations first, and understand your quality control checkpoints. How do you ensure weld consistency?",
+    "category": "scenario",
+    "scenarioId": "factory_inspection_001"
+  },
+  {
+    "id": "factory_inspection_001_turn_5",
+    "filename": "scenarios/factory_inspection_001/turn_5.mp3",
+    "text": "Impressive. I notice you're using robotic welding here. What happens if the robot detects an anomaly?",
+    "category": "scenario",
+    "scenarioId": "factory_inspection_001"
+  },
+  {
+    "id": "factory_inspection_001_turn_7",
+    "filename": "scenarios/factory_inspection_001/turn_7.mp3",
+    "text": "Very thorough. One more thing - can I see your traceability records? We need to ensure full component traceability for our fleet.",
+    "category": "scenario",
+    "scenarioId": "factory_inspection_001"
+  },
+  {
+    "id": "restaurant_business_lunch_001_turn_1",
+    "filename": "scenarios/restaurant_business_lunch_001/turn_1.mp3",
+    "text": "This is a lovely restaurant. Thank you for the invitation, Lewis.",
+    "category": "scenario",
+    "scenarioId": "restaurant_business_lunch_001"
+  },
+  {
+    "id": "restaurant_business_lunch_001_turn_3",
+    "filename": "scenarios/restaurant_business_lunch_001/turn_3.mp3",
+    "text": "The fish does look tempting. What are you going to have?",
+    "category": "scenario",
+    "scenarioId": "restaurant_business_lunch_001"
+  },
+  {
+    "id": "restaurant_business_lunch_001_turn_5",
+    "filename": "scenarios/restaurant_business_lunch_001/turn_5.mp3",
+    "text": "Sparkling water would be lovely. This is very generous of you. Shall we discuss the project details while we wait for the food?",
+    "category": "scenario",
+    "scenarioId": "restaurant_business_lunch_001"
+  },
+  {
+    "id": "restaurant_business_lunch_001_turn_7",
+    "filename": "scenarios/restaurant_business_lunch_001/turn_7.mp3",
+    "text": "That's excellent news! Oh, the food is here. This looks delicious. Shall we continue our discussion after lunch?",
+    "category": "scenario",
+    "scenarioId": "restaurant_business_lunch_001"
+  },
+  {
+    "id": "business_meeting_intro_001_turn_1",
+    "filename": "scenarios/business_meeting_intro_001/turn_1.mp3",
+    "text": "Thank you for coming in today. Before we discuss potential collaboration, could you tell us a bit about STU Trailer?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_intro_001"
+  },
+  {
+    "id": "business_meeting_intro_001_turn_3",
+    "filename": "scenarios/business_meeting_intro_001/turn_3.mp3",
+    "text": "Impressive. What would you say sets you apart from other manufacturers in the market?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_intro_001"
+  },
+  {
+    "id": "business_meeting_intro_001_turn_5",
+    "filename": "scenarios/business_meeting_intro_001/turn_5.mp3",
+    "text": "That's good to know. Do you have any existing presence in the UK market?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_intro_001"
+  },
+  {
+    "id": "business_meeting_intro_001_turn_7",
+    "filename": "scenarios/business_meeting_intro_001/turn_7.mp3",
+    "text": "I appreciate the honesty. What kind of partnership model are you looking for?",
+    "category": "scenario",
+    "scenarioId": "business_meeting_intro_001"
+  },
+  {
+    "id": "small_talk_culture_001_turn_1",
+    "filename": "scenarios/small_talk_culture_001/turn_1.mp3",
+    "text": "Is this your first time in the UK, Lewis? What do you make of it so far?",
+    "category": "scenario",
+    "scenarioId": "small_talk_culture_001"
+  },
+  {
+    "id": "small_talk_culture_001_turn_3",
+    "filename": "scenarios/small_talk_culture_001/turn_3.mp3",
+    "text": "Ha! Yes, we do love our queues. Is queueing not such a big thing in Turkey?",
+    "category": "scenario",
+    "scenarioId": "small_talk_culture_001"
+  },
+  {
+    "id": "small_talk_culture_001_turn_5",
+    "filename": "scenarios/small_talk_culture_001/turn_5.mp3",
+    "text": "That's fascinating. What about food? Have you tried any traditional British dishes?",
+    "category": "scenario",
+    "scenarioId": "small_talk_culture_001"
+  },
+  {
+    "id": "small_talk_culture_001_turn_7",
+    "filename": "scenarios/small_talk_culture_001/turn_7.mp3",
+    "text": "You should try a proper cream tea if you get the chance! Oh, looks like the session is starting again. Nice chatting with you.",
+    "category": "scenario",
+    "scenarioId": "small_talk_culture_001"
+  },
+  {
+    "id": "airport_security_001_turn_7",
+    "filename": "scenarios/airport_security_001/turn_7.mp3",
+    "text": "That's fine, it happens all the time. Pop those in the tray and go through again. Have a good flight.",
+    "category": "scenario",
+    "scenarioId": "airport_security_001"
+  },
+  {
+    "id": "factory_logistics_001_turn_1",
+    "filename": "scenarios/factory_logistics_001/turn_1.mp3",
+    "text": "Now that we've agreed on the order, let's discuss delivery. How do you usually handle shipping from Turkey?",
+    "category": "scenario",
+    "scenarioId": "factory_logistics_001"
+  },
+  {
+    "id": "factory_logistics_001_turn_3",
+    "filename": "scenarios/factory_logistics_001/turn_3.mp3",
+    "text": "RoRo sounds efficient. What about customs clearance? Will we need to handle that ourselves?",
+    "category": "scenario",
+    "scenarioId": "factory_logistics_001"
+  },
+  {
+    "id": "factory_logistics_001_turn_5",
+    "filename": "scenarios/factory_logistics_001/turn_5.mp3",
+    "text": "That's helpful. And if we need to track the shipment, is there a system for that?",
+    "category": "scenario",
+    "scenarioId": "factory_logistics_001"
+  },
+  {
+    "id": "factory_logistics_001_turn_7",
+    "filename": "scenarios/factory_logistics_001/turn_7.mp3",
+    "text": "Excellent. One last thing - what happens if there are any delays or damage during transit?",
+    "category": "scenario",
+    "scenarioId": "factory_logistics_001"
+  },
+  {
+    "id": "technical_troubleshooting_001_turn_1",
+    "filename": "scenarios/technical_troubleshooting_001/turn_1.mp3",
+    "text": "Hello, this is Dave from Northern Haulage. We've got an issue with one of your curtainsiders - the EBS warning light keeps coming on.",
+    "category": "scenario",
+    "scenarioId": "technical_troubleshooting_001"
+  },
+  {
+    "id": "technical_troubleshooting_001_turn_3",
+    "filename": "scenarios/technical_troubleshooting_001/turn_3.mp3",
+    "text": "It's a solid light, comes on after about 10 minutes of driving. The brakes seem to work fine otherwise.",
+    "category": "scenario",
+    "scenarioId": "technical_troubleshooting_001"
+  },
+  {
+    "id": "technical_troubleshooting_001_turn_5",
+    "filename": "scenarios/technical_troubleshooting_001/turn_5.mp3",
+    "text": "Hang on, let me check... Actually yes, there's a cable hanging loose on the nearside rear. Looks like it's been caught on something.",
+    "category": "scenario",
+    "scenarioId": "technical_troubleshooting_001"
+  },
+  {
+    "id": "technical_troubleshooting_001_turn_7",
+    "filename": "scenarios/technical_troubleshooting_001/turn_7.mp3",
+    "text": "Brilliant, we'll sort that out now. Thanks for your help - saved us a garage visit!",
+    "category": "scenario",
+    "scenarioId": "technical_troubleshooting_001"
+  },
+  {
+    "id": "phone_inquiry_001_turn_1",
+    "filename": "scenarios/phone_inquiry_001/turn_1.mp3",
+    "text": "Good morning. I'm calling from Smith Transport in Leeds. We're looking for new curtainsiders. Do you supply to the UK?",
+    "category": "scenario",
+    "scenarioId": "phone_inquiry_001"
+  },
+  {
+    "id": "phone_inquiry_001_turn_3",
+    "filename": "scenarios/phone_inquiry_001/turn_3.mp3",
+    "text": "We need five standard curtainsiders, 13.6 metres. What's your lead time and roughly what price are we looking at?",
+    "category": "scenario",
+    "scenarioId": "phone_inquiry_001"
+  },
+  {
+    "id": "phone_inquiry_001_turn_5",
+    "filename": "scenarios/phone_inquiry_001/turn_5.mp3",
+    "text": "That sounds reasonable. Yes, please send a quote. My email is j.smith@smithtransport.co.uk.",
+    "category": "scenario",
+    "scenarioId": "phone_inquiry_001"
+  },
+  {
+    "id": "phone_inquiry_001_turn_7",
+    "filename": "scenarios/phone_inquiry_001/turn_7.mp3",
+    "text": "Yes, include delivery please. My direct number is 0113 555 7890. Look forward to your email.",
+    "category": "scenario",
+    "scenarioId": "phone_inquiry_001"
+  },
+  {
+    "id": "hotel_wifi_001_turn_1",
+    "filename": "scenarios/hotel_wifi_001/turn_1.mp3",
+    "text": "Good morning, sir. How can I help you today?",
+    "category": "scenario",
+    "scenarioId": "hotel_wifi_001"
+  },
+  {
+    "id": "hotel_wifi_001_turn_3",
+    "filename": "scenarios/hotel_wifi_001/turn_3.mp3",
+    "text": "Of course. The network name is \"HotelGuest\" and the password is on this card. It's valid for your entire stay. Is the connection for work purposes?",
+    "category": "scenario",
+    "scenarioId": "hotel_wifi_001"
+  },
+  {
+    "id": "hotel_wifi_001_turn_5",
+    "filename": "scenarios/hotel_wifi_001/turn_5.mp3",
+    "text": "The WiFi should be fine, but if you need a guaranteed connection, we have a business centre on the first floor with high-speed ethernet and private meeting rooms.",
+    "category": "scenario",
+    "scenarioId": "hotel_wifi_001"
+  },
+  {
+    "id": "hotel_wifi_001_turn_7",
+    "filename": "scenarios/hotel_wifi_001/turn_7.mp3",
+    "text": "It's complimentary for guests. There's a printer, scanner, and two private pods you can use. No booking needed - just turn up. Would you like me to show you where it is?",
+    "category": "scenario",
+    "scenarioId": "hotel_wifi_001"
+  },
+  {
+    "id": "restaurant_reservation_001_turn_1",
+    "filename": "scenarios/restaurant_reservation_001/turn_1.mp3",
+    "text": "Good afternoon, The Grill Room. How may I help you?",
+    "category": "scenario",
+    "scenarioId": "restaurant_reservation_001"
+  },
+  {
+    "id": "restaurant_reservation_001_turn_3",
+    "filename": "scenarios/restaurant_reservation_001/turn_3.mp3",
+    "text": "Friday evening, party of four. What time would you like? We have availability at 7pm or 8:30pm.",
+    "category": "scenario",
+    "scenarioId": "restaurant_reservation_001"
+  },
+  {
+    "id": "restaurant_reservation_001_turn_5",
+    "filename": "scenarios/restaurant_reservation_001/turn_5.mp3",
+    "text": "Certainly, I can seat you in our Garden Room - it's quieter. May I take a name and contact number for the booking?",
+    "category": "scenario",
+    "scenarioId": "restaurant_reservation_001"
+  },
+  {
+    "id": "restaurant_reservation_001_turn_7",
+    "filename": "scenarios/restaurant_reservation_001/turn_7.mp3",
+    "text": "Perfect. So that's Friday at 7pm, party of four, Garden Room, under Lewis. We'll send a confirmation to your mobile. Is there anything else?",
+    "category": "scenario",
+    "scenarioId": "restaurant_reservation_001"
+  },
+  {
+    "id": "business_video_call_001_turn_1",
+    "filename": "scenarios/business_video_call_001/turn_1.mp3",
+    "text": "Hello Lewis, can you hear me? Your video seems to be frozen.",
+    "category": "scenario",
+    "scenarioId": "business_video_call_001"
+  },
+  {
+    "id": "business_video_call_001_turn_3",
+    "filename": "scenarios/business_video_call_001/turn_3.mp3",
+    "text": "Yes, that's much better now. Right, shall we get started? Can you give us an update on the production schedule?",
+    "category": "scenario",
+    "scenarioId": "business_video_call_001"
+  },
+  {
+    "id": "business_video_call_001_turn_5",
+    "filename": "scenarios/business_video_call_001/turn_5.mp3",
+    "text": "That's great to hear. We noticed a slight change in the specification sheet you sent. Can you clarify what's different?",
+    "category": "scenario",
+    "scenarioId": "business_video_call_001"
+  },
+  {
+    "id": "business_video_call_001_turn_7",
+    "filename": "scenarios/business_video_call_001/turn_7.mp3",
+    "text": "No problem, that sounds fine. Before we wrap up, is there anything else you need from our side?",
+    "category": "scenario",
+    "scenarioId": "business_video_call_001"
+  },
+  {
+    "id": "factory_meeting_room_001_turn_1",
+    "filename": "scenarios/factory_meeting_room_001/turn_1.mp3",
+    "text": "That was a very informative tour. I'm impressed with your facilities. Shall we sit down and discuss what we've seen?",
+    "category": "scenario",
+    "scenarioId": "factory_meeting_room_001"
+  },
+  {
+    "id": "factory_meeting_room_001_turn_3",
+    "filename": "scenarios/factory_meeting_room_001/turn_3.mp3",
+    "text": "Coffee would be lovely, thanks. Now, I was particularly impressed by your paint shop. Can you tell me more about the coating process?",
+    "category": "scenario",
+    "scenarioId": "factory_meeting_room_001"
+  },
+  {
+    "id": "factory_meeting_room_001_turn_5",
+    "filename": "scenarios/factory_meeting_room_001/turn_5.mp3",
+    "text": "That's reassuring. One concern we have is after-sales support in the UK. How would that work?",
+    "category": "scenario",
+    "scenarioId": "factory_meeting_room_001"
+  },
+  {
+    "id": "factory_meeting_room_001_turn_7",
+    "filename": "scenarios/factory_meeting_room_001/turn_7.mp3",
+    "text": "That sounds comprehensive. So, what would be the next step if we wanted to proceed?",
+    "category": "scenario",
+    "scenarioId": "factory_meeting_room_001"
+  },
+  {
+    "id": "technical_training_001_turn_1",
+    "filename": "scenarios/technical_training_001/turn_1.mp3",
+    "text": "Right, we've got the trailers. Before we put them into service, what do we need to know about daily checks?",
+    "category": "scenario",
+    "scenarioId": "technical_training_001"
+  },
+  {
+    "id": "technical_training_001_turn_3",
+    "filename": "scenarios/technical_training_001/turn_3.mp3",
+    "text": "That's helpful. What about the sliding roof? Any special instructions for operating it?",
+    "category": "scenario",
+    "scenarioId": "technical_training_001"
+  },
+  {
+    "id": "technical_training_001_turn_5",
+    "filename": "scenarios/technical_training_001/turn_5.mp3",
+    "text": "Got it. And what about regular maintenance? What's the service schedule?",
+    "category": "scenario",
+    "scenarioId": "technical_training_001"
+  },
+  {
+    "id": "technical_training_001_turn_7",
+    "filename": "scenarios/technical_training_001/turn_7.mp3",
+    "text": "Perfect. One last thing - if something goes wrong on the road, who do we call?",
+    "category": "scenario",
+    "scenarioId": "technical_training_001"
+  },
+  {
+    "id": "small_talk_sports_001_turn_1",
+    "filename": "scenarios/small_talk_sports_001/turn_1.mp3",
+    "text": "Did you catch the match last night? Liverpool against Manchester City - what a game!",
+    "category": "scenario",
+    "scenarioId": "small_talk_sports_001"
+  },
+  {
+    "id": "small_talk_sports_001_turn_3",
+    "filename": "scenarios/small_talk_sports_001/turn_3.mp3",
+    "text": "It ended 2-2, very tense! I'm a Liverpool fan myself. Do you follow any English teams?",
+    "category": "scenario",
+    "scenarioId": "small_talk_sports_001"
+  },
+  {
+    "id": "small_talk_sports_001_turn_5",
+    "filename": "scenarios/small_talk_sports_001/turn_5.mp3",
+    "text": "Galatasaray - yes, I've heard of them! They play in Europe sometimes, don't they? The atmosphere at Turkish matches looks incredible.",
+    "category": "scenario",
+    "scenarioId": "small_talk_sports_001"
+  },
+  {
+    "id": "small_talk_sports_001_turn_7",
+    "filename": "scenarios/small_talk_sports_001/turn_7.mp3",
+    "text": "I'd love that! Right, we should probably get back to business. But let's definitely talk more about football over dinner later.",
+    "category": "scenario",
+    "scenarioId": "small_talk_sports_001"
+  },
+  {
+    "id": "travel_001",
+    "filename": "chunks/travel_001.mp3",
+    "text": "Could I have an aisle seat, please?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_002",
+    "filename": "chunks/travel_002.mp3",
+    "text": "I'm travelling on business",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_003",
+    "filename": "chunks/travel_003.mp3",
+    "text": "Where can I collect my luggage?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_004",
+    "filename": "chunks/travel_004.mp3",
+    "text": "I'd like to declare these items",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_005",
+    "filename": "chunks/travel_005.mp3",
+    "text": "Could you tell me the way to...?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_006",
+    "filename": "chunks/travel_006.mp3",
+    "text": "My flight has been delayed",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_007",
+    "filename": "chunks/travel_007.mp3",
+    "text": "I've booked a transfer to the hotel",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_008",
+    "filename": "chunks/travel_008.mp3",
+    "text": "Is there anywhere to charge my phone?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_009",
+    "filename": "chunks/travel_009.mp3",
+    "text": "I'll be staying for three days",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_010",
+    "filename": "chunks/travel_010.mp3",
+    "text": "Could I have a receipt for this, please?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_011",
+    "filename": "chunks/travel_011.mp3",
+    "text": "I have a reservation under the name...",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_012",
+    "filename": "chunks/travel_012.mp3",
+    "text": "Could I have a room with a view?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_013",
+    "filename": "chunks/travel_013.mp3",
+    "text": "What time is breakfast served?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_014",
+    "filename": "chunks/travel_014.mp3",
+    "text": "Could you arrange a wake-up call?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_015",
+    "filename": "chunks/travel_015.mp3",
+    "text": "I'd like to extend my stay",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_016",
+    "filename": "chunks/travel_016.mp3",
+    "text": "How long does it take to get to...?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_017",
+    "filename": "chunks/travel_017.mp3",
+    "text": "Could you drop me off at...?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_018",
+    "filename": "chunks/travel_018.mp3",
+    "text": "I'm having trouble with...",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_019",
+    "filename": "chunks/travel_019.mp3",
+    "text": "Where's the nearest currency exchange?",
+    "category": "chunk"
+  },
+  {
+    "id": "travel_020",
+    "filename": "chunks/travel_020.mp3",
+    "text": "I need to catch a connecting flight",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_001",
+    "filename": "chunks/tech_001.mp3",
+    "text": "I'd like to walk you through the specifications",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_002",
+    "filename": "chunks/tech_002.mp3",
+    "text": "The load capacity is rated at...",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_003",
+    "filename": "chunks/tech_003.mp3",
+    "text": "This model features a hydraulic system that...",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_004",
+    "filename": "chunks/tech_004.mp3",
+    "text": "Could you clarify what you mean by...?",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_005",
+    "filename": "chunks/tech_005.mp3",
+    "text": "Let me check with our engineering team",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_006",
+    "filename": "chunks/tech_006.mp3",
+    "text": "The delivery timeline would be approximately...",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_007",
+    "filename": "chunks/tech_007.mp3",
+    "text": "This complies with EU regulations",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_008",
+    "filename": "chunks/tech_008.mp3",
+    "text": "Would you like me to prepare a detailed quotation?",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_009",
+    "filename": "chunks/tech_009.mp3",
+    "text": "The chassis is constructed from high-strength steel",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_010",
+    "filename": "chunks/tech_010.mp3",
+    "text": "What are your requirements in terms of...?",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_011",
+    "filename": "chunks/tech_011.mp3",
+    "text": "I'll send you the technical drawings",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_012",
+    "filename": "chunks/tech_012.mp3",
+    "text": "Could we schedule a factory visit?",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_013",
+    "filename": "chunks/tech_013.mp3",
+    "text": "The turning radius is optimised for...",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_014",
+    "filename": "chunks/tech_014.mp3",
+    "text": "We can customise this to your specifications",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_015",
+    "filename": "chunks/tech_015.mp3",
+    "text": "Let me demonstrate how this works",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_016",
+    "filename": "chunks/tech_016.mp3",
+    "text": "I think there might be a misunderstanding",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_017",
+    "filename": "chunks/tech_017.mp3",
+    "text": "Let me see if I've understood correctly",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_018",
+    "filename": "chunks/tech_018.mp3",
+    "text": "I'll look into it and get back to you",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_019",
+    "filename": "chunks/tech_019.mp3",
+    "text": "Compared to the previous model, this offers...",
+    "category": "chunk"
+  },
+  {
+    "id": "tech_020",
+    "filename": "chunks/tech_020.mp3",
+    "text": "The warranty covers...",
+    "category": "chunk"
+  },
+  {
+    "id": "social_001",
+    "filename": "chunks/social_001.mp3",
+    "text": "It's lovely to finally meet you in person",
+    "category": "chunk"
+  },
+  {
+    "id": "social_002",
+    "filename": "chunks/social_002.mp3",
+    "text": "How was your journey?",
+    "category": "chunk"
+  },
+  {
+    "id": "social_003",
+    "filename": "chunks/social_003.mp3",
+    "text": "Shall we grab a bite to eat?",
+    "category": "chunk"
+  },
+  {
+    "id": "social_004",
+    "filename": "chunks/social_004.mp3",
+    "text": "I'll have whatever you're having",
+    "category": "chunk"
+  },
+  {
+    "id": "social_005",
+    "filename": "chunks/social_005.mp3",
+    "text": "This is on me",
+    "category": "chunk"
+  },
+  {
+    "id": "social_006",
+    "filename": "chunks/social_006.mp3",
+    "text": "I'm not fussy about food",
+    "category": "chunk"
+  },
+  {
+    "id": "social_007",
+    "filename": "chunks/social_007.mp3",
+    "text": "Could I get the bill, please?",
+    "category": "chunk"
+  },
+  {
+    "id": "social_008",
+    "filename": "chunks/social_008.mp3",
+    "text": "What do you do when you're not working?",
+    "category": "chunk"
+  },
+  {
+    "id": "social_009",
+    "filename": "chunks/social_009.mp3",
+    "text": "I'm afraid I don't drink alcohol",
+    "category": "chunk"
+  },
+  {
+    "id": "social_010",
+    "filename": "chunks/social_010.mp3",
+    "text": "It's been a pleasure doing business with you",
+    "category": "chunk"
+  },
+  {
+    "id": "social_011",
+    "filename": "chunks/social_011.mp3",
+    "text": "The weather's been rather unpredictable lately",
+    "category": "chunk"
+  },
+  {
+    "id": "social_012",
+    "filename": "chunks/social_012.mp3",
+    "text": "I must say, that was absolutely delicious",
+    "category": "chunk"
+  },
+  {
+    "id": "social_013",
+    "filename": "chunks/social_013.mp3",
+    "text": "Would you mind if we split the bill?",
+    "category": "chunk"
+  },
+  {
+    "id": "social_014",
+    "filename": "chunks/social_014.mp3",
+    "text": "I couldn't possibly eat another bite",
+    "category": "chunk"
+  },
+  {
+    "id": "social_015",
+    "filename": "chunks/social_015.mp3",
+    "text": "Let's keep in touch",
+    "category": "chunk"
+  },
+  {
+    "id": "social_016",
+    "filename": "chunks/social_016.mp3",
+    "text": "I was wondering if you'd like to...",
+    "category": "chunk"
+  },
+  {
+    "id": "social_017",
+    "filename": "chunks/social_017.mp3",
+    "text": "That sounds absolutely lovely",
+    "category": "chunk"
+  },
+  {
+    "id": "social_018",
+    "filename": "chunks/social_018.mp3",
+    "text": "Shall we say around seven?",
+    "category": "chunk"
+  },
+  {
+    "id": "social_019",
+    "filename": "chunks/social_019.mp3",
+    "text": "Could you repeat that, please? I didn't quite catch it",
+    "category": "chunk"
+  },
+  {
+    "id": "social_020",
+    "filename": "chunks/social_020.mp3",
+    "text": "I really appreciate you taking the time",
+    "category": "chunk"
+  },
+  {
+    "id": "business_001",
+    "filename": "chunks/business_001.mp3",
+    "text": "We might be able to offer a discount if...",
+    "category": "chunk"
+  },
+  {
+    "id": "business_002",
+    "filename": "chunks/business_002.mp3",
+    "text": "What sort of budget are you working with?",
+    "category": "chunk"
+  },
+  {
+    "id": "business_003",
+    "filename": "chunks/business_003.mp3",
+    "text": "I'm writing to follow up on our meeting",
+    "category": "chunk"
+  },
+  {
+    "id": "business_004",
+    "filename": "chunks/business_004.mp3",
+    "text": "Shall we move on to the next item?",
+    "category": "chunk"
+  },
+  {
+    "id": "business_005",
+    "filename": "chunks/business_005.mp3",
+    "text": "We're happy to proceed on those terms",
+    "category": "chunk"
+  },
+  {
+    "id": "business_006",
+    "filename": "chunks/business_006.mp3",
+    "text": "What are your payment terms?",
+    "category": "chunk"
+  },
+  {
+    "id": "business_007",
+    "filename": "chunks/business_007.mp3",
+    "text": "Please find attached...",
+    "category": "chunk"
+  },
+  {
+    "id": "business_008",
+    "filename": "chunks/business_008.mp3",
+    "text": "Would it be convenient to schedule a call?",
+    "category": "chunk"
+  },
+  {
+    "id": "business_009",
+    "filename": "chunks/business_009.mp3",
+    "text": "When would you need this by?",
+    "category": "chunk"
+  },
+  {
+    "id": "business_010",
+    "filename": "chunks/business_010.mp3",
+    "text": "Just to confirm, we agreed on...",
+    "category": "chunk"
+  },
+  {
+    "id": "business_011",
+    "filename": "chunks/business_011.mp3",
+    "text": "I apologise for the delay in getting back to you",
+    "category": "chunk"
+  },
+  {
+    "id": "business_012",
+    "filename": "chunks/business_012.mp3",
+    "text": "Allow me to introduce myself",
+    "category": "chunk"
+  },
+  {
+    "id": "business_013",
+    "filename": "chunks/business_013.mp3",
+    "text": "I look forward to hearing from you",
+    "category": "chunk"
+  },
+  {
+    "id": "business_014",
+    "filename": "chunks/business_014.mp3",
+    "text": "I was referred to you by...",
+    "category": "chunk"
+  },
+  {
+    "id": "business_015",
+    "filename": "chunks/business_015.mp3",
+    "text": "This is a matter of some urgency",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_001",
+    "filename": "chunks/daily_001.mp3",
+    "text": "I'm just looking, thank you",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_002",
+    "filename": "chunks/daily_002.mp3",
+    "text": "Would you mind if I...?",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_003",
+    "filename": "chunks/daily_003.mp3",
+    "text": "I'm afraid I'm not from around here",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_004",
+    "filename": "chunks/daily_004.mp3",
+    "text": "I'm afraid they're not available at the moment",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_005",
+    "filename": "chunks/daily_005.mp3",
+    "text": "I'm terribly sorry, I didn't mean to...",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_006",
+    "filename": "chunks/daily_006.mp3",
+    "text": "Could I have a flat white, please?",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_007",
+    "filename": "chunks/daily_007.mp3",
+    "text": "I'd rather have... if you don't mind",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_008",
+    "filename": "chunks/daily_008.mp3",
+    "text": "I'm feeling a bit under the weather",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_009",
+    "filename": "chunks/daily_009.mp3",
+    "text": "Excuse me, is this the queue for...?",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_010",
+    "filename": "chunks/daily_010.mp3",
+    "text": "That's very kind of you",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_011",
+    "filename": "chunks/daily_011.mp3",
+    "text": "Do you mind if I sit here?",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_012",
+    "filename": "chunks/daily_012.mp3",
+    "text": "Could you give me a hand with this?",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_013",
+    "filename": "chunks/daily_013.mp3",
+    "text": "Lovely day, isn't it?",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_014",
+    "filename": "chunks/daily_014.mp3",
+    "text": "It was lovely to see you",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_015",
+    "filename": "chunks/daily_015.mp3",
+    "text": "I'm afraid I've already got plans",
+    "category": "chunk"
+  },
+  {
+    "id": "business_016",
+    "filename": "chunks/business_016.mp3",
+    "text": "I think we can find a middle ground",
+    "category": "chunk"
+  },
+  {
+    "id": "business_017",
+    "filename": "chunks/business_017.mp3",
+    "text": "Could I add something to that?",
+    "category": "chunk"
+  },
+  {
+    "id": "business_018",
+    "filename": "chunks/business_018.mp3",
+    "text": "Thank you for your time today",
+    "category": "chunk"
+  },
+  {
+    "id": "business_019",
+    "filename": "chunks/business_019.mp3",
+    "text": "We'd like to propose the following...",
+    "category": "chunk"
+  },
+  {
+    "id": "business_020",
+    "filename": "chunks/business_020.mp3",
+    "text": "I wanted to touch base regarding...",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_016",
+    "filename": "chunks/daily_016.mp3",
+    "text": "Is this seat taken?",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_017",
+    "filename": "chunks/daily_017.mp3",
+    "text": "Do you have this in a different size?",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_018",
+    "filename": "chunks/daily_018.mp3",
+    "text": "You can't miss it",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_019",
+    "filename": "chunks/daily_019.mp3",
+    "text": "I really couldn't have done it without you",
+    "category": "chunk"
+  },
+  {
+    "id": "daily_020",
+    "filename": "chunks/daily_020.mp3",
+    "text": "Take care of yourself",
+    "category": "chunk"
+  },
+  {
+    "id": "shadowing_1",
+    "filename": "shadowing/shadowing_1.mp3",
+    "text": "Good morning. I'd like to check in for my flight to Istanbul, please.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_2",
+    "filename": "shadowing/shadowing_2.mp3",
+    "text": "Could I have a window seat, please? I'd prefer one near the front if possible.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_3",
+    "filename": "shadowing/shadowing_3.mp3",
+    "text": "I'm afraid I only have hand luggage. Will that fit in the overhead locker?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_4",
+    "filename": "shadowing/shadowing_4.mp3",
+    "text": "Excuse me, where can I find the departure gate for flight BA seven two three?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_5",
+    "filename": "shadowing/shadowing_5.mp3",
+    "text": "Could you tell me how long it takes to get through security?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_6",
+    "filename": "shadowing/shadowing_6.mp3",
+    "text": "I believe my connecting flight has been delayed. What are my options?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_7",
+    "filename": "shadowing/shadowing_7.mp3",
+    "text": "I'm here on business. I'll be staying for approximately one week.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_8",
+    "filename": "shadowing/shadowing_8.mp3",
+    "text": "The purpose of my visit is to attend a trade fair in Birmingham.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_9",
+    "filename": "shadowing/shadowing_9.mp3",
+    "text": "I'll be staying at the Hilton Hotel in central London.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_10",
+    "filename": "shadowing/shadowing_10.mp3",
+    "text": "Excuse me, I think there might be a problem with my baggage. It hasn't arrived.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_11",
+    "filename": "shadowing/shadowing_11.mp3",
+    "text": "Could you please check if my suitcase is on the next flight?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_12",
+    "filename": "shadowing/shadowing_12.mp3",
+    "text": "I'd like to hire a car for three days. Do you have anything available?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_13",
+    "filename": "shadowing/shadowing_13.mp3",
+    "text": "What's the best way to get to the city centre from here?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_14",
+    "filename": "shadowing/shadowing_14.mp3",
+    "text": "Is there a direct train to Manchester, or do I need to change?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_15",
+    "filename": "shadowing/shadowing_15.mp3",
+    "text": "Could you recommend a good restaurant near the hotel?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_16",
+    "filename": "shadowing/shadowing_16.mp3",
+    "text": "I'd like to book a table for two at eight o'clock, please.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_17",
+    "filename": "shadowing/shadowing_17.mp3",
+    "text": "Would it be possible to have a late checkout tomorrow?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_18",
+    "filename": "shadowing/shadowing_18.mp3",
+    "text": "I'm afraid the air conditioning in my room isn't working properly.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_19",
+    "filename": "shadowing/shadowing_19.mp3",
+    "text": "Could you call a taxi for me? I need to be at the station by nine.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_20",
+    "filename": "shadowing/shadowing_20.mp3",
+    "text": "Excuse me, is this seat taken? Would you mind if I sat here?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_21",
+    "filename": "shadowing/shadowing_21.mp3",
+    "text": "I need to exchange some currency. Where's the nearest bureau de change?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_22",
+    "filename": "shadowing/shadowing_22.mp3",
+    "text": "What time does the museum close? I'd like to visit this afternoon.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_23",
+    "filename": "shadowing/shadowing_23.mp3",
+    "text": "I seem to have lost my way. Could you point me in the right direction?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_24",
+    "filename": "shadowing/shadowing_24.mp3",
+    "text": "Is it within walking distance, or should I take a bus?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_25",
+    "filename": "shadowing/shadowing_25.mp3",
+    "text": "Thank you so much for your help. You've been very kind.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_26",
+    "filename": "shadowing/shadowing_26.mp3",
+    "text": "I'd like to walk you through the specifications of our new semi-trailer.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_27",
+    "filename": "shadowing/shadowing_27.mp3",
+    "text": "The lead time for this configuration would be approximately eight to ten weeks.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_28",
+    "filename": "shadowing/shadowing_28.mp3",
+    "text": "As you can see from the specifications, the payload capacity is fourteen tonnes.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_29",
+    "filename": "shadowing/shadowing_29.mp3",
+    "text": "Let me get back to you on that. I'll need to check with our engineering team.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_30",
+    "filename": "shadowing/shadowing_30.mp3",
+    "text": "We're looking at approximately three hundred units per month.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_31",
+    "filename": "shadowing/shadowing_31.mp3",
+    "text": "The chassis is made from high-strength steel for maximum durability.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_32",
+    "filename": "shadowing/shadowing_32.mp3",
+    "text": "Could you explain the warranty terms in more detail, please?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_33",
+    "filename": "shadowing/shadowing_33.mp3",
+    "text": "We offer a comprehensive after-sales service package.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_34",
+    "filename": "shadowing/shadowing_34.mp3",
+    "text": "I'd be happy to arrange a factory visit for you next month.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_35",
+    "filename": "shadowing/shadowing_35.mp3",
+    "text": "The fuel consumption has been reduced by fifteen percent compared to the previous model.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_36",
+    "filename": "shadowing/shadowing_36.mp3",
+    "text": "We've implemented several improvements based on customer feedback.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_37",
+    "filename": "shadowing/shadowing_37.mp3",
+    "text": "What payment terms would you be looking for on an order of this size?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_38",
+    "filename": "shadowing/shadowing_38.mp3",
+    "text": "I'll send you a revised quotation by the end of the week.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_39",
+    "filename": "shadowing/shadowing_39.mp3",
+    "text": "We'd need a thirty percent deposit to confirm the order.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_40",
+    "filename": "shadowing/shadowing_40.mp3",
+    "text": "The quality control process involves three separate inspections.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_41",
+    "filename": "shadowing/shadowing_41.mp3",
+    "text": "Could we schedule a video conference for next Tuesday afternoon?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_42",
+    "filename": "shadowing/shadowing_42.mp3",
+    "text": "I'm attaching the technical drawings for your reference.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_43",
+    "filename": "shadowing/shadowing_43.mp3",
+    "text": "We're confident that this solution will meet your requirements.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_44",
+    "filename": "shadowing/shadowing_44.mp3",
+    "text": "The prototype should be ready for testing within six weeks.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_45",
+    "filename": "shadowing/shadowing_45.mp3",
+    "text": "We need to discuss the logistics arrangements before we proceed.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_46",
+    "filename": "shadowing/shadowing_46.mp3",
+    "text": "I'll prepare a detailed proposal and have it ready by Friday.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_47",
+    "filename": "shadowing/shadowing_47.mp3",
+    "text": "The contract includes a penalty clause for late delivery.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_48",
+    "filename": "shadowing/shadowing_48.mp3",
+    "text": "We've been manufacturing trailers for over thirty years.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_49",
+    "filename": "shadowing/shadowing_49.mp3",
+    "text": "Our annual production capacity is approximately five thousand units.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_50",
+    "filename": "shadowing/shadowing_50.mp3",
+    "text": "Shall we take a short break and reconvene in fifteen minutes?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_51",
+    "filename": "shadowing/shadowing_51.mp3",
+    "text": "Shall we say around seven? That should give us enough time after the meeting.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_52",
+    "filename": "shadowing/shadowing_52.mp3",
+    "text": "I was wondering if you'd like to join us for dinner this evening.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_53",
+    "filename": "shadowing/shadowing_53.mp3",
+    "text": "That sounds lovely. I'd be delighted to come along.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_54",
+    "filename": "shadowing/shadowing_54.mp3",
+    "text": "I'm afraid I'll have to decline. I have another commitment that evening.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_55",
+    "filename": "shadowing/shadowing_55.mp3",
+    "text": "Would you mind if I invited a colleague to join us?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_56",
+    "filename": "shadowing/shadowing_56.mp3",
+    "text": "How was your flight? I hope you weren't too tired after the journey.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_57",
+    "filename": "shadowing/shadowing_57.mp3",
+    "text": "Is this your first time in England? What do you think of it so far?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_58",
+    "filename": "shadowing/shadowing_58.mp3",
+    "text": "The weather has been quite pleasant this week, hasn't it?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_59",
+    "filename": "shadowing/shadowing_59.mp3",
+    "text": "I've heard wonderful things about the Lake District. Have you been?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_60",
+    "filename": "shadowing/shadowing_60.mp3",
+    "text": "Would you like me to recommend some places to visit while you're here?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_61",
+    "filename": "shadowing/shadowing_61.mp3",
+    "text": "Cheers! Here's to a successful partnership.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_62",
+    "filename": "shadowing/shadowing_62.mp3",
+    "text": "I must say, the food here is absolutely delicious.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_63",
+    "filename": "shadowing/shadowing_63.mp3",
+    "text": "Could I have the bill, please? We'll split it between us.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_64",
+    "filename": "shadowing/shadowing_64.mp3",
+    "text": "Please, allow me. This one's on me.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_65",
+    "filename": "shadowing/shadowing_65.mp3",
+    "text": "That's very kind of you. I'll get the next one then.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_66",
+    "filename": "shadowing/shadowing_66.mp3",
+    "text": "I really enjoyed our conversation. We should do this again sometime.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_67",
+    "filename": "shadowing/shadowing_67.mp3",
+    "text": "It was lovely meeting you. Have a safe journey home.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_68",
+    "filename": "shadowing/shadowing_68.mp3",
+    "text": "I do apologise for being late. The traffic was absolutely dreadful.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_69",
+    "filename": "shadowing/shadowing_69.mp3",
+    "text": "Not to worry at all. These things happen.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_70",
+    "filename": "shadowing/shadowing_70.mp3",
+    "text": "I'm terribly sorry, but I didn't quite catch your name.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_71",
+    "filename": "shadowing/shadowing_71.mp3",
+    "text": "Would you excuse me for a moment? I need to make a quick phone call.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_72",
+    "filename": "shadowing/shadowing_72.mp3",
+    "text": "I couldn't help but notice you're reading a fascinating book.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_73",
+    "filename": "shadowing/shadowing_73.mp3",
+    "text": "I'm not entirely sure, but I believe the museum is closed on Mondays.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_74",
+    "filename": "shadowing/shadowing_74.mp3",
+    "text": "Do you happen to know if there's a good pub nearby?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_75",
+    "filename": "shadowing/shadowing_75.mp3",
+    "text": "I'd love to stay longer, but I really must be going.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_76",
+    "filename": "shadowing/shadowing_76.mp3",
+    "text": "Good morning. A flat white and a croissant, please.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_77",
+    "filename": "shadowing/shadowing_77.mp3",
+    "text": "Could I have that to take away, please?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_78",
+    "filename": "shadowing/shadowing_78.mp3",
+    "text": "Do you have any vegetarian options on the menu?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_79",
+    "filename": "shadowing/shadowing_79.mp3",
+    "text": "I'm afraid I'm allergic to nuts. Does this dish contain any?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_80",
+    "filename": "shadowing/shadowing_80.mp3",
+    "text": "The soup of the day sounds lovely. I'll have that, please.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_81",
+    "filename": "shadowing/shadowing_81.mp3",
+    "text": "Excuse me, I think there might be a mistake with my order.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_82",
+    "filename": "shadowing/shadowing_82.mp3",
+    "text": "Would you mind turning the heating up a bit? It's rather chilly in here.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_83",
+    "filename": "shadowing/shadowing_83.mp3",
+    "text": "I'm looking for a birthday present for my colleague. Any suggestions?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_84",
+    "filename": "shadowing/shadowing_84.mp3",
+    "text": "Do you have this in a larger size? This one's a bit too small.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_85",
+    "filename": "shadowing/shadowing_85.mp3",
+    "text": "Could I try this on, please? Where are the fitting rooms?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_86",
+    "filename": "shadowing/shadowing_86.mp3",
+    "text": "I'll take it. Could you gift wrap it for me, please?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_87",
+    "filename": "shadowing/shadowing_87.mp3",
+    "text": "I'm afraid this doesn't fit properly. Would I be able to exchange it?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_88",
+    "filename": "shadowing/shadowing_88.mp3",
+    "text": "I'd like to make an appointment to see the doctor, please.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_89",
+    "filename": "shadowing/shadowing_89.mp3",
+    "text": "I've been feeling under the weather for the past few days.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_90",
+    "filename": "shadowing/shadowing_90.mp3",
+    "text": "Could you recommend something for a headache, please?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_91",
+    "filename": "shadowing/shadowing_91.mp3",
+    "text": "I need to top up my phone. Where can I buy credit?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_92",
+    "filename": "shadowing/shadowing_92.mp3",
+    "text": "The Wi-Fi doesn't seem to be working. Could you check for me?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_93",
+    "filename": "shadowing/shadowing_93.mp3",
+    "text": "I'm sorry to bother you, but could you help me with something?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_94",
+    "filename": "shadowing/shadowing_94.mp3",
+    "text": "That's very helpful. I really appreciate your assistance.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_95",
+    "filename": "shadowing/shadowing_95.mp3",
+    "text": "I'm running a bit late. I should be there in about fifteen minutes.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_96",
+    "filename": "shadowing/shadowing_96.mp3",
+    "text": "I've left my umbrella on the train. Is there a lost property office?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_97",
+    "filename": "shadowing/shadowing_97.mp3",
+    "text": "Would you be able to keep an eye on my bag while I get a coffee?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_98",
+    "filename": "shadowing/shadowing_98.mp3",
+    "text": "I think there may have been a misunderstanding. Let me explain.",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_99",
+    "filename": "shadowing/shadowing_99.mp3",
+    "text": "I'm not quite sure I follow. Could you explain that again?",
+    "category": "shadowing"
+  },
+  {
+    "id": "shadowing_100",
+    "filename": "shadowing/shadowing_100.mp3",
+    "text": "It's been an absolute pleasure. I look forward to seeing you again soon.",
+    "category": "shadowing"
+  }
+]

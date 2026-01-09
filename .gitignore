@@ -1,0 +1,15 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+
+# Vercel
+.vercel
+
+# OS
+.DS_Store
+
+# IDE
+.idea
+.vscode

@@ -1,0 +1,2458 @@
+# ElevenLabs Audio Generation List
+# Total items: 406
+# Total characters: 29.635
+# Estimated cost: ~$0.89 (at $0.30 per 1000 chars)
+
+========================================
+SCENARIOS (Agent dialogues)
+Total: 206 items
+========================================
+
+---
+ID: airport_checkin_001_turn_1
+File: scenarios/airport_checkin_001/turn_1.mp3
+Text:
+Good morning, sir. May I see your passport and booking reference, please?
+
+---
+ID: airport_checkin_001_turn_3
+File: scenarios/airport_checkin_001/turn_3.mp3
+Text:
+Thank you, Mr. Lewis. I can see you're on flight BA678 to London Heathrow, departing at 10:45. Would you like a window or aisle seat?
+
+---
+ID: airport_checkin_001_turn_5
+File: scenarios/airport_checkin_001/turn_5.mp3
+Text:
+Certainly. I've allocated you seat 14A, which is by the window. Are you checking in any luggage today?
+
+---
+ID: airport_checkin_001_turn_7
+File: scenarios/airport_checkin_001/turn_7.mp3
+Text:
+Perfect. Please place it on the belt. Your allowance is 23 kilograms. It weighs 19.5 kilograms, so that's fine. Here's your boarding pass. Boarding starts at 10:15 from Gate B24. Have a pleasant flight.
+
+---
+ID: passport_control_001_turn_1
+File: scenarios/passport_control_001/turn_1.mp3
+Text:
+Good afternoon. Passport, please. What is the purpose of your visit to the United Kingdom?
+
+---
+ID: passport_control_001_turn_3
+File: scenarios/passport_control_001/turn_3.mp3
+Text:
+I see. And how long are you planning to stay in the UK?
+
+---
+ID: passport_control_001_turn_5
+File: scenarios/passport_control_001/turn_5.mp3
+Text:
+Where will you be staying during your visit?
+
+---
+ID: passport_control_001_turn_7
+File: scenarios/passport_control_001/turn_7.mp3
+Text:
+And what company do you work for?
+
+---
+ID: passport_control_001_turn_9
+File: scenarios/passport_control_001/turn_9.mp3
+Text:
+Is this your first visit to the UK?
+
+---
+ID: passport_control_001_turn_11
+File: scenarios/passport_control_001/turn_11.mp3
+Text:
+Very well. Do you have anything to declare? Any goods over the duty-free allowance?
+
+---
+ID: passport_control_001_turn_13
+File: scenarios/passport_control_001/turn_13.mp3
+Text:
+That's fine. Welcome to the United Kingdom. Enjoy your stay.
+
+---
+ID: airport_security_001_turn_1
+File: scenarios/airport_security_001/turn_1.mp3
+Text:
+Please remove your laptop and any liquids from your bag. Place them in a separate tray.
+
+---
+ID: airport_security_001_turn_3
+File: scenarios/airport_security_001/turn_3.mp3
+Text:
+Is this your bag, sir? We need to check it. There seems to be something metallic inside.
+
+---
+ID: airport_security_001_turn_5
+File: scenarios/airport_security_001/turn_5.mp3
+Text:
+Ah yes, it's a power bank. That's fine. You're all clear. Have a good flight.
+
+---
+ID: business_meeting_001_turn_1
+File: scenarios/business_meeting_001/turn_1.mp3
+Text:
+Good afternoon. You must be from STU Trailer. Please, take a seat. We're looking forward to hearing about your products.
+
+---
+ID: business_meeting_001_turn_3
+File: scenarios/business_meeting_001/turn_3.mp3
+Text:
+Excellent. So, what can you tell us about your concrete mixer range?
+
+---
+ID: business_meeting_001_turn_5
+File: scenarios/business_meeting_001/turn_5.mp3
+Text:
+That's interesting. What's the drum rotation speed, and what kind of discharge rate can we expect?
+
+---
+ID: business_meeting_001_turn_7
+File: scenarios/business_meeting_001/turn_7.mp3
+Text:
+Very good. And what about the hydraulic system? Is it compatible with standard European truck connections?
+
+---
+ID: business_meeting_001_turn_9
+File: scenarios/business_meeting_001/turn_9.mp3
+Text:
+Excellent. That all sounds very promising. Could you send us a detailed quotation by next Friday?
+
+---
+ID: factory_visit_001_turn_1
+File: scenarios/factory_visit_001/turn_1.mp3
+Text:
+Good morning! Thank you for the invitation to visit your facility. I've been looking forward to seeing your production process.
+
+---
+ID: factory_visit_001_turn_3
+File: scenarios/factory_visit_001/turn_3.mp3
+Text:
+This is impressive. Can you tell me about this welding station? What process do you use?
+
+---
+ID: factory_visit_001_turn_5
+File: scenarios/factory_visit_001/turn_5.mp3
+Text:
+I see. And what quality control measures do you have in place?
+
+---
+ID: factory_visit_001_turn_7
+File: scenarios/factory_visit_001/turn_7.mp3
+Text:
+That's reassuring. What's your typical lead time from order to delivery?
+
+---
+ID: restaurant_001_turn_1
+File: scenarios/restaurant_001/turn_1.mp3
+Text:
+This is a lovely restaurant. I come here quite often. Have you decided what you'd like to order?
+
+---
+ID: restaurant_001_turn_3
+File: scenarios/restaurant_001/turn_3.mp3
+Text:
+The lamb is excellent here. By the way, how was your journey from Konya? I imagine it's quite a long trip.
+
+---
+ID: restaurant_001_turn_5
+File: scenarios/restaurant_001/turn_5.mp3
+Text:
+Would you like some wine with dinner? They have an excellent selection here.
+
+---
+ID: restaurant_001_turn_7
+File: scenarios/restaurant_001/turn_7.mp3
+Text:
+Of course, no problem at all. So tell me, how did you get into the trailer manufacturing business?
+
+---
+ID: small_talk_001_turn_1
+File: scenarios/small_talk_001/turn_1.mp3
+Text:
+Bit grey today, isn't it? Typical British weather, I'm afraid. Is it very different in Turkey?
+
+---
+ID: small_talk_001_turn_3
+File: scenarios/small_talk_001/turn_3.mp3
+Text:
+I've always wanted to visit Turkey. Any plans for the weekend while you're here?
+
+---
+ID: small_talk_001_turn_5
+File: scenarios/small_talk_001/turn_5.mp3
+Text:
+Oh, the British Museum is brilliant. Free entry too! Do you follow football at all?
+
+---
+ID: small_talk_001_turn_7
+File: scenarios/small_talk_001/turn_7.mp3
+Text:
+I'm a Manchester United fan, for my sins! Anyway, shall we head back? I think they're ready to continue.
+
+---
+ID: phone_call_001_turn_1
+File: scenarios/phone_call_001/turn_1.mp3
+Text:
+Hello, Thompson Engineering, Sarah speaking. How can I help you?
+
+---
+ID: phone_call_001_turn_3
+File: scenarios/phone_call_001/turn_3.mp3
+Text:
+Of course. Let me check his diary. When would suit you best?
+
+---
+ID: phone_call_001_turn_5
+File: scenarios/phone_call_001/turn_5.mp3
+Text:
+Tuesday the 17th looks good. Would 10 o'clock work? We'll need about two hours, I imagine.
+
+---
+ID: phone_call_001_turn_7
+File: scenarios/phone_call_001/turn_7.mp3
+Text:
+Excellent. I'll send you a calendar invite and directions to our office. Is there anything you'll need for the presentation?
+
+---
+ID: hotel_checkin_001_turn_1
+File: scenarios/hotel_checkin_001/turn_1.mp3
+Text:
+Good evening, sir. Welcome to the Grand Hotel Manchester. Do you have a reservation?
+
+---
+ID: hotel_checkin_001_turn_3
+File: scenarios/hotel_checkin_001/turn_3.mp3
+Text:
+Yes, here it is. A standard room for three nights. Would you prefer a higher floor or a quieter room at the back?
+
+---
+ID: hotel_checkin_001_turn_5
+File: scenarios/hotel_checkin_001/turn_5.mp3
+Text:
+No problem. I've put you in room 412 on the fourth floor, nice and quiet. Breakfast is served from 6:30 to 10. Is there anything else you need to know?
+
+---
+ID: hotel_checkin_001_turn_7
+File: scenarios/hotel_checkin_001/turn_7.mp3
+Text:
+Yes, the gym is on the ground floor, open 24 hours. The Wi-Fi password is on a card in your room. Enjoy your stay!
+
+---
+ID: airport_delay_001_turn_1
+File: scenarios/airport_delay_001/turn_1.mp3
+Text:
+Good afternoon. How can I help you today?
+
+---
+ID: airport_delay_001_turn_3
+File: scenarios/airport_delay_001/turn_3.mp3
+Text:
+I'm sorry about that. There's been a technical issue with the aircraft. We're expecting a delay of approximately two hours.
+
+---
+ID: airport_delay_001_turn_5
+File: scenarios/airport_delay_001/turn_5.mp3
+Text:
+Unfortunately, this is the only direct flight today. However, we can offer you a meal voucher for the wait. Would that help?
+
+---
+ID: airport_delay_001_turn_7
+File: scenarios/airport_delay_001/turn_7.mp3
+Text:
+You can use it at any restaurant in Terminal 3. We'll announce boarding as soon as the aircraft is ready. Apologies again for the inconvenience.
+
+---
+ID: hotel_complaint_001_turn_1
+File: scenarios/hotel_complaint_001/turn_1.mp3
+Text:
+Reception, how may I assist you?
+
+---
+ID: hotel_complaint_001_turn_3
+File: scenarios/hotel_complaint_001/turn_3.mp3
+Text:
+I'm terribly sorry to hear that, sir. Could you describe what's happening? Is it not turning on at all, or is it making a noise?
+
+---
+ID: hotel_complaint_001_turn_5
+File: scenarios/hotel_complaint_001/turn_5.mp3
+Text:
+I understand. I can send our maintenance team up right away, or I can offer you a different room on the same floor. Which would you prefer?
+
+---
+ID: hotel_complaint_001_turn_7
+File: scenarios/hotel_complaint_001/turn_7.mp3
+Text:
+Of course. I have room 418 available, which is an identical room with a city view. I'll send someone up to help you move. Again, my sincere apologies.
+
+---
+ID: business_meeting_negotiation_001_turn_1
+File: scenarios/business_meeting_negotiation_001/turn_1.mp3
+Text:
+So, let's talk numbers. What kind of pricing are we looking at for a bulk order of curtainsiders?
+
+---
+ID: business_meeting_negotiation_001_turn_3
+File: scenarios/business_meeting_negotiation_001/turn_3.mp3
+Text:
+That's a bit higher than we were hoping. Our current supplier offers similar specs at €26,000. Can you match that?
+
+---
+ID: business_meeting_negotiation_001_turn_5
+File: scenarios/business_meeting_negotiation_001/turn_5.mp3
+Text:
+The warranty is appealing. If we commit to 20 units this year, what's the best you can do?
+
+---
+ID: business_meeting_negotiation_001_turn_7
+File: scenarios/business_meeting_negotiation_001/turn_7.mp3
+Text:
+That sounds reasonable. And what about payment terms? We typically work on 60-day terms.
+
+---
+ID: business_meeting_negotiation_001_turn_9
+File: scenarios/business_meeting_negotiation_001/turn_9.mp3
+Text:
+That works for us. Shall we put together a formal proposal then?
+
+---
+ID: restaurant_ordering_001_turn_1
+File: scenarios/restaurant_ordering_001/turn_1.mp3
+Text:
+Good evening! Welcome to The Crown. Are you ready to order, or would you like a few more minutes?
+
+---
+ID: restaurant_ordering_001_turn_3
+File: scenarios/restaurant_ordering_001/turn_3.mp3
+Text:
+Today's pie is steak and ale - it's very popular. Comes with mash and gravy. Can I get you some drinks while you decide?
+
+---
+ID: restaurant_ordering_001_turn_5
+File: scenarios/restaurant_ordering_001/turn_5.mp3
+Text:
+Excellent choice. And for your colleagues?
+
+---
+ID: restaurant_ordering_001_turn_7
+File: scenarios/restaurant_ordering_001/turn_7.mp3
+Text:
+It's beer-battered. Lovely and crispy. So that's one pie, one fish and chips. I'll bring your drinks right away.
+
+---
+ID: phone_complaint_001_turn_1
+File: scenarios/phone_complaint_001/turn_1.mp3
+Text:
+Good morning, Harrison Parts, Claire speaking. How can I help?
+
+---
+ID: phone_complaint_001_turn_3
+File: scenarios/phone_complaint_001/turn_3.mp3
+Text:
+Let me pull that up... Yes, I can see it here. It looks like there was a delay at our warehouse. I'm sorry about that. It's scheduled to ship today.
+
+---
+ID: phone_complaint_001_turn_5
+File: scenarios/phone_complaint_001/turn_5.mp3
+Text:
+I completely understand. Would express shipping help? We could upgrade to next-day delivery at no extra cost to make up for the delay.
+
+---
+ID: phone_complaint_001_turn_7
+File: scenarios/phone_complaint_001/turn_7.mp3
+Text:
+Yes, it should arrive Thursday morning your time. I'll email you the tracking number within the hour. Is there anything else I can help with?
+
+---
+ID: factory_quality_001_turn_1
+File: scenarios/factory_quality_001/turn_1.mp3
+Text:
+This is impressive. Can you walk me through your quality management system? What certifications do you hold?
+
+---
+ID: factory_quality_001_turn_3
+File: scenarios/factory_quality_001/turn_3.mp3
+Text:
+Good to hear. How do you handle non-conformances? What happens if a defect is found during production?
+
+---
+ID: factory_quality_001_turn_5
+File: scenarios/factory_quality_001/turn_5.mp3
+Text:
+I noticed you use both robotic and manual welding. How do you ensure consistent weld quality across both methods?
+
+---
+ID: factory_quality_001_turn_7
+File: scenarios/factory_quality_001/turn_7.mp3
+Text:
+Very thorough. One last question - what's your defect rate, and how has it trended over the past year?
+
+---
+ID: small_talk_networking_001_turn_1
+File: scenarios/small_talk_networking_001/turn_1.mp3
+Text:
+Quite a busy show this year, isn't it? I don't think we've met. I'm James, from Axle Solutions.
+
+---
+ID: small_talk_networking_001_turn_3
+File: scenarios/small_talk_networking_001/turn_3.mp3
+Text:
+Turkey! Interesting. The Turkish trailer industry has grown enormously. What type of trailers do you specialise in?
+
+---
+ID: small_talk_networking_001_turn_5
+File: scenarios/small_talk_networking_001/turn_5.mp3
+Text:
+We supply axles and suspension systems to trailer manufacturers. Actually, we might be able to work together. Do you source your axles locally or import them?
+
+---
+ID: small_talk_networking_001_turn_7
+File: scenarios/small_talk_networking_001/turn_7.mp3
+Text:
+We distribute BPW and SAF-Holland. Look, I'd love to chat more, but I need to get back to the stand. Could I give you my card?
+
+---
+ID: technical_presentation_specs_001_turn_1
+File: scenarios/technical_presentation_specs_001/turn_1.mp3
+Text:
+Right, so tell me about this tipper. We need something robust for aggregate transport. What's the body capacity?
+
+---
+ID: technical_presentation_specs_001_turn_3
+File: scenarios/technical_presentation_specs_001/turn_3.mp3
+Text:
+Hardox is good. What about the tipping mechanism? We've had issues with slow tipping times in the past.
+
+---
+ID: technical_presentation_specs_001_turn_5
+File: scenarios/technical_presentation_specs_001/turn_5.mp3
+Text:
+That's decent. What's the unladen weight? We need to maximise payload.
+
+---
+ID: technical_presentation_specs_001_turn_7
+File: scenarios/technical_presentation_specs_001/turn_7.mp3
+Text:
+Good payload. One more thing - what warranty do you offer, and do you have service support in the UK?
+
+---
+ID: airport_taxi_001_turn_1
+File: scenarios/airport_taxi_001/turn_1.mp3
+Text:
+Hello there! Where can I take you today?
+
+---
+ID: airport_taxi_001_turn_3
+File: scenarios/airport_taxi_001/turn_3.mp3
+Text:
+The Grand Hotel, yes I know it well. That'll be about 25 pounds. Should take around 20 minutes depending on traffic. Is that alright?
+
+---
+ID: airport_taxi_001_turn_5
+File: scenarios/airport_taxi_001/turn_5.mp3
+Text:
+Yes, card is fine. So, business or pleasure? You sound like you've travelled a fair way.
+
+---
+ID: airport_taxi_001_turn_7
+File: scenarios/airport_taxi_001/turn_7.mp3
+Text:
+Turkey, lovely! Right, here we are - the Grand Hotel. That's 24 pounds on the meter. Shall I get your bag from the boot?
+
+---
+ID: hotel_checkout_001_turn_1
+File: scenarios/hotel_checkout_001/turn_1.mp3
+Text:
+Good morning, sir. Checking out today?
+
+---
+ID: hotel_checkout_001_turn_3
+File: scenarios/hotel_checkout_001/turn_3.mp3
+Text:
+Let me pull up your bill. That's three nights, plus the restaurant charges and minibar. The total comes to £485.
+
+---
+ID: hotel_checkout_001_turn_5
+File: scenarios/hotel_checkout_001/turn_5.mp3
+Text:
+Of course. Let me check... You're right, that was a system error. I'll remove it. The new total is £467. How would you like to pay?
+
+---
+ID: hotel_checkout_001_turn_7
+File: scenarios/hotel_checkout_001/turn_7.mp3
+Text:
+Certainly. Here's your receipt. Is there anything else I can help with? Do you need transport to the airport?
+
+---
+ID: hotel_checkout_001_turn_9
+File: scenarios/hotel_checkout_001/turn_9.mp3
+Text:
+I'll book one for 11:30, that should give you plenty of time. It'll wait outside the main entrance. Have a safe journey!
+
+---
+ID: business_meeting_followup_001_turn_1
+File: scenarios/business_meeting_followup_001/turn_1.mp3
+Text:
+Thanks for coming in, Lewis. So, where are we with our order? The 15 curtainsiders we ordered last month.
+
+---
+ID: business_meeting_followup_001_turn_3
+File: scenarios/business_meeting_followup_001/turn_3.mp3
+Text:
+Good to hear. We did have one concern though - your quality manager mentioned there was a weld issue on a previous batch. Has that been addressed?
+
+---
+ID: business_meeting_followup_001_turn_5
+File: scenarios/business_meeting_followup_001/turn_5.mp3
+Text:
+That's reassuring. Now, regarding delivery - we're a bit concerned about the timeline. Can you still hit the March 15th deadline?
+
+---
+ID: business_meeting_followup_001_turn_7
+File: scenarios/business_meeting_followup_001/turn_7.mp3
+Text:
+Excellent. One more thing - we're considering increasing next quarter's order to 25 units. Would that be feasible for you?
+
+---
+ID: restaurant_bill_001_turn_1
+File: scenarios/restaurant_bill_001/turn_1.mp3
+Text:
+That was a lovely meal. Shall we get the bill?
+
+---
+ID: restaurant_bill_001_turn_3
+File: scenarios/restaurant_bill_001/turn_3.mp3
+Text:
+Oh, that's very kind of you. Are you sure? I'm happy to split it.
+
+---
+ID: restaurant_bill_001_turn_5
+File: scenarios/restaurant_bill_001/turn_5.mp3
+Text:
+Well, thank you very much. That's very generous. I've really enjoyed this evening.
+
+---
+ID: restaurant_bill_001_turn_7
+File: scenarios/restaurant_bill_001/turn_7.mp3
+Text:
+Definitely. Right, I should probably head off - early start tomorrow. Thank you again for dinner.
+
+---
+ID: phone_reschedule_001_turn_1
+File: scenarios/phone_reschedule_001/turn_1.mp3
+Text:
+Good morning, David Richards speaking.
+
+---
+ID: phone_reschedule_001_turn_3
+File: scenarios/phone_reschedule_001/turn_3.mp3
+Text:
+Oh, that's a shame. What's happened?
+
+---
+ID: phone_reschedule_001_turn_5
+File: scenarios/phone_reschedule_001/turn_5.mp3
+Text:
+These things happen. Don't worry about it. When would you be able to reschedule?
+
+---
+ID: phone_reschedule_001_turn_7
+File: scenarios/phone_reschedule_001/turn_7.mp3
+Text:
+Thursday morning would actually work better for me. Shall we say 10 o'clock?
+
+---
+ID: small_talk_hotel_breakfast_001_turn_1
+File: scenarios/small_talk_hotel_breakfast_001/turn_1.mp3
+Text:
+Morning! The coffee here is quite good, isn't it?
+
+---
+ID: small_talk_hotel_breakfast_001_turn_3
+File: scenarios/small_talk_hotel_breakfast_001/turn_3.mp3
+Text:
+Yes, I'm visiting a supplier in the area. What about you? Your accent - let me guess, somewhere Mediterranean?
+
+---
+ID: small_talk_hotel_breakfast_001_turn_5
+File: scenarios/small_talk_hotel_breakfast_001/turn_5.mp3
+Text:
+Trailers? That's interesting. I'm in logistics myself - we run a haulage company. Always looking for reliable equipment.
+
+---
+ID: small_talk_hotel_breakfast_001_turn_7
+File: scenarios/small_talk_hotel_breakfast_001/turn_7.mp3
+Text:
+Mostly curtainsiders, actually. We buy about 10 new ones a year. Here's my card - give me a call if you'd like to discuss further.
+
+---
+ID: factory_safety_001_turn_1
+File: scenarios/factory_safety_001/turn_1.mp3
+Text:
+Thank you for visiting STU Trailer. Before we start the tour, I believe there's a safety briefing?
+
+---
+ID: factory_safety_001_turn_3
+File: scenarios/factory_safety_001/turn_3.mp3
+Text:
+Of course. What do we need to know?
+
+---
+ID: factory_safety_001_turn_5
+File: scenarios/factory_safety_001/turn_5.mp3
+Text:
+Understood. Are there any particular hazards we should be aware of?
+
+---
+ID: factory_safety_001_turn_7
+File: scenarios/factory_safety_001/turn_7.mp3
+Text:
+Good to know. And if there's an emergency?
+
+---
+ID: technical_presentation_qa_001_turn_1
+File: scenarios/technical_presentation_qa_001/turn_1.mp3
+Text:
+Thank you for that presentation. I have a question about the axle configuration. Can you use disc brakes instead of drum brakes on your trailers?
+
+---
+ID: technical_presentation_qa_001_turn_3
+File: scenarios/technical_presentation_qa_001/turn_3.mp3
+Text:
+Good to know. Another question - what's the typical lifespan of your trailer floors? We've had issues with rotting on other brands.
+
+---
+ID: technical_presentation_qa_001_turn_5
+File: scenarios/technical_presentation_qa_001/turn_5.mp3
+Text:
+Impressive. One more - do you have crash test certification for the rear underrun protection?
+
+---
+ID: technical_presentation_qa_001_turn_7
+File: scenarios/technical_presentation_qa_001/turn_7.mp3
+Text:
+That would be helpful. Are there any other questions from the floor? No? Well, thank you all for your attention.
+
+---
+ID: airport_lost_luggage_001_turn_1
+File: scenarios/airport_lost_luggage_001/turn_1.mp3
+Text:
+Good evening, sir. How can I help you?
+
+---
+ID: airport_lost_luggage_001_turn_3
+File: scenarios/airport_lost_luggage_001/turn_3.mp3
+Text:
+I'm sorry to hear that. Can you describe your bag for me? Size, colour, any distinguishing features?
+
+---
+ID: airport_lost_luggage_001_turn_5
+File: scenarios/airport_lost_luggage_001/turn_5.mp3
+Text:
+Thank you. And do you have your baggage claim ticket? It should be attached to your boarding pass.
+
+---
+ID: airport_lost_luggage_001_turn_7
+File: scenarios/airport_lost_luggage_001/turn_7.mp3
+Text:
+Perfect. We'll track it down. Where are you staying? We can deliver it once it's located.
+
+---
+ID: hotel_concierge_001_turn_1
+File: scenarios/hotel_concierge_001/turn_1.mp3
+Text:
+Good afternoon, sir. How may I assist you today?
+
+---
+ID: hotel_concierge_001_turn_3
+File: scenarios/hotel_concierge_001/turn_3.mp3
+Text:
+Of course. What type of cuisine does your client prefer? We have excellent Italian, British, and Asian options within walking distance.
+
+---
+ID: hotel_concierge_001_turn_5
+File: scenarios/hotel_concierge_001/turn_5.mp3
+Text:
+I'd recommend The Ivy. Excellent British menu, beautiful setting, very popular with business clients. Shall I make a reservation for you?
+
+---
+ID: hotel_concierge_001_turn_7
+File: scenarios/hotel_concierge_001/turn_7.mp3
+Text:
+Certainly. And would you like me to arrange anything else? Theatre tickets perhaps, or a car service?
+
+---
+ID: restaurant_dietary_001_turn_1
+File: scenarios/restaurant_dietary_001/turn_1.mp3
+Text:
+Good evening. Are you ready to order, or do you have any questions about the menu?
+
+---
+ID: restaurant_dietary_001_turn_3
+File: scenarios/restaurant_dietary_001/turn_3.mp3
+Text:
+Of course, no problem at all. The lamb shank, the grilled salmon, and the chicken supreme are all pork-free. Would any of those interest you?
+
+---
+ID: restaurant_dietary_001_turn_5
+File: scenarios/restaurant_dietary_001/turn_5.mp3
+Text:
+The lamb is slow-cooked in a rosemary and garlic jus - no wine. It comes with roasted vegetables and mashed potato. Shall I put that order in for you?
+
+---
+ID: restaurant_dietary_001_turn_7
+File: scenarios/restaurant_dietary_001/turn_7.mp3
+Text:
+Certainly. Sparkling water and the lamb shank. I'll make a note about your dietary requirements for the kitchen. Is there anything else?
+
+---
+ID: business_closing_deal_001_turn_1
+File: scenarios/business_closing_deal_001/turn_1.mp3
+Text:
+Right, I think we've covered everything. Before we sign, shall we just run through the key terms one more time?
+
+---
+ID: business_closing_deal_001_turn_3
+File: scenarios/business_closing_deal_001/turn_3.mp3
+Text:
+That's correct. And the warranty is 3 years on the chassis, 2 years on everything else. One last thing - what happens if there are any quality issues after delivery?
+
+---
+ID: business_closing_deal_001_turn_5
+File: scenarios/business_closing_deal_001/turn_5.mp3
+Text:
+That's reassuring. I'm happy with everything. I think we have a deal.
+
+---
+ID: business_closing_deal_001_turn_7
+File: scenarios/business_closing_deal_001/turn_7.mp3
+Text:
+Indeed. Let me sign here... and here. There we go. Welcome aboard! Shall we celebrate with a drink?
+
+---
+ID: small_talk_weekend_001_turn_1
+File: scenarios/small_talk_weekend_001/turn_1.mp3
+Text:
+Morning Lewis! Good to see you again. Did you have a good weekend? Did you get to do anything nice while you were here?
+
+---
+ID: small_talk_weekend_001_turn_3
+File: scenarios/small_talk_weekend_001/turn_3.mp3
+Text:
+The British Museum is wonderful, isn't it? I spent the weekend with the family - took the kids to a football match on Sunday. Do you follow football?
+
+---
+ID: small_talk_weekend_001_turn_5
+File: scenarios/small_talk_weekend_001/turn_5.mp3
+Text:
+We saw Manchester City play. They won 3-1, so the kids were happy! Anyway, shall we grab a coffee before the others arrive?
+
+---
+ID: small_talk_weekend_001_turn_7
+File: scenarios/small_talk_weekend_001/turn_7.mp3
+Text:
+How do you take yours? Milk? Sugar?
+
+---
+ID: phone_order_confirmation_001_turn_1
+File: scenarios/phone_order_confirmation_001/turn_1.mp3
+Text:
+Hello, Mike Stevens speaking.
+
+---
+ID: phone_order_confirmation_001_turn_3
+File: scenarios/phone_order_confirmation_001/turn_3.mp3
+Text:
+Ah yes, perfect timing. Go ahead.
+
+---
+ID: phone_order_confirmation_001_turn_5
+File: scenarios/phone_order_confirmation_001/turn_5.mp3
+Text:
+That's correct, except we'd like to change the colour to RAL 5010 blue. Is that possible at this stage?
+
+---
+ID: phone_order_confirmation_001_turn_7
+File: scenarios/phone_order_confirmation_001/turn_7.mp3
+Text:
+No, that's everything. When can we expect delivery?
+
+---
+ID: factory_production_capacity_001_turn_1
+File: scenarios/factory_production_capacity_001/turn_1.mp3
+Text:
+This is an impressive facility. What's your annual production capacity here?
+
+---
+ID: factory_production_capacity_001_turn_3
+File: scenarios/factory_production_capacity_001/turn_3.mp3
+Text:
+That's substantial. If we were to place a large order - say 100 units - what would the lead time be?
+
+---
+ID: factory_production_capacity_001_turn_5
+File: scenarios/factory_production_capacity_001/turn_5.mp3
+Text:
+What if we needed to rush an order? Can you expedite production if we pay extra?
+
+---
+ID: factory_production_capacity_001_turn_7
+File: scenarios/factory_production_capacity_001/turn_7.mp3
+Text:
+Good to know. And your workforce - do you have enough skilled workers to maintain quality at high volumes?
+
+---
+ID: airport_car_rental_001_turn_1
+File: scenarios/airport_car_rental_001/turn_1.mp3
+Text:
+Good afternoon! Welcome to Europcar. Do you have a reservation?
+
+---
+ID: airport_car_rental_001_turn_3
+File: scenarios/airport_car_rental_001/turn_3.mp3
+Text:
+Yes, here it is. A Ford Focus for four days, returning Sunday. Can I see your driving licence and a credit card for the deposit?
+
+---
+ID: airport_car_rental_001_turn_5
+File: scenarios/airport_car_rental_001/turn_5.mp3
+Text:
+Both would be great, thank you. Now, would you like to add a GPS navigation system? It's £8 per day.
+
+---
+ID: airport_car_rental_001_turn_7
+File: scenarios/airport_car_rental_001/turn_7.mp3
+Text:
+Yes, all UK and European maps. One last thing - the fuel policy is full-to-full. Please return it with a full tank to avoid refuelling charges. Any questions?
+
+---
+ID: technical_demo_001_turn_1
+File: scenarios/technical_demo_001/turn_1.mp3
+Text:
+This curtainsider looks well-built. Can you show us how the sliding roof works?
+
+---
+ID: technical_demo_001_turn_3
+File: scenarios/technical_demo_001/turn_3.mp3
+Text:
+That is smooth. What about the curtain tensioning system? We've had problems with loose curtains on other trailers.
+
+---
+ID: technical_demo_001_turn_5
+File: scenarios/technical_demo_001/turn_5.mp3
+Text:
+Impressive. And the floor - is it suitable for forklift loading?
+
+---
+ID: technical_demo_001_turn_7
+File: scenarios/technical_demo_001/turn_7.mp3
+Text:
+Very thorough. Do you have any literature we can take away? Spec sheets, pricing?
+
+---
+ID: small_talk_delays_001_turn_1
+File: scenarios/small_talk_delays_001/turn_1.mp3
+Text:
+Sorry I'm late. The M6 was absolutely dreadful this morning. Roadworks everywhere!
+
+---
+ID: small_talk_delays_001_turn_3
+File: scenarios/small_talk_delays_001/turn_3.mp3
+Text:
+It is notorious! Do you drive much when you're here, or do you prefer the train?
+
+---
+ID: small_talk_delays_001_turn_5
+File: scenarios/small_talk_delays_001/turn_5.mp3
+Text:
+The trains are good, yes. How do you find driving on the left? Must be quite an adjustment!
+
+---
+ID: small_talk_delays_001_turn_7
+File: scenarios/small_talk_delays_001/turn_7.mp3
+Text:
+Ha! I can imagine. Oh, looks like the others are arriving now. Shall we head to the meeting room?
+
+---
+ID: hotel_room_service_001_turn_1
+File: scenarios/hotel_room_service_001/turn_1.mp3
+Text:
+Room service, good evening. How can I help you?
+
+---
+ID: hotel_room_service_001_turn_3
+File: scenarios/hotel_room_service_001/turn_3.mp3
+Text:
+Of course, Mr Lewis. What would you like this evening?
+
+---
+ID: hotel_room_service_001_turn_5
+File: scenarios/hotel_room_service_001/turn_5.mp3
+Text:
+Certainly. The grilled chicken with vegetables and a side salad. Any drinks with that?
+
+---
+ID: hotel_room_service_001_turn_7
+File: scenarios/hotel_room_service_001/turn_7.mp3
+Text:
+Of course. So that's grilled chicken, side salad, and tea with milk. It'll be with you in about 25 minutes. Is there anything else?
+
+---
+ID: phone_support_call_001_turn_1
+File: scenarios/phone_support_call_001/turn_1.mp3
+Text:
+Hello, this is James from Fleet Solutions. I submitted a warranty claim for one of our trailers last week and haven't heard back. Can you help?
+
+---
+ID: phone_support_call_001_turn_3
+File: scenarios/phone_support_call_001/turn_3.mp3
+Text:
+It's WC-2024-0847. The issue is with the rear door hinges - they're not closing properly.
+
+---
+ID: phone_support_call_001_turn_5
+File: scenarios/phone_support_call_001/turn_5.mp3
+Text:
+That's a relief. Will someone come to fit them, or do we need to arrange that ourselves?
+
+---
+ID: phone_support_call_001_turn_7
+File: scenarios/phone_support_call_001/turn_7.mp3
+Text:
+That's excellent service, thank you. Mornings work better for us. Can you send me a confirmation email?
+
+---
+ID: factory_inspection_001_turn_1
+File: scenarios/factory_inspection_001/turn_1.mp3
+Text:
+Good morning. I'm Sarah Mitchell, Quality Assurance Manager from TransportCo. We're here for the factory inspection we arranged.
+
+---
+ID: factory_inspection_001_turn_3
+File: scenarios/factory_inspection_001/turn_3.mp3
+Text:
+Thank you. I'd like to see your welding stations first, and understand your quality control checkpoints. How do you ensure weld consistency?
+
+---
+ID: factory_inspection_001_turn_5
+File: scenarios/factory_inspection_001/turn_5.mp3
+Text:
+Impressive. I notice you're using robotic welding here. What happens if the robot detects an anomaly?
+
+---
+ID: factory_inspection_001_turn_7
+File: scenarios/factory_inspection_001/turn_7.mp3
+Text:
+Very thorough. One more thing - can I see your traceability records? We need to ensure full component traceability for our fleet.
+
+---
+ID: restaurant_business_lunch_001_turn_1
+File: scenarios/restaurant_business_lunch_001/turn_1.mp3
+Text:
+This is a lovely restaurant. Thank you for the invitation, Lewis.
+
+---
+ID: restaurant_business_lunch_001_turn_3
+File: scenarios/restaurant_business_lunch_001/turn_3.mp3
+Text:
+The fish does look tempting. What are you going to have?
+
+---
+ID: restaurant_business_lunch_001_turn_5
+File: scenarios/restaurant_business_lunch_001/turn_5.mp3
+Text:
+Sparkling water would be lovely. This is very generous of you. Shall we discuss the project details while we wait for the food?
+
+---
+ID: restaurant_business_lunch_001_turn_7
+File: scenarios/restaurant_business_lunch_001/turn_7.mp3
+Text:
+That's excellent news! Oh, the food is here. This looks delicious. Shall we continue our discussion after lunch?
+
+---
+ID: business_meeting_intro_001_turn_1
+File: scenarios/business_meeting_intro_001/turn_1.mp3
+Text:
+Thank you for coming in today. Before we discuss potential collaboration, could you tell us a bit about STU Trailer?
+
+---
+ID: business_meeting_intro_001_turn_3
+File: scenarios/business_meeting_intro_001/turn_3.mp3
+Text:
+Impressive. What would you say sets you apart from other manufacturers in the market?
+
+---
+ID: business_meeting_intro_001_turn_5
+File: scenarios/business_meeting_intro_001/turn_5.mp3
+Text:
+That's good to know. Do you have any existing presence in the UK market?
+
+---
+ID: business_meeting_intro_001_turn_7
+File: scenarios/business_meeting_intro_001/turn_7.mp3
+Text:
+I appreciate the honesty. What kind of partnership model are you looking for?
+
+---
+ID: small_talk_culture_001_turn_1
+File: scenarios/small_talk_culture_001/turn_1.mp3
+Text:
+Is this your first time in the UK, Lewis? What do you make of it so far?
+
+---
+ID: small_talk_culture_001_turn_3
+File: scenarios/small_talk_culture_001/turn_3.mp3
+Text:
+Ha! Yes, we do love our queues. Is queueing not such a big thing in Turkey?
+
+---
+ID: small_talk_culture_001_turn_5
+File: scenarios/small_talk_culture_001/turn_5.mp3
+Text:
+That's fascinating. What about food? Have you tried any traditional British dishes?
+
+---
+ID: small_talk_culture_001_turn_7
+File: scenarios/small_talk_culture_001/turn_7.mp3
+Text:
+You should try a proper cream tea if you get the chance! Oh, looks like the session is starting again. Nice chatting with you.
+
+---
+ID: airport_security_001_turn_7
+File: scenarios/airport_security_001/turn_7.mp3
+Text:
+That's fine, it happens all the time. Pop those in the tray and go through again. Have a good flight.
+
+---
+ID: factory_logistics_001_turn_1
+File: scenarios/factory_logistics_001/turn_1.mp3
+Text:
+Now that we've agreed on the order, let's discuss delivery. How do you usually handle shipping from Turkey?
+
+---
+ID: factory_logistics_001_turn_3
+File: scenarios/factory_logistics_001/turn_3.mp3
+Text:
+RoRo sounds efficient. What about customs clearance? Will we need to handle that ourselves?
+
+---
+ID: factory_logistics_001_turn_5
+File: scenarios/factory_logistics_001/turn_5.mp3
+Text:
+That's helpful. And if we need to track the shipment, is there a system for that?
+
+---
+ID: factory_logistics_001_turn_7
+File: scenarios/factory_logistics_001/turn_7.mp3
+Text:
+Excellent. One last thing - what happens if there are any delays or damage during transit?
+
+---
+ID: technical_troubleshooting_001_turn_1
+File: scenarios/technical_troubleshooting_001/turn_1.mp3
+Text:
+Hello, this is Dave from Northern Haulage. We've got an issue with one of your curtainsiders - the EBS warning light keeps coming on.
+
+---
+ID: technical_troubleshooting_001_turn_3
+File: scenarios/technical_troubleshooting_001/turn_3.mp3
+Text:
+It's a solid light, comes on after about 10 minutes of driving. The brakes seem to work fine otherwise.
+
+---
+ID: technical_troubleshooting_001_turn_5
+File: scenarios/technical_troubleshooting_001/turn_5.mp3
+Text:
+Hang on, let me check... Actually yes, there's a cable hanging loose on the nearside rear. Looks like it's been caught on something.
+
+---
+ID: technical_troubleshooting_001_turn_7
+File: scenarios/technical_troubleshooting_001/turn_7.mp3
+Text:
+Brilliant, we'll sort that out now. Thanks for your help - saved us a garage visit!
+
+---
+ID: phone_inquiry_001_turn_1
+File: scenarios/phone_inquiry_001/turn_1.mp3
+Text:
+Good morning. I'm calling from Smith Transport in Leeds. We're looking for new curtainsiders. Do you supply to the UK?
+
+---
+ID: phone_inquiry_001_turn_3
+File: scenarios/phone_inquiry_001/turn_3.mp3
+Text:
+We need five standard curtainsiders, 13.6 metres. What's your lead time and roughly what price are we looking at?
+
+---
+ID: phone_inquiry_001_turn_5
+File: scenarios/phone_inquiry_001/turn_5.mp3
+Text:
+That sounds reasonable. Yes, please send a quote. My email is j.smith@smithtransport.co.uk.
+
+---
+ID: phone_inquiry_001_turn_7
+File: scenarios/phone_inquiry_001/turn_7.mp3
+Text:
+Yes, include delivery please. My direct number is 0113 555 7890. Look forward to your email.
+
+---
+ID: hotel_wifi_001_turn_1
+File: scenarios/hotel_wifi_001/turn_1.mp3
+Text:
+Good morning, sir. How can I help you today?
+
+---
+ID: hotel_wifi_001_turn_3
+File: scenarios/hotel_wifi_001/turn_3.mp3
+Text:
+Of course. The network name is "HotelGuest" and the password is on this card. It's valid for your entire stay. Is the connection for work purposes?
+
+---
+ID: hotel_wifi_001_turn_5
+File: scenarios/hotel_wifi_001/turn_5.mp3
+Text:
+The WiFi should be fine, but if you need a guaranteed connection, we have a business centre on the first floor with high-speed ethernet and private meeting rooms.
+
+---
+ID: hotel_wifi_001_turn_7
+File: scenarios/hotel_wifi_001/turn_7.mp3
+Text:
+It's complimentary for guests. There's a printer, scanner, and two private pods you can use. No booking needed - just turn up. Would you like me to show you where it is?
+
+---
+ID: restaurant_reservation_001_turn_1
+File: scenarios/restaurant_reservation_001/turn_1.mp3
+Text:
+Good afternoon, The Grill Room. How may I help you?
+
+---
+ID: restaurant_reservation_001_turn_3
+File: scenarios/restaurant_reservation_001/turn_3.mp3
+Text:
+Friday evening, party of four. What time would you like? We have availability at 7pm or 8:30pm.
+
+---
+ID: restaurant_reservation_001_turn_5
+File: scenarios/restaurant_reservation_001/turn_5.mp3
+Text:
+Certainly, I can seat you in our Garden Room - it's quieter. May I take a name and contact number for the booking?
+
+---
+ID: restaurant_reservation_001_turn_7
+File: scenarios/restaurant_reservation_001/turn_7.mp3
+Text:
+Perfect. So that's Friday at 7pm, party of four, Garden Room, under Lewis. We'll send a confirmation to your mobile. Is there anything else?
+
+---
+ID: business_video_call_001_turn_1
+File: scenarios/business_video_call_001/turn_1.mp3
+Text:
+Hello Lewis, can you hear me? Your video seems to be frozen.
+
+---
+ID: business_video_call_001_turn_3
+File: scenarios/business_video_call_001/turn_3.mp3
+Text:
+Yes, that's much better now. Right, shall we get started? Can you give us an update on the production schedule?
+
+---
+ID: business_video_call_001_turn_5
+File: scenarios/business_video_call_001/turn_5.mp3
+Text:
+That's great to hear. We noticed a slight change in the specification sheet you sent. Can you clarify what's different?
+
+---
+ID: business_video_call_001_turn_7
+File: scenarios/business_video_call_001/turn_7.mp3
+Text:
+No problem, that sounds fine. Before we wrap up, is there anything else you need from our side?
+
+---
+ID: factory_meeting_room_001_turn_1
+File: scenarios/factory_meeting_room_001/turn_1.mp3
+Text:
+That was a very informative tour. I'm impressed with your facilities. Shall we sit down and discuss what we've seen?
+
+---
+ID: factory_meeting_room_001_turn_3
+File: scenarios/factory_meeting_room_001/turn_3.mp3
+Text:
+Coffee would be lovely, thanks. Now, I was particularly impressed by your paint shop. Can you tell me more about the coating process?
+
+---
+ID: factory_meeting_room_001_turn_5
+File: scenarios/factory_meeting_room_001/turn_5.mp3
+Text:
+That's reassuring. One concern we have is after-sales support in the UK. How would that work?
+
+---
+ID: factory_meeting_room_001_turn_7
+File: scenarios/factory_meeting_room_001/turn_7.mp3
+Text:
+That sounds comprehensive. So, what would be the next step if we wanted to proceed?
+
+---
+ID: technical_training_001_turn_1
+File: scenarios/technical_training_001/turn_1.mp3
+Text:
+Right, we've got the trailers. Before we put them into service, what do we need to know about daily checks?
+
+---
+ID: technical_training_001_turn_3
+File: scenarios/technical_training_001/turn_3.mp3
+Text:
+That's helpful. What about the sliding roof? Any special instructions for operating it?
+
+---
+ID: technical_training_001_turn_5
+File: scenarios/technical_training_001/turn_5.mp3
+Text:
+Got it. And what about regular maintenance? What's the service schedule?
+
+---
+ID: technical_training_001_turn_7
+File: scenarios/technical_training_001/turn_7.mp3
+Text:
+Perfect. One last thing - if something goes wrong on the road, who do we call?
+
+---
+ID: small_talk_sports_001_turn_1
+File: scenarios/small_talk_sports_001/turn_1.mp3
+Text:
+Did you catch the match last night? Liverpool against Manchester City - what a game!
+
+---
+ID: small_talk_sports_001_turn_3
+File: scenarios/small_talk_sports_001/turn_3.mp3
+Text:
+It ended 2-2, very tense! I'm a Liverpool fan myself. Do you follow any English teams?
+
+---
+ID: small_talk_sports_001_turn_5
+File: scenarios/small_talk_sports_001/turn_5.mp3
+Text:
+Galatasaray - yes, I've heard of them! They play in Europe sometimes, don't they? The atmosphere at Turkish matches looks incredible.
+
+---
+ID: small_talk_sports_001_turn_7
+File: scenarios/small_talk_sports_001/turn_7.mp3
+Text:
+I'd love that! Right, we should probably get back to business. But let's definitely talk more about football over dinner later.
+
+
+========================================
+CHUNKS (Language patterns)
+Total: 100 items
+========================================
+
+---
+ID: travel_001
+File: chunks/travel_001.mp3
+Text:
+Could I have an aisle seat, please?
+
+---
+ID: travel_002
+File: chunks/travel_002.mp3
+Text:
+I'm travelling on business
+
+---
+ID: travel_003
+File: chunks/travel_003.mp3
+Text:
+Where can I collect my luggage?
+
+---
+ID: travel_004
+File: chunks/travel_004.mp3
+Text:
+I'd like to declare these items
+
+---
+ID: travel_005
+File: chunks/travel_005.mp3
+Text:
+Could you tell me the way to...?
+
+---
+ID: travel_006
+File: chunks/travel_006.mp3
+Text:
+My flight has been delayed
+
+---
+ID: travel_007
+File: chunks/travel_007.mp3
+Text:
+I've booked a transfer to the hotel
+
+---
+ID: travel_008
+File: chunks/travel_008.mp3
+Text:
+Is there anywhere to charge my phone?
+
+---
+ID: travel_009
+File: chunks/travel_009.mp3
+Text:
+I'll be staying for three days
+
+---
+ID: travel_010
+File: chunks/travel_010.mp3
+Text:
+Could I have a receipt for this, please?
+
+---
+ID: travel_011
+File: chunks/travel_011.mp3
+Text:
+I have a reservation under the name...
+
+---
+ID: travel_012
+File: chunks/travel_012.mp3
+Text:
+Could I have a room with a view?
+
+---
+ID: travel_013
+File: chunks/travel_013.mp3
+Text:
+What time is breakfast served?
+
+---
+ID: travel_014
+File: chunks/travel_014.mp3
+Text:
+Could you arrange a wake-up call?
+
+---
+ID: travel_015
+File: chunks/travel_015.mp3
+Text:
+I'd like to extend my stay
+
+---
+ID: travel_016
+File: chunks/travel_016.mp3
+Text:
+How long does it take to get to...?
+
+---
+ID: travel_017
+File: chunks/travel_017.mp3
+Text:
+Could you drop me off at...?
+
+---
+ID: travel_018
+File: chunks/travel_018.mp3
+Text:
+I'm having trouble with...
+
+---
+ID: travel_019
+File: chunks/travel_019.mp3
+Text:
+Where's the nearest currency exchange?
+
+---
+ID: travel_020
+File: chunks/travel_020.mp3
+Text:
+I need to catch a connecting flight
+
+---
+ID: tech_001
+File: chunks/tech_001.mp3
+Text:
+I'd like to walk you through the specifications
+
+---
+ID: tech_002
+File: chunks/tech_002.mp3
+Text:
+The load capacity is rated at...
+
+---
+ID: tech_003
+File: chunks/tech_003.mp3
+Text:
+This model features a hydraulic system that...
+
+---
+ID: tech_004
+File: chunks/tech_004.mp3
+Text:
+Could you clarify what you mean by...?
+
+---
+ID: tech_005
+File: chunks/tech_005.mp3
+Text:
+Let me check with our engineering team
+
+---
+ID: tech_006
+File: chunks/tech_006.mp3
+Text:
+The delivery timeline would be approximately...
+
+---
+ID: tech_007
+File: chunks/tech_007.mp3
+Text:
+This complies with EU regulations
+
+---
+ID: tech_008
+File: chunks/tech_008.mp3
+Text:
+Would you like me to prepare a detailed quotation?
+
+---
+ID: tech_009
+File: chunks/tech_009.mp3
+Text:
+The chassis is constructed from high-strength steel
+
+---
+ID: tech_010
+File: chunks/tech_010.mp3
+Text:
+What are your requirements in terms of...?
+
+---
+ID: tech_011
+File: chunks/tech_011.mp3
+Text:
+I'll send you the technical drawings
+
+---
+ID: tech_012
+File: chunks/tech_012.mp3
+Text:
+Could we schedule a factory visit?
+
+---
+ID: tech_013
+File: chunks/tech_013.mp3
+Text:
+The turning radius is optimised for...
+
+---
+ID: tech_014
+File: chunks/tech_014.mp3
+Text:
+We can customise this to your specifications
+
+---
+ID: tech_015
+File: chunks/tech_015.mp3
+Text:
+Let me demonstrate how this works
+
+---
+ID: tech_016
+File: chunks/tech_016.mp3
+Text:
+I think there might be a misunderstanding
+
+---
+ID: tech_017
+File: chunks/tech_017.mp3
+Text:
+Let me see if I've understood correctly
+
+---
+ID: tech_018
+File: chunks/tech_018.mp3
+Text:
+I'll look into it and get back to you
+
+---
+ID: tech_019
+File: chunks/tech_019.mp3
+Text:
+Compared to the previous model, this offers...
+
+---
+ID: tech_020
+File: chunks/tech_020.mp3
+Text:
+The warranty covers...
+
+---
+ID: social_001
+File: chunks/social_001.mp3
+Text:
+It's lovely to finally meet you in person
+
+---
+ID: social_002
+File: chunks/social_002.mp3
+Text:
+How was your journey?
+
+---
+ID: social_003
+File: chunks/social_003.mp3
+Text:
+Shall we grab a bite to eat?
+
+---
+ID: social_004
+File: chunks/social_004.mp3
+Text:
+I'll have whatever you're having
+
+---
+ID: social_005
+File: chunks/social_005.mp3
+Text:
+This is on me
+
+---
+ID: social_006
+File: chunks/social_006.mp3
+Text:
+I'm not fussy about food
+
+---
+ID: social_007
+File: chunks/social_007.mp3
+Text:
+Could I get the bill, please?
+
+---
+ID: social_008
+File: chunks/social_008.mp3
+Text:
+What do you do when you're not working?
+
+---
+ID: social_009
+File: chunks/social_009.mp3
+Text:
+I'm afraid I don't drink alcohol
+
+---
+ID: social_010
+File: chunks/social_010.mp3
+Text:
+It's been a pleasure doing business with you
+
+---
+ID: social_011
+File: chunks/social_011.mp3
+Text:
+The weather's been rather unpredictable lately
+
+---
+ID: social_012
+File: chunks/social_012.mp3
+Text:
+I must say, that was absolutely delicious
+
+---
+ID: social_013
+File: chunks/social_013.mp3
+Text:
+Would you mind if we split the bill?
+
+---
+ID: social_014
+File: chunks/social_014.mp3
+Text:
+I couldn't possibly eat another bite
+
+---
+ID: social_015
+File: chunks/social_015.mp3
+Text:
+Let's keep in touch
+
+---
+ID: social_016
+File: chunks/social_016.mp3
+Text:
+I was wondering if you'd like to...
+
+---
+ID: social_017
+File: chunks/social_017.mp3
+Text:
+That sounds absolutely lovely
+
+---
+ID: social_018
+File: chunks/social_018.mp3
+Text:
+Shall we say around seven?
+
+---
+ID: social_019
+File: chunks/social_019.mp3
+Text:
+Could you repeat that, please? I didn't quite catch it
+
+---
+ID: social_020
+File: chunks/social_020.mp3
+Text:
+I really appreciate you taking the time
+
+---
+ID: business_001
+File: chunks/business_001.mp3
+Text:
+We might be able to offer a discount if...
+
+---
+ID: business_002
+File: chunks/business_002.mp3
+Text:
+What sort of budget are you working with?
+
+---
+ID: business_003
+File: chunks/business_003.mp3
+Text:
+I'm writing to follow up on our meeting
+
+---
+ID: business_004
+File: chunks/business_004.mp3
+Text:
+Shall we move on to the next item?
+
+---
+ID: business_005
+File: chunks/business_005.mp3
+Text:
+We're happy to proceed on those terms
+
+---
+ID: business_006
+File: chunks/business_006.mp3
+Text:
+What are your payment terms?
+
+---
+ID: business_007
+File: chunks/business_007.mp3
+Text:
+Please find attached...
+
+---
+ID: business_008
+File: chunks/business_008.mp3
+Text:
+Would it be convenient to schedule a call?
+
+---
+ID: business_009
+File: chunks/business_009.mp3
+Text:
+When would you need this by?
+
+---
+ID: business_010
+File: chunks/business_010.mp3
+Text:
+Just to confirm, we agreed on...
+
+---
+ID: business_011
+File: chunks/business_011.mp3
+Text:
+I apologise for the delay in getting back to you
+
+---
+ID: business_012
+File: chunks/business_012.mp3
+Text:
+Allow me to introduce myself
+
+---
+ID: business_013
+File: chunks/business_013.mp3
+Text:
+I look forward to hearing from you
+
+---
+ID: business_014
+File: chunks/business_014.mp3
+Text:
+I was referred to you by...
+
+---
+ID: business_015
+File: chunks/business_015.mp3
+Text:
+This is a matter of some urgency
+
+---
+ID: daily_001
+File: chunks/daily_001.mp3
+Text:
+I'm just looking, thank you
+
+---
+ID: daily_002
+File: chunks/daily_002.mp3
+Text:
+Would you mind if I...?
+
+---
+ID: daily_003
+File: chunks/daily_003.mp3
+Text:
+I'm afraid I'm not from around here
+
+---
+ID: daily_004
+File: chunks/daily_004.mp3
+Text:
+I'm afraid they're not available at the moment
+
+---
+ID: daily_005
+File: chunks/daily_005.mp3
+Text:
+I'm terribly sorry, I didn't mean to...
+
+---
+ID: daily_006
+File: chunks/daily_006.mp3
+Text:
+Could I have a flat white, please?
+
+---
+ID: daily_007
+File: chunks/daily_007.mp3
+Text:
+I'd rather have... if you don't mind
+
+---
+ID: daily_008
+File: chunks/daily_008.mp3
+Text:
+I'm feeling a bit under the weather
+
+---
+ID: daily_009
+File: chunks/daily_009.mp3
+Text:
+Excuse me, is this the queue for...?
+
+---
+ID: daily_010
+File: chunks/daily_010.mp3
+Text:
+That's very kind of you
+
+---
+ID: daily_011
+File: chunks/daily_011.mp3
+Text:
+Do you mind if I sit here?
+
+---
+ID: daily_012
+File: chunks/daily_012.mp3
+Text:
+Could you give me a hand with this?
+
+---
+ID: daily_013
+File: chunks/daily_013.mp3
+Text:
+Lovely day, isn't it?
+
+---
+ID: daily_014
+File: chunks/daily_014.mp3
+Text:
+It was lovely to see you
+
+---
+ID: daily_015
+File: chunks/daily_015.mp3
+Text:
+I'm afraid I've already got plans
+
+---
+ID: business_016
+File: chunks/business_016.mp3
+Text:
+I think we can find a middle ground
+
+---
+ID: business_017
+File: chunks/business_017.mp3
+Text:
+Could I add something to that?
+
+---
+ID: business_018
+File: chunks/business_018.mp3
+Text:
+Thank you for your time today
+
+---
+ID: business_019
+File: chunks/business_019.mp3
+Text:
+We'd like to propose the following...
+
+---
+ID: business_020
+File: chunks/business_020.mp3
+Text:
+I wanted to touch base regarding...
+
+---
+ID: daily_016
+File: chunks/daily_016.mp3
+Text:
+Is this seat taken?
+
+---
+ID: daily_017
+File: chunks/daily_017.mp3
+Text:
+Do you have this in a different size?
+
+---
+ID: daily_018
+File: chunks/daily_018.mp3
+Text:
+You can't miss it
+
+---
+ID: daily_019
+File: chunks/daily_019.mp3
+Text:
+I really couldn't have done it without you
+
+---
+ID: daily_020
+File: chunks/daily_020.mp3
+Text:
+Take care of yourself
+
+
+========================================
+SHADOWING (Pronunciation practice)
+Total: 100 items
+========================================
+
+---
+ID: shadowing_1
+File: shadowing/shadowing_1.mp3
+Text:
+Good morning. I'd like to check in for my flight to Istanbul, please.
+
+---
+ID: shadowing_2
+File: shadowing/shadowing_2.mp3
+Text:
+Could I have a window seat, please? I'd prefer one near the front if possible.
+
+---
+ID: shadowing_3
+File: shadowing/shadowing_3.mp3
+Text:
+I'm afraid I only have hand luggage. Will that fit in the overhead locker?
+
+---
+ID: shadowing_4
+File: shadowing/shadowing_4.mp3
+Text:
+Excuse me, where can I find the departure gate for flight BA seven two three?
+
+---
+ID: shadowing_5
+File: shadowing/shadowing_5.mp3
+Text:
+Could you tell me how long it takes to get through security?
+
+---
+ID: shadowing_6
+File: shadowing/shadowing_6.mp3
+Text:
+I believe my connecting flight has been delayed. What are my options?
+
+---
+ID: shadowing_7
+File: shadowing/shadowing_7.mp3
+Text:
+I'm here on business. I'll be staying for approximately one week.
+
+---
+ID: shadowing_8
+File: shadowing/shadowing_8.mp3
+Text:
+The purpose of my visit is to attend a trade fair in Birmingham.
+
+---
+ID: shadowing_9
+File: shadowing/shadowing_9.mp3
+Text:
+I'll be staying at the Hilton Hotel in central London.
+
+---
+ID: shadowing_10
+File: shadowing/shadowing_10.mp3
+Text:
+Excuse me, I think there might be a problem with my baggage. It hasn't arrived.
+
+---
+ID: shadowing_11
+File: shadowing/shadowing_11.mp3
+Text:
+Could you please check if my suitcase is on the next flight?
+
+---
+ID: shadowing_12
+File: shadowing/shadowing_12.mp3
+Text:
+I'd like to hire a car for three days. Do you have anything available?
+
+---
+ID: shadowing_13
+File: shadowing/shadowing_13.mp3
+Text:
+What's the best way to get to the city centre from here?
+
+---
+ID: shadowing_14
+File: shadowing/shadowing_14.mp3
+Text:
+Is there a direct train to Manchester, or do I need to change?
+
+---
+ID: shadowing_15
+File: shadowing/shadowing_15.mp3
+Text:
+Could you recommend a good restaurant near the hotel?
+
+---
+ID: shadowing_16
+File: shadowing/shadowing_16.mp3
+Text:
+I'd like to book a table for two at eight o'clock, please.
+
+---
+ID: shadowing_17
+File: shadowing/shadowing_17.mp3
+Text:
+Would it be possible to have a late checkout tomorrow?
+
+---
+ID: shadowing_18
+File: shadowing/shadowing_18.mp3
+Text:
+I'm afraid the air conditioning in my room isn't working properly.
+
+---
+ID: shadowing_19
+File: shadowing/shadowing_19.mp3
+Text:
+Could you call a taxi for me? I need to be at the station by nine.
+
+---
+ID: shadowing_20
+File: shadowing/shadowing_20.mp3
+Text:
+Excuse me, is this seat taken? Would you mind if I sat here?
+
+---
+ID: shadowing_21
+File: shadowing/shadowing_21.mp3
+Text:
+I need to exchange some currency. Where's the nearest bureau de change?
+
+---
+ID: shadowing_22
+File: shadowing/shadowing_22.mp3
+Text:
+What time does the museum close? I'd like to visit this afternoon.
+
+---
+ID: shadowing_23
+File: shadowing/shadowing_23.mp3
+Text:
+I seem to have lost my way. Could you point me in the right direction?
+
+---
+ID: shadowing_24
+File: shadowing/shadowing_24.mp3
+Text:
+Is it within walking distance, or should I take a bus?
+
+---
+ID: shadowing_25
+File: shadowing/shadowing_25.mp3
+Text:
+Thank you so much for your help. You've been very kind.
+
+---
+ID: shadowing_26
+File: shadowing/shadowing_26.mp3
+Text:
+I'd like to walk you through the specifications of our new semi-trailer.
+
+---
+ID: shadowing_27
+File: shadowing/shadowing_27.mp3
+Text:
+The lead time for this configuration would be approximately eight to ten weeks.
+
+---
+ID: shadowing_28
+File: shadowing/shadowing_28.mp3
+Text:
+As you can see from the specifications, the payload capacity is fourteen tonnes.
+
+---
+ID: shadowing_29
+File: shadowing/shadowing_29.mp3
+Text:
+Let me get back to you on that. I'll need to check with our engineering team.
+
+---
+ID: shadowing_30
+File: shadowing/shadowing_30.mp3
+Text:
+We're looking at approximately three hundred units per month.
+
+---
+ID: shadowing_31
+File: shadowing/shadowing_31.mp3
+Text:
+The chassis is made from high-strength steel for maximum durability.
+
+---
+ID: shadowing_32
+File: shadowing/shadowing_32.mp3
+Text:
+Could you explain the warranty terms in more detail, please?
+
+---
+ID: shadowing_33
+File: shadowing/shadowing_33.mp3
+Text:
+We offer a comprehensive after-sales service package.
+
+---
+ID: shadowing_34
+File: shadowing/shadowing_34.mp3
+Text:
+I'd be happy to arrange a factory visit for you next month.
+
+---
+ID: shadowing_35
+File: shadowing/shadowing_35.mp3
+Text:
+The fuel consumption has been reduced by fifteen percent compared to the previous model.
+
+---
+ID: shadowing_36
+File: shadowing/shadowing_36.mp3
+Text:
+We've implemented several improvements based on customer feedback.
+
+---
+ID: shadowing_37
+File: shadowing/shadowing_37.mp3
+Text:
+What payment terms would you be looking for on an order of this size?
+
+---
+ID: shadowing_38
+File: shadowing/shadowing_38.mp3
+Text:
+I'll send you a revised quotation by the end of the week.
+
+---
+ID: shadowing_39
+File: shadowing/shadowing_39.mp3
+Text:
+We'd need a thirty percent deposit to confirm the order.
+
+---
+ID: shadowing_40
+File: shadowing/shadowing_40.mp3
+Text:
+The quality control process involves three separate inspections.
+
+---
+ID: shadowing_41
+File: shadowing/shadowing_41.mp3
+Text:
+Could we schedule a video conference for next Tuesday afternoon?
+
+---
+ID: shadowing_42
+File: shadowing/shadowing_42.mp3
+Text:
+I'm attaching the technical drawings for your reference.
+
+---
+ID: shadowing_43
+File: shadowing/shadowing_43.mp3
+Text:
+We're confident that this solution will meet your requirements.
+
+---
+ID: shadowing_44
+File: shadowing/shadowing_44.mp3
+Text:
+The prototype should be ready for testing within six weeks.
+
+---
+ID: shadowing_45
+File: shadowing/shadowing_45.mp3
+Text:
+We need to discuss the logistics arrangements before we proceed.
+
+---
+ID: shadowing_46
+File: shadowing/shadowing_46.mp3
+Text:
+I'll prepare a detailed proposal and have it ready by Friday.
+
+---
+ID: shadowing_47
+File: shadowing/shadowing_47.mp3
+Text:
+The contract includes a penalty clause for late delivery.
+
+---
+ID: shadowing_48
+File: shadowing/shadowing_48.mp3
+Text:
+We've been manufacturing trailers for over thirty years.
+
+---
+ID: shadowing_49
+File: shadowing/shadowing_49.mp3
+Text:
+Our annual production capacity is approximately five thousand units.
+
+---
+ID: shadowing_50
+File: shadowing/shadowing_50.mp3
+Text:
+Shall we take a short break and reconvene in fifteen minutes?
+
+---
+ID: shadowing_51
+File: shadowing/shadowing_51.mp3
+Text:
+Shall we say around seven? That should give us enough time after the meeting.
+
+---
+ID: shadowing_52
+File: shadowing/shadowing_52.mp3
+Text:
+I was wondering if you'd like to join us for dinner this evening.
+
+---
+ID: shadowing_53
+File: shadowing/shadowing_53.mp3
+Text:
+That sounds lovely. I'd be delighted to come along.
+
+---
+ID: shadowing_54
+File: shadowing/shadowing_54.mp3
+Text:
+I'm afraid I'll have to decline. I have another commitment that evening.
+
+---
+ID: shadowing_55
+File: shadowing/shadowing_55.mp3
+Text:
+Would you mind if I invited a colleague to join us?
+
+---
+ID: shadowing_56
+File: shadowing/shadowing_56.mp3
+Text:
+How was your flight? I hope you weren't too tired after the journey.
+
+---
+ID: shadowing_57
+File: shadowing/shadowing_57.mp3
+Text:
+Is this your first time in England? What do you think of it so far?
+
+---
+ID: shadowing_58
+File: shadowing/shadowing_58.mp3
+Text:
+The weather has been quite pleasant this week, hasn't it?
+
+---
+ID: shadowing_59
+File: shadowing/shadowing_59.mp3
+Text:
+I've heard wonderful things about the Lake District. Have you been?
+
+---
+ID: shadowing_60
+File: shadowing/shadowing_60.mp3
+Text:
+Would you like me to recommend some places to visit while you're here?
+
+---
+ID: shadowing_61
+File: shadowing/shadowing_61.mp3
+Text:
+Cheers! Here's to a successful partnership.
+
+---
+ID: shadowing_62
+File: shadowing/shadowing_62.mp3
+Text:
+I must say, the food here is absolutely delicious.
+
+---
+ID: shadowing_63
+File: shadowing/shadowing_63.mp3
+Text:
+Could I have the bill, please? We'll split it between us.
+
+---
+ID: shadowing_64
+File: shadowing/shadowing_64.mp3
+Text:
+Please, allow me. This one's on me.
+
+---
+ID: shadowing_65
+File: shadowing/shadowing_65.mp3
+Text:
+That's very kind of you. I'll get the next one then.
+
+---
+ID: shadowing_66
+File: shadowing/shadowing_66.mp3
+Text:
+I really enjoyed our conversation. We should do this again sometime.
+
+---
+ID: shadowing_67
+File: shadowing/shadowing_67.mp3
+Text:
+It was lovely meeting you. Have a safe journey home.
+
+---
+ID: shadowing_68
+File: shadowing/shadowing_68.mp3
+Text:
+I do apologise for being late. The traffic was absolutely dreadful.
+
+---
+ID: shadowing_69
+File: shadowing/shadowing_69.mp3
+Text:
+Not to worry at all. These things happen.
+
+---
+ID: shadowing_70
+File: shadowing/shadowing_70.mp3
+Text:
+I'm terribly sorry, but I didn't quite catch your name.
+
+---
+ID: shadowing_71
+File: shadowing/shadowing_71.mp3
+Text:
+Would you excuse me for a moment? I need to make a quick phone call.
+
+---
+ID: shadowing_72
+File: shadowing/shadowing_72.mp3
+Text:
+I couldn't help but notice you're reading a fascinating book.
+
+---
+ID: shadowing_73
+File: shadowing/shadowing_73.mp3
+Text:
+I'm not entirely sure, but I believe the museum is closed on Mondays.
+
+---
+ID: shadowing_74
+File: shadowing/shadowing_74.mp3
+Text:
+Do you happen to know if there's a good pub nearby?
+
+---
+ID: shadowing_75
+File: shadowing/shadowing_75.mp3
+Text:
+I'd love to stay longer, but I really must be going.
+
+---
+ID: shadowing_76
+File: shadowing/shadowing_76.mp3
+Text:
+Good morning. A flat white and a croissant, please.
+
+---
+ID: shadowing_77
+File: shadowing/shadowing_77.mp3
+Text:
+Could I have that to take away, please?
+
+---
+ID: shadowing_78
+File: shadowing/shadowing_78.mp3
+Text:
+Do you have any vegetarian options on the menu?
+
+---
+ID: shadowing_79
+File: shadowing/shadowing_79.mp3
+Text:
+I'm afraid I'm allergic to nuts. Does this dish contain any?
+
+---
+ID: shadowing_80
+File: shadowing/shadowing_80.mp3
+Text:
+The soup of the day sounds lovely. I'll have that, please.
+
+---
+ID: shadowing_81
+File: shadowing/shadowing_81.mp3
+Text:
+Excuse me, I think there might be a mistake with my order.
+
+---
+ID: shadowing_82
+File: shadowing/shadowing_82.mp3
+Text:
+Would you mind turning the heating up a bit? It's rather chilly in here.
+
+---
+ID: shadowing_83
+File: shadowing/shadowing_83.mp3
+Text:
+I'm looking for a birthday present for my colleague. Any suggestions?
+
+---
+ID: shadowing_84
+File: shadowing/shadowing_84.mp3
+Text:
+Do you have this in a larger size? This one's a bit too small.
+
+---
+ID: shadowing_85
+File: shadowing/shadowing_85.mp3
+Text:
+Could I try this on, please? Where are the fitting rooms?
+
+---
+ID: shadowing_86
+File: shadowing/shadowing_86.mp3
+Text:
+I'll take it. Could you gift wrap it for me, please?
+
+---
+ID: shadowing_87
+File: shadowing/shadowing_87.mp3
+Text:
+I'm afraid this doesn't fit properly. Would I be able to exchange it?
+
+---
+ID: shadowing_88
+File: shadowing/shadowing_88.mp3
+Text:
+I'd like to make an appointment to see the doctor, please.
+
+---
+ID: shadowing_89
+File: shadowing/shadowing_89.mp3
+Text:
+I've been feeling under the weather for the past few days.
+
+---
+ID: shadowing_90
+File: shadowing/shadowing_90.mp3
+Text:
+Could you recommend something for a headache, please?
+
+---
+ID: shadowing_91
+File: shadowing/shadowing_91.mp3
+Text:
+I need to top up my phone. Where can I buy credit?
+
+---
+ID: shadowing_92
+File: shadowing/shadowing_92.mp3
+Text:
+The Wi-Fi doesn't seem to be working. Could you check for me?
+
+---
+ID: shadowing_93
+File: shadowing/shadowing_93.mp3
+Text:
+I'm sorry to bother you, but could you help me with something?
+
+---
+ID: shadowing_94
+File: shadowing/shadowing_94.mp3
+Text:
+That's very helpful. I really appreciate your assistance.
+
+---
+ID: shadowing_95
+File: shadowing/shadowing_95.mp3
+Text:
+I'm running a bit late. I should be there in about fifteen minutes.
+
+---
+ID: shadowing_96
+File: shadowing/shadowing_96.mp3
+Text:
+I've left my umbrella on the train. Is there a lost property office?
+
+---
+ID: shadowing_97
+File: shadowing/shadowing_97.mp3
+Text:
+Would you be able to keep an eye on my bag while I get a coffee?
+
+---
+ID: shadowing_98
+File: shadowing/shadowing_98.mp3
+Text:
+I think there may have been a misunderstanding. Let me explain.
+
+---
+ID: shadowing_99
+File: shadowing/shadowing_99.mp3
+Text:
+I'm not quite sure I follow. Could you explain that again?
+
+---
+ID: shadowing_100
+File: shadowing/shadowing_100.mp3
+Text:
+It's been an absolute pleasure. I look forward to seeing you again soon.
+

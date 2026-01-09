@@ -1,0 +1,811 @@
+Good morning, sir. May I see your passport and booking reference, please?
+---
+Thank you, Mr. Lewis. I can see you're on flight BA678 to London Heathrow, departing at 10:45. Would you like a window or aisle seat?
+---
+Certainly. I've allocated you seat 14A, which is by the window. Are you checking in any luggage today?
+---
+Perfect. Please place it on the belt. Your allowance is 23 kilograms. It weighs 19.5 kilograms, so that's fine. Here's your boarding pass. Boarding starts at 10:15 from Gate B24. Have a pleasant flight.
+---
+Good afternoon. Passport, please. What is the purpose of your visit to the United Kingdom?
+---
+I see. And how long are you planning to stay in the UK?
+---
+Where will you be staying during your visit?
+---
+And what company do you work for?
+---
+Is this your first visit to the UK?
+---
+Very well. Do you have anything to declare? Any goods over the duty-free allowance?
+---
+That's fine. Welcome to the United Kingdom. Enjoy your stay.
+---
+Please remove your laptop and any liquids from your bag. Place them in a separate tray.
+---
+Is this your bag, sir? We need to check it. There seems to be something metallic inside.
+---
+Ah yes, it's a power bank. That's fine. You're all clear. Have a good flight.
+---
+Good afternoon. You must be from STU Trailer. Please, take a seat. We're looking forward to hearing about your products.
+---
+Excellent. So, what can you tell us about your concrete mixer range?
+---
+That's interesting. What's the drum rotation speed, and what kind of discharge rate can we expect?
+---
+Very good. And what about the hydraulic system? Is it compatible with standard European truck connections?
+---
+Excellent. That all sounds very promising. Could you send us a detailed quotation by next Friday?
+---
+Good morning! Thank you for the invitation to visit your facility. I've been looking forward to seeing your production process.
+---
+This is impressive. Can you tell me about this welding station? What process do you use?
+---
+I see. And what quality control measures do you have in place?
+---
+That's reassuring. What's your typical lead time from order to delivery?
+---
+This is a lovely restaurant. I come here quite often. Have you decided what you'd like to order?
+---
+The lamb is excellent here. By the way, how was your journey from Konya? I imagine it's quite a long trip.
+---
+Would you like some wine with dinner? They have an excellent selection here.
+---
+Of course, no problem at all. So tell me, how did you get into the trailer manufacturing business?
+---
+Bit grey today, isn't it? Typical British weather, I'm afraid. Is it very different in Turkey?
+---
+I've always wanted to visit Turkey. Any plans for the weekend while you're here?
+---
+Oh, the British Museum is brilliant. Free entry too! Do you follow football at all?
+---
+I'm a Manchester United fan, for my sins! Anyway, shall we head back? I think they're ready to continue.
+---
+Hello, Thompson Engineering, Sarah speaking. How can I help you?
+---
+Of course. Let me check his diary. When would suit you best?
+---
+Tuesday the 17th looks good. Would 10 o'clock work? We'll need about two hours, I imagine.
+---
+Excellent. I'll send you a calendar invite and directions to our office. Is there anything you'll need for the presentation?
+---
+Good evening, sir. Welcome to the Grand Hotel Manchester. Do you have a reservation?
+---
+Yes, here it is. A standard room for three nights. Would you prefer a higher floor or a quieter room at the back?
+---
+No problem. I've put you in room 412 on the fourth floor, nice and quiet. Breakfast is served from 6:30 to 10. Is there anything else you need to know?
+---
+Yes, the gym is on the ground floor, open 24 hours. The Wi-Fi password is on a card in your room. Enjoy your stay!
+---
+Good afternoon. How can I help you today?
+---
+I'm sorry about that. There's been a technical issue with the aircraft. We're expecting a delay of approximately two hours.
+---
+Unfortunately, this is the only direct flight today. However, we can offer you a meal voucher for the wait. Would that help?
+---
+You can use it at any restaurant in Terminal 3. We'll announce boarding as soon as the aircraft is ready. Apologies again for the inconvenience.
+---
+Reception, how may I assist you?
+---
+I'm terribly sorry to hear that, sir. Could you describe what's happening? Is it not turning on at all, or is it making a noise?
+---
+I understand. I can send our maintenance team up right away, or I can offer you a different room on the same floor. Which would you prefer?
+---
+Of course. I have room 418 available, which is an identical room with a city view. I'll send someone up to help you move. Again, my sincere apologies.
+---
+So, let's talk numbers. What kind of pricing are we looking at for a bulk order of curtainsiders?
+---
+That's a bit higher than we were hoping. Our current supplier offers similar specs at €26,000. Can you match that?
+---
+The warranty is appealing. If we commit to 20 units this year, what's the best you can do?
+---
+That sounds reasonable. And what about payment terms? We typically work on 60-day terms.
+---
+That works for us. Shall we put together a formal proposal then?
+---
+Good evening! Welcome to The Crown. Are you ready to order, or would you like a few more minutes?
+---
+Today's pie is steak and ale - it's very popular. Comes with mash and gravy. Can I get you some drinks while you decide?
+---
+Excellent choice. And for your colleagues?
+---
+It's beer-battered. Lovely and crispy. So that's one pie, one fish and chips. I'll bring your drinks right away.
+---
+Good morning, Harrison Parts, Claire speaking. How can I help?
+---
+Let me pull that up... Yes, I can see it here. It looks like there was a delay at our warehouse. I'm sorry about that. It's scheduled to ship today.
+---
+I completely understand. Would express shipping help? We could upgrade to next-day delivery at no extra cost to make up for the delay.
+---
+Yes, it should arrive Thursday morning your time. I'll email you the tracking number within the hour. Is there anything else I can help with?
+---
+This is impressive. Can you walk me through your quality management system? What certifications do you hold?
+---
+Good to hear. How do you handle non-conformances? What happens if a defect is found during production?
+---
+I noticed you use both robotic and manual welding. How do you ensure consistent weld quality across both methods?
+---
+Very thorough. One last question - what's your defect rate, and how has it trended over the past year?
+---
+Quite a busy show this year, isn't it? I don't think we've met. I'm James, from Axle Solutions.
+---
+Turkey! Interesting. The Turkish trailer industry has grown enormously. What type of trailers do you specialise in?
+---
+We supply axles and suspension systems to trailer manufacturers. Actually, we might be able to work together. Do you source your axles locally or import them?
+---
+We distribute BPW and SAF-Holland. Look, I'd love to chat more, but I need to get back to the stand. Could I give you my card?
+---
+Right, so tell me about this tipper. We need something robust for aggregate transport. What's the body capacity?
+---
+Hardox is good. What about the tipping mechanism? We've had issues with slow tipping times in the past.
+---
+That's decent. What's the unladen weight? We need to maximise payload.
+---
+Good payload. One more thing - what warranty do you offer, and do you have service support in the UK?
+---
+Hello there! Where can I take you today?
+---
+The Grand Hotel, yes I know it well. That'll be about 25 pounds. Should take around 20 minutes depending on traffic. Is that alright?
+---
+Yes, card is fine. So, business or pleasure? You sound like you've travelled a fair way.
+---
+Turkey, lovely! Right, here we are - the Grand Hotel. That's 24 pounds on the meter. Shall I get your bag from the boot?
+---
+Good morning, sir. Checking out today?
+---
+Let me pull up your bill. That's three nights, plus the restaurant charges and minibar. The total comes to £485.
+---
+Of course. Let me check... You're right, that was a system error. I'll remove it. The new total is £467. How would you like to pay?
+---
+Certainly. Here's your receipt. Is there anything else I can help with? Do you need transport to the airport?
+---
+I'll book one for 11:30, that should give you plenty of time. It'll wait outside the main entrance. Have a safe journey!
+---
+Thanks for coming in, Lewis. So, where are we with our order? The 15 curtainsiders we ordered last month.
+---
+Good to hear. We did have one concern though - your quality manager mentioned there was a weld issue on a previous batch. Has that been addressed?
+---
+That's reassuring. Now, regarding delivery - we're a bit concerned about the timeline. Can you still hit the March 15th deadline?
+---
+Excellent. One more thing - we're considering increasing next quarter's order to 25 units. Would that be feasible for you?
+---
+That was a lovely meal. Shall we get the bill?
+---
+Oh, that's very kind of you. Are you sure? I'm happy to split it.
+---
+Well, thank you very much. That's very generous. I've really enjoyed this evening.
+---
+Definitely. Right, I should probably head off - early start tomorrow. Thank you again for dinner.
+---
+Good morning, David Richards speaking.
+---
+Oh, that's a shame. What's happened?
+---
+These things happen. Don't worry about it. When would you be able to reschedule?
+---
+Thursday morning would actually work better for me. Shall we say 10 o'clock?
+---
+Morning! The coffee here is quite good, isn't it?
+---
+Yes, I'm visiting a supplier in the area. What about you? Your accent - let me guess, somewhere Mediterranean?
+---
+Trailers? That's interesting. I'm in logistics myself - we run a haulage company. Always looking for reliable equipment.
+---
+Mostly curtainsiders, actually. We buy about 10 new ones a year. Here's my card - give me a call if you'd like to discuss further.
+---
+Thank you for visiting STU Trailer. Before we start the tour, I believe there's a safety briefing?
+---
+Of course. What do we need to know?
+---
+Understood. Are there any particular hazards we should be aware of?
+---
+Good to know. And if there's an emergency?
+---
+Thank you for that presentation. I have a question about the axle configuration. Can you use disc brakes instead of drum brakes on your trailers?
+---
+Good to know. Another question - what's the typical lifespan of your trailer floors? We've had issues with rotting on other brands.
+---
+Impressive. One more - do you have crash test certification for the rear underrun protection?
+---
+That would be helpful. Are there any other questions from the floor? No? Well, thank you all for your attention.
+---
+Good evening, sir. How can I help you?
+---
+I'm sorry to hear that. Can you describe your bag for me? Size, colour, any distinguishing features?
+---
+Thank you. And do you have your baggage claim ticket? It should be attached to your boarding pass.
+---
+Perfect. We'll track it down. Where are you staying? We can deliver it once it's located.
+---
+Good afternoon, sir. How may I assist you today?
+---
+Of course. What type of cuisine does your client prefer? We have excellent Italian, British, and Asian options within walking distance.
+---
+I'd recommend The Ivy. Excellent British menu, beautiful setting, very popular with business clients. Shall I make a reservation for you?
+---
+Certainly. And would you like me to arrange anything else? Theatre tickets perhaps, or a car service?
+---
+Good evening. Are you ready to order, or do you have any questions about the menu?
+---
+Of course, no problem at all. The lamb shank, the grilled salmon, and the chicken supreme are all pork-free. Would any of those interest you?
+---
+The lamb is slow-cooked in a rosemary and garlic jus - no wine. It comes with roasted vegetables and mashed potato. Shall I put that order in for you?
+---
+Certainly. Sparkling water and the lamb shank. I'll make a note about your dietary requirements for the kitchen. Is there anything else?
+---
+Right, I think we've covered everything. Before we sign, shall we just run through the key terms one more time?
+---
+That's correct. And the warranty is 3 years on the chassis, 2 years on everything else. One last thing - what happens if there are any quality issues after delivery?
+---
+That's reassuring. I'm happy with everything. I think we have a deal.
+---
+Indeed. Let me sign here... and here. There we go. Welcome aboard! Shall we celebrate with a drink?
+---
+Morning Lewis! Good to see you again. Did you have a good weekend? Did you get to do anything nice while you were here?
+---
+The British Museum is wonderful, isn't it? I spent the weekend with the family - took the kids to a football match on Sunday. Do you follow football?
+---
+We saw Manchester City play. They won 3-1, so the kids were happy! Anyway, shall we grab a coffee before the others arrive?
+---
+How do you take yours? Milk? Sugar?
+---
+Hello, Mike Stevens speaking.
+---
+Ah yes, perfect timing. Go ahead.
+---
+That's correct, except we'd like to change the colour to RAL 5010 blue. Is that possible at this stage?
+---
+No, that's everything. When can we expect delivery?
+---
+This is an impressive facility. What's your annual production capacity here?
+---
+That's substantial. If we were to place a large order - say 100 units - what would the lead time be?
+---
+What if we needed to rush an order? Can you expedite production if we pay extra?
+---
+Good to know. And your workforce - do you have enough skilled workers to maintain quality at high volumes?
+---
+Good afternoon! Welcome to Europcar. Do you have a reservation?
+---
+Yes, here it is. A Ford Focus for four days, returning Sunday. Can I see your driving licence and a credit card for the deposit?
+---
+Both would be great, thank you. Now, would you like to add a GPS navigation system? It's £8 per day.
+---
+Yes, all UK and European maps. One last thing - the fuel policy is full-to-full. Please return it with a full tank to avoid refuelling charges. Any questions?
+---
+This curtainsider looks well-built. Can you show us how the sliding roof works?
+---
+That is smooth. What about the curtain tensioning system? We've had problems with loose curtains on other trailers.
+---
+Impressive. And the floor - is it suitable for forklift loading?
+---
+Very thorough. Do you have any literature we can take away? Spec sheets, pricing?
+---
+Sorry I'm late. The M6 was absolutely dreadful this morning. Roadworks everywhere!
+---
+It is notorious! Do you drive much when you're here, or do you prefer the train?
+---
+The trains are good, yes. How do you find driving on the left? Must be quite an adjustment!
+---
+Ha! I can imagine. Oh, looks like the others are arriving now. Shall we head to the meeting room?
+---
+Room service, good evening. How can I help you?
+---
+Of course, Mr Lewis. What would you like this evening?
+---
+Certainly. The grilled chicken with vegetables and a side salad. Any drinks with that?
+---
+Of course. So that's grilled chicken, side salad, and tea with milk. It'll be with you in about 25 minutes. Is there anything else?
+---
+Hello, this is James from Fleet Solutions. I submitted a warranty claim for one of our trailers last week and haven't heard back. Can you help?
+---
+It's WC-2024-0847. The issue is with the rear door hinges - they're not closing properly.
+---
+That's a relief. Will someone come to fit them, or do we need to arrange that ourselves?
+---
+That's excellent service, thank you. Mornings work better for us. Can you send me a confirmation email?
+---
+Good morning. I'm Sarah Mitchell, Quality Assurance Manager from TransportCo. We're here for the factory inspection we arranged.
+---
+Thank you. I'd like to see your welding stations first, and understand your quality control checkpoints. How do you ensure weld consistency?
+---
+Impressive. I notice you're using robotic welding here. What happens if the robot detects an anomaly?
+---
+Very thorough. One more thing - can I see your traceability records? We need to ensure full component traceability for our fleet.
+---
+This is a lovely restaurant. Thank you for the invitation, Lewis.
+---
+The fish does look tempting. What are you going to have?
+---
+Sparkling water would be lovely. This is very generous of you. Shall we discuss the project details while we wait for the food?
+---
+That's excellent news! Oh, the food is here. This looks delicious. Shall we continue our discussion after lunch?
+---
+Thank you for coming in today. Before we discuss potential collaboration, could you tell us a bit about STU Trailer?
+---
+Impressive. What would you say sets you apart from other manufacturers in the market?
+---
+That's good to know. Do you have any existing presence in the UK market?
+---
+I appreciate the honesty. What kind of partnership model are you looking for?
+---
+Is this your first time in the UK, Lewis? What do you make of it so far?
+---
+Ha! Yes, we do love our queues. Is queueing not such a big thing in Turkey?
+---
+That's fascinating. What about food? Have you tried any traditional British dishes?
+---
+You should try a proper cream tea if you get the chance! Oh, looks like the session is starting again. Nice chatting with you.
+---
+That's fine, it happens all the time. Pop those in the tray and go through again. Have a good flight.
+---
+Now that we've agreed on the order, let's discuss delivery. How do you usually handle shipping from Turkey?
+---
+RoRo sounds efficient. What about customs clearance? Will we need to handle that ourselves?
+---
+That's helpful. And if we need to track the shipment, is there a system for that?
+---
+Excellent. One last thing - what happens if there are any delays or damage during transit?
+---
+Hello, this is Dave from Northern Haulage. We've got an issue with one of your curtainsiders - the EBS warning light keeps coming on.
+---
+It's a solid light, comes on after about 10 minutes of driving. The brakes seem to work fine otherwise.
+---
+Hang on, let me check... Actually yes, there's a cable hanging loose on the nearside rear. Looks like it's been caught on something.
+---
+Brilliant, we'll sort that out now. Thanks for your help - saved us a garage visit!
+---
+Good morning. I'm calling from Smith Transport in Leeds. We're looking for new curtainsiders. Do you supply to the UK?
+---
+We need five standard curtainsiders, 13.6 metres. What's your lead time and roughly what price are we looking at?
+---
+That sounds reasonable. Yes, please send a quote. My email is j.smith@smithtransport.co.uk.
+---
+Yes, include delivery please. My direct number is 0113 555 7890. Look forward to your email.
+---
+Good morning, sir. How can I help you today?
+---
+Of course. The network name is "HotelGuest" and the password is on this card. It's valid for your entire stay. Is the connection for work purposes?
+---
+The WiFi should be fine, but if you need a guaranteed connection, we have a business centre on the first floor with high-speed ethernet and private meeting rooms.
+---
+It's complimentary for guests. There's a printer, scanner, and two private pods you can use. No booking needed - just turn up. Would you like me to show you where it is?
+---
+Good afternoon, The Grill Room. How may I help you?
+---
+Friday evening, party of four. What time would you like? We have availability at 7pm or 8:30pm.
+---
+Certainly, I can seat you in our Garden Room - it's quieter. May I take a name and contact number for the booking?
+---
+Perfect. So that's Friday at 7pm, party of four, Garden Room, under Lewis. We'll send a confirmation to your mobile. Is there anything else?
+---
+Hello Lewis, can you hear me? Your video seems to be frozen.
+---
+Yes, that's much better now. Right, shall we get started? Can you give us an update on the production schedule?
+---
+That's great to hear. We noticed a slight change in the specification sheet you sent. Can you clarify what's different?
+---
+No problem, that sounds fine. Before we wrap up, is there anything else you need from our side?
+---
+That was a very informative tour. I'm impressed with your facilities. Shall we sit down and discuss what we've seen?
+---
+Coffee would be lovely, thanks. Now, I was particularly impressed by your paint shop. Can you tell me more about the coating process?
+---
+That's reassuring. One concern we have is after-sales support in the UK. How would that work?
+---
+That sounds comprehensive. So, what would be the next step if we wanted to proceed?
+---
+Right, we've got the trailers. Before we put them into service, what do we need to know about daily checks?
+---
+That's helpful. What about the sliding roof? Any special instructions for operating it?
+---
+Got it. And what about regular maintenance? What's the service schedule?
+---
+Perfect. One last thing - if something goes wrong on the road, who do we call?
+---
+Did you catch the match last night? Liverpool against Manchester City - what a game!
+---
+It ended 2-2, very tense! I'm a Liverpool fan myself. Do you follow any English teams?
+---
+Galatasaray - yes, I've heard of them! They play in Europe sometimes, don't they? The atmosphere at Turkish matches looks incredible.
+---
+I'd love that! Right, we should probably get back to business. But let's definitely talk more about football over dinner later.
+---
+Could I have an aisle seat, please?
+---
+I'm travelling on business
+---
+Where can I collect my luggage?
+---
+I'd like to declare these items
+---
+Could you tell me the way to...?
+---
+My flight has been delayed
+---
+I've booked a transfer to the hotel
+---
+Is there anywhere to charge my phone?
+---
+I'll be staying for three days
+---
+Could I have a receipt for this, please?
+---
+I have a reservation under the name...
+---
+Could I have a room with a view?
+---
+What time is breakfast served?
+---
+Could you arrange a wake-up call?
+---
+I'd like to extend my stay
+---
+How long does it take to get to...?
+---
+Could you drop me off at...?
+---
+I'm having trouble with...
+---
+Where's the nearest currency exchange?
+---
+I need to catch a connecting flight
+---
+I'd like to walk you through the specifications
+---
+The load capacity is rated at...
+---
+This model features a hydraulic system that...
+---
+Could you clarify what you mean by...?
+---
+Let me check with our engineering team
+---
+The delivery timeline would be approximately...
+---
+This complies with EU regulations
+---
+Would you like me to prepare a detailed quotation?
+---
+The chassis is constructed from high-strength steel
+---
+What are your requirements in terms of...?
+---
+I'll send you the technical drawings
+---
+Could we schedule a factory visit?
+---
+The turning radius is optimised for...
+---
+We can customise this to your specifications
+---
+Let me demonstrate how this works
+---
+I think there might be a misunderstanding
+---
+Let me see if I've understood correctly
+---
+I'll look into it and get back to you
+---
+Compared to the previous model, this offers...
+---
+The warranty covers...
+---
+It's lovely to finally meet you in person
+---
+How was your journey?
+---
+Shall we grab a bite to eat?
+---
+I'll have whatever you're having
+---
+This is on me
+---
+I'm not fussy about food
+---
+Could I get the bill, please?
+---
+What do you do when you're not working?
+---
+I'm afraid I don't drink alcohol
+---
+It's been a pleasure doing business with you
+---
+The weather's been rather unpredictable lately
+---
+I must say, that was absolutely delicious
+---
+Would you mind if we split the bill?
+---
+I couldn't possibly eat another bite
+---
+Let's keep in touch
+---
+I was wondering if you'd like to...
+---
+That sounds absolutely lovely
+---
+Shall we say around seven?
+---
+Could you repeat that, please? I didn't quite catch it
+---
+I really appreciate you taking the time
+---
+We might be able to offer a discount if...
+---
+What sort of budget are you working with?
+---
+I'm writing to follow up on our meeting
+---
+Shall we move on to the next item?
+---
+We're happy to proceed on those terms
+---
+What are your payment terms?
+---
+Please find attached...
+---
+Would it be convenient to schedule a call?
+---
+When would you need this by?
+---
+Just to confirm, we agreed on...
+---
+I apologise for the delay in getting back to you
+---
+Allow me to introduce myself
+---
+I look forward to hearing from you
+---
+I was referred to you by...
+---
+This is a matter of some urgency
+---
+I'm just looking, thank you
+---
+Would you mind if I...?
+---
+I'm afraid I'm not from around here
+---
+I'm afraid they're not available at the moment
+---
+I'm terribly sorry, I didn't mean to...
+---
+Could I have a flat white, please?
+---
+I'd rather have... if you don't mind
+---
+I'm feeling a bit under the weather
+---
+Excuse me, is this the queue for...?
+---
+That's very kind of you
+---
+Do you mind if I sit here?
+---
+Could you give me a hand with this?
+---
+Lovely day, isn't it?
+---
+It was lovely to see you
+---
+I'm afraid I've already got plans
+---
+I think we can find a middle ground
+---
+Could I add something to that?
+---
+Thank you for your time today
+---
+We'd like to propose the following...
+---
+I wanted to touch base regarding...
+---
+Is this seat taken?
+---
+Do you have this in a different size?
+---
+You can't miss it
+---
+I really couldn't have done it without you
+---
+Take care of yourself
+---
+Good morning. I'd like to check in for my flight to Istanbul, please.
+---
+Could I have a window seat, please? I'd prefer one near the front if possible.
+---
+I'm afraid I only have hand luggage. Will that fit in the overhead locker?
+---
+Excuse me, where can I find the departure gate for flight BA seven two three?
+---
+Could you tell me how long it takes to get through security?
+---
+I believe my connecting flight has been delayed. What are my options?
+---
+I'm here on business. I'll be staying for approximately one week.
+---
+The purpose of my visit is to attend a trade fair in Birmingham.
+---
+I'll be staying at the Hilton Hotel in central London.
+---
+Excuse me, I think there might be a problem with my baggage. It hasn't arrived.
+---
+Could you please check if my suitcase is on the next flight?
+---
+I'd like to hire a car for three days. Do you have anything available?
+---
+What's the best way to get to the city centre from here?
+---
+Is there a direct train to Manchester, or do I need to change?
+---
+Could you recommend a good restaurant near the hotel?
+---
+I'd like to book a table for two at eight o'clock, please.
+---
+Would it be possible to have a late checkout tomorrow?
+---
+I'm afraid the air conditioning in my room isn't working properly.
+---
+Could you call a taxi for me? I need to be at the station by nine.
+---
+Excuse me, is this seat taken? Would you mind if I sat here?
+---
+I need to exchange some currency. Where's the nearest bureau de change?
+---
+What time does the museum close? I'd like to visit this afternoon.
+---
+I seem to have lost my way. Could you point me in the right direction?
+---
+Is it within walking distance, or should I take a bus?
+---
+Thank you so much for your help. You've been very kind.
+---
+I'd like to walk you through the specifications of our new semi-trailer.
+---
+The lead time for this configuration would be approximately eight to ten weeks.
+---
+As you can see from the specifications, the payload capacity is fourteen tonnes.
+---
+Let me get back to you on that. I'll need to check with our engineering team.
+---
+We're looking at approximately three hundred units per month.
+---
+The chassis is made from high-strength steel for maximum durability.
+---
+Could you explain the warranty terms in more detail, please?
+---
+We offer a comprehensive after-sales service package.
+---
+I'd be happy to arrange a factory visit for you next month.
+---
+The fuel consumption has been reduced by fifteen percent compared to the previous model.
+---
+We've implemented several improvements based on customer feedback.
+---
+What payment terms would you be looking for on an order of this size?
+---
+I'll send you a revised quotation by the end of the week.
+---
+We'd need a thirty percent deposit to confirm the order.
+---
+The quality control process involves three separate inspections.
+---
+Could we schedule a video conference for next Tuesday afternoon?
+---
+I'm attaching the technical drawings for your reference.
+---
+We're confident that this solution will meet your requirements.
+---
+The prototype should be ready for testing within six weeks.
+---
+We need to discuss the logistics arrangements before we proceed.
+---
+I'll prepare a detailed proposal and have it ready by Friday.
+---
+The contract includes a penalty clause for late delivery.
+---
+We've been manufacturing trailers for over thirty years.
+---
+Our annual production capacity is approximately five thousand units.
+---
+Shall we take a short break and reconvene in fifteen minutes?
+---
+Shall we say around seven? That should give us enough time after the meeting.
+---
+I was wondering if you'd like to join us for dinner this evening.
+---
+That sounds lovely. I'd be delighted to come along.
+---
+I'm afraid I'll have to decline. I have another commitment that evening.
+---
+Would you mind if I invited a colleague to join us?
+---
+How was your flight? I hope you weren't too tired after the journey.
+---
+Is this your first time in England? What do you think of it so far?
+---
+The weather has been quite pleasant this week, hasn't it?
+---
+I've heard wonderful things about the Lake District. Have you been?
+---
+Would you like me to recommend some places to visit while you're here?
+---
+Cheers! Here's to a successful partnership.
+---
+I must say, the food here is absolutely delicious.
+---
+Could I have the bill, please? We'll split it between us.
+---
+Please, allow me. This one's on me.
+---
+That's very kind of you. I'll get the next one then.
+---
+I really enjoyed our conversation. We should do this again sometime.
+---
+It was lovely meeting you. Have a safe journey home.
+---
+I do apologise for being late. The traffic was absolutely dreadful.
+---
+Not to worry at all. These things happen.
+---
+I'm terribly sorry, but I didn't quite catch your name.
+---
+Would you excuse me for a moment? I need to make a quick phone call.
+---
+I couldn't help but notice you're reading a fascinating book.
+---
+I'm not entirely sure, but I believe the museum is closed on Mondays.
+---
+Do you happen to know if there's a good pub nearby?
+---
+I'd love to stay longer, but I really must be going.
+---
+Good morning. A flat white and a croissant, please.
+---
+Could I have that to take away, please?
+---
+Do you have any vegetarian options on the menu?
+---
+I'm afraid I'm allergic to nuts. Does this dish contain any?
+---
+The soup of the day sounds lovely. I'll have that, please.
+---
+Excuse me, I think there might be a mistake with my order.
+---
+Would you mind turning the heating up a bit? It's rather chilly in here.
+---
+I'm looking for a birthday present for my colleague. Any suggestions?
+---
+Do you have this in a larger size? This one's a bit too small.
+---
+Could I try this on, please? Where are the fitting rooms?
+---
+I'll take it. Could you gift wrap it for me, please?
+---
+I'm afraid this doesn't fit properly. Would I be able to exchange it?
+---
+I'd like to make an appointment to see the doctor, please.
+---
+I've been feeling under the weather for the past few days.
+---
+Could you recommend something for a headache, please?
+---
+I need to top up my phone. Where can I buy credit?
+---
+The Wi-Fi doesn't seem to be working. Could you check for me?
+---
+I'm sorry to bother you, but could you help me with something?
+---
+That's very helpful. I really appreciate your assistance.
+---
+I'm running a bit late. I should be there in about fifteen minutes.
+---
+I've left my umbrella on the train. Is there a lost property office?
+---
+Would you be able to keep an eye on my bag while I get a coffee?
+---
+I think there may have been a misunderstanding. Let me explain.
+---
+I'm not quite sure I follow. Could you explain that again?
+---
+It's been an absolute pleasure. I look forward to seeing you again soon.

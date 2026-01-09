@@ -1,0 +1,624 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-cream-300;
+  }
+  
+  body {
+    @apply bg-cream-100 text-navy-900 font-sans;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Premium Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-navy-900 text-white font-semibold rounded-xl
+           shadow-soft hover:bg-navy-800 
+           transition-all duration-300 ease-out
+           hover:shadow-elevated hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-soft
+           focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-white text-navy-900 font-semibold rounded-xl
+           border-2 border-navy-200
+           shadow-soft hover:border-navy-400
+           transition-all duration-300 ease-out
+           hover:shadow-elevated hover:-translate-y-0.5
+           active:translate-y-0
+           focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2;
+  }
+  
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-racing-950 text-white font-semibold rounded-xl
+           shadow-soft hover:bg-racing-900
+           transition-all duration-300 ease-out
+           hover:shadow-elevated hover:-translate-y-0.5
+           active:translate-y-0
+           focus:outline-none focus:ring-2 focus:ring-racing-600 focus:ring-offset-2;
+  }
+  
+  .btn-icon {
+    @apply inline-flex items-center justify-center w-10 h-10
+           bg-white text-navy-700 rounded-xl
+           border border-cream-300
+           shadow-soft hover:shadow-elevated
+           transition-all duration-200
+           hover:text-navy-900 hover:border-navy-300
+           focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft
+           border border-cream-200
+           transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-elevated hover:-translate-y-1
+           cursor-pointer;
+  }
+  
+  .card-elevated {
+    @apply bg-white rounded-3xl shadow-elevated
+           border border-cream-200;
+  }
+  
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl
+           bg-cream-50 border border-cream-300
+           text-navy-900 placeholder-navy-400
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent
+           focus:bg-white;
+  }
+  
+  /* Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1
+           text-xs font-semibold rounded-full;
+  }
+  
+  .badge-navy {
+    @apply badge bg-navy-100 text-navy-800;
+  }
+  
+  .badge-green {
+    @apply badge bg-racing-100 text-racing-800;
+  }
+  
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-800;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    @apply h-2 bg-cream-200 rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-navy-600 to-racing-600
+           rounded-full transition-all duration-500 ease-out;
+  }
+  
+  /* Audio Waveform */
+  .waveform-bar {
+    @apply w-1 bg-navy-300 rounded-full
+           transition-all duration-150;
+  }
+  
+  .waveform-bar-active {
+    @apply bg-racing-600;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3
+           text-navy-600 font-medium rounded-xl
+           transition-all duration-200
+           hover:bg-navy-50 hover:text-navy-900;
+  }
+  
+  .nav-link-active {
+    @apply nav-link bg-navy-900 text-white
+           hover:bg-navy-800 hover:text-white;
+  }
+  
+  /* Tooltip */
+  .tooltip {
+    @apply absolute z-50 px-3 py-2
+           bg-navy-900 text-white text-sm
+           rounded-lg shadow-elevated
+           opacity-0 invisible
+           transition-all duration-200
+           group-hover:opacity-100 group-hover:visible;
+  }
+}
+
+@layer utilities {
+  /* Text Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-navy-700 via-racing-700 to-navy-700
+           bg-clip-text text-transparent;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md
+           border border-white/20;
+  }
+  
+  /* Scrollbar Styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.navy.300') transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.navy.300');
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.navy.400');
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Animation Delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+}
+
+/* Custom Selection */
+::selection {
+  @apply bg-navy-200 text-navy-900;
+}
+
+/* Focus Visible */
+:focus-visible {
+  @apply outline-none ring-2 ring-navy-500 ring-offset-2;
+}
+
+/* ========================================
+   DARK MODE STYLES
+   ======================================== */
+
+/* Dark mode base styles using raw CSS values */
+.dark body,
+body.dark {
+  background-color: #0a0a0a; /* true black */
+  color: #f5f5f5; /* light gray */
+}
+
+/* Dark mode card styles */
+.dark .card {
+  background-color: #171717; /* dark gray */
+  border-color: #262626; /* gray border */
+}
+
+.dark .card-hover {
+  background-color: #171717;
+  border-color: #262626;
+}
+
+.dark .card-hover:hover {
+  background-color: #1f1f1f;
+}
+
+.dark .card-elevated {
+  background-color: #171717;
+  border-color: #262626;
+}
+
+/* Dark mode button styles */
+.dark .btn-primary {
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+
+.dark .btn-primary:hover {
+  background-color: #e5e5e5;
+}
+
+.dark .btn-secondary {
+  background-color: #262626;
+  color: #f5f5f5;
+  border-color: #404040;
+}
+
+.dark .btn-secondary:hover {
+  border-color: #525252;
+  background-color: #333333;
+}
+
+.dark .btn-icon {
+  background-color: #262626;
+  color: #e5e5e5;
+  border-color: #404040;
+}
+
+.dark .btn-icon:hover {
+  color: #ffffff;
+  border-color: #525252;
+}
+
+/* Dark mode input styles */
+.dark .input {
+  background-color: #262626;
+  border-color: #404040;
+  color: #f5f5f5;
+}
+
+.dark .input::placeholder {
+  color: #737373;
+}
+
+.dark .input:focus {
+  background-color: #333333;
+}
+
+/* Dark mode badge styles */
+.dark .badge-navy {
+  background-color: #333333;
+  color: #e5e5e5;
+}
+
+.dark .badge-green {
+  background-color: #14532d; /* racing-900 */
+  color: #bbf7d0; /* racing-200 */
+}
+
+.dark .badge-warning {
+  background-color: #78350f; /* amber-900 */
+  color: #fde68a; /* amber-200 */
+}
+
+/* Dark mode progress bar */
+.dark .progress-bar {
+  background-color: #333333;
+}
+
+/* Dark mode navigation */
+.dark .nav-link {
+  color: #a3a3a3;
+}
+
+.dark .nav-link:hover {
+  background-color: #262626;
+  color: #ffffff;
+}
+
+.dark .nav-link-active {
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+
+.dark .nav-link-active:hover {
+  background-color: #e5e5e5;
+  color: #0a0a0a;
+}
+
+/* Dark mode tooltip */
+.dark .tooltip {
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+
+/* Dark mode text colors */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #ffffff;
+}
+
+.dark p {
+  color: #e5e5e5;
+}
+
+/* Dark mode scrollbar */
+.dark .scrollbar-thin {
+  scrollbar-color: #404040 transparent;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #404040;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #525252;
+}
+
+/* Dark mode selection */
+.dark ::selection {
+  background-color: #404040;
+  color: #ffffff;
+}
+
+/* Additional dark mode background overrides */
+.dark .bg-cream-100 { background-color: #0a0a0a !important; }
+.dark .bg-cream-50 { background-color: #171717 !important; }
+.dark .bg-cream-200 { background-color: #262626 !important; }
+/* Note: bg-white with opacity (bg-white/90) is handled by Tailwind dark: classes */
+.dark .bg-white:not([class*="dark:"]) { background-color: #171717 !important; }
+.dark .bg-navy-50 { background-color: #262626 !important; }
+.dark .bg-navy-100 { background-color: #262626 !important; }
+.dark .bg-gray-50 { background-color: #171717 !important; }
+.dark .bg-gray-100 { background-color: #262626 !important; }
+.dark .bg-gray-200 { background-color: #333333 !important; }
+
+/* Dark mode border colors for status indicators */
+.dark .border-green-500 { border-color: #22c55e !important; }
+.dark .border-red-500 { border-color: #ef4444 !important; }
+.dark .border-green-300 { border-color: #86efac !important; }
+.dark .border-red-300 { border-color: #fca5a5 !important; }
+
+/* Dark mode for green backgrounds */
+.dark .bg-green-50 { background-color: rgba(20, 83, 45, 0.3) !important; }
+.dark .bg-green-100 { background-color: rgba(20, 83, 45, 0.4) !important; }
+.dark .text-green-600 { color: #86efac !important; }
+.dark .text-green-700 { color: #86efac !important; }
+.dark .text-green-800 { color: #bbf7d0 !important; }
+.dark .border-green-200 { border-color: #15803d !important; }
+
+/* Dark mode for red backgrounds */
+.dark .bg-red-50 { background-color: rgba(127, 29, 29, 0.3) !important; }
+.dark .bg-red-100 { background-color: rgba(127, 29, 29, 0.4) !important; }
+.dark .text-red-600 { color: #fca5a5 !important; }
+.dark .text-red-700 { color: #fca5a5 !important; }
+.dark .text-red-800 { color: #fecaca !important; }
+
+/* Dark mode for yellow backgrounds */
+.dark .bg-yellow-50 { background-color: rgba(113, 63, 18, 0.3) !important; }
+.dark .bg-yellow-100 { background-color: rgba(113, 63, 18, 0.4) !important; }
+.dark .text-yellow-600 { color: #fde047 !important; }
+.dark .text-yellow-700 { color: #fde047 !important; }
+.dark .text-yellow-800 { color: #fef08a !important; }
+
+/* Additional dark mode text overrides */
+.dark .text-navy-900 { color: #ffffff !important; }
+.dark .text-navy-800 { color: #f5f5f5 !important; }
+.dark .text-navy-700 { color: #e5e5e5 !important; }
+.dark .text-navy-600 { color: #d4d4d4 !important; }
+.dark .text-navy-500 { color: #a3a3a3 !important; }
+.dark .text-navy-400 { color: #737373 !important; }
+
+/* Additional dark mode border overrides */
+.dark .border-cream-200 { border-color: #262626 !important; }
+.dark .border-cream-300 { border-color: #333333 !important; }
+.dark .border-navy-200 { border-color: #333333 !important; }
+
+/* Dark mode for specific UI elements */
+.dark .bg-racing-50 { background-color: rgba(20, 83, 45, 0.3) !important; }
+.dark .border-racing-200 { border-color: #15803d !important; }
+.dark .text-racing-700 { color: #86efac !important; }
+
+/* Dark mode for amber elements */
+.dark .bg-amber-50 { background-color: rgba(80, 50, 10, 0.4) !important; }
+.dark .border-amber-200 { border-color: #d97706 !important; }
+.dark .text-amber-700 { color: #fcd34d !important; }
+.dark .text-amber-900 { color: #fef3c7 !important; }
+.dark .text-amber-500 { color: #f59e0b !important; }
+
+/* Dark mode gradient backgrounds */
+.dark .from-amber-50,
+.dark .to-orange-50 {
+  --tw-gradient-from: rgba(80, 50, 10, 0.4);
+  --tw-gradient-to: rgba(80, 40, 10, 0.4);
+}
+
+/* Dark mode for gradient elements */
+.dark .bg-gradient-to-r.from-amber-50.to-orange-50 {
+  background: linear-gradient(to right, rgba(80, 50, 10, 0.4), rgba(80, 40, 10, 0.4)) !important;
+}
+
+/* ========================================
+   FONT SIZE CLASSES
+   ======================================== */
+
+/*
+ * Font size classes affect main content area
+ * Sidebar (aside) and navigation remain unchanged
+ */
+
+/* Small text size */
+.text-size-small main {
+  font-size: 14px;
+}
+
+.text-size-small main .text-3xl {
+  font-size: 1.5rem;
+}
+
+.text-size-small main .text-2xl {
+  font-size: 1.25rem;
+}
+
+.text-size-small main .text-xl {
+  font-size: 1.1rem;
+}
+
+.text-size-small main .text-lg {
+  font-size: 1rem;
+}
+
+/* Medium text size (default) */
+.text-size-medium main {
+  font-size: 16px;
+}
+
+/* Large text size */
+.text-size-large main {
+  font-size: 18px;
+}
+
+.text-size-large main .text-3xl {
+  font-size: 2.25rem;
+}
+
+.text-size-large main .text-2xl {
+  font-size: 1.75rem;
+}
+
+.text-size-large main .text-xl {
+  font-size: 1.5rem;
+}
+
+.text-size-large main .text-lg {
+  font-size: 1.25rem;
+}
+
+.text-size-large main .text-base,
+.text-size-large main p,
+.text-size-large main li {
+  font-size: 1.125rem;
+}
+
+.text-size-large main .text-sm {
+  font-size: 1rem;
+}
+
+.text-size-large main .text-xs {
+  font-size: 0.875rem;
+}
+
+/* ========================================
+   iOS NATIVE STYLES
+   ======================================== */
+
+/* Safe Area Variables */
+:root {
+  --safe-area-top: env(safe-area-inset-top);
+  --safe-area-bottom: env(safe-area-inset-bottom);
+  --tab-bar-height: 64px;
+}
+
+/* iOS Large Title */
+.ios-large-title {
+  font-size: 34px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* iOS Segmented Control */
+.ios-segmented-control {
+  display: flex;
+  background: rgba(118, 118, 128, 0.12);
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.ios-segment {
+  flex: 1;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.ios-segment.active {
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode iOS Segmented Control */
+.dark .ios-segmented-control {
+  background: rgba(118, 118, 128, 0.24);
+}
+
+.dark .ios-segment.active {
+  background: #404040;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Tab Bar Backdrop */
+.tab-bar-backdrop {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* Dark mode Tab Bar Backdrop */
+.dark .tab-bar-backdrop {
+  background: rgba(23, 23, 23, 0.9);
+}
+
+/* Content bottom padding for tab bar */
+@media (max-width: 767px) {
+  .page-content {
+    padding-bottom: calc(var(--tab-bar-height) + var(--safe-area-bottom) + 16px);
+  }
+}
+
+/* Hide scrollbar on iOS style */
+.ios-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ios-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

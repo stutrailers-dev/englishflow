@@ -1,0 +1,399 @@
+# EnglishFlow - Kişiselleştirilmiş İngilizce Geliştirme Sistemi
+
+## 📋 Durum Analizi
+
+### Mevcut Profil
+- **Seviye:** B1 (Orta)
+- **Anlama Kapasitesi:** ~%80
+- **Konuşma Kapasitesi:** Zihninden geçenlerin <%50'si
+- **Hedef Aksan:** British English (RP - Received Pronunciation)
+
+### Kullanım Bağlamları
+1. **Havalimanı & Seyahat** - Check-in, güvenlik, bagaj, yönlendirmeler
+2. **Teknik Görüşmeler** - Semi-trailer terminolojisi, üretim süreçleri, kalite
+3. **Sosyal Ortamlar** - Restoran, günlük sohbet, small talk
+
+### Tespit Edilen Engeller
+| Engel | Kök Neden | Çözüm Yaklaşımı |
+|-------|-----------|-----------------|
+| Mükemmeliyetçilik | Hata korkusu | Progressive Accuracy + Fluency First |
+| Zaman yapıları karmaşası | L1 Transfer hatası | Chunking + Pattern Recognition |
+| Zihinsel çeviri | Dual-processing yükü | Direct Association + Immersion |
+| Dil körlüğü | Exposure eksikliği | Daily Micro-Immersion |
+| Non-native anlama zorluğu | Accent variation | Multi-accent exposure |
+| Kelime dağarcığı | Domain-specific gaps | Contextual Vocabulary Building |
+
+---
+
+## 🧠 Metodoloji Çerçevesi
+
+### 1. Comprehensible Input (Krashen's i+1)
+**Prensip:** Mevcut seviyenin biraz üstünde (i+1) materyal ile doğal edinim.
+
+**Uygulama:**
+- British podcast/video içerikleri (BBC Learning English, British Council)
+- Teknik dokümanlar (semi-trailer manuals, industry publications)
+- Graded readers (B1-B2 seviyesi)
+
+### 2. Shadowing Technique (Kaizen Dil Öğrenimi)
+**Prensip:** Native konuşmacıyı anlık olarak taklit etme.
+
+**Aşamalar:**
+1. **Passive Listening** - 2-3 kez dinle, anlam kavra
+2. **Active Listening** - Transcript ile takip et
+3. **Mumbling** - Sessizce dudak hareketleriyle takip
+4. **Shadowing** - Aynı anda sesli tekrar
+5. **Independent** - Bağımsız üretim
+
+**British Accent için Odak Noktaları:**
+- Non-rhotic 'r' (car → /kɑː/)
+- Long 'a' (bath → /bɑːθ/)
+- T-glottalization (butter → /ˈbʌʔə/)
+- Linking sounds
+
+### 3. Chunking & Collocations
+**Prensip:** Kelime yerine hazır kalıp öğrenme.
+
+**Örnek Chunks (Teknik Bağlam):**
+```
+"I'd like to walk you through..."
+"As you can see from the specifications..."
+"The lead time for this would be..."
+"Let me get back to you on that."
+"We're looking at approximately..."
+```
+
+**Örnek Chunks (Sosyal Bağlam):**
+```
+"Shall we say around 7?"
+"I was wondering if you'd like to..."
+"That sounds lovely."
+"I'm afraid I'll have to..."
+"Would you mind if...?"
+```
+
+### 4. Spaced Repetition System (SRS)
+**Prensip:** Leitner Box / SM-2 algoritması ile optimal tekrar zamanlaması.
+
+**Aralıklar:**
+- İlk tekrar: 1 gün
+- İkinci: 3 gün
+- Üçüncü: 7 gün
+- Dördüncü: 14 gün
+- Beşinci: 30 gün
+- (Başarısızlıkta başa dön)
+
+### 5. Fluency First Approach (Anti-Perfectionism)
+**Prensip:** Akıcılık > Doğruluk (başlangıçta)
+
+**Uygulama:**
+- Zamanlı konuşma egzersizleri (60 saniyede anlat)
+- "Good enough" feedback sistemi
+- Error tolerance scoring (%70 doğruluk = başarılı)
+- Progressive accuracy (akıcılık kazanıldıkça doğruluk artar)
+
+### 6. Direct Association Method
+**Prensip:** Türkçe çeviri yerine görsel/bağlamsal ilişkilendirme.
+
+**Uygulama:**
+- Görsel flashcard'lar (kelime + görsel, Türkçe yok)
+- Situation-based learning (bağlam içinde öğrenme)
+- English-to-English definitions
+
+### 7. Tense Mastery Through Stories
+**Prensip:** İzole gramer yerine bağlam içinde zaman öğrenme.
+
+**Türkçe-İngilizce Zaman Eşleştirmesi:**
+| Türkçe | İngilizce | Örnek |
+|--------|-----------|-------|
+| -DI (Belirli Geçmiş) | Past Simple | I sent the quotation yesterday. |
+| -MIŞ (Belirsiz/Duyum) | Present Perfect / Reported | I've heard they received it. / They said they had received it. |
+| -IYOR (Şimdiki) | Present Continuous | I'm preparing the documents. |
+| -IR/-AR (Geniş) | Present Simple | We manufacture semi-trailers. |
+| -ECEK (Gelecek) | Will / Going to | We'll ship next week. |
+| -IYORDU (Süregelen Geçmiş) | Past Continuous | We were discussing when you called. |
+
+---
+
+## 🏗️ Uygulama Mimarisi
+
+### Modüller
+
+#### 1. 🎧 Immersion Hub
+- British English podcast/video entegrasyonu
+- Daily listening challenge (15-30 dk)
+- Comprehension quizzes
+- Subtitle toggle (önce açık, sonra kapalı)
+
+#### 2. 🗣️ Shadowing Studio
+- Native audio + waveform visualization
+- Recording & comparison
+- Pronunciation scoring (Web Speech API)
+- British accent specific drills
+
+#### 3. 📦 Chunk Library
+- Domain-based categories (Technical, Travel, Social)
+- Audio pronunciation (British)
+- Usage examples in context
+- SRS review system
+
+#### 4. ⏰ Tense Trainer
+- Interactive timeline visualization
+- Story-based exercises
+- Turkish-English mapping guide
+- Common error correction
+
+#### 5. 💬 Conversation Simulator
+- AI-powered role-play scenarios
+- Airport, Technical meeting, Dinner scenarios
+- Real-time speech recognition
+- Fluency-focused feedback
+
+#### 6. 📊 Progress Dashboard
+- Daily streak tracker
+- Vocabulary growth chart
+- Weak areas identification
+- Weekly review suggestions
+
+#### 7. 🔔 Daily Micro-Immersion
+- Push notifications with daily phrase
+- "Word of the day" with audio
+- Quick 2-minute exercises
+- Anti-atrophy reminders
+
+---
+
+## 🎨 UI/UX Tasarım Prensipleri
+
+### Görsel Dil
+- **Tema:** Premium, minimal, Apple-inspired (Lewis'in tercihi)
+- **Renk Paleti:** 
+  - Primary: Deep Navy (#1a365d)
+  - Accent: British Racing Green (#004225)
+  - Background: Warm White (#fafaf9)
+  - Success: Emerald (#059669)
+- **Tipografi:** 
+  - Display: Playfair Display (British elegance)
+  - Body: Source Sans Pro (readability)
+- **Animasyonlar:** Subtle, purposeful micro-interactions
+
+### Gamification (Hafif)
+- Daily streaks (kırılınca motivasyon kaybı önleme)
+- Achievement badges (teknik terminoloji master, vb.)
+- Progress visualization (not leaderboards - personal growth focus)
+
+---
+
+## 🔧 Teknik Stack
+
+### Frontend
+```
+- React 18 + TypeScript
+- TailwindCSS (custom theme)
+- Framer Motion (animations)
+- React Query (data fetching)
+- Zustand (state management)
+```
+
+### Audio & Speech
+```
+- Web Speech API (recognition + synthesis)
+- Tone.js (audio processing)
+- WaveSurfer.js (waveform visualization)
+- British English TTS voices
+```
+
+### Data & Storage
+```
+- IndexedDB (offline-first)
+- LocalStorage (preferences)
+- Optional: Supabase/Firebase (sync)
+```
+
+### Content
+```
+- Custom JSON content files
+- Markdown for lessons
+- Audio files (MP3/OGG)
+```
+
+---
+
+## 📁 Proje Yapısı
+
+```
+english-flow/
+├── public/
+│   ├── audio/
+│   │   ├── chunks/
+│   │   ├── vocabulary/
+│   │   └── shadowing/
+│   └── images/
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   ├── immersion/
+│   │   ├── shadowing/
+│   │   ├── chunks/
+│   │   ├── tenses/
+│   │   ├── conversation/
+│   │   └── dashboard/
+│   ├── hooks/
+│   │   ├── useSpeechRecognition.ts
+│   │   ├── useSpeechSynthesis.ts
+│   │   ├── useAudioPlayer.ts
+│   │   └── useSRS.ts
+│   ├── stores/
+│   │   ├── userProgress.ts
+│   │   ├── vocabulary.ts
+│   │   └── settings.ts
+│   ├── data/
+│   │   ├── chunks/
+│   │   │   ├── technical.json
+│   │   │   ├── travel.json
+│   │   │   └── social.json
+│   │   ├── vocabulary/
+│   │   ├── tenses/
+│   │   └── scenarios/
+│   ├── utils/
+│   │   ├── srs.ts
+│   │   ├── scoring.ts
+│   │   └── audio.ts
+│   ├── pages/
+│   ├── styles/
+│   └── types/
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── vite.config.ts
+```
+
+---
+
+## 🚀 MVP Özellikleri (Faz 1)
+
+### Hafta 1-2: Temel Altyapı
+- [ ] Project setup (Vite + React + TS + Tailwind)
+- [ ] Routing ve layout
+- [ ] Theme ve design system
+- [ ] IndexedDB integration
+
+### Hafta 3-4: Chunk Library
+- [ ] Chunk data structure
+- [ ] Category navigation
+- [ ] Audio playback (British TTS)
+- [ ] SRS engine
+
+### Hafta 5-6: Shadowing Studio
+- [ ] Audio player component
+- [ ] Recording functionality
+- [ ] Waveform visualization
+- [ ] Basic comparison
+
+### Hafta 7-8: Conversation Simulator
+- [ ] Scenario selection
+- [ ] Speech recognition integration
+- [ ] Response evaluation
+- [ ] Feedback system
+
+### Hafta 9-10: Dashboard & Polish
+- [ ] Progress tracking
+- [ ] Statistics visualization
+- [ ] Settings & preferences
+- [ ] PWA setup (offline)
+
+---
+
+## 📝 Örnek İçerik Yapısı
+
+### Technical Chunk Example
+```json
+{
+  "id": "tech_001",
+  "category": "technical",
+  "subcategory": "quotations",
+  "chunk": "I'd like to walk you through the specifications",
+  "ipa": "/aɪd laɪk tə wɔːk juː θruː ðə ˌspesɪfɪˈkeɪʃənz/",
+  "audioUrl": "/audio/chunks/tech_001.mp3",
+  "context": "Presenting technical details to a client",
+  "example": "I'd like to walk you through the specifications of our 14.7 cubic metre concrete mixer.",
+  "turkishEquivalent": "Sizinle teknik özellikleri incelemek isterim",
+  "variations": [
+    "Let me walk you through...",
+    "Allow me to explain..."
+  ],
+  "difficulty": "B1",
+  "tags": ["presentation", "formal", "client-facing"]
+}
+```
+
+### Scenario Example
+```json
+{
+  "id": "scenario_airport_001",
+  "title": "Check-in at Heathrow",
+  "setting": "Airport check-in counter",
+  "difficulty": "B1",
+  "objectives": [
+    "Request window seat",
+    "Ask about baggage allowance",
+    "Confirm gate information"
+  ],
+  "dialogue": [
+    {
+      "role": "agent",
+      "text": "Good morning, sir. May I see your passport and booking reference, please?",
+      "audioUrl": "/audio/scenarios/airport_001_01.mp3"
+    },
+    {
+      "role": "user",
+      "expectedResponses": [
+        "Here you are. I'm on the flight to Istanbul.",
+        "Of course. Here's my passport."
+      ],
+      "hints": ["Hand over documents politely"]
+    }
+  ]
+}
+```
+
+---
+
+## 🎯 Başarı Metrikleri
+
+| Metrik | Hedef | Ölçüm |
+|--------|-------|-------|
+| Daily Active Use | 15+ dakika | App analytics |
+| Chunk Retention | %80 (30 gün sonra) | SRS data |
+| Speaking Confidence | +2 level (self-report) | Weekly survey |
+| Vocabulary Growth | +50 kelime/ay | System tracking |
+| Streak Maintenance | 21+ gün | App data |
+
+---
+
+## 💡 Ek Öneriler
+
+### Günlük Rutin Önerisi
+```
+Sabah (10 dk):
+├── Word of the day review
+└── 1 chunk shadowing
+
+Öğle (15 dk):
+├── Podcast listening (BBC 6 Minute English)
+└── Comprehension check
+
+Akşam (20 dk):
+├── SRS review session
+├── 1 conversation simulation
+└── Progress check
+```
+
+### Tavsiye Edilen Kaynaklar (British English)
+- **Podcast:** BBC Learning English, The English We Speak
+- **YouTube:** BBC Learning English, English with Lucy
+- **App Desteği:** Youglish (British filter), Forvo (pronunciation)
+
+---
+
+*Bu döküman, EnglishFlow uygulamasının temelini oluşturur ve Claude Code ile geliştirme sürecinde referans olarak kullanılacaktır.*
