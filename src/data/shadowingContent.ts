@@ -2140,6 +2140,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Documentation requirements',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Uygunluk sertifikaları dahil tam dokümantasyon talep ediyoruz.',
+    keyWords: [
+      { word: 'documentation', translation: 'dokümantasyon' },
+      { word: 'certificates of conformity', translation: 'uygunluk sertifikaları' },
+      { word: 'require', translation: 'talep etmek' },
+    ],
   },
   {
     id: 152,
@@ -2148,6 +2154,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Meeting request',
     difficulty: 'B1',
     category: 'business',
+    turkishTranslation: 'Gelecek hafta satış direktörünüzle bir toplantı ayarlamak istiyorum.',
+    keyWords: [
+      { word: 'arrange a meeting', translation: 'toplantı ayarlamak' },
+      { word: 'sales director', translation: 'satış direktörü' },
+      { word: 'next week', translation: 'gelecek hafta' },
+    ],
   },
   {
     id: 153,
@@ -2156,6 +2168,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Business objectives',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Bu yıl yüzde on beşlik pazar payı artışını hedefliyoruz.',
+    keyWords: [
+      { word: 'market share', translation: 'pazar payı' },
+      { word: 'targeting', translation: 'hedeflemek' },
+      { word: 'increase', translation: 'artış' },
+    ],
   },
   {
     id: 154,
@@ -2164,6 +2182,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Contract terms',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Sözleşme yıllık fiyat incelemeleri için hükümler içermektedir.',
+    keyWords: [
+      { word: 'provisions', translation: 'hükümler' },
+      { word: 'annual price reviews', translation: 'yıllık fiyat incelemeleri' },
+      { word: 'contract', translation: 'sözleşme' },
+    ],
   },
   {
     id: 155,
@@ -2172,6 +2196,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Meeting closure',
     difficulty: 'B2',
     category: 'business',
+    turkishTranslation: 'Teklifimizi değerlendirmek için zamanınız olduktan sonra yarın tekrar toplanalım.',
+    keyWords: [
+      { word: 'reconvene', translation: 'tekrar toplanmak' },
+      { word: 'consider', translation: 'değerlendirmek' },
+      { word: 'proposal', translation: 'teklif' },
+    ],
   },
 
   // ==================== ADDITIONAL TRAVEL (156-169): 14 ITEMS ====================
@@ -2182,6 +2212,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Hotel reservation',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Üç gece için deniz manzaralı çift kişilik bir oda ayırtmak istiyorum lütfen.',
+    keyWords: [
+      { word: 'double room', translation: 'çift kişilik oda' },
+      { word: 'sea view', translation: 'deniz manzarası' },
+      { word: 'three nights', translation: 'üç gece' },
+    ],
   },
   {
     id: 157,
@@ -2190,6 +2226,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Asking for directions',
     difficulty: 'A2',
     category: 'travel',
+    turkishTranslation: 'Affedersiniz, en yakın metro istasyonunun nerede olduğunu söyleyebilir misiniz?',
+    keyWords: [
+      { word: 'underground station', translation: 'metro istasyonu' },
+      { word: 'nearest', translation: 'en yakın' },
+      { word: 'tell me', translation: 'söyleyebilir misiniz' },
+    ],
   },
   {
     id: 158,
@@ -2198,6 +2240,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Train enquiry',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: "Edinburgh'a gidecek bir sonraki tren yedi numaralı perondan saat kaçta kalkıyor?",
+    keyWords: [
+      { word: 'next train', translation: 'bir sonraki tren' },
+      { word: 'depart', translation: 'kalkmak' },
+      { word: 'platform', translation: 'peron' },
+    ],
   },
   {
     id: 159,
@@ -2206,6 +2254,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Lost luggage complaint',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Korkarım bavulum benimle aynı uçuşa gelmedi.',
+    keyWords: [
+      { word: 'luggage', translation: 'bavul' },
+      { word: "hasn't arrived", translation: 'gelmedi' },
+      { word: 'same flight', translation: 'aynı uçuş' },
+    ],
   },
   {
     id: 160,
@@ -2214,6 +2268,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Restaurant seating',
     difficulty: 'A2',
     category: 'travel',
+    turkishTranslation: 'Mümkünse pencere yakınında dört kişilik bir masa alabilir miyim?',
+    keyWords: [
+      { word: 'table for four', translation: 'dört kişilik masa' },
+      { word: 'near the window', translation: 'pencere yakınında' },
+      { word: 'if possible', translation: 'mümkünse' },
+    ],
   },
   {
     id: 161,
@@ -2222,6 +2282,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Hotel enquiry',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Kahvaltı oda fiyatına dahil mi, yoksa ayrı olarak mı ücretlendiriliyor?',
+    keyWords: [
+      { word: 'breakfast included', translation: 'kahvaltı dahil' },
+      { word: 'room rate', translation: 'oda fiyatı' },
+      { word: 'charged separately', translation: 'ayrı ücretlendirilir' },
+    ],
   },
   {
     id: 162,
@@ -2230,6 +2296,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Car rental',
     difficulty: 'B2',
     category: 'travel',
+    turkishTranslation: 'Sınırsız kilometre kapsamı ile bir haftalığına araba kiralamak istiyorum.',
+    keyWords: [
+      { word: 'hire a car', translation: 'araba kiralamak' },
+      { word: 'unlimited mileage', translation: 'sınırsız kilometre' },
+      { word: 'coverage', translation: 'kapsam' },
+    ],
   },
   {
     id: 163,
@@ -2238,6 +2310,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Tourist information',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Bölgede ziyaret edilecek iyi müzeler veya galeriler önerebilir misiniz?',
+    keyWords: [
+      { word: 'recommend', translation: 'önermek' },
+      { word: 'museums', translation: 'müzeler' },
+      { word: 'galleries', translation: 'galeriler' },
+    ],
   },
   {
     id: 164,
@@ -2246,6 +2324,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Flight change request',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Mümkünse dönüş uçuşumu daha erken bir tarihe değiştirmem gerekiyor.',
+    keyWords: [
+      { word: 'change', translation: 'değiştirmek' },
+      { word: 'return flight', translation: 'dönüş uçuşu' },
+      { word: 'earlier date', translation: 'daha erken tarih' },
+    ],
   },
   {
     id: 165,
@@ -2254,6 +2338,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Transport enquiry',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Beni şehir merkezine götürecek güvenilir bir taksi servisini nerede bulabilirim?',
+    keyWords: [
+      { word: 'reliable taxi service', translation: 'güvenilir taksi servisi' },
+      { word: 'city centre', translation: 'şehir merkezi' },
+      { word: 'where can I find', translation: 'nerede bulabilirim' },
+    ],
   },
   {
     id: 166,
@@ -2262,6 +2352,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Restaurant recommendation',
     difficulty: 'B2',
     category: 'travel',
+    turkishTranslation: 'Otantik yerel mutfak sunan geleneksel bir İngiliz barı arıyorum.',
+    keyWords: [
+      { word: 'traditional British pub', translation: 'geleneksel İngiliz barı' },
+      { word: 'authentic local cuisine', translation: 'otantik yerel mutfak' },
+      { word: 'looking for', translation: 'arıyorum' },
+    ],
   },
   {
     id: 167,
@@ -2270,6 +2366,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Transport advice',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: "Havalimanından Londra merkezindeki otelime gitmenin en iyi yolu nedir?",
+    keyWords: [
+      { word: 'best way', translation: 'en iyi yol' },
+      { word: 'airport', translation: 'havalimanı' },
+      { word: 'central London', translation: 'Londra merkezi' },
+    ],
   },
   {
     id: 168,
@@ -2278,6 +2380,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Insurance enquiry',
     difficulty: 'B2',
     category: 'travel',
+    turkishTranslation: 'Seyahat sigortasını ayrı mı satın almam gerekiyor, yoksa dahil mi?',
+    keyWords: [
+      { word: 'purchase', translation: 'satın almak' },
+      { word: 'travel insurance', translation: 'seyahat sigortası' },
+      { word: 'separately', translation: 'ayrı olarak' },
+    ],
   },
   {
     id: 169,
@@ -2286,6 +2394,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Assistance request',
     difficulty: 'A2',
     category: 'travel',
+    turkishTranslation: 'Çantalarım için bana yardım edebilir misiniz? Merdivenler için oldukça ağırlar.',
+    keyWords: [
+      { word: 'help me', translation: 'bana yardım etmek' },
+      { word: 'bags', translation: 'çantalar' },
+      { word: 'heavy', translation: 'ağır' },
+    ],
   },
 
   // ==================== ADDITIONAL SOCIAL (170-184): 15 ITEMS ====================
@@ -2296,6 +2410,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'First meeting',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Tüm video görüşmelerimizden sonra sonunda sizinle şahsen tanışmak çok güzel.',
+    keyWords: [
+      { word: 'lovely', translation: 'çok güzel' },
+      { word: 'finally', translation: 'sonunda' },
+      { word: 'in person', translation: 'şahsen' },
+    ],
   },
   {
     id: 171,
@@ -2304,6 +2424,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Social invitation',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Bu akşam pubda bir şeyler içmek için bize katılmak ister misiniz?',
+    keyWords: [
+      { word: 'fancy', translation: 'istemek' },
+      { word: 'joining us', translation: 'bize katılmak' },
+      { word: 'drink', translation: 'içecek' },
+    ],
   },
   {
     id: 172,
@@ -2312,6 +2438,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Apology',
     difficulty: 'B2',
     category: 'social',
+    turkishTranslation: 'Doğum günü partinize gelemeyeceğim için kesinlikle çok üzgünüm.',
+    keyWords: [
+      { word: 'absolutely gutted', translation: 'kesinlikle çok üzgün' },
+      { word: "can't make it", translation: 'gelememek' },
+      { word: 'birthday party', translation: 'doğum günü partisi' },
+    ],
   },
   {
     id: 173,
@@ -2320,6 +2452,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Small talk',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Son zamanlarda kendinizi ilginç projelerle meşgul ediyor musunuz?',
+    keyWords: [
+      { word: 'keeping yourself busy', translation: 'kendini meşgul etmek' },
+      { word: 'interesting projects', translation: 'ilginç projeler' },
+      { word: 'lately', translation: 'son zamanlarda' },
+    ],
   },
   {
     id: 174,
@@ -2328,6 +2466,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Introduction',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Sizi pazarlamada çalışan iş arkadaşım Sarah ile tanıştırayım.',
+    keyWords: [
+      { word: 'introduce', translation: 'tanıştırmak' },
+      { word: 'colleague', translation: 'iş arkadaşı' },
+      { word: 'works in', translation: 'de çalışmak' },
+    ],
   },
   {
     id: 175,
@@ -2336,6 +2480,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Agreement',
     difficulty: 'B2',
     category: 'social',
+    turkishTranslation: 'Sürdürülebilirlik hakkında az önce söylediklerinize daha fazla katılamazdım.',
+    keyWords: [
+      { word: "couldn't agree more", translation: 'daha fazla katılamazdım' },
+      { word: 'just said', translation: 'az önce söyledikleri' },
+      { word: 'sustainability', translation: 'sürdürülebilirlik' },
+    ],
   },
   {
     id: 176,
@@ -2344,6 +2494,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Enquiry',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Yeni mahallenizi nasıl buluyorsunuz? İyice yerleştiniz mi?',
+    keyWords: [
+      { word: 'finding', translation: 'bulmak' },
+      { word: 'neighbourhood', translation: 'mahalle' },
+      { word: 'settled in', translation: 'yerleşmek' },
+    ],
   },
   {
     id: 177,
@@ -2352,6 +2508,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Party invitation',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Gelecek Cumartesi ev görme partisi veriyorum, sizi de beklerim.',
+    keyWords: [
+      { word: 'housewarming party', translation: 'ev görme partisi' },
+      { word: 'next Saturday', translation: 'gelecek Cumartesi' },
+      { word: 'most welcome', translation: 'beklerim' },
+    ],
   },
   {
     id: 178,
@@ -2360,6 +2522,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Social arrangement',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Yakında güzel bir çay eşliğinde etraflıca görüşmeliyiz.',
+    keyWords: [
+      { word: 'catch up', translation: 'görüşmek/yakalamak' },
+      { word: 'properly', translation: 'etraflıca' },
+      { word: 'nice cup of tea', translation: 'güzel bir çay' },
+    ],
   },
   {
     id: 179,
@@ -2368,6 +2536,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Apology for lateness',
     difficulty: 'B2',
     category: 'social',
+    turkishTranslation: 'Geç kaldığım için çok özür dilerim; trafik kesinlikle berbattı.',
+    keyWords: [
+      { word: 'terribly sorry', translation: 'çok özür dilerim' },
+      { word: 'being late', translation: 'geç kalmak' },
+      { word: 'horrendous', translation: 'berbat/korkunç' },
+    ],
   },
   {
     id: 180,
@@ -2376,6 +2550,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Reunion',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Birbirimizi son gördüğümüzden beri kesinlikle asırlar geçti, değil mi?',
+    keyWords: [
+      { word: 'absolutely ages', translation: 'kesinlikle asırlar' },
+      { word: 'last saw', translation: 'son gördüğümüz' },
+      { word: 'each other', translation: 'birbirimizi' },
+    ],
   },
   {
     id: 181,
@@ -2384,6 +2564,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Polite request',
     difficulty: 'B2',
     category: 'social',
+    turkishTranslation: 'Öğleden sonra şemsiyenizi ödünç alsam sizin için çok sorun olur mu?',
+    keyWords: [
+      { word: 'mind awfully', translation: 'çok sorun olmak' },
+      { word: 'borrowed', translation: 'ödünç almak' },
+      { word: 'afternoon', translation: 'öğleden sonra' },
+    ],
   },
   {
     id: 182,
@@ -2392,6 +2578,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Praise',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Ne kadar harika bir fikir! Keşke bunu ben düşünseydim.',
+    keyWords: [
+      { word: 'brilliant idea', translation: 'harika fikir' },
+      { word: 'wish', translation: 'keşke' },
+      { word: 'thought of', translation: 'düşünmek' },
+    ],
   },
   {
     id: 183,
@@ -2400,6 +2592,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Departure',
     difficulty: 'B2',
     category: 'social',
+    turkishTranslation: 'Korkarım şimdi acele etmem lazım, ama sizi görmek kesinlikle çok güzeldi.',
+    keyWords: [
+      { word: 'must dash', translation: 'acele etmeli / gitmeli' },
+      { word: 'absolutely lovely', translation: 'kesinlikle çok güzel' },
+      { word: 'seeing you', translation: 'sizi görmek' },
+    ],
   },
   {
     id: 184,
@@ -2408,6 +2606,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Unexpected encounter',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Sizi burada görmek ne tesadüf! Sizi şehrin bu tarafına getiren nedir?',
+    keyWords: [
+      { word: 'fancy meeting you', translation: 'ne tesadüf' },
+      { word: 'brings you', translation: 'getirmek' },
+      { word: 'part of town', translation: 'şehrin bu tarafı' },
+    ],
   },
 
   // ==================== ADDITIONAL DAILY (185-199): 15 ITEMS ====================
@@ -2418,6 +2622,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Shopping errand',
     difficulty: 'A2',
     category: 'daily',
+    turkishTranslation: 'Kahvaltı için biraz süt ve ekmek almak üzere dükkanlara uğramam gerek.',
+    keyWords: [
+      { word: 'pop to', translation: 'uğramak' },
+      { word: 'pick up', translation: 'almak' },
+      { word: 'milk and bread', translation: 'süt ve ekmek' },
+    ],
   },
   {
     id: 186,
@@ -2426,6 +2636,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Household reminder',
     difficulty: 'A2',
     category: 'daily',
+    turkishTranslation: 'Tekrar unutmadan bu gece çöpleri dışarı çıkarmamı hatırlatabilir misiniz?',
+    keyWords: [
+      { word: 'remind me', translation: 'bana hatırlatmak' },
+      { word: 'put the bins out', translation: 'çöpleri dışarı çıkarmak' },
+      { word: 'before I forget', translation: 'unutmadan önce' },
+    ],
   },
   {
     id: 187,
@@ -2434,6 +2650,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Household chore',
     difficulty: 'B1',
     category: 'daily',
+    turkishTranslation: 'Hava değişmeden önce hızlıca bir makine çamaşır yıkayacağım.',
+    keyWords: [
+      { word: 'quick load', translation: 'hızlı bir makine (çamaşır)' },
+      { word: 'washing', translation: 'yıkama' },
+      { word: 'weather changes', translation: 'hava değişimi' },
+    ],
   },
   {
     id: 188,
@@ -2442,6 +2664,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Daily routine',
     difficulty: 'A2',
     category: 'daily',
+    turkishTranslation: 'Hafta içi sabahları alarmınızı genellikle saat kaça kurarsınız?',
+    keyWords: [
+      { word: 'set your alarm', translation: 'alarm kurmak' },
+      { word: 'weekday mornings', translation: 'hafta içi sabahları' },
+      { word: 'usually', translation: 'genellikle' },
+    ],
   },
   {
     id: 189,
@@ -2450,6 +2678,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Cleaning tasks',
     difficulty: 'B1',
     category: 'daily',
+    turkishTranslation: 'Bu öğleden sonra halıları süpürmem ve rafların tozunu almam gerekiyor.',
+    keyWords: [
+      { word: 'hoover', translation: 'süpürmek (elektrikli süpürge ile)' },
+      { word: 'carpets', translation: 'halılar' },
+      { word: 'dust', translation: 'toz almak' },
+    ],
   },
   {
     id: 190,
@@ -2458,6 +2692,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Meal planning',
     difficulty: 'B1',
     category: 'daily',
+    turkishTranslation: 'Bu akşam dışarıdan yemek mi söyleyelim, yoksa ev yemeği mi tercih edersiniz?',
+    keyWords: [
+      { word: 'takeaway', translation: 'paket servis / dışarıdan yemek' },
+      { word: 'prefer', translation: 'tercih etmek' },
+      { word: 'home-cooked', translation: 'ev yemeği' },
+    ],
   },
   {
     id: 191,
@@ -2466,6 +2706,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Appointment booking',
     difficulty: 'B1',
     category: 'daily',
+    turkishTranslation: 'Mümkünse gelecek hafta için dişçiden randevu almam gerekiyor.',
+    keyWords: [
+      { word: 'book an appointment', translation: 'randevu almak' },
+      { word: 'dentist', translation: 'dişçi' },
+      { word: 'if possible', translation: 'mümkünse' },
+    ],
   },
   {
     id: 192,
@@ -2474,6 +2720,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Plant care',
     difficulty: 'B1',
     category: 'daily',
+    turkishTranslation: 'Bugün bitkileri sulamayı hatırladın mı? Biraz solgun görünüyorlar.',
+    keyWords: [
+      { word: 'remembered', translation: 'hatırlamak' },
+      { word: 'water the plants', translation: 'bitkileri sulamak' },
+      { word: 'droopy', translation: 'solgun/sarkmış' },
+    ],
   },
   {
     id: 193,
@@ -2482,6 +2734,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Postal errand',
     difficulty: 'B1',
     category: 'daily',
+    turkishTranslation: 'Kapanmadan önce bu paketi göndermek için postaneye uğrayacağım.',
+    keyWords: [
+      { word: 'nip to', translation: 'uğramak' },
+      { word: 'post office', translation: 'postane' },
+      { word: 'parcel', translation: 'paket' },
+    ],
   },
   {
     id: 194,
@@ -2490,6 +2748,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Shopping request',
     difficulty: 'A2',
     category: 'daily',
+    turkishTranslation: 'Bu akşam işten eve gelirken bir şişe süt alabilir misin?',
+    keyWords: [
+      { word: 'pick up', translation: 'almak' },
+      { word: 'pint of milk', translation: 'bir şişe süt' },
+      { word: 'on your way home', translation: 'eve gelirken' },
+    ],
   },
   {
     id: 195,
@@ -2498,6 +2762,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Postponed task',
     difficulty: 'B2',
     category: 'daily',
+    turkishTranslation: 'Garajı düzenlemeyi planlıyordum ama henüz vaktim olmadı.',
+    keyWords: [
+      { word: 'meaning to', translation: 'niyetlenmek/planlamak' },
+      { word: 'sort through', translation: 'düzenlemek' },
+      { word: 'found the time', translation: 'vakit bulmak' },
+    ],
   },
   {
     id: 196,
@@ -2506,6 +2776,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Household maintenance',
     difficulty: 'B2',
     category: 'daily',
+    turkishTranslation: 'Kombi yine arıza yapıyor; yarın sabah tesisatçıyı aramam gerekecek.',
+    keyWords: [
+      { word: "boiler's playing up", translation: 'kombi arıza yapıyor' },
+      { word: 'call the plumber', translation: 'tesisatçıyı aramak' },
+      { word: 'tomorrow morning', translation: 'yarın sabah' },
+    ],
   },
   {
     id: 197,
@@ -2514,6 +2790,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Evening meal enquiry',
     difficulty: 'B1',
     category: 'daily',
+    turkishTranslation: 'Bu akşam yemekte ne var? İşteki o uzun günden sonra açlıktan ölüyorum.',
+    keyWords: [
+      { word: "what's for tea", translation: 'yemekte ne var' },
+      { word: 'absolute starving', translation: 'açlıktan ölmek' },
+      { word: 'long day', translation: 'uzun gün' },
+    ],
   },
   {
     id: 198,
@@ -2522,6 +2804,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Phone maintenance',
     difficulty: 'B1',
     category: 'daily',
+    turkishTranslation: 'Tamamen bitmeden önce cep telefonu kontörümü yüklemem gerekiyor.',
+    keyWords: [
+      { word: 'top up', translation: 'yüklemek (kontör)' },
+      { word: 'mobile phone credit', translation: 'cep telefonu kontörü' },
+      { word: 'runs out', translation: 'bitmek' },
+    ],
   },
   {
     id: 199,
@@ -2530,6 +2818,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Bedtime routine',
     difficulty: 'A2',
     category: 'daily',
+    turkishTranslation: 'Yatmadan önce arka kapıyı kilitlemeyi ve tüm ışıkları söndürmeyi unutma.',
+    keyWords: [
+      { word: 'lock', translation: 'kilitlemek' },
+      { word: 'back door', translation: 'arka kapı' },
+      { word: 'turn off', translation: 'söndürmek/kapatmak' },
+    ],
   },
 
   // ==================== ADDITIONAL TRAVEL (200): 1 ITEM ====================
@@ -2540,6 +2834,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Asking for directions',
     difficulty: 'B1',
     category: 'travel',
+    turkishTranslation: 'Affedersiniz, yolumu kaybetmiş gibiyim. Bana British Museum\'un yönünü gösterebilir misiniz?',
+    keyWords: [
+      { word: 'lost my way', translation: 'yolumu kaybetmek' },
+      { word: 'point me towards', translation: 'yönünü göstermek' },
+      { word: 'British Museum', translation: 'British Museum' },
+    ],
   },
 
   // ==================== CONDITIONAL SENTENCES (201-250): 50 ITEMS ====================
