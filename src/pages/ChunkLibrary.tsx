@@ -49,16 +49,27 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
   // Scroll to show buttons when chunk expands
   useEffect(() => {
     if (expandedChunk) {
-      // Wait for expand animation to complete
-      setTimeout(() => {
+      // Wait for expand animation to complete (framer-motion uses 200ms)
+      const scrollTimer = setTimeout(() => {
         const buttonsElement = document.querySelector(`[data-buttons-for="${expandedChunk}"]`)
         if (buttonsElement) {
-          buttonsElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest'
-          })
+          const rect = buttonsElement.getBoundingClientRect()
+          const viewportHeight = window.innerHeight
+          const tabBarHeight = 80 // Approximate tab bar height including safe area
+
+          // Check if buttons are below the visible area (above tab bar)
+          if (rect.bottom > viewportHeight - tabBarHeight) {
+            // Calculate how much we need to scroll
+            const scrollAmount = rect.bottom - (viewportHeight - tabBarHeight) + 20 // 20px padding
+            window.scrollBy({
+              top: scrollAmount,
+              behavior: 'smooth'
+            })
+          }
         }
-      }, 400)
+      }, 500) // Longer delay to ensure animation is complete
+
+      return () => clearTimeout(scrollTimer)
     }
   }, [expandedChunk])
 
