@@ -351,7 +351,7 @@ export default function VocabularyLibrary({ embedded = false }: VocabularyLibrar
               animate={{ rotateY: isCardFlipped ? 180 : 0 }}
               transition={{ duration: 0.6 }}
               style={{ transformStyle: 'preserve-3d' }}
-              className="relative min-h-[400px]"
+              className="relative min-h-[280px]"
             >
               {/* Front of Card */}
               <div
@@ -362,7 +362,7 @@ export default function VocabularyLibrary({ embedded = false }: VocabularyLibrar
                 style={{ backfaceVisibility: 'hidden' }}
                 onClick={() => handleFlipCard(currentWord.id)}
               >
-                <div className="card-elevated p-10 h-full flex flex-col items-center justify-center text-center space-y-6">
+                <div className="card-elevated p-6 h-full flex flex-col items-center justify-center text-center space-y-4">
                   {/* Category & Difficulty Badge */}
                   <div className="flex items-center gap-2">
                     <span className="badge-navy capitalize text-xs">{currentWord.category}</span>
@@ -371,7 +371,7 @@ export default function VocabularyLibrary({ embedded = false }: VocabularyLibrar
 
                   {/* Word */}
                   <div>
-                    <h2 className="text-5xl font-display font-bold text-navy-900 mb-3">
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-navy-900 mb-2">
                       {currentWord.word}
                     </h2>
                     <p className="font-mono text-xl text-navy-500">{currentWord.ipa}</p>
@@ -383,9 +383,9 @@ export default function VocabularyLibrary({ embedded = false }: VocabularyLibrar
                       e.stopPropagation()
                       handleSpeak(currentWord.word)
                     }}
-                    className="btn-icon w-20 h-20 bg-navy-100 hover:bg-navy-200"
+                    className="btn-icon w-14 h-14 md:w-20 md:h-20 bg-navy-100 hover:bg-navy-200"
                   >
-                    <Volume2 className={clsx('w-8 h-8 text-navy-700', isSpeaking && 'animate-pulse')} />
+                    <Volume2 className={clsx('w-6 h-6 md:w-8 md:h-8 text-navy-700', isSpeaking && 'animate-pulse')} />
                   </button>
 
                   {/* Tap instruction */}
