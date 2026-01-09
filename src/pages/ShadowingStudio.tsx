@@ -34,7 +34,7 @@ interface ShadowingStudioProps {
 export default function ShadowingStudio({ embedded = false }: ShadowingStudioProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [phase, setPhase] = useState<ShadowingPhase>('listen')
-  const [showIPA, setShowIPA] = useState(true)
+  const [showIPA] = useState(true)
   const [finalTranscript, setFinalTranscript] = useState('')
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all')
   const [isCardFlipped, setIsCardFlipped] = useState(false)
@@ -154,7 +154,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="max-w-3xl mx-auto space-y-4 pb-24 md:pb-4"
+      className="max-w-3xl mx-auto space-y-4 pb-32 md:pb-4"
     >
       {/* Header - only show if not embedded */}
       {!embedded && (
@@ -529,24 +529,6 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
         </div>
       </div>
 
-      {/* Swipe Hint */}
-      <div className="flex justify-center items-center gap-4 py-2">
-        <div className="flex items-center gap-2 text-navy-400 text-xs">
-          {currentIndex > 0 && (
-            <span>← Önceki</span>
-          )}
-          <button
-            onClick={() => setShowIPA(!showIPA)}
-            className="btn-icon w-10 h-10"
-            title={showIPA ? 'Hide IPA' : 'Show IPA'}
-          >
-            <span className="text-xs font-mono">/aɪ/</span>
-          </button>
-          {currentIndex < filteredContent.length - 1 && (
-            <span>Sonraki →</span>
-          )}
-        </div>
-      </div>
     </motion.div >
   )
 }
