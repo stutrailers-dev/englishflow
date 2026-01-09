@@ -7,7 +7,6 @@ import {
   Pause,
   RotateCcw,
   Volume2,
-  ChevronLeft,
   ChevronRight,
   AlertCircle
 } from 'lucide-react'
@@ -155,7 +154,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="max-w-3xl mx-auto space-y-4 pb-2 md:pb-0"
+      className="max-w-3xl mx-auto space-y-4 pb-24 md:pb-4"
     >
       {/* Header - only show if not embedded */}
       {!embedded && (
@@ -206,9 +205,19 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
         </div>
       </div>
 
-      {/* Main Card - Click to Flip */}
-      <div
+      {/* Main Card - Click to Flip, Swipe to Navigate */}
+      <motion.div
         className="cursor-pointer"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.2}
+        onDragEnd={(_, info) => {
+          if (info.offset.x < -100 && currentIndex < filteredContent.length - 1) {
+            handleNext()
+          } else if (info.offset.x > 100 && currentIndex > 0) {
+            handlePrevious()
+          }
+        }}
         onClick={() => setIsCardFlipped(!isCardFlipped)}
       >
         <AnimatePresence mode="wait">
@@ -293,7 +302,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
 
       {/* Controls Card */}
       <div className="card-elevated p-5">
@@ -520,37 +529,23 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
         </div>
       </div>
 
-      {/* Navigation */}
-      <div className="flex justify-between items-center">
-        <button
-          onClick={handlePrevious}
-          disabled={currentIndex === 0}
-          className={clsx(
-            'btn-secondary py-2.5 text-sm',
-            currentIndex === 0 && 'opacity-50 cursor-not-allowed'
+      {/* Swipe Hint */}
+      <div className="flex justify-center items-center gap-4 py-2">
+        <div className="flex items-center gap-2 text-navy-400 text-xs">
+          {currentIndex > 0 && (
+            <span>← Önceki</span>
           )}
-        >
-          <ChevronLeft className="w-4 h-4 mr-1" />
-          Previous
-        </button>
-        <button
-          onClick={() => setShowIPA(!showIPA)}
-          className="btn-icon w-10 h-10"
-          title={showIPA ? 'Hide IPA' : 'Show IPA'}
-        >
-          <span className="text-xs font-mono">/aɪ/</span>
-        </button>
-        <button
-          onClick={handleNext}
-          disabled={currentIndex === filteredContent.length - 1}
-          className={clsx(
-            'btn-secondary py-2.5 text-sm',
-            currentIndex === filteredContent.length - 1 && 'opacity-50 cursor-not-allowed'
+          <button
+            onClick={() => setShowIPA(!showIPA)}
+            className="btn-icon w-10 h-10"
+            title={showIPA ? 'Hide IPA' : 'Show IPA'}
+          >
+            <span className="text-xs font-mono">/aɪ/</span>
+          </button>
+          {currentIndex < filteredContent.length - 1 && (
+            <span>Sonraki →</span>
           )}
-        >
-          Next
-          <ChevronRight className="w-4 h-4 ml-1" />
-        </button>
+        </div>
       </div>
     </motion.div >
   )
