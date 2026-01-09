@@ -50,13 +50,13 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
   // Scroll to expanded chunk when it changes
   useEffect(() => {
     if (expandedChunk && expandedChunkRef.current) {
-      // Small delay to allow animation to start
+      // Wait for expand animation to complete
       setTimeout(() => {
         expandedChunkRef.current?.scrollIntoView({
           behavior: 'smooth',
-          block: 'start'
+          block: 'center'
         })
-      }, 100)
+      }, 300)
     }
   }, [expandedChunk])
 
