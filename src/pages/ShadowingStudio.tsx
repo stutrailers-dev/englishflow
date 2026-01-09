@@ -350,34 +350,31 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
         <div className="flex flex-col items-center gap-3">
           {/* Listen Phase */}
           {phase === 'listen' && (
-            <>
-              <p className="text-navy-600 text-center text-sm mb-1">
-                Listen to the original, then record yourself
-              </p>
+            <div className="flex items-center gap-3 w-full justify-center">
               <button
                 onClick={handlePlayOriginal}
-                className="btn-primary w-44 py-2.5"
+                className="btn-secondary flex-1 max-w-[140px] py-2.5"
               >
                 {isSpeaking ? (
                   <>
-                    <Pause className="w-5 h-5 mr-2" />
+                    <Pause className="w-5 h-5 mr-1" />
                     Pause
                   </>
                 ) : (
                   <>
-                    <Volume2 className="w-5 h-5 mr-2" />
+                    <Volume2 className="w-5 h-5 mr-1" />
                     Listen
                   </>
                 )}
               </button>
               <button
                 onClick={handleStartRecording}
-                className="btn-accent w-44 py-2.5"
+                className="btn-accent flex-1 max-w-[160px] py-2.5"
               >
-                <Mic className="w-5 h-5 mr-2" />
-                Start Recording
+                <Mic className="w-5 h-5 mr-1" />
+                Record
               </button>
-            </>
+            </div>
           )}
 
           {/* Practice Phase */}
