@@ -728,6 +728,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Social arrangement',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Saat yedi civarı diyelim mi? Toplantıdan sonra bize yeterli zamanı vermiş olur.',
+    keyWords: [
+      { word: 'shall we say', translation: 'diyelim mi' },
+      { word: 'around seven', translation: 'yedi civarı' },
+      { word: 'enough time', translation: 'yeterli zaman' },
+    ],
   },
   {
     id: 52,
@@ -736,6 +742,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Social invitation',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Bu akşam yemeğe bize katılmak ister misiniz diye merak ediyordum.',
+    keyWords: [
+      { word: 'I was wondering', translation: 'merak ediyordum' },
+      { word: 'join us', translation: 'bize katılmak' },
+      { word: 'this evening', translation: 'bu akşam' },
+    ],
   },
   {
     id: 53,
@@ -744,6 +756,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Accepting invitation',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Çok hoş görünüyor. Gelmekten memnuniyet duyarım.',
+    keyWords: [
+      { word: 'sounds lovely', translation: 'çok hoş görünüyor' },
+      { word: 'delighted', translation: 'memnun' },
+      { word: 'come along', translation: 'katılmak' },
+    ],
   },
   {
     id: 54,
@@ -752,6 +770,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Declining invitation',
     difficulty: 'B2',
     category: 'social',
+    turkishTranslation: 'Korkarım reddetmek zorundayım. O akşam başka bir randevum var.',
+    keyWords: [
+      { word: 'decline', translation: 'reddetmek' },
+      { word: 'commitment', translation: 'taahhüt/randevu' },
+      { word: "I'm afraid", translation: 'korkarım' },
+    ],
   },
   {
     id: 55,
@@ -760,6 +784,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Social arrangement',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Bir meslektaşımı davet etsem sakıncası olur mu?',
+    keyWords: [
+      { word: 'would you mind', translation: 'sakıncası olur mu' },
+      { word: 'invited', translation: 'davet etsem' },
+      { word: 'colleague', translation: 'meslektaş' },
+    ],
   },
   {
     id: 56,
@@ -768,6 +798,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Small talk',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Uçuşunuz nasıldı? Umarım yolculuktan sonra çok yorgun değilsinizdir.',
+    keyWords: [
+      { word: 'flight', translation: 'uçuş' },
+      { word: 'tired', translation: 'yorgun' },
+      { word: 'journey', translation: 'yolculuk' },
+    ],
   },
   {
     id: 57,
@@ -776,6 +812,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Small talk',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: "İngiltere'ye ilk geliniz mi? Şu ana kadar ne düşünüyorsunuz?",
+    keyWords: [
+      { word: 'first time', translation: 'ilk kez' },
+      { word: 'what do you think', translation: 'ne düşünüyorsunuz' },
+      { word: 'so far', translation: 'şu ana kadar' },
+    ],
   },
   {
     id: 58,
@@ -784,6 +826,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Small talk - weather',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Bu hafta hava oldukça güzel, değil mi?',
+    keyWords: [
+      { word: 'weather', translation: 'hava' },
+      { word: 'quite pleasant', translation: 'oldukça güzel' },
+      { word: "hasn't it", translation: 'değil mi' },
+    ],
   },
   {
     id: 59,
@@ -792,6 +840,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Small talk',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Lake District hakkında harika şeyler duydum. Hiç gittiniz mi?',
+    keyWords: [
+      { word: "I've heard", translation: 'duydum' },
+      { word: 'wonderful things', translation: 'harika şeyler' },
+      { word: 'have you been', translation: 'hiç gittiniz mi' },
+    ],
   },
   {
     id: 60,
@@ -800,6 +854,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Offering help',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Buradayken ziyaret edebileceğiniz bazı yerleri önermemi ister misiniz?',
+    keyWords: [
+      { word: 'recommend', translation: 'önermek' },
+      { word: 'places to visit', translation: 'ziyaret edilecek yerler' },
+      { word: "while you're here", translation: 'buradayken' },
+    ],
   },
   {
     id: 61,
@@ -808,6 +868,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Toast',
     difficulty: 'A2',
     category: 'social',
+    turkishTranslation: 'Şerefe! Başarılı bir ortaklık için.',
+    keyWords: [
+      { word: 'cheers', translation: 'şerefe' },
+      { word: 'successful', translation: 'başarılı' },
+      { word: 'partnership', translation: 'ortaklık' },
+    ],
   },
   {
     id: 62,
@@ -816,6 +882,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Restaurant compliment',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Söylemeliyim ki buradaki yemek kesinlikle muhteşem.',
+    keyWords: [
+      { word: 'I must say', translation: 'söylemeliyim ki' },
+      { word: 'absolutely', translation: 'kesinlikle' },
+      { word: 'delicious', translation: 'lezzetli' },
+    ],
   },
   {
     id: 63,
@@ -824,6 +896,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Restaurant payment',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Hesabı alabilir miyim lütfen? Aramızda bölüşeceğiz.',
+    keyWords: [
+      { word: 'the bill', translation: 'hesap' },
+      { word: 'split', translation: 'bölmek' },
+      { word: 'between us', translation: 'aramızda' },
+    ],
   },
   {
     id: 64,
@@ -832,6 +910,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Paying the bill',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Lütfen, izin verin. Bu benden.',
+    keyWords: [
+      { word: 'allow me', translation: 'izin verin' },
+      { word: "on me", translation: 'benden' },
+      { word: 'please', translation: 'lütfen' },
+    ],
   },
   {
     id: 65,
@@ -840,6 +924,12 @@ export const shadowingContent: ShadowingItem[] = [
     context: 'Polite response',
     difficulty: 'B1',
     category: 'social',
+    turkishTranslation: 'Çok naziksiniz. O zaman bir sonrakini ben öderim.',
+    keyWords: [
+      { word: "that's very kind", translation: 'çok naziksiniz' },
+      { word: "I'll get", translation: 'ben öderim' },
+      { word: 'the next one', translation: 'bir sonrakini' },
+    ],
   },
   {
     id: 66,
