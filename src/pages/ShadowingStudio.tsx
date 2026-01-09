@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
   Mic,
   MicOff,
@@ -206,27 +206,22 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
         </div>
       </div>
 
-      {/* Main Flip Card */}
+      {/* Main Card - Click to Flip */}
       <div
-        className="relative min-h-[200px] cursor-pointer"
-        style={{ perspective: '1000px' }}
+        className="cursor-pointer"
         onClick={() => setIsCardFlipped(!isCardFlipped)}
       >
-        <motion.div
-          className="w-full h-full"
-          animate={{ rotateY: isCardFlipped ? 180 : 0 }}
-          transition={{ duration: 0.5 }}
-          style={{ transformStyle: 'preserve-3d' }}
-        >
-          {/* Front of Card - English */}
-          <div
-            className={clsx(
-              'absolute inset-0 backface-hidden',
-              isCardFlipped && 'pointer-events-none'
-            )}
-            style={{ backfaceVisibility: 'hidden' }}
-          >
-            <div className="card-elevated p-5 h-full">
+        <AnimatePresence mode="wait">
+          {!isCardFlipped ? (
+            /* Front of Card - English */
+            <motion.div
+              key="front"
+              initial={{ opacity: 0, rotateY: -90 }}
+              animate={{ opacity: 1, rotateY: 0 }}
+              exit={{ opacity: 0, rotateY: 90 }}
+              transition={{ duration: 0.3 }}
+              className="card-elevated p-5"
+            >
               {/* Context Badge */}
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
@@ -253,22 +248,21 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
                 )}
               </div>
 
-              <p className="text-xs text-navy-400 text-center mt-3">Çevirmek için kartı çevir</p>
-            </div>
-          </div>
-
-          {/* Back of Card - Turkish Translation & Key Words */}
-          <div
-            className={clsx(
-              'absolute inset-0 backface-hidden',
-              !isCardFlipped && 'pointer-events-none'
-            )}
-            style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-          >
-            <div className="card-elevated p-5 h-full bg-cream-50">
+              <p className="text-xs text-navy-400 text-center mt-4">👆 Çevirmek için dokun</p>
+            </motion.div>
+          ) : (
+            /* Back of Card - Turkish Translation & Key Words */
+            <motion.div
+              key="back"
+              initial={{ opacity: 0, rotateY: 90 }}
+              animate={{ opacity: 1, rotateY: 0 }}
+              exit={{ opacity: 0, rotateY: -90 }}
+              transition={{ duration: 0.3 }}
+              className="card-elevated p-5 bg-cream-50 dark:bg-neutral-800"
+            >
               {/* Header */}
-              <div className="text-center border-b border-cream-300 pb-3 mb-3">
-                <h3 className="text-base font-display font-bold text-navy-900">Türkçe Çeviri</h3>
+              <div className="text-center border-b border-cream-300 dark:border-neutral-700 pb-3 mb-3">
+                <h3 className="text-base font-display font-bold text-navy-900">🇹🇷 Türkçe Çeviri</h3>
               </div>
 
               {/* Turkish Translation */}
@@ -282,23 +276,23 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
               {currentItem.keyWords && currentItem.keyWords.length > 0 && (
                 <div>
                   <p className="text-xs font-medium text-navy-500 uppercase tracking-wide mb-2">
-                    Önemli Kelimeler
+                    📚 Önemli Kelimeler
                   </p>
-                  <div className="space-y-1">
+                  <div className="space-y-1.5">
                     {currentItem.keyWords.map((kw, i) => (
-                      <div key={i} className="flex justify-between items-center bg-white rounded-lg px-3 py-1.5">
+                      <div key={i} className="flex justify-between items-center bg-white dark:bg-neutral-700 rounded-lg px-3 py-2 shadow-sm">
                         <span className="text-sm font-medium text-navy-900">{kw.word}</span>
-                        <span className="text-sm text-navy-600">{kw.translation}</span>
+                        <span className="text-sm text-racing-700">{kw.translation}</span>
                       </div>
                     ))}
                   </div>
                 </div>
               )}
 
-              <p className="text-xs text-navy-400 text-center mt-3">Geri dönmek için kartı çevir</p>
-            </div>
-          </div>
-        </motion.div>
+              <p className="text-xs text-navy-400 text-center mt-4">👆 Geri dönmek için dokun</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Controls Card */}
