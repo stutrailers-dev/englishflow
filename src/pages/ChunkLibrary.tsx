@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useSearchParams, Link } from 'react-router-dom'
 import {
@@ -45,19 +45,20 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
   const [searchQuery] = useState('')
   const [expandedChunk, setExpandedChunk] = useState<string | null>(null)
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
-  const expandedChunkRef = useRef<HTMLDivElement>(null)
-  const buttonsRef = useRef<HTMLDivElement>(null)
 
   // Scroll to show buttons when chunk expands
   useEffect(() => {
-    if (expandedChunk && buttonsRef.current) {
+    if (expandedChunk) {
       // Wait for expand animation to complete
       setTimeout(() => {
-        buttonsRef.current?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest'
-        })
-      }, 350)
+        const buttonsElement = document.querySelector(`[data-buttons-for="${expandedChunk}"]`)
+        if (buttonsElement) {
+          buttonsElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+          })
+        }
+      }, 400)
     }
   }, [expandedChunk])
 
@@ -288,7 +289,6 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
             return (
               <motion.div
                 key={chunk.id}
-                ref={isExpanded ? expandedChunkRef : null}
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -390,7 +390,7 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
 
                         {/* Fixed action buttons at bottom */}
                         <div
-                          ref={isExpanded ? buttonsRef : null}
+                          data-buttons-for={chunk.id}
                           className="p-4 pt-2 border-t border-cream-200 dark:border-neutral-700 bg-cream-50 dark:bg-neutral-800"
                         >
                           {(() => {
