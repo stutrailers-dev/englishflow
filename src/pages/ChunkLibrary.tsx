@@ -343,129 +343,134 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
                       transition={{ duration: 0.2 }}
                       className="border-t border-cream-200 dark:border-neutral-700"
                     >
-                      <div className="p-4 bg-cream-50 dark:bg-neutral-800 space-y-2">
-                        {/* IPA */}
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-medium text-navy-500 uppercase tracking-wide">IPA:</span>
-                          <span className="font-mono text-sm text-navy-700">{chunk.ipa}</span>
-                        </div>
+                      <div className="bg-cream-50 dark:bg-neutral-800">
+                        {/* Scrollable content area */}
+                        <div className="p-4 space-y-2 max-h-[180px] overflow-y-auto">
+                          {/* IPA */}
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-medium text-navy-500 uppercase tracking-wide">IPA:</span>
+                            <span className="font-mono text-sm text-navy-700">{chunk.ipa}</span>
+                          </div>
 
-                        {/* Context */}
-                        <div className="flex items-start gap-2">
-                          <span className="text-xs font-medium text-navy-500 uppercase tracking-wide flex-shrink-0">Context:</span>
-                          <span className="text-sm text-navy-700">{chunk.context}</span>
-                        </div>
-
-                        {/* Example */}
-                        <div>
+                          {/* Context */}
                           <div className="flex items-start gap-2">
-                            <span className="text-xs font-medium text-navy-500 uppercase tracking-wide flex-shrink-0">Example:</span>
-                            <span className="text-sm text-navy-700 italic">"{chunk.example}"</span>
+                            <span className="text-xs font-medium text-navy-500 uppercase tracking-wide flex-shrink-0">Context:</span>
+                            <span className="text-sm text-navy-700">{chunk.context}</span>
                           </div>
-                          <button
-                            onClick={() => handleSpeak(chunk.example)}
-                            className="mt-1 text-xs text-racing-700 hover:text-racing-800 flex items-center gap-1 ml-14"
-                          >
-                            <Play className="w-3 h-3" />
-                            Listen to example
-                          </button>
+
+                          {/* Example */}
+                          <div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-xs font-medium text-navy-500 uppercase tracking-wide flex-shrink-0">Example:</span>
+                              <span className="text-sm text-navy-700 italic">"{chunk.example}"</span>
+                            </div>
+                            <button
+                              onClick={() => handleSpeak(chunk.example)}
+                              className="mt-1 text-xs text-racing-700 hover:text-racing-800 flex items-center gap-1 ml-14"
+                            >
+                              <Play className="w-3 h-3" />
+                              Listen to example
+                            </button>
+                          </div>
+
+                          {/* Variations - show only 2 */}
+                          <div>
+                            <span className="text-xs font-medium text-navy-500 uppercase tracking-wide">Variations:</span>
+                            <div className="flex flex-wrap gap-x-3 gap-y-1 mt-1">
+                              {chunk.variations.slice(0, 2).map((variation, i) => (
+                                <span key={i} className="text-sm text-navy-600 flex items-center gap-1">
+                                  <span className="w-1 h-1 bg-navy-400 rounded-full" />
+                                  {variation}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
                         </div>
 
-                        {/* Variations - show only 2 */}
-                        <div>
-                          <span className="text-xs font-medium text-navy-500 uppercase tracking-wide">Variations:</span>
-                          <div className="flex flex-wrap gap-x-3 gap-y-1 mt-1">
-                            {chunk.variations.slice(0, 2).map((variation, i) => (
-                              <span key={i} className="text-sm text-navy-600 flex items-center gap-1">
-                                <span className="w-1 h-1 bg-navy-400 rounded-full" />
-                                {variation}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Actions */}
-                        {(() => {
-                          console.log('🎯 isCurrentReview:', isCurrentReview, 'reviewMode:', reviewMode, 'chunk:', chunk.id)
-                          return isCurrentReview ? (
-                            <div className="space-y-3 pt-2">
-                              <p className="text-sm font-medium text-navy-700">How well did you remember this?</p>
-                              <div className="grid grid-cols-4 gap-2">
+                        {/* Fixed action buttons at bottom */}
+                        <div className="p-4 pt-2 border-t border-cream-200 dark:border-neutral-700 bg-cream-50 dark:bg-neutral-800">
+                          {(() => {
+                            console.log('🎯 isCurrentReview:', isCurrentReview, 'reviewMode:', reviewMode, 'chunk:', chunk.id)
+                            return isCurrentReview ? (
+                              <div className="space-y-2">
+                                <p className="text-sm font-medium text-navy-700">How well did you remember this?</p>
+                                <div className="grid grid-cols-4 gap-2">
+                                  <button
+                                    onClick={() => handleMarkReviewed(chunk.id, 1)}
+                                    className="btn-secondary py-2 text-sm flex flex-col items-center gap-1"
+                                  >
+                                    <span className="text-lg">😓</span>
+                                    <span>Hard</span>
+                                  </button>
+                                  <button
+                                    onClick={() => handleMarkReviewed(chunk.id, 2)}
+                                    className="btn-secondary py-2 text-sm flex flex-col items-center gap-1"
+                                  >
+                                    <span className="text-lg">🤔</span>
+                                    <span>Okay</span>
+                                  </button>
+                                  <button
+                                    onClick={() => handleMarkReviewed(chunk.id, 3)}
+                                    className="btn-secondary py-2 text-sm flex flex-col items-center gap-1"
+                                  >
+                                    <span className="text-lg">😊</span>
+                                    <span>Good</span>
+                                  </button>
+                                  <button
+                                    onClick={() => handleMarkReviewed(chunk.id, 4)}
+                                    className="btn-primary py-2 text-sm flex flex-col items-center gap-1"
+                                  >
+                                    <span className="text-lg">🎯</span>
+                                    <span>Easy</span>
+                                  </button>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="flex items-center gap-3">
                                 <button
-                                  onClick={() => handleMarkReviewed(chunk.id, 1)}
-                                  className="btn-secondary py-3 text-sm flex flex-col items-center gap-1"
+                                  onClick={() => handleMarkAsLearned(chunk.id)}
+                                  disabled={learned}
+                                  className={clsx(
+                                    'btn-secondary flex-1 h-11 text-sm',
+                                    learned && 'opacity-50 cursor-not-allowed bg-green-100 text-green-700 border-green-300'
+                                  )}
                                 >
-                                  <span className="text-lg">😓</span>
-                                  <span>Hard</span>
+                                  {learned ? (
+                                    <>
+                                      <Check className="w-4 h-4 mr-2" />
+                                      Learned
+                                    </>
+                                  ) : (
+                                    <>
+                                      <Check className="w-4 h-4 mr-2" />
+                                      Mark as Learned
+                                    </>
+                                  )}
                                 </button>
                                 <button
-                                  onClick={() => handleMarkReviewed(chunk.id, 2)}
-                                  className="btn-secondary py-3 text-sm flex flex-col items-center gap-1"
+                                  onClick={() => handleAddToSRS(chunk.id)}
+                                  disabled={inSRS || learned}
+                                  className={clsx(
+                                    'btn-primary flex-1 h-11 text-sm',
+                                    (inSRS || learned) && 'opacity-50 cursor-not-allowed bg-racing-700'
+                                  )}
                                 >
-                                  <span className="text-lg">🤔</span>
-                                  <span>Okay</span>
-                                </button>
-                                <button
-                                  onClick={() => handleMarkReviewed(chunk.id, 3)}
-                                  className="btn-secondary py-3 text-sm flex flex-col items-center gap-1"
-                                >
-                                  <span className="text-lg">😊</span>
-                                  <span>Good</span>
-                                </button>
-                                <button
-                                  onClick={() => handleMarkReviewed(chunk.id, 4)}
-                                  className="btn-primary py-3 text-sm flex flex-col items-center gap-1"
-                                >
-                                  <span className="text-lg">🎯</span>
-                                  <span>Easy</span>
+                                  {inSRS ? (
+                                    <>
+                                      <Check className="w-4 h-4 mr-2" />
+                                      In Review
+                                    </>
+                                  ) : (
+                                    <>
+                                      <BookOpen className="w-4 h-4 mr-2" />
+                                      Add to Review
+                                    </>
+                                  )}
                                 </button>
                               </div>
-                            </div>
-                          ) : (
-                            <div className="flex items-center gap-3 pt-2 mb-2">
-                              <button
-                                onClick={() => handleMarkAsLearned(chunk.id)}
-                                disabled={learned}
-                                className={clsx(
-                                  'btn-secondary flex-1 h-12 text-sm',
-                                  learned && 'opacity-50 cursor-not-allowed bg-green-100 text-green-700 border-green-300'
-                                )}
-                              >
-                                {learned ? (
-                                  <>
-                                    <Check className="w-4 h-4 mr-2" />
-                                    Learned
-                                  </>
-                                ) : (
-                                  <>
-                                    <Check className="w-4 h-4 mr-2" />
-                                    Mark as Learned
-                                  </>
-                                )}
-                              </button>
-                              <button
-                                onClick={() => handleAddToSRS(chunk.id)}
-                                disabled={inSRS || learned}
-                                className={clsx(
-                                  'btn-primary flex-1 h-12 text-sm',
-                                  (inSRS || learned) && 'opacity-50 cursor-not-allowed bg-racing-700'
-                                )}
-                              >
-                                {inSRS ? (
-                                  <>
-                                    <Check className="w-4 h-4 mr-2" />
-                                    In Review
-                                  </>
-                                ) : (
-                                  <>
-                                    <BookOpen className="w-4 h-4 mr-2" />
-                                    Add to Review
-                                  </>
-                                )}
-                              </button>
-                            </div>
-                          )
-                        })()}
+                            )
+                          })()}
+                        </div>
                       </div>
                     </motion.div>
                   )}
