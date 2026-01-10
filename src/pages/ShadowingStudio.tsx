@@ -41,6 +41,8 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
 
   // Track if we were listening to detect when recording stops
   const wasListeningRef = useRef(false)
+  // Ref for auto-scroll to controls card
+  const controlsCardRef = useRef<HTMLDivElement>(null)
 
   // Filter content by category
   const filteredContent = categoryFilter === 'all'
@@ -80,6 +82,10 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
         setFinalTranscript(transcript)
       }
       setPhase('compare')
+      // Auto-scroll to show comparison results after a short delay
+      setTimeout(() => {
+        controlsCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
     }
     wasListeningRef.current = isListening
   }, [isListening, transcript, phase])
@@ -305,7 +311,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
       </motion.div>
 
       {/* Controls Card */}
-      <div className="card-elevated p-4">
+      <div ref={controlsCardRef} className="card-elevated p-4">
         {/* Phase Indicator */}
         <div className="flex justify-center gap-2 mb-4">
           {[
