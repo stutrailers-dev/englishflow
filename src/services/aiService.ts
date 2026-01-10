@@ -15,10 +15,10 @@ interface DynamicResponseParams {
     userName?: string;
 }
 
-export const generateDynamicResponse = async (params: DynamicResponseParams): Promise<string> => {
+export const generateDynamicResponse = async (params: DynamicResponseParams): Promise<string | null> => {
     if (!API_KEY) {
         console.warn('Gemini API Key missing, falling back to original response');
-        return params.originalNextLine;
+        return null;
     }
 
     try {
@@ -48,6 +48,7 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       4. Keep the response length similar to the original.
       5. Maintain the CEFR B1 level simplicity.
       6. Do NOT output any explanations, just the dialogue text.
+      7. IMPORTANT: Do NOT use any placeholders like {{SEAT_NUMBER}} or {{LUGGAGE_RESPONSE}}. Fill them with appropriate realistic fictional data (e.g. "Seat 12A", "Okay, I've checked your bag").
     `;
 
         const result = await model.generateContent(prompt);
@@ -58,6 +59,6 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
         return text.trim();
     } catch (error) {
         console.error('Error generating AI response:', error);
-        return params.originalNextLine; // Fallback to original script on error
+        return null; // Return null to fallback to template system
     }
 };

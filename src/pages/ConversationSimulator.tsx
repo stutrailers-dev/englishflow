@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
-import { Mic, RotateCcw, Volume2, X, ChevronRight, Loader2, Target, Lock as Clock, Trophy, Lightbulb, Pause, BookOpen, Star, Check, MicOff, MessageCircle } from 'lucide-react'
+import { Mic, RotateCcw, Volume2, X, ChevronRight, Target, Lock as Clock, Trophy, Lightbulb, Pause, BookOpen, Star, Check, MicOff, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { generateDynamicResponse } from '../services/aiService'
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition'
@@ -150,10 +150,20 @@ export default function ConversationSimulator() {
     return personalized
   }, [userName, userGender])
 
+  // Helper to personalize text and clean placeholders
+  const processText = useCallback((text: string) => {
+    let processed = personalizeText(text)
+    // Clean any remaining placeholders like {{SEAT_NUMBER}} if they weren't replaced
+    // Replace with "..." to avoid showing code to user
+    processed = processed.replace(/\{\{[A-Z_]+\}\}/g, '...')
+    return processed
+  }, [personalizeText])
+
   // Get current dialogue turn with dynamic replacements based on user choices
   const currentTurn = useMemo(() => {
     if (!selectedScenario) return null
     const turn = selectedScenario.dialogue[currentTurnIndex]
+    if (!turn) return null
 
     // Apply dynamic replacements if this turn has them
     let processedText = turn.text
@@ -193,13 +203,13 @@ export default function ConversationSimulator() {
 
     return {
       ...turn,
-      text: personalizeText(processedText),
+      text: processText(processedText),
       expectedResponses: turn.expectedResponses?.map(r => ({
         ...r,
-        text: personalizeText(r.text)
+        text: processText(r.text)
       }))
     }
-  }, [selectedScenario, currentTurnIndex, personalizeText, userChoices])
+  }, [selectedScenario, currentTurnIndex, processText, userChoices, aiResponses])
 
   // Handle user response submission
   const submitResponse = useCallback(() => {
@@ -405,14 +415,9 @@ export default function ConversationSimulator() {
   // Auto-scroll conversation history to bottom when new message is added
   useEffect(() => {
     if (conversationHistoryRef.current) {
-      setTimeout(() => {
-        conversationHistoryRef.current?.scrollTo({
-          top: conversationHistoryRef.current.scrollHeight,
-          behavior: 'smooth'
-        })
-      }, 100)
+      conversationHistoryRef.current.scrollTop = conversationHistoryRef.current.scrollHeight
     }
-  }, [currentTurnIndex, userResponses.size])
+  }, [currentTurnIndex, transcript, isGeneratingResponse])
 
   // Auto-submit when recording stops and there's a transcript
   useEffect(() => {
@@ -930,13 +935,18 @@ export default function ConversationSimulator() {
           {/* AI Thinking Indicator */}
           {isGeneratingResponse && (
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
               className="flex justify-start"
             >
-              <div className="max-w-[80%] rounded-2xl px-4 py-3 bg-navy-100 text-navy-900 rounded-tl-sm flex items-center gap-2">
-                <Loader2 className="w-4 h-4 animate-spin text-navy-500" />
-                <span className="text-sm text-navy-500">Agent is typing...</span>
+              <div className="bg-navy-100 text-navy-600 rounded-2xl rounded-tl-sm px-4 py-3 flex items-center gap-2 shadow-sm">
+                <div className="flex space-x-1">
+                  <motion.div className="w-1.5 h-1.5 bg-navy-400 rounded-full" animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0 }} />
+                  <motion.div className="w-1.5 h-1.5 bg-navy-400 rounded-full" animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }} />
+                  <motion.div className="w-1.5 h-1.5 bg-navy-400 rounded-full" animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }} />
+                </div>
+                <span className="text-xs font-medium">AI Thinking...</span>
               </div>
             </motion.div>
           )}
