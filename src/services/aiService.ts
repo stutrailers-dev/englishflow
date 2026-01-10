@@ -2,14 +2,18 @@
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 
 // Initialize Gemini API
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+const API_KEY = (import.meta.env.VITE_GEMINI_API_KEY || '').trim();
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 // List of models to try in order of preference
 const MODELS_TO_TRY = [
     "gemini-1.5-flash",
+    "models/gemini-1.5-flash",
+    "gemini-1.5-flash-latest",
     "gemini-1.5-flash-001",
     "gemini-1.5-pro",
+    "models/gemini-1.5-pro",
+    "gemini-1.5-pro-latest",
     "gemini-1.0-pro",
     "gemini-pro"
 ];
@@ -100,7 +104,7 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
                 return text.trim();
             }
         } catch (error: any) {
-            console.warn(`❌ Failed with model ${modelName}:`, error.message || error);
+            console.warn(`❌ Failed with model ${modelName}:`, error);
             // Continue to next model
             continue;
         }
