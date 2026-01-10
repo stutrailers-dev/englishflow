@@ -48,7 +48,7 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       CRITICAL INSTRUCTIONS:
       1. **ANALYZE USER INTENT:** First, determine what the user actually wants. Pay close attention to negations (e.g., "I don't want window", "Not aisle").
          - If user says "Not window", they imply "Aisle".
-         - If user says "No luggage", acknowledge that.
+         - If user says "No luggage", confirm NO luggage. Do not assume hand luggage.
       
       2. **ADAPT THE SCRIPT:**
          - The "ORIGINAL SCRIPTED RESPONSE" is just a guide for the *type* of information to give.

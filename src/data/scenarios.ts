@@ -119,7 +119,7 @@ export const scenarios: Scenario[] = [
         choiceKeywords: ['yes', 'no', 'hand', 'carry', 'luggage'],
         dynamicReplacements: {
           'yes': { 'LUGGAGE_RESPONSE': 'Perfect. Please place it on the belt. Your allowance is 23 kilograms. It weighs 19.5 kilograms, so that\'s fine.' },
-          'no': { 'LUGGAGE_RESPONSE': 'No problem, hand luggage only. That\'s all sorted then.' },
+          'no': { 'LUGGAGE_RESPONSE': 'No problem. That\'s all sorted then.' },
           'hand': { 'LUGGAGE_RESPONSE': 'No problem, hand luggage only. That\'s all sorted then.' },
           'carry': { 'LUGGAGE_RESPONSE': 'No problem, hand luggage only. That\'s all sorted then.' }
         }
