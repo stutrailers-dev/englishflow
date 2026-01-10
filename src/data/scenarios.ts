@@ -65,45 +65,64 @@ export const scenarios: Scenario[] = [
         expectedResponses: [
           { text: 'I\'d like a window seat, please.', score: 100 },
           { text: 'Window seat, please.', score: 90 },
-          { text: 'Can I have a window seat?', score: 95 }
+          { text: 'Can I have a window seat?', score: 95 },
+          { text: 'I\'d prefer an aisle seat, please.', score: 100 },
+          { text: 'Aisle seat, please.', score: 90 },
+          { text: 'Can I have an aisle seat?', score: 95 }
         ],
-        acceptableKeywords: ['window', 'please', 'like', 'prefer']
+        acceptableKeywords: ['window', 'aisle', 'please', 'like', 'prefer'],
+        choiceKeywords: ['window', 'aisle']
       },
       {
         id: 'turn_4',
         role: 'user',
         text: '',
-        hints: ['Request window seat', 'Be polite']
+        hints: ['Request window or aisle seat', 'Be polite']
       },
       {
         id: 'turn_5',
         role: 'agent',
-        text: 'Certainly. I\'ve allocated you seat 14A, which is by the window. Are you checking in any luggage today?',
-        hints: ['Confirm your luggage', 'You have one suitcase'],
+        text: 'Certainly. I\'ve allocated you seat {{SEAT_NUMBER}}, which is {{SEAT_LOCATION}}. Are you checking in any luggage today?',
+        hints: ['Confirm your luggage', 'Mention if you have a suitcase or not'],
         expectedResponses: [
           { text: 'Yes, I have one suitcase to check in.', score: 100 },
           { text: 'Yes, just one bag, please.', score: 95 },
-          { text: 'I\'d like to check in one piece of luggage.', score: 100 }
+          { text: 'I\'d like to check in one piece of luggage.', score: 100 },
+          { text: 'No, I only have hand luggage.', score: 100 },
+          { text: 'No luggage to check in, just my carry-on.', score: 95 },
+          { text: 'Just hand luggage, thank you.', score: 90 }
         ],
-        acceptableKeywords: ['yes', 'one', 'suitcase', 'bag', 'luggage', 'check']
+        acceptableKeywords: ['yes', 'no', 'one', 'suitcase', 'bag', 'luggage', 'check', 'hand', 'carry'],
+        choiceKeywords: ['window', 'aisle'],
+        dynamicReplacements: {
+          'window': { 'SEAT_NUMBER': '14A', 'SEAT_LOCATION': 'by the window' },
+          'aisle': { 'SEAT_NUMBER': '14C', 'SEAT_LOCATION': 'on the aisle' }
+        }
       },
       {
         id: 'turn_6',
         role: 'user',
         text: '',
-        hints: ['Say you have one suitcase']
+        hints: ['Say if you have luggage to check in']
       },
       {
         id: 'turn_7',
         role: 'agent',
-        text: 'Perfect. Please place it on the belt. Your allowance is 23 kilograms. It weighs 19.5 kilograms, so that\'s fine. Here\'s your boarding pass. Boarding starts at 10:15 from Gate B24. Have a pleasant flight.',
+        text: '{{LUGGAGE_RESPONSE}} Here\'s your boarding pass. Boarding starts at 10:15 from Gate B24. Have a pleasant flight.',
         hints: ['Thank them', 'Confirm the gate'],
         expectedResponses: [
           { text: 'Thank you very much. Gate B24, correct?', score: 100 },
           { text: 'Thanks. Which gate was that again?', score: 90 },
           { text: 'Brilliant, thank you. B24, got it.', score: 100 }
         ],
-        acceptableKeywords: ['thank', 'gate', 'B24']
+        acceptableKeywords: ['thank', 'gate', 'B24'],
+        choiceKeywords: ['yes', 'no', 'hand', 'carry', 'luggage'],
+        dynamicReplacements: {
+          'yes': { 'LUGGAGE_RESPONSE': 'Perfect. Please place it on the belt. Your allowance is 23 kilograms. It weighs 19.5 kilograms, so that\'s fine.' },
+          'no': { 'LUGGAGE_RESPONSE': 'No problem, hand luggage only. That\'s all sorted then.' },
+          'hand': { 'LUGGAGE_RESPONSE': 'No problem, hand luggage only. That\'s all sorted then.' },
+          'carry': { 'LUGGAGE_RESPONSE': 'No problem, hand luggage only. That\'s all sorted then.' }
+        }
       }
     ],
     vocabulary: ['boarding pass', 'check-in', 'luggage allowance', 'aisle', 'window seat', 'departing'],

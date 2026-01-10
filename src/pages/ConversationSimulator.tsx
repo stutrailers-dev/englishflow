@@ -71,6 +71,8 @@ export default function ConversationSimulator() {
   const [shouldDelaySort, setShouldDelaySort] = useState(false)
   const [showFeedback, setShowFeedback] = useState(false)
   const [lastScore, setLastScore] = useState<number | null>(null)
+  // Track detected user choices for dynamic responses (e.g., 'window', 'aisle', 'yes', 'no')
+  const [userChoices, setUserChoices] = useState<Map<number, string>>(new Map())
   const [lastFeedback, setLastFeedback] = useState<{
     userResponse: string
     expectedResponses: { text: string; score: number }[]
@@ -160,20 +162,49 @@ export default function ConversationSimulator() {
     return personalized
   }, [userName, userGender])
 
-  // Get current dialogue turn
+  // Get current dialogue turn with dynamic replacements based on user choices
   const currentTurn = useMemo(() => {
     if (!selectedScenario) return null
     const turn = selectedScenario.dialogue[currentTurnIndex]
 
+    // Apply dynamic replacements if this turn has them
+    let processedText = turn.text
+    if (turn.dynamicReplacements && turn.choiceKeywords) {
+      // Look for user's previous choice in collected userChoices
+      // Check previous turn indexes for detected choices
+      for (let i = currentTurnIndex - 1; i >= 0; i--) {
+        const previousChoice = userChoices.get(i)
+        if (previousChoice && turn.dynamicReplacements[previousChoice]) {
+          // Apply the dynamic replacement
+          const replacements = turn.dynamicReplacements[previousChoice]
+          for (const [placeholder, value] of Object.entries(replacements)) {
+            processedText = processedText.replace(new RegExp(`\\{\\{${placeholder}\\}\\}`, 'g'), value)
+          }
+          break // Use the most recent matching choice
+        }
+      }
+
+      // If no choice was detected, use the first option as default
+      if (processedText.includes('{{')) {
+        const defaultChoice = Object.keys(turn.dynamicReplacements)[0]
+        if (defaultChoice) {
+          const replacements = turn.dynamicReplacements[defaultChoice]
+          for (const [placeholder, value] of Object.entries(replacements)) {
+            processedText = processedText.replace(new RegExp(`\\{\\{${placeholder}\\}\\}`, 'g'), value)
+          }
+        }
+      }
+    }
+
     return {
       ...turn,
-      text: personalizeText(turn.text),
+      text: personalizeText(processedText),
       expectedResponses: turn.expectedResponses?.map(r => ({
         ...r,
         text: personalizeText(r.text)
       }))
     }
-  }, [selectedScenario, currentTurnIndex, personalizeText])
+  }, [selectedScenario, currentTurnIndex, personalizeText, userChoices])
 
   // Handle user response submission
   const submitResponse = useCallback(() => {
@@ -248,6 +279,30 @@ export default function ConversationSimulator() {
     setShowFeedback(false)
     setLastScore(null)
     setLastFeedback(null)
+
+    // Detect user choice from transcript before resetting
+    // Look at the NEXT turn's choiceKeywords to know what to detect in current user response
+    if (selectedScenario && transcript) {
+      const nextTurnIndex = currentTurnIndex + 1
+      const nextTurn = selectedScenario.dialogue[nextTurnIndex]
+
+      if (nextTurn?.choiceKeywords) {
+        const userResponseLower = transcript.toLowerCase()
+        for (const keyword of nextTurn.choiceKeywords) {
+          if (userResponseLower.includes(keyword.toLowerCase())) {
+            // Store this choice with the current turn index
+            setUserChoices(prev => {
+              const newMap = new Map(prev)
+              newMap.set(currentTurnIndex, keyword.toLowerCase())
+              return newMap
+            })
+            console.log(`🎯 Detected user choice: "${keyword}" for turn ${currentTurnIndex}`)
+            break
+          }
+        }
+      }
+    }
+
     resetTranscript()
     isSubmittingRef.current = false
 
@@ -285,7 +340,7 @@ export default function ConversationSimulator() {
         console.log(`🎉 Scenario completed! Marked as completed: ${selectedScenario.title}`)
       }
     }
-  }, [currentTurnIndex, selectedScenario, resetTranscript, incrementScenariosCompleted, addStudyTime, incrementChunksLearned, incrementVocabularyLearned, userResponses, saveScenarioProgress, clearScenarioProgress, markScenarioCompleted])
+  }, [currentTurnIndex, selectedScenario, resetTranscript, incrementScenariosCompleted, addStudyTime, incrementChunksLearned, incrementVocabularyLearned, userResponses, saveScenarioProgress, clearScenarioProgress, markScenarioCompleted, transcript])
 
 
   // Cleanup when leaving a scenario - ensures state is fully reset
@@ -299,6 +354,7 @@ export default function ConversationSimulator() {
       setShowFeedback(false)
       setLastScore(null)
       setLastFeedback(null)
+      setUserChoices(new Map())
       resetTranscript()
       cancel()
       isSubmittingRef.current = false
@@ -343,6 +399,7 @@ export default function ConversationSimulator() {
 
     setCurrentTurnIndex(0)
     setUserResponses(new Map())
+    setUserChoices(new Map())
     setIsComplete(false)
     setShowHints(false)
     setShowFeedback(false)

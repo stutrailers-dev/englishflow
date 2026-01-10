@@ -40,14 +40,14 @@ export interface VocabularyItem {
   category: ChunkCategory
 }
 
-export type PartOfSpeech = 
-  | 'noun' 
-  | 'verb' 
-  | 'adjective' 
-  | 'adverb' 
-  | 'preposition' 
-  | 'conjunction' 
-  | 'pronoun' 
+export type PartOfSpeech =
+  | 'noun'
+  | 'verb'
+  | 'adjective'
+  | 'adverb'
+  | 'preposition'
+  | 'conjunction'
+  | 'pronoun'
   | 'interjection'
   | 'phrasal-verb'
 
@@ -109,12 +109,12 @@ export interface Scenario {
   imageUrl?: string
 }
 
-export type ScenarioCategory = 
-  | 'airport' 
-  | 'hotel' 
-  | 'restaurant' 
-  | 'business-meeting' 
-  | 'factory-visit' 
+export type ScenarioCategory =
+  | 'airport'
+  | 'hotel'
+  | 'restaurant'
+  | 'business-meeting'
+  | 'factory-visit'
   | 'technical-presentation'
   | 'phone-call'
   | 'small-talk'
@@ -134,6 +134,9 @@ export interface DialogueTurn {
   hints?: string[]
   expectedResponses?: ExpectedResponse[]
   acceptableKeywords?: string[]
+  // Dynamic response system: allows agent responses to adapt based on user choices
+  choiceKeywords?: string[] // Keywords to detect in user's previous response (e.g., ['window', 'aisle'])
+  dynamicReplacements?: Record<string, Record<string, string>> // { 'window': { SEAT: '14A', LOCATION: 'by the window' } }
 }
 
 export interface ExpectedResponse {
@@ -201,12 +204,12 @@ export interface Achievement {
   category: AchievementCategory
 }
 
-export type AchievementCategory = 
-  | 'streak' 
-  | 'vocabulary' 
-  | 'chunks' 
-  | 'scenarios' 
-  | 'accuracy' 
+export type AchievementCategory =
+  | 'streak'
+  | 'vocabulary'
+  | 'chunks'
+  | 'scenarios'
+  | 'accuracy'
   | 'consistency'
 
 export interface WeeklyStat {
