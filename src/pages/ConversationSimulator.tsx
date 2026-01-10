@@ -68,6 +68,7 @@ export default function ConversationSimulator() {
   const [showHints, setShowHints] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
   const [categoryFilter, setCategoryFilter] = useState<ScenarioCategory | 'all'>('all')
+  const [shouldDelaySort, setShouldDelaySort] = useState(false)
   const [showFeedback, setShowFeedback] = useState(false)
   const [lastScore, setLastScore] = useState<number | null>(null)
   const [lastFeedback, setLastFeedback] = useState<{
@@ -110,12 +111,16 @@ export default function ConversationSimulator() {
   // Ref for conversation history scroll container
   const conversationHistoryRef = useRef<HTMLDivElement>(null)
 
-  // Filter and sort scenarios (completed ones go to bottom)
+  // Filter and sort scenarios (completed ones go to bottom, with delay for just-completed)
   const filteredScenarios = useMemo(() => {
     const filtered = scenarios.filter(scenario => {
       const matchesCategory = categoryFilter === 'all' || scenario.category === categoryFilter
       return matchesCategory
     })
+    // If delay is active, don't sort - keep natural order (just-completed stays at top)
+    if (shouldDelaySort) {
+      return filtered
+    }
     // Sort: incomplete first, completed last
     return filtered.sort((a, b) => {
       const aCompleted = isScenarioCompleted(a.id)
@@ -123,7 +128,7 @@ export default function ConversationSimulator() {
       if (aCompleted === bCompleted) return 0
       return aCompleted ? 1 : -1
     })
-  }, [categoryFilter, isScenarioCompleted])
+  }, [categoryFilter, isScenarioCompleted, shouldDelaySort])
 
   // Helper to personalize text
   const personalizeText = useCallback((text: string) => {
@@ -687,9 +692,15 @@ export default function ConversationSimulator() {
             <button
               onClick={() => {
                 resetScenario()
+                // Enable delay sort so completed scenario stays at top briefly
+                setShouldDelaySort(true)
                 setSelectedScenarioId(null)
                 // Scroll to top of page when returning to scenario list
                 window.scrollTo({ top: 0, behavior: 'smooth' })
+                // After 200ms, disable delay sort to move completed to bottom
+                setTimeout(() => {
+                  setShouldDelaySort(false)
+                }, 200)
               }}
               className="btn-primary flex items-center gap-2"
             >
