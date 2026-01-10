@@ -92,8 +92,8 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
                         parts: [{ text: prompt }]
                     }],
                     generationConfig: {
-                        temperature: 0.7,
-                        maxOutputTokens: 150,
+                        temperature: 0.4,
+                        maxOutputTokens: 1000,
                     },
                     safetySettings: [
                         { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
