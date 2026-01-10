@@ -574,7 +574,7 @@ export default function ConversationSimulator() {
   // Scenario completion view
   if (isComplete) {
     return (
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto pb-24 md:pb-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -590,11 +590,12 @@ export default function ConversationSimulator() {
             <Trophy className="w-10 h-10 text-white" />
           </motion.div>
 
-          <h2 className="text-2xl font-display font-bold text-navy-900 mb-2">
-            Scenario Complete!
+          <h2 className="text-2xl font-display font-bold text-navy-900 mb-1">
+            Senaryo Tamamlandı! 🎉
           </h2>
+          <p className="text-sm text-navy-500 mb-1">Scenario Complete!</p>
           <p className="text-navy-600 mb-6">
-            Tebrikler! You've completed this conversation.
+            Tebrikler! Bu konuşmayı başarıyla tamamladınız.
           </p>
 
           {/* Score */}
@@ -602,7 +603,8 @@ export default function ConversationSimulator() {
             <div className="text-5xl font-bold text-navy-900 mb-2">
               {overallScore}%
             </div>
-            <p className="text-navy-600">Overall Performance</p>
+            <p className="text-navy-600">Genel Performans</p>
+            <p className="text-xs text-navy-400">Overall Performance</p>
 
             {/* Score breakdown */}
             <div className="flex justify-center gap-8 mt-4">
@@ -610,13 +612,15 @@ export default function ConversationSimulator() {
                 <div className="text-xl font-semibold text-racing-700">
                   {userResponses.size}
                 </div>
-                <div className="text-sm text-navy-500">Responses</div>
+                <div className="text-sm text-navy-500">Yanıtlar</div>
+                <div className="text-xs text-navy-400">Responses</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-semibold text-racing-700">
-                  {selectedScenario.duration}min
+                  {selectedScenario.duration}dk
                 </div>
-                <div className="text-sm text-navy-500">Study Time</div>
+                <div className="text-sm text-navy-500">Çalışma Süresi</div>
+                <div className="text-xs text-navy-400">Study Time</div>
               </div>
             </div>
           </div>
@@ -625,29 +629,27 @@ export default function ConversationSimulator() {
           <div className="text-left bg-cream-50 rounded-xl p-4 mb-6">
             <h4 className="font-semibold text-navy-900 mb-2 flex items-center gap-2">
               <Lightbulb className="w-5 h-5 text-yellow-500" />
-              Feedback
+              Geri Bildirim / Feedback
             </h4>
             {overallScore >= 80 ? (
               <p className="text-navy-600">
-                Excellent work! Your responses were natural and appropriate for the context.
-                Keep practising to maintain your fluency.
+                Harika! Cevaplarınız doğal ve bağlama uygundu. Akıcılığınızı korumak için pratik yapmaya devam edin.
               </p>
             ) : overallScore >= 60 ? (
               <p className="text-navy-600">
-                Good effort! You communicated effectively. Try using more of the suggested
-                phrases next time for even better results.
+                İyi çalışma! Etkili iletişim kurdunuz. Daha iyi sonuçlar için önerilen ifadeleri kullanmayı deneyin.
               </p>
             ) : (
               <p className="text-navy-600">
-                Keep practising! Review the chunks and vocabulary from this scenario,
-                then try again. Each attempt builds your confidence.
+                Pratik yapmaya devam edin! Bu senaryodaki kalıpları ve kelimeleri gözden geçirin, sonra tekrar deneyin.
               </p>
             )}
           </div>
 
           {/* Key vocabulary reminder */}
           <div className="text-left mb-6">
-            <h4 className="font-semibold text-navy-900 mb-2">Key Phrases to Remember:</h4>
+            <h4 className="font-semibold text-navy-900 mb-1">Hatırlanacak Önemli İfadeler</h4>
+            <p className="text-xs text-navy-400 mb-2">Key Phrases to Remember</p>
             <div className="flex flex-wrap gap-2">
               {selectedScenario.chunks.map((chunk, i) => (
                 <span key={i} className="badge badge-green text-sm">
@@ -664,7 +666,7 @@ export default function ConversationSimulator() {
               className="btn-secondary flex items-center gap-2"
             >
               <RotateCcw className="w-4 h-4" />
-              Try Again
+              Tekrar Dene
             </button>
             <button
               onClick={() => {
@@ -674,7 +676,7 @@ export default function ConversationSimulator() {
               className="btn-primary flex items-center gap-2"
             >
               <BookOpen className="w-4 h-4" />
-              Choose Another
+              Başka Senaryo
             </button>
           </div>
         </motion.div>
