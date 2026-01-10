@@ -154,7 +154,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="max-w-3xl mx-auto space-y-4 pb-32 md:pb-4"
+      className="max-w-3xl mx-auto space-y-3 pb-24 md:pb-4"
     >
       {/* Header - only show if not embedded */}
       {!embedded && (
@@ -305,9 +305,9 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
       </motion.div>
 
       {/* Controls Card */}
-      <div className="card-elevated p-5">
+      <div className="card-elevated p-4">
         {/* Phase Indicator */}
-        <div className="flex justify-center gap-2 mb-5">
+        <div className="flex justify-center gap-2 mb-4">
           {[
             { phase: 'listen', label: 'Listen' },
             { phase: 'record', label: 'Record' },
@@ -322,7 +322,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
               <div key={item.phase} className="flex items-center">
                 <div className="flex flex-col items-center">
                   <div className={clsx(
-                    'w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors',
+                    'w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium transition-colors',
                     isActive
                       ? 'bg-navy-900 text-white'
                       : isCompleted
@@ -347,7 +347,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
         </div>
 
         {/* Controls */}
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-2">
           {/* Listen Phase */}
           {phase === 'listen' && (
             <div className="flex items-center gap-3 w-full justify-center">
@@ -413,14 +413,14 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
           {phase === 'record' && (
             <>
               <div className={clsx(
-                'w-20 h-20 rounded-full flex items-center justify-center transition-all',
+                'w-16 h-16 rounded-full flex items-center justify-center transition-all',
                 isListening
                   ? 'bg-red-500 animate-pulse'
                   : 'bg-navy-900'
               )}>
-                <Mic className="w-8 h-8 text-white" />
+                <Mic className="w-6 h-6 text-white" />
               </div>
-              <p className="text-navy-600 text-sm">
+              <p className="text-navy-600 text-xs">
                 {isListening ? 'Recording... Speak now!' : 'Ready to record'}
               </p>
 
@@ -471,22 +471,22 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
 
           {/* Compare Phase */}
           {phase === 'compare' && (
-            <div className="w-full space-y-4">
-              <div className="grid md:grid-cols-2 gap-3">
+            <div className="w-full space-y-3">
+              <div className="grid md:grid-cols-2 gap-2">
                 {/* Original */}
-                <div className="p-3 bg-cream-50 rounded-xl">
-                  <p className="text-xs font-medium text-navy-500 uppercase tracking-wide mb-1">
+                <div className="p-2.5 bg-cream-50 rounded-lg">
+                  <p className="text-xs font-medium text-navy-500 uppercase tracking-wide mb-0.5">
                     Original
                   </p>
-                  <p className="text-navy-900 text-sm">{currentItem.text}</p>
+                  <p className="text-navy-900 text-sm leading-snug">{currentItem.text}</p>
                 </div>
 
                 {/* User's Version */}
-                <div className="p-3 bg-racing-50 rounded-xl border border-racing-200">
-                  <p className="text-xs font-medium text-racing-700 uppercase tracking-wide mb-1">
+                <div className="p-2.5 bg-racing-50 rounded-lg border border-racing-200">
+                  <p className="text-xs font-medium text-racing-700 uppercase tracking-wide mb-0.5">
                     Your Version
                   </p>
-                  <p className="text-navy-900 text-sm">
+                  <p className="text-navy-900 text-sm leading-snug">
                     {finalTranscript || transcript || '(No speech detected)'}
                   </p>
                 </div>
@@ -494,12 +494,12 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
 
               {/* Score */}
               {(finalTranscript || transcript) && (
-                <div className="text-center p-4 bg-navy-50 rounded-xl">
-                  <p className="text-xs text-navy-600 mb-1">Similarity Score</p>
-                  <p className="text-3xl font-bold text-navy-900">
+                <div className="text-center p-3 bg-navy-50 rounded-lg">
+                  <p className="text-xs text-navy-600">Similarity Score</p>
+                  <p className="text-2xl font-bold text-navy-900">
                     {compareTexts()}%
                   </p>
-                  <p className="text-sm text-navy-500 mt-2">
+                  <p className="text-xs text-navy-500 mt-1">
                     {compareTexts() >= 80
                       ? 'Excellent! Your pronunciation is very close.'
                       : compareTexts() >= 60
@@ -509,13 +509,13 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
                 </div>
               )}
 
-              <div className="flex justify-center gap-3">
-                <button onClick={handleReset} className="btn-secondary py-2.5">
+              <div className="flex justify-center gap-2 mt-1">
+                <button onClick={handleReset} className="btn-secondary py-2 text-sm">
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Try Again
                 </button>
                 {currentIndex < filteredContent.length - 1 && (
-                  <button onClick={handleNext} className="btn-primary py-2.5">
+                  <button onClick={handleNext} className="btn-primary py-2 text-sm">
                     Next Phrase
                     <ChevronRight className="w-4 h-4 ml-2" />
                   </button>
