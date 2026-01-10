@@ -697,10 +697,10 @@ export default function ConversationSimulator() {
                 setSelectedScenarioId(null)
                 // Scroll to top of page when returning to scenario list
                 window.scrollTo({ top: 0, behavior: 'smooth' })
-                // After 200ms, disable delay sort to move completed to bottom
+                // After 1250ms, disable delay sort to move completed to bottom
                 setTimeout(() => {
                   setShouldDelaySort(false)
-                }, 200)
+                }, 1250)
               }}
               className="btn-primary flex items-center gap-2"
             >
