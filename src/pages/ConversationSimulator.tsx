@@ -363,7 +363,7 @@ export default function ConversationSimulator() {
             role: 'agent', // Role of the responder
             previousAgentLine: previousAgentTurn.text,
             userResponse: transcript,
-            originalNextLine: nextTurn.text,
+            originalNextLine: getDisplayText(nextTurn, nextTurnIndex),
             userName: userName,
             detectedChoice: detectedChoice ?? undefined
           })
