@@ -4,7 +4,8 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 // Initialize Gemini API
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+// Using gemini-1.5-flash for faster responses and lower latency suitable for conversation
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 interface DynamicResponseParams {
     scenarioContext: string;
