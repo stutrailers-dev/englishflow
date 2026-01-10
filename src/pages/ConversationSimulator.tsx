@@ -573,10 +573,7 @@ export default function ConversationSimulator() {
                   </div>
                 </div>
 
-                {/* Hover arrow */}
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                  <ChevronRight className="w-6 h-6 text-racing-700" />
-                </div>
+
               </motion.div>
             )
           })}
@@ -697,10 +694,10 @@ export default function ConversationSimulator() {
                 setSelectedScenarioId(null)
                 // Scroll to top of page when returning to scenario list
                 window.scrollTo({ top: 0, behavior: 'smooth' })
-                // After 1250ms, disable delay sort to move completed to bottom
+                // After 1750ms, disable delay sort to move completed to bottom
                 setTimeout(() => {
                   setShouldDelaySort(false)
-                }, 1250)
+                }, 1750)
               }}
               className="btn-primary flex items-center gap-2"
             >
