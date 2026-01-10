@@ -43,6 +43,8 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
   const wasListeningRef = useRef(false)
   // Ref for auto-scroll to controls card
   const controlsCardRef = useRef<HTMLDivElement>(null)
+  // Ref for auto-scroll to main card (for next/previous navigation)
+  const mainCardRef = useRef<HTMLDivElement>(null)
 
   // Filter content by category
   const filteredContent = categoryFilter === 'all'
@@ -130,6 +132,10 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
     if (currentIndex < filteredContent.length - 1) {
       setCurrentIndex(prev => prev + 1)
       handleReset()
+      // Scroll to main card to show the new phrase
+      setTimeout(() => {
+        mainCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }, 100)
     }
   }, [currentIndex, filteredContent.length, handleReset])
 
@@ -137,6 +143,10 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
     if (currentIndex > 0) {
       setCurrentIndex(prev => prev - 1)
       handleReset()
+      // Scroll to main card to show the new phrase
+      setTimeout(() => {
+        mainCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }, 100)
     }
   }, [currentIndex, handleReset])
 
@@ -213,6 +223,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
 
       {/* Main Card - Click to Flip, Swipe to Navigate */}
       <motion.div
+        ref={mainCardRef}
         className="cursor-pointer"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
