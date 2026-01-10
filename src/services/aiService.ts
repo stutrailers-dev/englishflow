@@ -1,34 +1,17 @@
 /// <reference types="vite/client" />
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 
-// Initialize Gemini API
+// Initialize Gemini API Key
 const API_KEY = (import.meta.env.VITE_GEMINI_API_KEY || '').trim();
-const genAI = new GoogleGenerativeAI(API_KEY);
 
 // List of models to try in order of preference
 const MODELS_TO_TRY = [
     "gemini-1.5-flash",
-    "models/gemini-1.5-flash",
     "gemini-1.5-flash-latest",
-    "gemini-1.5-flash-001",
     "gemini-1.5-pro",
-    "models/gemini-1.5-pro",
     "gemini-1.5-pro-latest",
     "gemini-1.0-pro",
     "gemini-pro"
 ];
-
-const SAFETY_SETTINGS = [
-    { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-    { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
-    { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
-    { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-];
-
-const GENERATION_CONFIG = {
-    temperature: 0.7,
-    maxOutputTokens: 150,
-};
 
 interface DynamicResponseParams {
     scenarioContext: string;
@@ -69,8 +52,6 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       2. **ADAPT THE SCRIPT:**
          - The "ORIGINAL SCRIPTED RESPONSE" is just a guide for the *type* of information to give.
          - You MUST change the details (seat number, location, etc.) to match the USER'S preference.
-         - If the original script says "Seat 14A (Window)" but the user asked for "Aisle", you MUST change it to "Seat 14C (Aisle)".
-         - Do not blindly follow the placeholders in the original script.
 
       3. **RESPONSE STYLE:**
          - Keep it natural, polite, and at CEFR B1 level (Intermediate).
@@ -79,37 +60,66 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
 
       4. **FILLING DETAILS:**
          - Replace any {{PLACEHOLDERS}} with realistic data that matches the user's choice.
-         - Examples: {{SEAT_NUMBER}} -> "12C", {{SEAT_LOCATION}} -> "aisle seat".
 
       ORIGINAL SCRIPTED RESPONSE (What you were supposed to say):
       "${params.originalNextLine}"
     `;
 
-    // Try models sequentially
+    // Try models using raw REST API (bypassing SDK)
     for (const modelName of MODELS_TO_TRY) {
         try {
-            console.log(`Attempting to generate response with model: ${modelName}`);
-            const model = genAI.getGenerativeModel({
-                model: modelName,
-                safetySettings: SAFETY_SETTINGS,
-                generationConfig: GENERATION_CONFIG
+            console.log(`📡 Attempting REST API call to: ${modelName}`);
+
+            // Clean model name for URL (remove 'models/' prefix if present, though we removed it from list above)
+            const cleanModelName = modelName.replace('models/', '');
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/${cleanModelName}:generateContent?key=${API_KEY}`;
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{ text: prompt }]
+                    }],
+                    generationConfig: {
+                        temperature: 0.7,
+                        maxOutputTokens: 150,
+                    },
+                    safetySettings: [
+                        { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
+                        { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
+                        { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+                        { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
+                    ]
+                })
             });
 
-            const result = await model.generateContent(prompt);
-            const response = result.response;
-            const text = response.text();
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.warn(`❌ REST API Error (${modelName}): ${response.status} ${response.statusText}`, errorText);
+                continue;
+            }
+
+            const data = await response.json();
+
+            // Parse response safely
+            const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
             if (text) {
-                console.log(`✅ Success with model ${modelName}:`, text);
+                console.log(`✅ Success with ${modelName}:`, text);
                 return text.trim();
+            } else {
+                console.warn(`⚠️ Empty response from ${modelName}`, data);
             }
+
         } catch (error: any) {
-            console.warn(`❌ Failed with model ${modelName}:`, error);
-            // Continue to next model
+            console.warn(`❌ Network Error with ${modelName}:`, error);
             continue;
         }
     }
 
-    console.error('All Gemini models failed. Falling back to template.');
+    console.error('All REST API attempts failed. Falling back to template.');
     return null;
 };
