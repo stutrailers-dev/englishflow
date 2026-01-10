@@ -688,6 +688,8 @@ export default function ConversationSimulator() {
               onClick={() => {
                 resetScenario()
                 setSelectedScenarioId(null)
+                // Scroll to top of page when returning to scenario list
+                window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
               className="btn-primary flex items-center gap-2"
             >
@@ -849,10 +851,14 @@ export default function ConversationSimulator() {
                 {/* Check if this is the last turn */}
                 {currentTurnIndex === selectedScenario.dialogue.length - 1 ? (
                   <button
-                    onClick={() => setIsComplete(true)}
+                    onClick={() => {
+                      markScenarioCompleted(selectedScenario.id)
+                      incrementScenariosCompleted()
+                      setIsComplete(true)
+                    }}
                     className="btn-primary"
                   >
-                    <Check className="w-4 h-4 mr-1 inline" /> Complete Scenario
+                    <Check className="w-4 h-4 mr-1 inline" /> Senaryoyu Tamamla
                   </button>
                 ) : (
                   <button
