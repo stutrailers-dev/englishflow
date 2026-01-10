@@ -330,10 +330,10 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
                 <div className="flex flex-col items-center">
                   <div className={clsx(
                     'w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium transition-colors',
-                    isActive
-                      ? 'bg-navy-900 text-white'
-                      : isCompleted
-                        ? 'bg-racing-600 text-white'
+                    isCompleted
+                      ? 'bg-racing-600 text-white'
+                      : isActive
+                        ? 'bg-navy-900 text-white'
                         : 'bg-cream-200 text-navy-500'
                   )}>
                     {i + 1}
