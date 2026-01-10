@@ -4,20 +4,27 @@ import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/ge
 // Initialize Gemini API
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
-// Using gemini-1.5-flash with optimized settings for conversation
-const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
-    safetySettings: [
-        { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-        { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
-        { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
-        { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-    ],
-    generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 150,
-    }
-});
+
+// List of models to try in order of preference
+const MODELS_TO_TRY = [
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-001",
+    "gemini-1.5-pro",
+    "gemini-1.0-pro",
+    "gemini-pro"
+];
+
+const SAFETY_SETTINGS = [
+    { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+    { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+    { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
+    { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+];
+
+const GENERATION_CONFIG = {
+    temperature: 0.7,
+    maxOutputTokens: 150,
+};
 
 interface DynamicResponseParams {
     scenarioContext: string;
@@ -35,8 +42,7 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
         return null;
     }
 
-    try {
-        const prompt = `
+    const prompt = `
       You are an English language tutor roleplaying in a conversation simulation.
       
       SCENARIO SETTING:
@@ -50,12 +56,6 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       The user responded: "${params.userResponse}"
       
       SYSTEM DETECTED CHOICE: ${params.detectedChoice ? params.detectedChoice.toUpperCase() : 'N/A'} (Use this as a strong hint for user intent)
-      
-      ORIGINAL SCRIPTED RESPONSE (What you were supposed to say):
-      "${params.originalNextLine}"
-
-      TASK:
-      You are an intelligent roleplay partner. Your goal is to generate the next response in the dialogue based on the USER'S actual input and the ORIGINAL SCRIPT.
       
       CRITICAL INSTRUCTIONS:
       1. **ANALYZE USER INTENT:** First, determine what the user actually wants. Pay close attention to negations (e.g., "I don't want window", "Not aisle").
@@ -76,16 +76,36 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       4. **FILLING DETAILS:**
          - Replace any {{PLACEHOLDERS}} with realistic data that matches the user's choice.
          - Examples: {{SEAT_NUMBER}} -> "12C", {{SEAT_LOCATION}} -> "aisle seat".
+
+      ORIGINAL SCRIPTED RESPONSE (What you were supposed to say):
+      "${params.originalNextLine}"
     `;
 
-        const result = await model.generateContent(prompt);
-        const response = result.response;
-        const text = response.text();
+    // Try models sequentially
+    for (const modelName of MODELS_TO_TRY) {
+        try {
+            console.log(`Attempting to generate response with model: ${modelName}`);
+            const model = genAI.getGenerativeModel({
+                model: modelName,
+                safetySettings: SAFETY_SETTINGS,
+                generationConfig: GENERATION_CONFIG
+            });
 
-        console.log('🤖 AI Generated Response:', text);
-        return text.trim();
-    } catch (error) {
-        console.error('Error generating AI response:', error);
-        return null; // Return null to fallback to template system
+            const result = await model.generateContent(prompt);
+            const response = result.response;
+            const text = response.text();
+
+            if (text) {
+                console.log(`✅ Success with model ${modelName}:`, text);
+                return text.trim();
+            }
+        } catch (error: any) {
+            console.warn(`❌ Failed with model ${modelName}:`, error.message || error);
+            // Continue to next model
+            continue;
+        }
     }
+
+    console.error('All Gemini models failed. Falling back to template.');
+    return null;
 };
