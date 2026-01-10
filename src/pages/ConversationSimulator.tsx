@@ -373,7 +373,7 @@ export default function ConversationSimulator() {
         console.log(`🎉 Scenario completed! Marked as completed: ${selectedScenario.title}`)
       }
     }
-  }, [currentTurnIndex, selectedScenario, resetTranscript, incrementScenariosCompleted, addStudyTime, incrementChunksLearned, incrementVocabularyLearned, userResponses, saveScenarioProgress, clearScenarioProgress, markScenarioCompleted, transcript])
+  }, [currentTurnIndex, selectedScenario, resetTranscript, incrementScenariosCompleted, addStudyTime, incrementChunksLearned, incrementVocabularyLearned, userResponses, saveScenarioProgress, clearScenarioProgress, markScenarioCompleted, transcript, userName])
 
 
   // Cleanup when leaving a scenario - ensures state is fully reset
@@ -890,7 +890,10 @@ export default function ConversationSimulator() {
       >
         {/* Conversation history */}
         <div ref={conversationHistoryRef} className="space-y-4 mb-3 max-h-[250px] overflow-y-auto scrollbar-thin">
-          {selectedScenario.dialogue.slice(0, currentTurnIndex + 1).map((turn) => {
+          {selectedScenario.dialogue.slice(0, currentTurnIndex + 1).map((turn, index) => {
+            // Hide the current active turn if we are generating a response for it
+            if (index === currentTurnIndex && isGeneratingResponse && turn.role === 'agent') return null
+
             // Only render if it's an agent turn OR a user turn with a response
             const hasContent = turn.role === 'agent' || userResponses.has(turn.id)
             if (!hasContent) return null
