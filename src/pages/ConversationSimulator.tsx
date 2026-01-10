@@ -828,12 +828,22 @@ export default function ConversationSimulator() {
                     {isSpeaking ? 'Playing...' : 'Replay audio'}
                   </span>
                 </div>
-                <button
-                  onClick={nextTurn}
-                  className="btn-primary"
-                >
-                  Answer <Mic className="w-4 h-4 ml-1 inline" />
-                </button>
+                {/* Check if this is the last turn */}
+                {currentTurnIndex === selectedScenario.dialogue.length - 1 ? (
+                  <button
+                    onClick={() => setIsComplete(true)}
+                    className="btn-primary"
+                  >
+                    <Check className="w-4 h-4 mr-1 inline" /> Complete Scenario
+                  </button>
+                ) : (
+                  <button
+                    onClick={nextTurn}
+                    className="btn-primary"
+                  >
+                    Answer <Mic className="w-4 h-4 ml-1 inline" />
+                  </button>
+                )}
               </div>
             ) : (
               <div>
