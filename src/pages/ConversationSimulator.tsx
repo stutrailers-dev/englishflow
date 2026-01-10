@@ -105,6 +105,8 @@ export default function ConversationSimulator() {
   const isSubmittingRef = useRef(false)
   // Ref for dialogue area to scroll to
   const dialogueAreaRef = useRef<HTMLDivElement>(null)
+  // Ref for conversation history scroll container
+  const conversationHistoryRef = useRef<HTMLDivElement>(null)
 
   // Filter scenarios
   const filteredScenarios = useMemo(() => {
@@ -295,6 +297,18 @@ export default function ConversationSimulator() {
       speak(currentTurn.text)
     }
   }, [currentTurn, selectedScenario, speak])
+
+  // Auto-scroll conversation history to bottom when new message is added
+  useEffect(() => {
+    if (conversationHistoryRef.current) {
+      setTimeout(() => {
+        conversationHistoryRef.current?.scrollTo({
+          top: conversationHistoryRef.current.scrollHeight,
+          behavior: 'smooth'
+        })
+      }, 100)
+    }
+  }, [currentTurnIndex, userResponses.size])
 
   // Auto-submit when recording stops and there's a transcript
   useEffect(() => {
@@ -757,7 +771,7 @@ export default function ConversationSimulator() {
         className="card p-5 mb-6"
       >
         {/* Conversation history */}
-        <div className="space-y-4 mb-3 max-h-[220px] overflow-y-auto scrollbar-thin">
+        <div ref={conversationHistoryRef} className="space-y-4 mb-3 max-h-[250px] overflow-y-auto scrollbar-thin">
           {selectedScenario.dialogue.slice(0, currentTurnIndex + 1).map((turn) => {
             // Only render if it's an agent turn OR a user turn with a response
             const hasContent = turn.role === 'agent' || userResponses.has(turn.id)
