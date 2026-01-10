@@ -225,11 +225,25 @@ export default function ConversationSimulator() {
     isSubmittingRef.current = true
 
     // Calculate score
+    // Calculate score
     let score = 0
     const rawPreviousTurn = selectedScenario?.dialogue[currentTurnIndex - 1]
+
+    // Context-aware filtering: Only consider responses relevant to user's previous choices
+    let relevantExpectedResponses = rawPreviousTurn?.expectedResponses
+    if (relevantExpectedResponses && userChoices.size > 0) {
+      const filtered = relevantExpectedResponses.filter(er => {
+        if (!er.relatesToChoice) return true
+        return er.relatesToChoice.some(choice => Array.from(userChoices.values()).includes(choice))
+      })
+      if (filtered.length > 0) {
+        relevantExpectedResponses = filtered
+      }
+    }
+
     const previousTurn = rawPreviousTurn ? {
       ...rawPreviousTurn,
-      expectedResponses: rawPreviousTurn.expectedResponses?.map(er => ({
+      expectedResponses: relevantExpectedResponses?.map(er => ({
         ...er,
         text: personalizeText(er.text)
       })),
@@ -282,7 +296,7 @@ export default function ConversationSimulator() {
     })
 
     setShowFeedback(true)
-  }, [currentTurn, transcript, selectedScenario, currentTurnIndex])
+  }, [currentTurn, transcript, selectedScenario, currentTurnIndex, userChoices])
 
   // Close feedback and move to next turn
   const closeFeedbackAndContinue = useCallback(async () => {
@@ -291,9 +305,23 @@ export default function ConversationSimulator() {
     setLastFeedback(null)
 
     // Detect user choice from transcript before resetting
+    let nextTurnIndex = currentTurnIndex + 1
+
     if (selectedScenario && transcript) {
       // Logic for legacy template system detection...
-      const nextTurnIndex = currentTurnIndex + 1
+
+      // Check Skip Logic from current turn response
+      const currentDialogueTurn = selectedScenario.dialogue[currentTurnIndex]
+      if (currentDialogueTurn?.skipLogic) {
+        const { triggerKeywords, skipCount, invertCondition } = currentDialogueTurn.skipLogic
+        const lowerText = transcript.toLowerCase()
+        let shouldSkip = triggerKeywords.some(kw => lowerText.includes(kw.toLowerCase()))
+        if (invertCondition) shouldSkip = !shouldSkip
+        if (shouldSkip) {
+          nextTurnIndex += skipCount
+        }
+      }
+
       const nextTurn = selectedScenario.dialogue[nextTurnIndex]
       let detectedChoice: string | null = null
 
@@ -400,8 +428,8 @@ export default function ConversationSimulator() {
       console.log(`✅ Progress saved: +${chunksPerTurn} chunks, +${vocabPerTurn} vocabulary`)
     }
 
-    if (currentTurnIndex < (selectedScenario?.dialogue.length || 0) - 1) {
-      const nextIndex = currentTurnIndex + 1
+    if (nextTurnIndex < (selectedScenario?.dialogue.length || 0)) {
+      const nextIndex = nextTurnIndex
       setCurrentTurnIndex(nextIndex)
 
       // Save progress after moving to next turn

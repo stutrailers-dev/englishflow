@@ -137,11 +137,17 @@ export interface DialogueTurn {
   // Dynamic response system: allows agent responses to adapt based on user choices
   choiceKeywords?: string[] // Keywords to detect in user's previous response (e.g., ['window', 'aisle'])
   dynamicReplacements?: Record<string, Record<string, string>> // { 'window': { SEAT: '14A', LOCATION: 'by the window' } }
+  skipLogic?: {
+    triggerKeywords: string[]
+    skipCount: number
+    invertCondition?: boolean
+  }
 }
 
 export interface ExpectedResponse {
   text: string
   score: number // 0-100
+  relatesToChoice?: string[] // Only valid if previous choices include one of these
 }
 
 // --- SRS (Spaced Repetition) Types ---

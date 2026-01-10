@@ -221,12 +221,12 @@ export const scenarios: Scenario[] = [
         hints: ['Answer the question asked', 'Be honest'],
         expectedResponses: [
           // Business responses
-          { text: 'I work for STU Trailer in Turkey.', score: 100 },
-          { text: 'STU Trailer. We manufacture semi-trailers.', score: 95 },
+          { text: 'I work for STU Trailer in Turkey.', score: 100, relatesToChoice: ['business', 'work'] },
+          { text: 'STU Trailer. We manufacture semi-trailers.', score: 95, relatesToChoice: ['business', 'work'] },
           // Tourism responses
-          { text: 'Yes, I have a return ticket for next week.', score: 100 },
-          { text: 'I have my return flight booked for Friday.', score: 95 },
-          { text: 'Yes, here is my return ticket.', score: 90 }
+          { text: 'Yes, I have a return ticket for next week.', score: 100, relatesToChoice: ['tourism', 'holiday', 'vacation', 'leisure'] },
+          { text: 'I have my return flight booked for Friday.', score: 95, relatesToChoice: ['tourism', 'holiday', 'vacation', 'leisure'] },
+          { text: 'Yes, here is my return ticket.', score: 90, relatesToChoice: ['tourism', 'holiday', 'vacation', 'leisure'] }
         ],
         acceptableKeywords: ['STU', 'Trailer', 'Turkey', 'company', 'work', 'ticket', 'return', 'flight', 'booked', 'yes'],
         dynamicReplacements: {
@@ -278,10 +278,31 @@ export const scenarios: Scenario[] = [
         id: 'turn_12',
         role: 'user',
         text: '',
-        hints: ['State you have nothing to declare']
+        hints: ['State you have nothing to declare'],
+        skipLogic: {
+          triggerKeywords: ['no', 'nothing', 'don\'t', 'dont', 'none'],
+          skipCount: 2
+        }
       },
       {
         id: 'turn_13',
+        role: 'agent',
+        text: 'Could you please specify what goods you are declaring?',
+        hints: ['Be specific'],
+        expectedResponses: [
+          { text: 'I have 200 cigarettes.', score: 100 },
+          { text: 'A bottle of whiskey.', score: 100 }
+        ],
+        acceptableKeywords: ['cigarettes', 'alcohol', 'gift']
+      },
+      {
+        id: 'turn_14',
+        role: 'user',
+        text: '',
+        hints: ['Specify quantity']
+      },
+      {
+        id: 'turn_15',
         role: 'agent',
         text: 'That\'s fine. Welcome to the United Kingdom. Enjoy your stay.',
         hints: ['Thank them politely'],
