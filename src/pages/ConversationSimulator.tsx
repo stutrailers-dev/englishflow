@@ -159,57 +159,62 @@ export default function ConversationSimulator() {
     return processed
   }, [personalizeText])
 
+  // Helper to get processed text for any turn (history or current)
+  const getDisplayText = useCallback((turn: any, index: number) => {
+    // 1. Check for AI response
+    const aiResponse = aiResponses.get(index)
+    if (aiResponse) {
+      return processText(aiResponse)
+    }
+
+    // 2. Fallback to template system
+    let processedText = turn.text
+    if (turn.dynamicReplacements && turn.choiceKeywords) {
+      // Look for user's previous choice in collected userChoices
+      for (let i = index - 1; i >= 0; i--) {
+        const previousChoice = userChoices.get(i)
+        if (previousChoice && turn.dynamicReplacements[previousChoice]) {
+          const replacements = turn.dynamicReplacements[previousChoice]
+          for (const [placeholder, value] of Object.entries(replacements)) {
+            processedText = processedText.replace(new RegExp(`\\{\\{${placeholder}\\}\\}`, 'g'), String(value))
+          }
+          break
+        }
+      }
+
+      // Default choice if still has placeholders
+      if (processedText.includes('{{')) {
+        const defaultChoice = Object.keys(turn.dynamicReplacements)[0]
+        if (defaultChoice) {
+          const replacements = turn.dynamicReplacements[defaultChoice]
+          for (const [placeholder, value] of Object.entries(replacements)) {
+            processedText = processedText.replace(new RegExp(`\\{\\{${placeholder}\\}\\}`, 'g'), String(value))
+          }
+        }
+      }
+    }
+
+    // 3. Cleanup placeholders and personalize
+    return processText(processedText)
+  }, [aiResponses, userChoices, processText])
+
   // Get current dialogue turn with dynamic replacements based on user choices
   const currentTurn = useMemo(() => {
     if (!selectedScenario) return null
     const turn = selectedScenario.dialogue[currentTurnIndex]
     if (!turn) return null
 
-    // Apply dynamic replacements if this turn has them
-    let processedText = turn.text
-
-    // 1. Check if we have an AI generated response for this turn
-    const aiResponse = aiResponses.get(currentTurnIndex)
-    if (aiResponse) {
-      processedText = aiResponse
-    }
-    // 2. Fallback to template system if no AI response
-    else if (turn.dynamicReplacements && turn.choiceKeywords) {
-      // Look for user's previous choice in collected userChoices
-      // Check previous turn indexes for detected choices
-      for (let i = currentTurnIndex - 1; i >= 0; i--) {
-        const previousChoice = userChoices.get(i)
-        if (previousChoice && turn.dynamicReplacements[previousChoice]) {
-          // Apply the dynamic replacement
-          const replacements = turn.dynamicReplacements[previousChoice]
-          for (const [placeholder, value] of Object.entries(replacements)) {
-            processedText = processedText.replace(new RegExp(`\\{\\{${placeholder}\\}\\}`, 'g'), value)
-          }
-          break // Use the most recent matching choice
-        }
-      }
-
-      // If no choice was detected, use the first option as default
-      if (processedText.includes('{{')) {
-        const defaultChoice = Object.keys(turn.dynamicReplacements)[0]
-        if (defaultChoice) {
-          const replacements = turn.dynamicReplacements[defaultChoice]
-          for (const [placeholder, value] of Object.entries(replacements)) {
-            processedText = processedText.replace(new RegExp(`\\{\\{${placeholder}\\}\\}`, 'g'), value)
-          }
-        }
-      }
-    }
+    const processedText = getDisplayText(turn, currentTurnIndex)
 
     return {
       ...turn,
-      text: processText(processedText),
+      text: processedText,
       expectedResponses: turn.expectedResponses?.map(r => ({
         ...r,
         text: processText(r.text)
       }))
     }
-  }, [selectedScenario, currentTurnIndex, processText, userChoices, aiResponses])
+  }, [selectedScenario, currentTurnIndex, getDisplayText, processText])
 
   // Handle user response submission
   const submitResponse = useCallback(() => {
@@ -915,7 +920,7 @@ export default function ConversationSimulator() {
                   : 'bg-racing-700 text-white rounded-tr-sm'
                   }`}>
                   {turn.role === 'agent' ? (
-                    <p className="text-sm">{personalizeText(turn.text)}</p>
+                    <p className="text-sm">{getDisplayText(turn, index)}</p>
                   ) : (
                     <>
                       <p className="text-sm">{userResponses.get(turn.id)?.text}</p>
