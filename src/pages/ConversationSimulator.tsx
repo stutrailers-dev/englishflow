@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { Mic, RotateCcw, Volume2, X, ChevronRight, Target, Lock as Clock, Trophy, Lightbulb, Pause, BookOpen, Star, Check, MicOff, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { generateDynamicResponse } from '../services/aiService'
+import { generateDynamicResponse, AIResponse } from '../services/aiService'
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition'
 import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis'
 import { scenarios } from '../data/scenarios'
@@ -56,6 +56,7 @@ export default function ConversationSimulator() {
   const [showFeedback, setShowFeedback] = useState(false)
   const [isGeneratingResponse, setIsGeneratingResponse] = useState(false)
   const [lastScore, setLastScore] = useState<number | null>(null)
+  const [offTopicCount, setOffTopicCount] = useState(0)
 
   // Track detected user choices and AI responses
   const [userChoices, setUserChoices] = useState<Map<number, string>>(new Map())
@@ -383,24 +384,24 @@ export default function ConversationSimulator() {
 
       // AI Response Generation
       // If the NEXT turn is an AGENT turn, we should generate a dynamic response based on user input
+      // AI Response Generation
+      // If the NEXT turn is an AGENT turn (or if we are STAYing), generat dynamic response
       if (nextTurn && nextTurn.role === 'agent') {
         setIsGeneratingResponse(true)
         try {
-          // Construct scenario context string from previous turns (last 3 turns for context)
           const contextTurns = selectedScenario.dialogue.slice(Math.max(0, currentTurnIndex - 2), currentTurnIndex + 1)
           const scenarioContext = `
             Scenario: ${selectedScenario.title}
-            Goal: ${selectedScenario.objectives.join(', ')}
+            Goal: ${selectedScenario.objectives.map(o => o.description).join(', ')}
             Conversation History:
             ${contextTurns.map(t => `${t.role}: ${t.text}`).join('\n')}
           `
 
-          // Get the current agent question (the one user just answered)
           const previousAgentTurn = selectedScenario.dialogue[currentTurnIndex]
 
-          const newResponse = await generateDynamicResponse({
+          const responseData: AIResponse | null = await generateDynamicResponse({
             scenarioContext,
-            role: 'agent', // Role of the responder
+            role: 'agent',
             previousAgentLine: previousAgentTurn.text,
             userResponse: transcript,
             originalNextLine: getDisplayText(nextTurn, nextTurnIndex),
@@ -408,10 +409,34 @@ export default function ConversationSimulator() {
             detectedChoice: detectedChoice ?? undefined
           })
 
-          if (newResponse) {
+          if (responseData) {
+            const { text, action } = responseData
+
+            // DIRECTOR ACTION LOGIC
+            if (action === 'TERMINATE') {
+              if (selectedScenario.terminationConfig) {
+                const abortIndex = selectedScenario.dialogue.findIndex(d => d.id === selectedScenario.terminationConfig!.targetTurnId)
+                if (abortIndex !== -1) nextTurnIndex = abortIndex
+              }
+            } else if (action === 'STAY') {
+              if (offTopicCount >= 9) {
+                // Quota exceeded -> Terminate
+                if (selectedScenario.terminationConfig) {
+                  const abortIndex = selectedScenario.dialogue.findIndex(d => d.id === selectedScenario.terminationConfig!.targetTurnId)
+                  if (abortIndex !== -1) nextTurnIndex = abortIndex
+                }
+              } else {
+                setOffTopicCount(prev => prev + 1)
+                nextTurnIndex = currentTurnIndex // Prevent advancement
+              }
+            } else {
+              // NEXT_TURN -> Reset quota
+              setOffTopicCount(0)
+            }
+
             setAiResponses(prev => {
               const newMap = new Map(prev)
-              newMap.set(nextTurnIndex, newResponse)
+              newMap.set(nextTurnIndex, text)
               return newMap
             })
           }
