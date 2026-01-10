@@ -169,7 +169,8 @@ export const scenarios: Scenario[] = [
           { text: 'Hello. It\'s a business trip. I\'m visiting clients.', score: 95 },
           { text: 'Business. I\'m meeting clients this week.', score: 85 }
         ],
-        acceptableKeywords: ['business', 'meeting', 'clients', 'work', 'trip']
+        acceptableKeywords: ['business', 'meeting', 'clients', 'work', 'trip'],
+        choiceKeywords: ['business', 'work', 'tourism', 'holiday', 'vacation', 'leisure']
       },
       {
         id: 'turn_2',
@@ -216,14 +217,26 @@ export const scenarios: Scenario[] = [
       {
         id: 'turn_7',
         role: 'agent',
-        text: 'And what company do you work for?',
-        hints: ['Name your company', 'Briefly mention what you do'],
+        text: '{{Turn7_Question}}',
+        hints: ['Answer the question asked', 'Be honest'],
         expectedResponses: [
-          { text: 'I work for STU Trailer in Turkey. We manufacture semi-trailers.', score: 100 },
-          { text: 'STU Trailer. We\'re a trailer manufacturing company based in Konya, Turkey.', score: 95 },
-          { text: 'I\'m with STU Trailer. We make commercial vehicles.', score: 90 }
+          // Business responses
+          { text: 'I work for STU Trailer in Turkey.', score: 100 },
+          { text: 'STU Trailer. We manufacture semi-trailers.', score: 95 },
+          // Tourism responses
+          { text: 'Yes, I have a return ticket for next week.', score: 100 },
+          { text: 'I have my return flight booked for Friday.', score: 95 },
+          { text: 'Yes, here is my return ticket.', score: 90 }
         ],
-        acceptableKeywords: ['STU', 'Trailer', 'Turkey', 'company', 'manufacture', 'work']
+        acceptableKeywords: ['STU', 'Trailer', 'Turkey', 'company', 'work', 'ticket', 'return', 'flight', 'booked', 'yes'],
+        dynamicReplacements: {
+          'business': { 'Turn7_Question': 'And what company do you work for?' },
+          'work': { 'Turn7_Question': 'And what company do you work for?' },
+          'tourism': { 'Turn7_Question': 'Do you have a return ticket booked?' },
+          'holiday': { 'Turn7_Question': 'Do you have a return ticket booked?' },
+          'vacation': { 'Turn7_Question': 'Do you have a return ticket booked?' },
+          'leisure': { 'Turn7_Question': 'Do you have a return ticket booked?' }
+        }
       },
       {
         id: 'turn_8',
