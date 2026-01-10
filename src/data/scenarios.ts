@@ -138,6 +138,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'airport',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to enter', 'withdraw', 'change my mind'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -312,6 +316,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thanks. Cheers.', score: 85 }
         ],
         acceptableKeywords: ['thank', 'cheers', 'appreciate']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. If you wish to withdraw your application to enter, please step aside and we will facilitate your return.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['border control', 'immigration officer', 'purpose of visit', 'duration', 'accommodation', 'duty-free allowance', 'declare', 'belongings'],

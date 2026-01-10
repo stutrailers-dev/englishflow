@@ -308,13 +308,25 @@ export default function ConversationSimulator() {
     let nextTurnIndex = currentTurnIndex + 1
 
     if (selectedScenario && transcript) {
-      // Logic for legacy template system detection...
+      const lowerText = transcript.toLowerCase()
+      let isTerminating = false
 
-      // Check Skip Logic from current turn response
+      // 1. Check Global Termination (Emergency Exit)
+      if (selectedScenario.terminationConfig) {
+        const { keywords, targetTurnId } = selectedScenario.terminationConfig
+        if (keywords.some(kw => lowerText.includes(kw.toLowerCase()))) {
+          const targetIndex = selectedScenario.dialogue.findIndex(d => d.id === targetTurnId)
+          if (targetIndex !== -1) {
+            nextTurnIndex = targetIndex
+            isTerminating = true
+          }
+        }
+      }
+
+      // 2. Check Skip Logic (if not terminating)
       const currentDialogueTurn = selectedScenario.dialogue[currentTurnIndex]
-      if (currentDialogueTurn?.skipLogic) {
+      if (!isTerminating && currentDialogueTurn?.skipLogic) {
         const { triggerKeywords, skipCount, invertCondition } = currentDialogueTurn.skipLogic
-        const lowerText = transcript.toLowerCase()
         let shouldSkip = triggerKeywords.some(kw => lowerText.includes(kw.toLowerCase()))
         if (invertCondition) shouldSkip = !shouldSkip
         if (shouldSkip) {

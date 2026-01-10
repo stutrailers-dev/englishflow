@@ -107,6 +107,11 @@ export interface Scenario {
   chunks: string[]
   duration: number // in minutes
   imageUrl?: string
+  // Emergency exit logic (e.g. user wants to go back/abort)
+  terminationConfig?: {
+    keywords: string[]
+    targetTurnId: string
+  }
 }
 
 export type ScenarioCategory =
