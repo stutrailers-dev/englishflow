@@ -1,11 +1,23 @@
 /// <reference types="vite/client" />
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 
 // Initialize Gemini API
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
-// Using gemini-1.5-flash for faster responses and lower latency suitable for conversation
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+// Using gemini-1.5-flash with optimized settings for conversation
+const model = genAI.getGenerativeModel({
+    model: "gemini-1.5-flash",
+    safetySettings: [
+        { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+        { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+        { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
+        { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+    ],
+    generationConfig: {
+        temperature: 0.7,
+        maxOutputTokens: 150,
+    }
+});
 
 interface DynamicResponseParams {
     scenarioContext: string;
