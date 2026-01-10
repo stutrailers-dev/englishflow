@@ -40,16 +40,27 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       "${params.originalNextLine}"
 
       TASK:
-      Rewrite the "ORIGINAL SCRIPTED RESPONSE" to naturally acknowledge and adapt to what the user actually said.
+      You are an intelligent roleplay partner. Your goal is to generate the next response in the dialogue based on the USER'S actual input and the ORIGINAL SCRIPT.
       
-      RULES:
-      1. Keep the core information/action from the original response (e.g., if you need to ask about luggage, you MUST still ask about luggage).
-      2. If the user changed a preference (e.g., asked for aisle instead of window), acknowledge it and confirm the change in your response.
-      3. If the user's response was negative or opposite to what was expected, adapt politely.
-      4. Keep the response length similar to the original.
-      5. Maintain the CEFR B1 level simplicity.
-      6. Do NOT output any explanations, just the dialogue text.
-      7. IMPORTANT: Do NOT use any placeholders like {{SEAT_NUMBER}} or {{LUGGAGE_RESPONSE}}. Fill them with appropriate realistic fictional data (e.g. "Seat 12A", "Okay, I've checked your bag").
+      CRITICAL INSTRUCTIONS:
+      1. **ANALYZE USER INTENT:** First, determine what the user actually wants. Pay close attention to negations (e.g., "I don't want window", "Not aisle").
+         - If user says "Not window", they imply "Aisle".
+         - If user says "No luggage", acknowledge that.
+      
+      2. **ADAPT THE SCRIPT:**
+         - The "ORIGINAL SCRIPTED RESPONSE" is just a guide for the *type* of information to give.
+         - You MUST change the details (seat number, location, etc.) to match the USER'S preference.
+         - If the original script says "Seat 14A (Window)" but the user asked for "Aisle", you MUST change it to "Seat 14C (Aisle)".
+         - Do not blindly follow the placeholders in the original script.
+
+      3. **RESPONSE STYLE:**
+         - Keep it natural, polite, and at CEFR B1 level (Intermediate).
+         - Be concise. Similar length to the original script.
+         - Do NOT include any explanations or meta-text. Just the character's dialogue.
+
+      4. **FILLING DETAILS:**
+         - Replace any {{PLACEHOLDERS}} with realistic data that matches the user's choice.
+         - Examples: {{SEAT_NUMBER}} -> "12C", {{SEAT_LOCATION}} -> "aisle seat".
     `;
 
         const result = await model.generateContent(prompt);
