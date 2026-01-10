@@ -14,6 +14,7 @@ interface DynamicResponseParams {
     userResponse: string;
     originalNextLine: string;
     userName?: string;
+    detectedChoice?: string;
 }
 
 export const generateDynamicResponse = async (params: DynamicResponseParams): Promise<string | null> => {
@@ -35,6 +36,8 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       CONTEXT:
       You just said: "${params.previousAgentLine}"
       The user responded: "${params.userResponse}"
+      
+      SYSTEM DETECTED CHOICE: ${params.detectedChoice ? params.detectedChoice.toUpperCase() : 'N/A'} (Use this as a strong hint for user intent)
       
       ORIGINAL SCRIPTED RESPONSE (What you were supposed to say):
       "${params.originalNextLine}"

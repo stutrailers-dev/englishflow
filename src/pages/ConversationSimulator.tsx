@@ -295,18 +295,49 @@ export default function ConversationSimulator() {
       // Logic for legacy template system detection...
       const nextTurnIndex = currentTurnIndex + 1
       const nextTurn = selectedScenario.dialogue[nextTurnIndex]
+      let detectedChoice: string | null = null
 
       if (nextTurn?.choiceKeywords) {
         const userResponseLower = transcript.toLowerCase()
+
+        // Smart detection that handles negations
+        // Example: "I don't want window" -> detects "window" but sees "don't", so picks "aisle" (if available)
         for (const keyword of nextTurn.choiceKeywords) {
-          if (userResponseLower.includes(keyword.toLowerCase())) {
-            setUserChoices(prev => {
-              const newMap = new Map(prev)
-              newMap.set(currentTurnIndex, keyword.toLowerCase())
-              return newMap
-            })
+          const kw = keyword.toLowerCase()
+          if (userResponseLower.includes(kw)) {
+            // Check for nearby negations (not, no, don't, won't) within reasonable distance before the keyword
+            // Regex checks for negation words up to 5 words before the keyword
+            const negationRegex = new RegExp(`(not|no|don't|dont|won't|wont|prefer)\\s+(?:\\w+\\s+){0,5}${kw}`, 'i')
+            const isNegated = negationRegex.test(userResponseLower) && !userResponseLower.includes(`prefer ${kw}`) // Exception for "prefer window"
+
+            if (isNegated) {
+              // Be clever: If user says "no window", look for the OTHER keyword in the list
+              const otherOption = nextTurn.choiceKeywords.find(k => k.toLowerCase() !== kw)
+              if (otherOption) {
+                detectedChoice = otherOption.toLowerCase()
+              }
+            } else {
+              detectedChoice = kw
+            }
             break
           }
+        }
+
+        // Also handle direct negative answers for Yes/No questions (Luggage etc)
+        if (!detectedChoice && (nextTurn.choiceKeywords.includes('yes') || nextTurn.choiceKeywords.includes('no'))) {
+          if (userResponseLower.includes('no') || userResponseLower.includes('not') || userResponseLower.includes("don't")) {
+            detectedChoice = 'no'
+          } else if (userResponseLower.includes('yes') || userResponseLower.includes('yeah') || userResponseLower.includes('sure')) {
+            detectedChoice = 'yes'
+          }
+        }
+
+        if (detectedChoice) {
+          setUserChoices(prev => {
+            const newMap = new Map(prev)
+            newMap.set(currentTurnIndex, detectedChoice!)
+            return newMap
+          })
         }
       }
 
@@ -333,7 +364,8 @@ export default function ConversationSimulator() {
             previousAgentLine: previousAgentTurn.text,
             userResponse: transcript,
             originalNextLine: nextTurn.text,
-            userName: userName
+            userName: userName,
+            detectedChoice: detectedChoice ?? undefined
           })
 
           if (newResponse) {
