@@ -3,14 +3,13 @@
 // Initialize Gemini API Key
 const API_KEY = (import.meta.env.VITE_GEMINI_API_KEY || '').trim();
 
-// List of models to try in order of preference
+// List of models to try in order of preference (Updated for 2026 availability)
 const MODELS_TO_TRY = [
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-latest",
-    "gemini-1.5-pro",
-    "gemini-1.5-pro-latest",
-    "gemini-1.0-pro",
-    "gemini-pro"
+    "gemini-2.5-flash",
+    "gemini-flash-latest",
+    "gemini-2.0-flash",
+    "gemini-2.5-pro",
+    "gemini-pro-latest"
 ];
 
 interface DynamicResponseParams {
