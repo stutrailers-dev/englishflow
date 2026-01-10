@@ -448,11 +448,10 @@ export default function ConversationSimulator() {
           <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2 -mx-4 px-4">
             <button
               onClick={() => setCategoryFilter('all')}
-              className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${
-                categoryFilter === 'all'
+              className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${categoryFilter === 'all'
                   ? 'bg-navy-900 dark:bg-white text-white dark:text-neutral-900 shadow-sm'
                   : 'bg-gray-100 dark:bg-neutral-800 text-navy-700 dark:text-neutral-300 hover:bg-gray-200 dark:hover:bg-neutral-700'
-              }`}
+                }`}
             >
               All Categories
               <span className={`ml-1.5 text-xs ${categoryFilter === 'all' ? 'opacity-80' : 'opacity-60'}`}>
@@ -463,11 +462,10 @@ export default function ConversationSimulator() {
               <button
                 key={key}
                 onClick={() => setCategoryFilter(key as ScenarioCategory)}
-                className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${
-                  categoryFilter === key
+                className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${categoryFilter === key
                     ? 'bg-navy-900 dark:bg-white text-white dark:text-neutral-900 shadow-sm'
                     : 'bg-gray-100 dark:bg-neutral-800 text-navy-700 dark:text-neutral-300 hover:bg-gray-200 dark:hover:bg-neutral-700'
-                }`}
+                  }`}
               >
                 {icon} {en}
                 <span className={`ml-1.5 text-xs ${categoryFilter === key ? 'opacity-80' : 'opacity-60'}`}>
@@ -672,7 +670,7 @@ export default function ConversationSimulator() {
 
   // Active scenario view - key forces React to remount when scenario changes
   return (
-    <div key={`scenario-${selectedScenario.id}`} className="max-w-4xl mx-auto pb-2 md:pb-0">
+    <div key={`scenario-${selectedScenario.id}`} className="max-w-4xl mx-auto pb-24 md:pb-4">
       {/* Compact Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -735,9 +733,8 @@ export default function ConversationSimulator() {
           <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
             {selectedScenario.objectives.map((obj, i) => (
               <div key={obj.id} className="flex items-center gap-1 flex-shrink-0">
-                <div className={`w-4 h-4 rounded-full flex items-center justify-center text-xs ${
-                  i < Math.floor(currentTurnIndex / 2) ? 'bg-racing-700 text-white' : 'bg-navy-100 text-navy-500'
-                }`}>
+                <div className={`w-4 h-4 rounded-full flex items-center justify-center text-xs ${i < Math.floor(currentTurnIndex / 2) ? 'bg-racing-700 text-white' : 'bg-navy-100 text-navy-500'
+                  }`}>
                   {i < Math.floor(currentTurnIndex / 2) ? (
                     <Check className="w-2.5 h-2.5" />
                   ) : (
@@ -760,7 +757,7 @@ export default function ConversationSimulator() {
         className="card p-5 mb-6"
       >
         {/* Conversation history */}
-        <div className="space-y-4 mb-6 max-h-[400px] overflow-y-auto scrollbar-thin">
+        <div className="space-y-4 mb-4 max-h-[280px] overflow-y-auto scrollbar-thin">
           {selectedScenario.dialogue.slice(0, currentTurnIndex + 1).map((turn) => {
             // Only render if it's an agent turn OR a user turn with a response
             const hasContent = turn.role === 'agent' || userResponses.has(turn.id)
