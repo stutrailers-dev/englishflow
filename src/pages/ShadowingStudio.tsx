@@ -322,7 +322,8 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
             const phases = ['listen', 'record', 'compare']
             const currentPhaseIndex = phases.indexOf(phase)
             const isActive = item.phase === phase
-            const isCompleted = i < currentPhaseIndex
+            // When in compare phase, all steps are complete (including compare itself)
+            const isCompleted = i < currentPhaseIndex || (phase === 'compare' && item.phase === 'compare')
 
             return (
               <div key={item.phase} className="flex items-center">
