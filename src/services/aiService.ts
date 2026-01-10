@@ -65,8 +65,17 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       "${params.originalNextLine}"
     `;
 
+    // OPTIMIZATION: Prioritize the model that worked previously
+    const preferredModel = localStorage.getItem('GEMINI_PREFERRED_MODEL');
+    let optimizationQueue = [...MODELS_TO_TRY];
+
+    if (preferredModel && MODELS_TO_TRY.includes(preferredModel)) {
+        optimizationQueue = [preferredModel, ...MODELS_TO_TRY.filter(m => m !== preferredModel)];
+        console.log(`🚀 Optimization: Trying previously successful model first: ${preferredModel}`);
+    }
+
     // Try models using raw REST API (bypassing SDK)
-    for (const modelName of MODELS_TO_TRY) {
+    for (const modelName of optimizationQueue) {
         try {
             console.log(`📡 Attempting REST API call to: ${modelName}`);
 
@@ -109,6 +118,11 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
 
             if (text) {
                 console.log(`✅ Success with ${modelName}:`, text);
+                // CACHE THE SUCCESSFUL MODEL
+                if (modelName !== preferredModel) {
+                    localStorage.setItem('GEMINI_PREFERRED_MODEL', modelName);
+                    console.log(`💾 Cached new preferred model: ${modelName}`);
+                }
                 return text.trim();
             } else {
                 console.warn(`⚠️ Empty response from ${modelName}`, data);
