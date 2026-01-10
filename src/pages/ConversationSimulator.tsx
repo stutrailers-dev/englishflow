@@ -1,28 +1,12 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
+import { Mic, RotateCcw, Volume2, X, ChevronRight, Loader2, Target, Lock as Clock, Trophy, Lightbulb, Pause, BookOpen, Star, Check, MicOff, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import {
-  MessageCircle,
-  Mic,
-  MicOff,
-  Volume2,
-  Check,
-  X,
-  ChevronRight,
-  RotateCcw,
-  Target,
-  Clock,
-  Trophy,
-  Lightbulb,
-  Pause,
-  BookOpen,
-  Star
-} from 'lucide-react'
-import { scenarios } from '@/data/scenarios'
-import { useSpeechRecognition } from '@/hooks/useSpeechRecognition'
-import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis'
-import { useProgressStore } from '@/stores/progressStore'
-import type { Scenario, ScenarioCategory } from '@/types'
-
+import { generateDynamicResponse } from '../services/aiService'
+import { useSpeechRecognition } from '../hooks/useSpeechRecognition'
+import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis'
+import { scenarios } from '../data/scenarios'
+import { Scenario, ScenarioCategory } from '../types'
+import { useProgressStore } from '../stores/progressStore'
 // Calculate similarity between two strings
 const calculateSimilarity = (str1: string, str2: string): number => {
   const s1 = str1.toLowerCase().replace(/[.,!?]/g, '').trim()
@@ -70,9 +54,13 @@ export default function ConversationSimulator() {
   const [categoryFilter, setCategoryFilter] = useState<ScenarioCategory | 'all'>('all')
   const [shouldDelaySort, setShouldDelaySort] = useState(false)
   const [showFeedback, setShowFeedback] = useState(false)
+  const [isGeneratingResponse, setIsGeneratingResponse] = useState(false)
   const [lastScore, setLastScore] = useState<number | null>(null)
-  // Track detected user choices for dynamic responses (e.g., 'window', 'aisle', 'yes', 'no')
+
+  // Track detected user choices and AI responses
   const [userChoices, setUserChoices] = useState<Map<number, string>>(new Map())
+  const [aiResponses, setAiResponses] = useState<Map<number, string>>(new Map())
+
   const [lastFeedback, setLastFeedback] = useState<{
     userResponse: string
     expectedResponses: { text: string; score: number }[]
@@ -169,7 +157,14 @@ export default function ConversationSimulator() {
 
     // Apply dynamic replacements if this turn has them
     let processedText = turn.text
-    if (turn.dynamicReplacements && turn.choiceKeywords) {
+
+    // 1. Check if we have an AI generated response for this turn
+    const aiResponse = aiResponses.get(currentTurnIndex)
+    if (aiResponse) {
+      processedText = aiResponse
+    }
+    // 2. Fallback to template system if no AI response
+    else if (turn.dynamicReplacements && turn.choiceKeywords) {
       // Look for user's previous choice in collected userChoices
       // Check previous turn indexes for detected choices
       for (let i = currentTurnIndex - 1; i >= 0; i--) {
@@ -275,14 +270,14 @@ export default function ConversationSimulator() {
   }, [currentTurn, transcript, selectedScenario, currentTurnIndex])
 
   // Close feedback and move to next turn
-  const closeFeedbackAndContinue = useCallback(() => {
+  const closeFeedbackAndContinue = useCallback(async () => {
     setShowFeedback(false)
     setLastScore(null)
     setLastFeedback(null)
 
     // Detect user choice from transcript before resetting
-    // Look at the NEXT turn's choiceKeywords to know what to detect in current user response
     if (selectedScenario && transcript) {
+      // Logic for legacy template system detection...
       const nextTurnIndex = currentTurnIndex + 1
       const nextTurn = selectedScenario.dialogue[nextTurnIndex]
 
@@ -290,15 +285,53 @@ export default function ConversationSimulator() {
         const userResponseLower = transcript.toLowerCase()
         for (const keyword of nextTurn.choiceKeywords) {
           if (userResponseLower.includes(keyword.toLowerCase())) {
-            // Store this choice with the current turn index
             setUserChoices(prev => {
               const newMap = new Map(prev)
               newMap.set(currentTurnIndex, keyword.toLowerCase())
               return newMap
             })
-            console.log(`🎯 Detected user choice: "${keyword}" for turn ${currentTurnIndex}`)
             break
           }
+        }
+      }
+
+      // AI Response Generation
+      // If the NEXT turn is an AGENT turn, we should generate a dynamic response based on user input
+      if (nextTurn && nextTurn.role === 'agent') {
+        setIsGeneratingResponse(true)
+        try {
+          // Construct scenario context string from previous turns (last 3 turns for context)
+          const contextTurns = selectedScenario.dialogue.slice(Math.max(0, currentTurnIndex - 2), currentTurnIndex + 1)
+          const scenarioContext = `
+            Scenario: ${selectedScenario.title}
+            Goal: ${selectedScenario.objectives.join(', ')}
+            Conversation History:
+            ${contextTurns.map(t => `${t.role}: ${t.text}`).join('\n')}
+          `
+
+          // Get the current agent question (the one user just answered)
+          const previousAgentTurn = selectedScenario.dialogue[currentTurnIndex]
+
+          const newResponse = await generateDynamicResponse({
+            scenarioContext,
+            role: 'agent', // Role of the responder
+            previousAgentLine: previousAgentTurn.text,
+            userResponse: transcript,
+            originalNextLine: nextTurn.text,
+            userName: userName
+          })
+
+          if (newResponse) {
+            setAiResponses(prev => {
+              const newMap = new Map(prev)
+              newMap.set(nextTurnIndex, newResponse)
+              return newMap
+            })
+          }
+        } catch (error) {
+          console.error("AI Generation failed, falling back to script", error)
+        } finally {
+          setIsGeneratingResponse(false)
         }
       }
     }
@@ -890,6 +923,20 @@ export default function ConversationSimulator() {
               </motion.div>
             )
           })}
+
+          {/* AI Thinking Indicator */}
+          {isGeneratingResponse && (
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex justify-start"
+            >
+              <div className="max-w-[80%] rounded-2xl px-4 py-3 bg-navy-100 text-navy-900 rounded-tl-sm flex items-center gap-2">
+                <Loader2 className="w-4 h-4 animate-spin text-navy-500" />
+                <span className="text-sm text-navy-500">Agent is typing...</span>
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Current turn interaction */}
