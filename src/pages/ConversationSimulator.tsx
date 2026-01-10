@@ -96,7 +96,9 @@ export default function ConversationSimulator() {
     incrementVocabularyLearned,
     saveScenarioProgress,
     getScenarioProgress,
-    clearScenarioProgress
+    clearScenarioProgress,
+    markScenarioCompleted,
+    isScenarioCompleted
   } = useProgressStore()
 
   // Ref to track previous listening state
@@ -108,13 +110,20 @@ export default function ConversationSimulator() {
   // Ref for conversation history scroll container
   const conversationHistoryRef = useRef<HTMLDivElement>(null)
 
-  // Filter scenarios
+  // Filter and sort scenarios (completed ones go to bottom)
   const filteredScenarios = useMemo(() => {
-    return scenarios.filter(scenario => {
+    const filtered = scenarios.filter(scenario => {
       const matchesCategory = categoryFilter === 'all' || scenario.category === categoryFilter
       return matchesCategory
     })
-  }, [categoryFilter])
+    // Sort: incomplete first, completed last
+    return filtered.sort((a, b) => {
+      const aCompleted = isScenarioCompleted(a.id)
+      const bCompleted = isScenarioCompleted(b.id)
+      if (aCompleted === bCompleted) return 0
+      return aCompleted ? 1 : -1
+    })
+  }, [categoryFilter, isScenarioCompleted])
 
   // Helper to personalize text
   const personalizeText = useCallback((text: string) => {
@@ -264,13 +273,14 @@ export default function ConversationSimulator() {
       setIsComplete(true)
       incrementScenariosCompleted()
 
-      // Clear saved progress on completion
+      // Mark scenario as completed and clear saved progress
       if (selectedScenario) {
+        markScenarioCompleted(selectedScenario.id)
         clearScenarioProgress(selectedScenario.id)
-        console.log(`🎉 Scenario completed! Progress cleared for: ${selectedScenario.title}`)
+        console.log(`🎉 Scenario completed! Marked as completed: ${selectedScenario.title}`)
       }
     }
-  }, [currentTurnIndex, selectedScenario, resetTranscript, incrementScenariosCompleted, addStudyTime, incrementChunksLearned, incrementVocabularyLearned, userResponses, saveScenarioProgress, clearScenarioProgress])
+  }, [currentTurnIndex, selectedScenario, resetTranscript, incrementScenariosCompleted, addStudyTime, incrementChunksLearned, incrementVocabularyLearned, userResponses, saveScenarioProgress, clearScenarioProgress, markScenarioCompleted])
 
 
   // Cleanup when leaving a scenario - ensures state is fully reset
@@ -500,6 +510,7 @@ export default function ConversationSimulator() {
           {filteredScenarios.map((scenario, index) => {
             const savedProgress = getScenarioProgress(scenario.id)
             const hasProgress = savedProgress && savedProgress.currentTurnIndex > 0
+            const completed = isScenarioCompleted(scenario.id)
 
             return (
               <motion.div
@@ -508,7 +519,7 @@ export default function ConversationSimulator() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
                 onClick={() => loadScenario(scenario)}
-                className="card card-hover p-5 cursor-pointer group"
+                className={`card card-hover p-5 cursor-pointer group ${completed ? 'opacity-70' : ''}`}
               >
                 {/* Category Badge */}
                 <div className="flex items-center justify-between mb-3">
@@ -516,7 +527,12 @@ export default function ConversationSimulator() {
                     {categoryLabels[scenario.category].icon}
                   </span>
                   <div className="flex items-center gap-2">
-                    {hasProgress && (
+                    {completed ? (
+                      <span className="badge bg-green-600 text-white text-xs flex items-center gap-1">
+                        <Check className="w-3 h-3" />
+                        Tamamlandı
+                      </span>
+                    ) : hasProgress && (
                       <span className="badge bg-racing-700 text-white text-xs">
                         Continue
                       </span>

@@ -19,6 +19,7 @@ interface ProgressState {
   progress: UserProgress
   isLoading: boolean
   scenarioProgress: Record<string, ScenarioProgress>
+  completedScenarioIds: string[]
 
   // Actions
   initializeProgress: () => void
@@ -36,6 +37,8 @@ interface ProgressState {
   saveScenarioProgress: (scenarioId: string, currentTurnIndex: number, userResponses: Map<string, { text: string; score: number }>) => void
   getScenarioProgress: (scenarioId: string) => ScenarioProgress | null
   clearScenarioProgress: (scenarioId: string) => void
+  markScenarioCompleted: (scenarioId: string) => void
+  isScenarioCompleted: (scenarioId: string) => boolean
 }
 
 const DEFAULT_DAILY_GOAL: DailyGoal = {
@@ -67,6 +70,7 @@ export const useProgressStore = create<ProgressState>()(
       progress: DEFAULT_PROGRESS,
       isLoading: false,
       scenarioProgress: {},
+      completedScenarioIds: [],
 
       initializeProgress: () => {
         const { progress } = get()
@@ -249,7 +253,7 @@ export const useProgressStore = create<ProgressState>()(
       },
 
       resetProgress: () => {
-        set({ progress: DEFAULT_PROGRESS, scenarioProgress: {} })
+        set({ progress: DEFAULT_PROGRESS, scenarioProgress: {}, completedScenarioIds: [] })
       },
 
       getWeeklyProgress: () => {
@@ -292,6 +296,20 @@ export const useProgressStore = create<ProgressState>()(
           delete newProgress[scenarioId]
           return { scenarioProgress: newProgress }
         })
+      },
+
+      markScenarioCompleted: (scenarioId: string) => {
+        const { completedScenarioIds } = get()
+        if (!completedScenarioIds.includes(scenarioId)) {
+          set(state => ({
+            completedScenarioIds: [...state.completedScenarioIds, scenarioId]
+          }))
+        }
+      },
+
+      isScenarioCompleted: (scenarioId: string) => {
+        const { completedScenarioIds } = get()
+        return completedScenarioIds.includes(scenarioId)
       },
     }),
     {
