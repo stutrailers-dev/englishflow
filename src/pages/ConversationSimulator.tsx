@@ -449,8 +449,8 @@ export default function ConversationSimulator() {
             <button
               onClick={() => setCategoryFilter('all')}
               className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${categoryFilter === 'all'
-                  ? 'bg-navy-900 dark:bg-white text-white dark:text-neutral-900 shadow-sm'
-                  : 'bg-gray-100 dark:bg-neutral-800 text-navy-700 dark:text-neutral-300 hover:bg-gray-200 dark:hover:bg-neutral-700'
+                ? 'bg-navy-900 dark:bg-white text-white dark:text-neutral-900 shadow-sm'
+                : 'bg-gray-100 dark:bg-neutral-800 text-navy-700 dark:text-neutral-300 hover:bg-gray-200 dark:hover:bg-neutral-700'
                 }`}
             >
               All Categories
@@ -463,8 +463,8 @@ export default function ConversationSimulator() {
                 key={key}
                 onClick={() => setCategoryFilter(key as ScenarioCategory)}
                 className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${categoryFilter === key
-                    ? 'bg-navy-900 dark:bg-white text-white dark:text-neutral-900 shadow-sm'
-                    : 'bg-gray-100 dark:bg-neutral-800 text-navy-700 dark:text-neutral-300 hover:bg-gray-200 dark:hover:bg-neutral-700'
+                  ? 'bg-navy-900 dark:bg-white text-white dark:text-neutral-900 shadow-sm'
+                  : 'bg-gray-100 dark:bg-neutral-800 text-navy-700 dark:text-neutral-300 hover:bg-gray-200 dark:hover:bg-neutral-700'
                   }`}
               >
                 {icon} {en}
@@ -757,7 +757,7 @@ export default function ConversationSimulator() {
         className="card p-5 mb-6"
       >
         {/* Conversation history */}
-        <div className="space-y-4 mb-4 max-h-[280px] overflow-y-auto scrollbar-thin">
+        <div className="space-y-4 mb-3 max-h-[220px] overflow-y-auto scrollbar-thin">
           {selectedScenario.dialogue.slice(0, currentTurnIndex + 1).map((turn) => {
             // Only render if it's an agent turn OR a user turn with a response
             const hasContent = turn.role === 'agent' || userResponses.has(turn.id)
