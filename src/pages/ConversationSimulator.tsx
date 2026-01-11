@@ -471,6 +471,17 @@ export default function ConversationSimulator() {
                   aiResponse: text
                 }])
 
+                // Remove the user's off-topic response from userResponses to avoid duplication
+                // (it's now stored in stayExchanges instead)
+                const currentUserTurn = selectedScenario.dialogue[currentTurnIndex]
+                if (currentUserTurn) {
+                  setUserResponses(prev => {
+                    const newMap = new Map(prev)
+                    newMap.delete(currentUserTurn.id)
+                    return newMap
+                  })
+                }
+
                 // Trigger TTS for the AI response
                 console.log('🔊 Speaking dynamic AI response:', text.substring(0, 50) + '...')
                 speak(text)
