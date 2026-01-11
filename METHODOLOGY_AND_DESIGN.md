@@ -397,3 +397,196 @@ Akşam (20 dk):
 ---
 
 *Bu döküman, EnglishFlow uygulamasının temelini oluşturur ve Claude Code ile geliştirme sürecinde referans olarak kullanılacaktır.*
+
+---
+
+## 🤖 AI Director Mode (11 Ocak 2026)
+
+### Genel Bakış
+AI Director Mode, Conversation Simulator'daki statik diyalog akışını dinamik ve gerçekçi bir deneyime dönüştüren gelişmiş bir özelliktir. Gemini AI kullanarak kullanıcı cevaplarını analiz eder ve konuşma akışını yönetir.
+
+### Temel Özellikler
+
+#### 1. Akış Kontrol Sistemi (Action Types)
+| Action | Açıklama | Kullanım Durumu |
+|--------|----------|-----------------|
+| `NEXT_TURN` | Kullanıcı soruyu cevapladı, bir sonraki tura geç | Geçerli cevap verildiğinde |
+| `STAY` | Aynı soruda kal, AI dinamik cevap üretir | Alakasız cevap, yardım talebi, açıklama isteme |
+| `TERMINATE` | Konuşmayı sonlandır | Kullanıcı çıkmak istiyor, sabır tükendi, belge eksik |
+
+#### 2. Sabır Kotası (Patience Quota)
+- Kullanıcının **7 STAY** hakkı vardır
+- Her off-topic cevap kotadan düşer
+- 7. denemede `TERMINATE` tetiklenir
+- Geçerli cevap (NEXT_TURN) kotayı sıfırlar
+
+#### 3. Dinamik Mesaj Biriktirme (stayExchanges)
+```typescript
+interface StayExchange {
+  userText: string      // Kullanıcının off-topic mesajı
+  userScore: number     // Eşleşme puanı
+  aiResponse: string    // AI'ın yönlendirme cevabı
+}
+```
+- Her STAY action'ında kullanıcı mesajı + AI cevabı array'e eklenir
+- Sıralı görüntüleme sağlar
+- NEXT_TURN ile temizlenir
+
+#### 4. Text-to-Speech Entegrasyonu
+- AI cevapları otomatik olarak seslendirilir
+- `speak(text)` fonksiyonu ile British accent TTS
+
+---
+
+### AI Empati ve Gerçekçilik Kategorileri
+
+AI artık kullanıcı cevaplarını 8 kategoride değerlendiriyor:
+
+#### A) Geçerli Cevap → `NEXT_TURN`
+Kullanıcı soruyu cevapladı (kısmen bile olsa), senaryo ilerler.
+
+#### B) Acil Durum / Fenalık → `STAY` + Gerçek İlgi
+**Tetikleyiciler:** sick, unwell, faint, dizzy, water urgently, help me
+```
+Kullanıcı: "I'm not feeling well, I need water"
+AI: "I understand. Let me get you some water right away. Once you feel a bit better, 
+     could you please tell me the purpose of your visit?"
+```
+
+#### C) Gönüllü Geri Dönüş İsteği → `TERMINATE` Nazikçe
+**Tetikleyiciler:** go back, return to my country, cancel, don't want to enter
+```
+Kullanıcı: "I want to go back to my country"
+AI: "I understand. I'll arrange for an officer to assist you with the return process. 
+     Please follow my colleague. Safe travels."
+```
+
+#### D) Dil Bariyeri → `STAY` + Sabır
+**Tetikleyiciler:** I don't speak English, can't understand, don't know the language
+```
+Kullanıcı: "I don't speak English very well"
+AI: "No problem. Would you like me to call an interpreter? For now, can you simply 
+     tell me: business or holiday?"
+```
+
+#### E) Belge Sorunları → `TERMINATE` Yardımcı
+**Tetikleyiciler:** can't find passport, left bag on plane, forgot documents
+```
+Kullanıcı: "I left my bag on the plane, my passport was inside"
+AI: "I understand. Without your passport, I cannot process your entry. Let me call 
+     ground services to help locate your bag on the aircraft. Please wait here."
+```
+
+#### F) Olağandışı Durumlar → `STAY` + Bilgi Toplama
+**Tetikleyiciler:** flight diverted, transit, going to Belgium, unplanned arrival
+```
+Kullanıcı: "My flight was diverted, I was going to Belgium"
+AI: "I see, so your flight was diverted here due to weather. Were you planning to 
+     continue to Belgium, or will you be staying in the UK?"
+```
+
+#### G) Vize Endişeleri → `STAY` + Değerlendirme
+**Tetikleyiciler:** visa expires, visa issue, visa problem
+```
+Kullanıcı: "My visa expires in 2 days"
+AI: "I see your visa expires in 2 days. For a short visit, that should be fine. 
+     What is the purpose of your visit?"
+```
+
+#### H) Gerçek Alakasızlık → `STAY` + Yönlendirme
+**Tetikleyiciler:** Hava durumu, spor, kişisel sorular
+```
+Kullanıcı: "What's the weather like in London?"
+AI: "It's quite cold today. Now, could you please tell me the purpose of your visit?"
+```
+
+---
+
+### Teknik Implementasyon
+
+#### Dosya Değişiklikleri
+
+**`src/services/aiService.ts`**
+- Gemini API entegrasyonu (REST API)
+- Model fallback sistemi: `gemini-2.5-flash` → `gemini-2.0-flash-exp` → `gemini-1.5-flash`
+- Başarılı model caching (`localStorage`)
+- Kapsamlı prompt engineering
+
+**`src/pages/ConversationSimulator.tsx`**
+- `stayExchanges` state: Off-topic mesajları biriktirme
+- `offTopicCount` state: Sabır kotası takibi
+- `closeFeedbackAndContinue` güncellendi:
+  - AI cevabı önceki turn (agent) kontrol edilerek üretiliyor
+  - STAY durumunda `userResponses`'dan silme (duplikasyon önleme)
+  - TTS entegrasyonu (`speak(text)`)
+- Render güncellendi:
+  - Ana diyalog döngüsü + stayExchanges array'i
+  - STAY mesajları için görsel ayrım (border-l-4)
+
+#### State Yönetimi
+```typescript
+// STAY exchange biriktirme
+const [stayExchanges, setStayExchanges] = useState<StayExchange[]>([])
+
+// Sabır kotası
+const [offTopicCount, setOffTopicCount] = useState(0)
+
+// AI cevapları (NEXT_TURN için)
+const [aiResponses, setAiResponses] = useState<Map<number, string>>(new Map())
+```
+
+#### API Çağrı Akışı
+```
+1. Kullanıcı cevap verir → submitResponse()
+2. Feedback popup açılır → showFeedback = true
+3. Kullanıcı "Devam Et" tıklar → closeFeedbackAndContinue()
+4. AI cevap üretir → generateDynamicResponse()
+5. Action'a göre işlem:
+   - NEXT_TURN: aiResponses güncelle, turn++ 
+   - STAY: stayExchanges'e ekle, userResponses'dan sil, speak()
+   - TERMINATE: terminationConfig'e göre yönlendir
+```
+
+---
+
+### Hata Ayıklama ve Debug Logları
+
+Konsol logları ile akış takibi:
+```
+🔑 AI Service initialized
+🔑 API Key present: true
+🎬 closeFeedbackAndContinue called
+🎬 currentTurnIndex: 1
+🎬 transcript: "can I have some water"
+🤖 Checking AI generation condition
+🤖 answeredTurn (previous): turn_1 agent
+🤖 ENTERING AI generation block!
+📡 Attempting REST API call to: gemini-2.5-flash
+✅ Success with gemini-2.5-flash
+🤖 AI Response received: {text: "...", action: "STAY", reason: "..."}
+🔊 Speaking dynamic AI response: "I'm sorry..."
+```
+
+---
+
+### Gelecek İyileştirmeler
+
+- [ ] Conversation history'yi AI'a gönderme (bağlam zenginleştirme)
+- [ ] Sentiment analysis ile duygu durumu algılama
+- [ ] Multi-language support (tercüman çağırma simülasyonu)
+- [ ] Voice tone analysis (kullanıcı ses tonundan stres algılama)
+- [ ] Scenario branching (kullanıcı tercihlerine göre dallanma)
+
+---
+
+### Versiyon Geçmişi
+
+| Tarih | Değişiklik |
+|-------|------------|
+| 11 Ocak 2026 | AI Director Mode ilk implementasyon |
+| 11 Ocak 2026 | Turn index bug düzeltmesi (previous turn kontrolü) |
+| 11 Ocak 2026 | Dinamik mesaj sistemi (stayExchanges array) |
+| 11 Ocak 2026 | Mesaj duplikasyonu düzeltmesi |
+| 11 Ocak 2026 | TTS entegrasyonu (STAY cevapları) |
+| 11 Ocak 2026 | Empati ve gerçekçilik kategorileri |
+| 11 Ocak 2026 | Edge case'ler (dil bariyeri, belge sorunları, vize, vb.) |
