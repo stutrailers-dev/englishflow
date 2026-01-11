@@ -338,12 +338,14 @@ export default function ConversationSimulator() {
       const nextTurn = selectedScenario.dialogue[nextTurnIndex]
       let detectedChoice: string | null = null
 
-      if (nextTurn?.choiceKeywords) {
+      // Fix: Choice keywords should be checked on the CURRENT turn (the question being answered), 
+      // not the next turn. The metadata is on the Agent turn asking the question.
+      if (currentDialogueTurn?.choiceKeywords) {
         const userResponseLower = transcript.toLowerCase()
 
         // Smart detection that handles negations
         // Example: "I don't want window" -> detects "window" but sees "don't", so picks "aisle" (if available)
-        for (const keyword of nextTurn.choiceKeywords) {
+        for (const keyword of currentDialogueTurn.choiceKeywords) {
           const kw = keyword.toLowerCase()
           if (userResponseLower.includes(kw)) {
             // Check for nearby negations (not, no, don't, won't) within reasonable distance before the keyword
@@ -353,7 +355,7 @@ export default function ConversationSimulator() {
 
             if (isNegated) {
               // Be clever: If user says "no window", look for the OTHER keyword in the list
-              const otherOption = nextTurn.choiceKeywords.find(k => k.toLowerCase() !== kw)
+              const otherOption = currentDialogueTurn.choiceKeywords.find(k => k.toLowerCase() !== kw)
               if (otherOption) {
                 detectedChoice = otherOption.toLowerCase()
               }
@@ -365,7 +367,7 @@ export default function ConversationSimulator() {
         }
 
         // Also handle direct negative answers for Yes/No questions (Luggage etc)
-        if (!detectedChoice && (nextTurn.choiceKeywords.includes('yes') || nextTurn.choiceKeywords.includes('no'))) {
+        if (!detectedChoice && (currentDialogueTurn.choiceKeywords.includes('yes') || currentDialogueTurn.choiceKeywords.includes('no'))) {
           if (userResponseLower.includes('no') || userResponseLower.includes('not') || userResponseLower.includes("don't")) {
             detectedChoice = 'no'
           } else if (userResponseLower.includes('yes') || userResponseLower.includes('yeah') || userResponseLower.includes('sure')) {
@@ -406,7 +408,8 @@ export default function ConversationSimulator() {
             userResponse: transcript,
             originalNextLine: getDisplayText(nextTurn, nextTurnIndex),
             userName: userName,
-            detectedChoice: detectedChoice ?? undefined
+            detectedChoice: detectedChoice ?? undefined,
+            offTopicCount: offTopicCount
           })
 
           if (responseData) {
@@ -419,8 +422,8 @@ export default function ConversationSimulator() {
                 if (abortIndex !== -1) nextTurnIndex = abortIndex
               }
             } else if (action === 'STAY') {
-              if (offTopicCount >= 9) {
-                // Quota exceeded -> Terminate
+              if (offTopicCount >= 6) {
+                // 7th off-topic attempt -> AI should have returned TERMINATE, but as fallback:
                 if (selectedScenario.terminationConfig) {
                   const abortIndex = selectedScenario.dialogue.findIndex(d => d.id === selectedScenario.terminationConfig!.targetTurnId)
                   if (abortIndex !== -1) nextTurnIndex = abortIndex

@@ -20,6 +20,7 @@ interface DynamicResponseParams {
     originalNextLine: string;
     userName?: string;
     detectedChoice?: string;
+    offTopicCount?: number; // How many times user went off-topic
 }
 
 export interface AIResponse {
@@ -33,6 +34,8 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
         console.warn('Gemini API Key missing, falling back to original response');
         return null;
     }
+
+    const patienceExhausted = (params.offTopicCount ?? 0) >= 6; // 7th attempt triggers termination
 
     const prompt = `
       You are an English language tutor roleplaying in a conversation simulation. Also, you are the DIRECTOR of the flow.
@@ -48,15 +51,19 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
       The user responded: "${params.userResponse}"
       
       SYSTEM DETECTED CHOICE: ${params.detectedChoice ? params.detectedChoice.toUpperCase() : 'N/A'}
+      USER OFF-TOPIC COUNT: ${params.offTopicCount ?? 0} / 7
+      PATIENCE EXHAUSTED: ${patienceExhausted ? 'YES - YOU MUST TERMINATE' : 'NO'}
       
       CRITICAL INSTRUCTIONS:
       1. **ANALYZE USER INTENT:** Determine if the user answered the question, asked for help, or is off-topic.
       2. **ADAPT THE SCRIPT:** Personalize the response based on the user's input.
       3. **CONTROL THE FLOW (ACTION):**
          - **NEXT_TURN**: The user answered the question (even if briefly). Proceed to the "ORIGINAL SCRIPTED RESPONSE".
-         - **STAY**: The user did NOT answer. They asked for repetition ("What?"), clarification ("Meaning?"), or asked an irrelevant question ("Water?"). 
-           * IN THIS CASE: Your 'text' must briefly address the user and RE-ASK the original question. Do NOT move to the next script line.
-         - **TERMINATE**: The user explicitly wants to quit ("Stop", "Go back", "Scared", "Cancel"). 
+         - **STAY**: The user did NOT answer. They asked for repetition, clarification, or asked an irrelevant question (e.g., "Can I have water?", "May I call my spouse?").
+           * **IMPORTANT FOR STAY**: First, briefly acknowledge their request IN CHARACTER (e.g., "Water is near the exit." or "I'm sorry, but this process must be done individually."). Then, politely RE-ASK the original question. Do NOT advance to the next script line.
+         - **TERMINATE**: ONLY use if:
+           a) The user explicitly wants to quit ("Stop", "Go back", "Scared", "Cancel").
+           b) **PATIENCE EXHAUSTED is YES**: The user has been off-topic too many times. You MUST terminate with a firm but professional message appropriate to your role (e.g., for border control: "I'm sorry, but I cannot continue this process. Please step aside, an officer will assist you. Next, please!").
 
       ORIGINAL SCRIPTED RESPONSE (Target for NEXT_TURN):
       "${params.originalNextLine}"
@@ -147,6 +154,11 @@ export const generateDynamicResponse = async (params: DynamicResponseParams): Pr
         }
     }
 
-    console.error('All REST API attempts failed. Falling back to template.');
-    return null;
+    console.error('All REST API attempts failed. Returning fail-safe response.');
+    // Fail-safe: Instead of null (which breaks the simulator), return a generic STAY action.
+    // This prevents the simulator from advancing on errors.
+    return {
+        text: "I'm sorry, I didn't catch that correctly. Could you please say it again?",
+        action: 'STAY'
+    };
 };
