@@ -442,6 +442,28 @@ export default function ConversationSimulator() {
             let responseIndex = nextTurnIndex // Default: save response for the next turn
 
             if (action === 'TERMINATE') {
+              // Add the final exchange to stayExchanges so it's visible
+              const lastUserScore = lastScore ?? 0
+              setStayExchanges(prev => [...prev, {
+                userText: transcript,
+                userScore: lastUserScore,
+                aiResponse: text
+              }])
+
+              // Remove from userResponses to avoid duplication
+              const currentUserTurn = selectedScenario.dialogue[currentTurnIndex]
+              if (currentUserTurn) {
+                setUserResponses(prev => {
+                  const newMap = new Map(prev)
+                  newMap.delete(currentUserTurn.id)
+                  return newMap
+                })
+              }
+
+              // Trigger TTS for the TERMINATE response
+              console.log('🔊 Speaking TERMINATE response:', text.substring(0, 50) + '...')
+              speak(text)
+
               if (selectedScenario.terminationConfig) {
                 const abortIndex = selectedScenario.dialogue.findIndex(d => d.id === selectedScenario.terminationConfig!.targetTurnId)
                 if (abortIndex !== -1) {
