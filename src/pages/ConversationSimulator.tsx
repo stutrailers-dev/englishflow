@@ -301,6 +301,11 @@ export default function ConversationSimulator() {
 
   // Close feedback and move to next turn
   const closeFeedbackAndContinue = useCallback(async () => {
+    console.log('🎬 closeFeedbackAndContinue called')
+    console.log('🎬 currentTurnIndex:', currentTurnIndex)
+    console.log('🎬 transcript:', transcript)
+    console.log('🎬 selectedScenario:', selectedScenario?.id)
+
     setShowFeedback(false)
     setLastScore(null)
     setLastFeedback(null)
@@ -309,6 +314,7 @@ export default function ConversationSimulator() {
     let nextTurnIndex = currentTurnIndex + 1
 
     if (selectedScenario && transcript) {
+      console.log('🎬 Inside main if block')
       const lowerText = transcript.toLowerCase()
       let isTerminating = false
 
@@ -387,7 +393,11 @@ export default function ConversationSimulator() {
       // AI Response Generation
       // Generate AI response when the CURRENT turn being answered is an AGENT question
       // This ensures the AI Director Mode evaluates the user's response to each agent question
+      console.log('🤖 Checking AI generation condition:')
+      console.log('🤖 currentDialogueTurn:', currentDialogueTurn?.id, currentDialogueTurn?.role)
+
       if (currentDialogueTurn && currentDialogueTurn.role === 'agent') {
+        console.log('🤖 ENTERING AI generation block!')
         setIsGeneratingResponse(true)
         try {
           const contextTurns = selectedScenario.dialogue.slice(Math.max(0, currentTurnIndex - 2), currentTurnIndex + 1)
@@ -400,6 +410,7 @@ export default function ConversationSimulator() {
 
           const previousAgentTurn = selectedScenario.dialogue[currentTurnIndex]
 
+          console.log('🤖 Calling generateDynamicResponse...')
           const responseData: AIResponse | null = await generateDynamicResponse({
             scenarioContext,
             role: 'agent',
@@ -410,6 +421,7 @@ export default function ConversationSimulator() {
             detectedChoice: detectedChoice ?? undefined,
             offTopicCount: offTopicCount
           })
+          console.log('🤖 AI Response received:', responseData)
 
           if (responseData) {
             const { text, action } = responseData
