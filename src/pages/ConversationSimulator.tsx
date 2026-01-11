@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { Mic, RotateCcw, Volume2, X, ChevronRight, Target, Lock as Clock, Trophy, Lightbulb, Pause, BookOpen, Star, Check, MicOff, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { generateDynamicResponse, AIResponse } from '../services/aiService'
@@ -61,6 +61,9 @@ export default function ConversationSimulator() {
   // Track detected user choices and AI responses
   const [userChoices, setUserChoices] = useState<Map<number, string>>(new Map())
   const [aiResponses, setAiResponses] = useState<Map<number, string>>(new Map())
+  // Dynamic agent messages that appear AFTER user's response (for STAY actions)
+  // Key: turn index where the message should appear after, Value: the AI message
+  const [dynamicAgentMessages, setDynamicAgentMessages] = useState<Map<number, string>>(new Map())
 
   const [lastFeedback, setLastFeedback] = useState<{
     userResponse: string
@@ -453,21 +456,31 @@ export default function ConversationSimulator() {
               } else {
                 setOffTopicCount(prev => prev + 1)
                 nextTurnIndex = currentTurnIndex // Prevent advancement
-                // For STAY: Save the AI response at the PREVIOUS agent turn (the question being re-asked)
-                // This replaces the original question with the AI's redirect response
-                responseIndex = currentTurnIndex - 1
+                // For STAY: Add the AI response as a DYNAMIC message that appears AFTER the user's response
+                // This doesn't replace the original question - it adds a new message
+                setDynamicAgentMessages(prev => {
+                  const newMap = new Map(prev)
+                  newMap.set(currentTurnIndex, text) // Key = the user turn index where this message appears after
+                  return newMap
+                })
+                responseIndex = -1 // Don't save to aiResponses for STAY (we use dynamicAgentMessages instead)
               }
             } else {
               // NEXT_TURN -> Reset quota
               setOffTopicCount(0)
+              // Clear any dynamic messages when moving forward
+              setDynamicAgentMessages(new Map())
             }
 
-            console.log('🤖 Saving AI response at index:', responseIndex, 'text:', text.substring(0, 50) + '...')
-            setAiResponses(prev => {
-              const newMap = new Map(prev)
-              newMap.set(responseIndex, text)
-              return newMap
-            })
+            // Only save to aiResponses if not using dynamicAgentMessages (i.e., not STAY)
+            if (responseIndex !== -1) {
+              console.log('🤖 Saving AI response at index:', responseIndex, 'text:', text.substring(0, 50) + '...')
+              setAiResponses(prev => {
+                const newMap = new Map(prev)
+                newMap.set(responseIndex, text)
+                return newMap
+              })
+            }
           }
         } catch (error) {
           console.error("AI Generation failed, falling back to script", error)
@@ -1035,31 +1048,45 @@ export default function ConversationSimulator() {
             if (!hasContent) return null
 
             return (
-              <motion.div
-                key={turn.id}
-                initial={{ opacity: 0, x: turn.role === 'agent' ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className={`flex ${turn.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div className={`max-w-[80%] rounded-2xl px-4 py-3 ${turn.role === 'agent'
-                  ? 'bg-navy-100 text-navy-900 rounded-tl-sm'
-                  : 'bg-racing-700 text-white rounded-tr-sm'
-                  }`}>
-                  {turn.role === 'agent' ? (
-                    <p className="text-sm">{getDisplayText(turn, index)}</p>
-                  ) : (
-                    <>
-                      <p className="text-sm">{userResponses.get(turn.id)?.text}</p>
-                      <div className="flex items-center justify-end gap-1 mt-1">
-                        <Star className="w-3 h-3 opacity-70" />
-                        <span className="text-xs opacity-70">
-                          {userResponses.get(turn.id)?.score}%
-                        </span>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </motion.div>
+              <React.Fragment key={turn.id}>
+                <motion.div
+                  initial={{ opacity: 0, x: turn.role === 'agent' ? -20 : 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className={`flex ${turn.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                >
+                  <div className={`max-w-[80%] rounded-2xl px-4 py-3 ${turn.role === 'agent'
+                    ? 'bg-navy-100 text-navy-900 rounded-tl-sm'
+                    : 'bg-racing-700 text-white rounded-tr-sm'
+                    }`}>
+                    {turn.role === 'agent' ? (
+                      <p className="text-sm">{getDisplayText(turn, index)}</p>
+                    ) : (
+                      <>
+                        <p className="text-sm">{userResponses.get(turn.id)?.text}</p>
+                        <div className="flex items-center justify-end gap-1 mt-1">
+                          <Star className="w-3 h-3 opacity-70" />
+                          <span className="text-xs opacity-70">
+                            {userResponses.get(turn.id)?.score}%
+                          </span>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+
+                {/* Dynamic agent message (for STAY actions) - appears AFTER user's response */}
+                {turn.role === 'user' && dynamicAgentMessages.has(index) && (
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="flex justify-start"
+                  >
+                    <div className="max-w-[80%] rounded-2xl px-4 py-3 bg-navy-100 text-navy-900 rounded-tl-sm border-l-4 border-racing-500">
+                      <p className="text-sm">{dynamicAgentMessages.get(index)}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </React.Fragment>
             )
           })}
 
