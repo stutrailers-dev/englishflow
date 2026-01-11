@@ -579,6 +579,41 @@ Konsol logları ile akış takibi:
 
 ---
 
+### Senaryo Kapsamı
+
+| Metrik | Değer |
+|--------|-------|
+| Toplam Senaryo | **51** |
+| terminationConfig | **51** (100%) |
+| turn_abort | **51** (100%) |
+| AI Director Mode | **Tüm senaryolarda aktif** |
+
+**Her senaryoya eklenen yapılandırma:**
+```typescript
+terminationConfig: {
+  keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 
+             'don\'t want to', 'withdraw', 'change my mind', 
+             'help me', 'I can\'t find my passport', 'lost passport'],
+  targetTurnId: 'turn_abort'
+}
+```
+
+**Her senaryoya eklenen sonlandırma turn'i:**
+```typescript
+{
+  id: 'turn_abort',
+  role: 'agent',
+  text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+  hints: ['Follow instructions'],
+  expectedResponses: [
+    { text: 'Thank you.', score: 100 },
+    { text: 'Okay, I understand.', score: 100 }
+  ]
+}
+```
+
+---
+
 ### Versiyon Geçmişi
 
 | Tarih | Değişiklik |
@@ -588,5 +623,10 @@ Konsol logları ile akış takibi:
 | 11 Ocak 2026 | Dinamik mesaj sistemi (stayExchanges array) |
 | 11 Ocak 2026 | Mesaj duplikasyonu düzeltmesi |
 | 11 Ocak 2026 | TTS entegrasyonu (STAY cevapları) |
-| 11 Ocak 2026 | Empati ve gerçekçilik kategorileri |
+| 11 Ocak 2026 | Empati ve gerçekçilik kategorileri (8 kategori) |
 | 11 Ocak 2026 | Edge case'ler (dil bariyeri, belge sorunları, vize, vb.) |
+| 11 Ocak 2026 | `isTerminatedEarly` flag - erken sonlandırma desteği |
+| 11 Ocak 2026 | Erken sonlandırmada mikrofon yerine tamamlama butonu |
+| 11 Ocak 2026 | Atlanan turn'lerin render edilmemesi düzeltmesi |
+| 11 Ocak 2026 | Başlık güncelleme: "AI Destekli Konuşma Pratiği" |
+| 11 Ocak 2026 | **51 senaryoya terminationConfig ve turn_abort eklendi** |
