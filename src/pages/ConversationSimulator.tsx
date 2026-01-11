@@ -755,7 +755,7 @@ export default function ConversationSimulator() {
             Conversation Simulator
           </h1>
           <p className="text-navy-600">
-            Konuşma Simülatörü - Practice real-world dialogues
+            AI Destekli Konuşma Pratiği - AI Supported Practice real-world dialogues
           </p>
         </motion.div>
 
