@@ -1223,6 +1223,23 @@ export default function ConversationSimulator() {
                   </button>
                 )}
               </div>
+            ) : isTerminatedEarly ? (
+              /* Early termination - show completion button instead of microphone */
+              <div className="text-center">
+                <p className="text-sm text-navy-500 mb-4">
+                  The conversation has ended. You can complete the scenario now.
+                </p>
+                <button
+                  onClick={() => {
+                    markScenarioCompleted(selectedScenario.id)
+                    incrementScenariosCompleted()
+                    setIsComplete(true)
+                  }}
+                  className="btn-primary"
+                >
+                  <Check className="w-4 h-4 mr-1 inline" /> Senaryoyu Tamamla
+                </button>
+              </div>
             ) : (
               <div>
                 <p className="text-sm text-navy-500 mb-3 text-center">
