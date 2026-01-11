@@ -468,9 +468,10 @@ export default function ConversationSimulator() {
                 const abortIndex = selectedScenario.dialogue.findIndex(d => d.id === selectedScenario.terminationConfig!.targetTurnId)
                 if (abortIndex !== -1) {
                   nextTurnIndex = abortIndex
-                  responseIndex = abortIndex
                 }
               }
+              // Don't save to aiResponses - we already have it in stayExchanges
+              responseIndex = -1
             } else if (action === 'STAY') {
               if (offTopicCount >= 6) {
                 // 7th off-topic attempt -> AI should have returned TERMINATE, but as fallback:
