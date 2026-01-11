@@ -61,9 +61,15 @@ export default function ConversationSimulator() {
   // Track detected user choices and AI responses
   const [userChoices, setUserChoices] = useState<Map<number, string>>(new Map())
   const [aiResponses, setAiResponses] = useState<Map<number, string>>(new Map())
-  // Dynamic agent messages that appear AFTER user's response (for STAY actions)
-  // Key: turn index where the message should appear after, Value: the AI message
-  const [dynamicAgentMessages, setDynamicAgentMessages] = useState<Map<number, string>>(new Map())
+
+  // STAY exchanges: Accumulates all off-topic user messages and AI responses
+  // This array grows with each STAY action and is cleared on NEXT_TURN
+  interface StayExchange {
+    userText: string
+    userScore: number
+    aiResponse: string
+  }
+  const [stayExchanges, setStayExchanges] = useState<StayExchange[]>([])
 
   const [lastFeedback, setLastFeedback] = useState<{
     userResponse: string
@@ -456,20 +462,25 @@ export default function ConversationSimulator() {
               } else {
                 setOffTopicCount(prev => prev + 1)
                 nextTurnIndex = currentTurnIndex // Prevent advancement
-                // For STAY: Add the AI response as a DYNAMIC message that appears AFTER the user's response
-                // This doesn't replace the original question - it adds a new message
-                setDynamicAgentMessages(prev => {
-                  const newMap = new Map(prev)
-                  newMap.set(currentTurnIndex, text) // Key = the user turn index where this message appears after
-                  return newMap
-                })
-                responseIndex = -1 // Don't save to aiResponses for STAY (we use dynamicAgentMessages instead)
+
+                // For STAY: Add to the stayExchanges array (accumulates all off-topic exchanges)
+                const lastUserScore = lastScore ?? 0
+                setStayExchanges(prev => [...prev, {
+                  userText: transcript,
+                  userScore: lastUserScore,
+                  aiResponse: text
+                }])
+
+                // Trigger TTS for the AI response
+                console.log('🔊 Speaking dynamic AI response:', text.substring(0, 50) + '...')
+                speak(text)
+
+                responseIndex = -1 // Don't save to aiResponses for STAY
               }
             } else {
-              // NEXT_TURN -> Reset quota
+              // NEXT_TURN -> Reset quota and clear STAY exchanges
               setOffTopicCount(0)
-              // Clear any dynamic messages when moving forward
-              setDynamicAgentMessages(new Map())
+              setStayExchanges([])
             }
 
             // Only save to aiResponses if not using dynamicAgentMessages (i.e., not STAY)
@@ -1073,22 +1084,40 @@ export default function ConversationSimulator() {
                     )}
                   </div>
                 </motion.div>
-
-                {/* Dynamic agent message (for STAY actions) - appears AFTER user's response */}
-                {turn.role === 'user' && dynamicAgentMessages.has(index) && (
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="flex justify-start"
-                  >
-                    <div className="max-w-[80%] rounded-2xl px-4 py-3 bg-navy-100 text-navy-900 rounded-tl-sm border-l-4 border-racing-500">
-                      <p className="text-sm">{dynamicAgentMessages.get(index)}</p>
-                    </div>
-                  </motion.div>
-                )}
               </React.Fragment>
             )
           })}
+
+          {/* STAY Exchanges: Off-topic user messages and AI redirect responses */}
+          {stayExchanges.map((exchange, idx) => (
+            <React.Fragment key={`stay-${idx}`}>
+              {/* User's off-topic message */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="flex justify-end"
+              >
+                <div className="max-w-[80%] rounded-2xl px-4 py-3 bg-racing-700 text-white rounded-tr-sm">
+                  <p className="text-sm">{exchange.userText}</p>
+                  <div className="flex items-center justify-end gap-1 mt-1">
+                    <Star className="w-3 h-3 opacity-70" />
+                    <span className="text-xs opacity-70">{exchange.userScore}%</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* AI's redirect response */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="flex justify-start"
+              >
+                <div className="max-w-[80%] rounded-2xl px-4 py-3 bg-navy-100 text-navy-900 rounded-tl-sm border-l-4 border-racing-500">
+                  <p className="text-sm">{exchange.aiResponse}</p>
+                </div>
+              </motion.div>
+            </React.Fragment>
+          ))}
 
           {/* AI Thinking Indicator */}
           {isGeneratingResponse && (
