@@ -430,30 +430,42 @@ export default function ConversationSimulator() {
             const { text, action } = responseData
 
             // DIRECTOR ACTION LOGIC
+            let responseIndex = nextTurnIndex // Default: save response for the next turn
+
             if (action === 'TERMINATE') {
               if (selectedScenario.terminationConfig) {
                 const abortIndex = selectedScenario.dialogue.findIndex(d => d.id === selectedScenario.terminationConfig!.targetTurnId)
-                if (abortIndex !== -1) nextTurnIndex = abortIndex
+                if (abortIndex !== -1) {
+                  nextTurnIndex = abortIndex
+                  responseIndex = abortIndex
+                }
               }
             } else if (action === 'STAY') {
               if (offTopicCount >= 6) {
                 // 7th off-topic attempt -> AI should have returned TERMINATE, but as fallback:
                 if (selectedScenario.terminationConfig) {
                   const abortIndex = selectedScenario.dialogue.findIndex(d => d.id === selectedScenario.terminationConfig!.targetTurnId)
-                  if (abortIndex !== -1) nextTurnIndex = abortIndex
+                  if (abortIndex !== -1) {
+                    nextTurnIndex = abortIndex
+                    responseIndex = abortIndex
+                  }
                 }
               } else {
                 setOffTopicCount(prev => prev + 1)
                 nextTurnIndex = currentTurnIndex // Prevent advancement
+                // For STAY: Save the AI response at the PREVIOUS agent turn (the question being re-asked)
+                // This replaces the original question with the AI's redirect response
+                responseIndex = currentTurnIndex - 1
               }
             } else {
               // NEXT_TURN -> Reset quota
               setOffTopicCount(0)
             }
 
+            console.log('🤖 Saving AI response at index:', responseIndex, 'text:', text.substring(0, 50) + '...')
             setAiResponses(prev => {
               const newMap = new Map(prev)
-              newMap.set(nextTurnIndex, text)
+              newMap.set(responseIndex, text)
               return newMap
             })
           }
