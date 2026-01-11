@@ -385,10 +385,9 @@ export default function ConversationSimulator() {
       }
 
       // AI Response Generation
-      // If the NEXT turn is an AGENT turn, we should generate a dynamic response based on user input
-      // AI Response Generation
-      // If the NEXT turn is an AGENT turn (or if we are STAYing), generat dynamic response
-      if (nextTurn && nextTurn.role === 'agent') {
+      // Generate AI response when the CURRENT turn being answered is an AGENT question
+      // This ensures the AI Director Mode evaluates the user's response to each agent question
+      if (currentDialogueTurn && currentDialogueTurn.role === 'agent') {
         setIsGeneratingResponse(true)
         try {
           const contextTurns = selectedScenario.dialogue.slice(Math.max(0, currentTurnIndex - 2), currentTurnIndex + 1)
@@ -488,7 +487,7 @@ export default function ConversationSimulator() {
         console.log(`🎉 Scenario completed! Marked as completed: ${selectedScenario.title}`)
       }
     }
-  }, [currentTurnIndex, selectedScenario, resetTranscript, incrementScenariosCompleted, addStudyTime, incrementChunksLearned, incrementVocabularyLearned, userResponses, saveScenarioProgress, clearScenarioProgress, markScenarioCompleted, transcript, userName])
+  }, [currentTurnIndex, selectedScenario, resetTranscript, incrementScenariosCompleted, addStudyTime, incrementChunksLearned, incrementVocabularyLearned, userResponses, saveScenarioProgress, clearScenarioProgress, markScenarioCompleted, transcript, userName, offTopicCount, getDisplayText, userChoices])
 
 
   // Cleanup when leaving a scenario - ensures state is fully reset
