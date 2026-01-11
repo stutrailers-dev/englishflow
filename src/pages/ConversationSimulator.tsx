@@ -391,16 +391,19 @@ export default function ConversationSimulator() {
       }
 
       // AI Response Generation
-      // Generate AI response when the CURRENT turn being answered is an AGENT question
-      // This ensures the AI Director Mode evaluates the user's response to each agent question
+      // When user answers a question, they are on a USER turn (currentTurnIndex).
+      // The question they answered is in the PREVIOUS turn (agent turn).
+      // So we need to check if the PREVIOUS turn is an agent turn.
+      const answeredTurn = currentTurnIndex > 0 ? selectedScenario.dialogue[currentTurnIndex - 1] : null
       console.log('🤖 Checking AI generation condition:')
-      console.log('🤖 currentDialogueTurn:', currentDialogueTurn?.id, currentDialogueTurn?.role)
+      console.log('🤖 currentTurnIndex:', currentTurnIndex)
+      console.log('🤖 answeredTurn (previous):', answeredTurn?.id, answeredTurn?.role)
 
-      if (currentDialogueTurn && currentDialogueTurn.role === 'agent') {
+      if (answeredTurn && answeredTurn.role === 'agent') {
         console.log('🤖 ENTERING AI generation block!')
         setIsGeneratingResponse(true)
         try {
-          const contextTurns = selectedScenario.dialogue.slice(Math.max(0, currentTurnIndex - 2), currentTurnIndex + 1)
+          const contextTurns = selectedScenario.dialogue.slice(Math.max(0, currentTurnIndex - 3), currentTurnIndex)
           const scenarioContext = `
             Scenario: ${selectedScenario.title}
             Goal: ${selectedScenario.objectives.map(o => o.description).join(', ')}
@@ -408,7 +411,7 @@ export default function ConversationSimulator() {
             ${contextTurns.map(t => `${t.role}: ${t.text}`).join('\n')}
           `
 
-          const previousAgentTurn = selectedScenario.dialogue[currentTurnIndex]
+          const previousAgentTurn = answeredTurn  // The agent turn that was answered
 
           console.log('🤖 Calling generateDynamicResponse...')
           const responseData: AIResponse | null = await generateDynamicResponse({
