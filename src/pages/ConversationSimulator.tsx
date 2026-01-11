@@ -71,6 +71,10 @@ export default function ConversationSimulator() {
   }
   const [stayExchanges, setStayExchanges] = useState<StayExchange[]>([])
 
+  // Flag for early termination (passport missing, user wants to leave, etc.)
+  // When true, shows completion button without rendering all skipped turns
+  const [isTerminatedEarly, setIsTerminatedEarly] = useState(false)
+
   const [lastFeedback, setLastFeedback] = useState<{
     userResponse: string
     expectedResponses: { text: string; score: number }[]
@@ -464,12 +468,13 @@ export default function ConversationSimulator() {
               console.log('🔊 Speaking TERMINATE response:', text.substring(0, 50) + '...')
               speak(text)
 
-              if (selectedScenario.terminationConfig) {
-                const abortIndex = selectedScenario.dialogue.findIndex(d => d.id === selectedScenario.terminationConfig!.targetTurnId)
-                if (abortIndex !== -1) {
-                  nextTurnIndex = abortIndex
-                }
-              }
+              // Set early termination flag - this shows completion button without rendering skipped turns
+              setIsTerminatedEarly(true)
+
+              // Keep nextTurnIndex at current position - don't jump to the last turn
+              // This prevents rendering all the skipped scripted dialogue
+              nextTurnIndex = currentTurnIndex
+
               // Don't save to aiResponses - we already have it in stayExchanges
               responseIndex = -1
             } else if (action === 'STAY') {
@@ -631,6 +636,9 @@ export default function ConversationSimulator() {
     setShowHints(false)
     setShowFeedback(false)
     setLastScore(null)
+    setIsTerminatedEarly(false)
+    setStayExchanges([])
+    setOffTopicCount(0)
     resetTranscript()
     cancel()
     isSubmittingRef.current = false
@@ -1194,8 +1202,8 @@ export default function ConversationSimulator() {
                     {isSpeaking ? 'Playing...' : 'Replay audio'}
                   </span>
                 </div>
-                {/* Check if this is the last turn */}
-                {currentTurnIndex === selectedScenario.dialogue.length - 1 ? (
+                {/* Check if this is the last turn OR early termination */}
+                {(currentTurnIndex === selectedScenario.dialogue.length - 1 || isTerminatedEarly) ? (
                   <button
                     onClick={() => {
                       markScenarioCompleted(selectedScenario.id)
