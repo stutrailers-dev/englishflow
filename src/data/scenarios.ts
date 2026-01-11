@@ -18,6 +18,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'airport',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -341,6 +345,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'airport',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -403,6 +411,16 @@ export const scenarios: Scenario[] = [
           { text: 'Cheers, thanks.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'cheers']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['tray', 'liquids', 'metallic', 'power bank', 'security check'],
@@ -421,6 +439,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'technical-presentation',
     duration: 8,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -525,6 +547,16 @@ export const scenarios: Scenario[] = [
           { text: 'No problem. I\'ll have that ready for you before Friday.', score: 90 }
         ],
         acceptableKeywords: ['certainly', 'yes', 'quotation', 'Friday', 'send']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['specifications', 'drum rotation', 'discharge rate', 'hydraulic system', 'quotation', 'ISO-standard'],
@@ -540,6 +572,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'factory-visit',
     duration: 7,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -626,6 +662,16 @@ export const scenarios: Scenario[] = [
           { text: 'You can expect delivery in about two months after placing the order.', score: 85 }
         ],
         acceptableKeywords: ['weeks', 'lead time', 'delivery', 'order', 'months']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['production line', 'welding station', 'quality control', 'lead time', 'MIG welding', 'inspection'],
@@ -644,6 +690,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'restaurant',
     duration: 6,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -730,6 +780,16 @@ export const scenarios: Scenario[] = [
           { text: 'It started with my engineering background. I saw an opportunity in the export market.', score: 90 }
         ],
         acceptableKeywords: ['engineering', 'founded', 'background', 'opportunity', 'started']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['sparkling water', 'selection', 'recommendation', 'journey', 'leaning towards'],
@@ -745,6 +805,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'small-talk',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -831,6 +895,16 @@ export const scenarios: Scenario[] = [
           { text: 'Right, let\'s continue. Good to chat with you.', score: 90 }
         ],
         acceptableKeywords: ['yes', 'let\'s', 'nice', 'chatting', 'good', 'head back']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['grey', 'typical', 'continental climate', 'free entry', 'brilliant', 'head back'],
@@ -849,6 +923,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'phone-call',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -935,6 +1013,16 @@ export const scenarios: Scenario[] = [
           { text: 'If you have a display I can connect to, that\'s all I need. Thanks very much.', score: 90 }
         ],
         acceptableKeywords: ['screen', 'projector', 'laptop', 'thank', 'appreciate']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['diary', 'calendar invite', 'arrange', 'sufficient', 'directions'],
@@ -953,6 +1041,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'hotel',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1039,6 +1131,16 @@ export const scenarios: Scenario[] = [
           { text: 'Perfect. Thanks a lot. Have a good evening.', score: 95 }
         ],
         acceptableKeywords: ['thank', 'wonderful', 'appreciate', 'great']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['reservation', 'higher floor', 'facilities', 'ground floor', 'enjoy your stay'],
@@ -1057,6 +1159,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'airport',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1143,6 +1249,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thanks. I\'ll listen for the announcement.', score: 85 }
         ],
         acceptableKeywords: ['thank', 'appreciate', 'boarding', 'time', 'announcement']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['technical issue', 'meal voucher', 'inconvenience', 'transferred', 'boarding time'],
@@ -1158,6 +1274,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'hotel',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1244,6 +1364,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thanks for your help. 418 it is then.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'appreciate', '418', 'helpful', 'ready']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['maintenance team', 'stuffy', 'sincere apologies', 'city view', 'identical room'],
@@ -1259,6 +1389,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'business-meeting',
     duration: 7,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1363,6 +1497,16 @@ export const scenarios: Scenario[] = [
           { text: 'Sounds good. I\'ll draft the proposal and we can review it together.', score: 90 }
         ],
         acceptableKeywords: ['proposal', 'Friday', 'send', 'productive', 'prepare', 'draft']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['curtainsider', 'bulk order', 'volume discount', 'payment terms', 'upfront', 'ADR certification'],
@@ -1381,6 +1525,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'restaurant',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1467,6 +1615,16 @@ export const scenarios: Scenario[] = [
           { text: 'Lovely, thanks very much.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'perfect', 'napkins', 'long', 'great']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['pie of the day', 'steak and ale', 'mash', 'gravy', 'beer-battered', 'crispy'],
@@ -1482,6 +1640,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'phone-call',
     duration: 6,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1568,6 +1730,16 @@ export const scenarios: Scenario[] = [
           { text: 'No, that\'s everything. Thank you for resolving this quickly.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'email', 'tracking', 'perfect', 'help']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['shipment', 'warehouse', 'express shipping', 'tracking number', 'next-day delivery'],
@@ -1583,6 +1755,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'factory-visit',
     duration: 7,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1669,6 +1845,16 @@ export const scenarios: Scenario[] = [
           { text: 'The rate is around half a percent. It\'s been improving steadily as we\'ve invested in training and equipment.', score: 90 }
         ],
         acceptableKeywords: ['defect rate', 'percent', 'reduced', 'improvement', 'training']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['non-conformance', 'NCR', '8D methodology', 'ultrasonic testing', 'NDT', 'root cause analysis', 'defect rate'],
@@ -1687,6 +1873,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'small-talk',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1773,6 +1963,16 @@ export const scenarios: Scenario[] = [
           { text: 'Yes, thank you. Here\'s my card. It was good meeting you, James.', score: 90 }
         ],
         acceptableKeywords: ['card', 'call', 'email', 'discuss', 'meeting', 'arrange']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['trade fair', 'exhibitor', 'networking', 'business card', 'distributor', 'partnership'],
@@ -1788,6 +1988,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'technical-presentation',
     duration: 7,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1874,6 +2078,16 @@ export const scenarios: Scenario[] = [
           { text: 'Two years on the chassis. We\'ve recently set up a UK support network, so parts availability isn\'t an issue.', score: 90 }
         ],
         acceptableKeywords: ['warranty', 'years', 'months', 'service', 'parts', 'support', 'UK']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['tipper', 'aggregate', 'body capacity', 'Hardox', 'telescopic cylinder', 'unladen weight', 'payload', 'GVW'],
@@ -1889,6 +2103,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'A2',
     category: 'airport',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -1975,6 +2193,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thanks. I\'ll pay by card. And yes, help with the bag would be great.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'change', 'bag', 'helpful', 'card', 'keep']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['fare', 'meter', 'boot', 'traffic', 'city centre', 'card payment'],
@@ -1993,6 +2221,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'hotel',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2097,6 +2329,16 @@ export const scenarios: Scenario[] = [
           { text: 'Great, thank you very much. Goodbye.', score: 85 }
         ],
         acceptableKeywords: ['thank', 'perfect', 'wonderful', 'stay', 'goodbye']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['itemised bill', 'minibar', 'receipt', 'invoice', 'system error', 'main entrance'],
@@ -2112,6 +2354,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'business-meeting',
     duration: 7,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2198,6 +2444,16 @@ export const scenarios: Scenario[] = [
           { text: 'Definitely feasible. We have capacity for growth. Let me send you a proposal for the increased volume.', score: 90 }
         ],
         acceptableKeywords: ['capacity', 'welcome', 'feasible', 'quotation', 'proposal', 'volume']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['status update', 'corrective action', 'root cause analysis', 'deadline', 'feasible', 'capacity'],
@@ -2213,6 +2469,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'restaurant',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2299,6 +2559,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thank you for joining me. I\'ll be in touch next week. Take care.', score: 90 }
         ],
         acceptableKeywords: ['safe', 'journey', 'proposal', 'follow up', 'email', 'touch', 'goodnight']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['bill', 'split the bill', 'generous', 'head off', 'follow up', 'proposal'],
@@ -2317,6 +2587,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'phone-call',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2403,6 +2677,16 @@ export const scenarios: Scenario[] = [
           { text: '10 o\'clock Thursday, confirmed. Thanks again, and sorry for the trouble.', score: 90 }
         ],
         acceptableKeywords: ['Thursday', '10', 'perfect', 'thank', 'appreciate', 'confirmed']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['reschedule', 'inconvenience', 'short notice', 'flexibility', 'delay', 'technical issues'],
@@ -2418,6 +2702,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'small-talk',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2504,6 +2792,16 @@ export const scenarios: Scenario[] = [
           { text: 'Brilliant, thanks. Here\'s mine. Perhaps we can arrange a proper meeting next time I\'m in the UK.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'card', 'catalogue', 'meeting', 'touch', 'lovely']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['haulage', 'logistics', 'fleet', 'coincidence', 'supplier', 'Mediterranean'],
@@ -2519,6 +2817,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'factory-visit',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2605,6 +2907,16 @@ export const scenarios: Scenario[] = [
           { text: 'Just follow me to the exits if the alarm sounds. The assembly point is outside. You\'ll be safe with me.', score: 90 }
         ],
         acceptableKeywords: ['alarm', 'assembly point', 'exits', 'emergency', 'green', 'follow']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['high-visibility vest', 'PPE', 'walkways', 'hazards', 'assembly point', 'overhead crane'],
@@ -2623,6 +2935,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'technical-presentation',
     duration: 6,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2709,6 +3025,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thanks everyone. I\'m happy to chat individually afterwards, and you can always email me with questions.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'contact', 'questions', 'email', 'reach out', 'discuss']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['axle configuration', 'disc brakes', 'drum brakes', 'phenolic coating', 'underrun protection', 'ECE R58'],
@@ -2724,6 +3050,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'airport',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2810,6 +3140,16 @@ export const scenarios: Scenario[] = [
           { text: 'I\'ll be at the Hilton. Here\'s my business card with my mobile number.', score: 90 }
         ],
         acceptableKeywords: ['hotel', 'Hilton', 'mobile', 'number', 'call', 'staying']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['carousel', 'baggage claim', 'distinguishing features', 'hard-shell', 'luggage tag', 'track down'],
@@ -2825,6 +3165,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'hotel',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -2911,6 +3255,16 @@ export const scenarios: Scenario[] = [
           { text: 'That\'s all for now, thank you. But I\'ll let you know if we need anything else.', score: 85 }
         ],
         acceptableKeywords: ['theatre', 'tickets', 'show', 'musical', 'tomorrow', 'thank']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['concierge', 'entertaining', 'cuisine', 'reservation', 'quintessentially', 'car service'],
@@ -2929,6 +3283,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'restaurant',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3015,6 +3373,16 @@ export const scenarios: Scenario[] = [
           { text: 'We\'re all set, thanks. Very helpful of you.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'appreciate', 'helpful', 'everything', 'set']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['dietary requirements', 'pork-free', 'slow-cooked', 'jus', 'ingredients', 'preparation'],
@@ -3030,6 +3398,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'business-meeting',
     duration: 7,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3116,6 +3488,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thank you. A sparkling water for me, but yes, let\'s toast to our new partnership!', score: 90 }
         ],
         acceptableKeywords: ['thank', 'celebration', 'partnership', 'toast', 'working together']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['key terms', 'warranty agreement', 'after-sales', 'partnership', 'close the deal', 'sign the contract'],
@@ -3131,6 +3513,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'A2',
     category: 'small-talk',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3217,6 +3603,16 @@ export const scenarios: Scenario[] = [
           { text: 'Milk, no sugar please. Thanks!', score: 90 }
         ],
         acceptableKeywords: ['black', 'white', 'milk', 'sugar', 'please', 'thank']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['small talk', 'sights', 'Premier League', 'family day out', 'grab a coffee', 'agenda'],
@@ -3235,6 +3631,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'phone-call',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3323,6 +3723,16 @@ export const scenarios: Scenario[] = [
           { text: 'Expect delivery in about 8 weeks, around mid-March. I\'ll keep you updated on progress.', score: 90 }
         ],
         acceptableKeywords: ['8 weeks', 'March', 'delivery', 'production', 'confirm', 'date']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['order confirmation', 'specifications', 'RAL colour', 'running gear', 'amendment', 'production schedule'],
@@ -3338,6 +3748,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'factory-visit',
     duration: 6,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3424,6 +3838,16 @@ export const scenarios: Scenario[] = [
           { text: 'We have a skilled team of over 300 workers. Quality checks happen at every stage, so high volume doesn\'t affect our standards.', score: 90 }
         ],
         acceptableKeywords: ['employees', 'certified', 'welders', 'training', 'ISO', 'quality', 'standards']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['production capacity', 'lead time', 'expedited', 'phased delivery', 'overtime', 'workforce'],
@@ -3439,6 +3863,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'airport',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3525,6 +3953,16 @@ export const scenarios: Scenario[] = [
           { text: 'No problem. Full tank on return. What time do I need to bring it back on Sunday?', score: 90 }
         ],
         acceptableKeywords: ['full tank', 'return', 'understood', 'Sunday', 'location', 'petrol']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['reservation', 'driving licence', 'International Driving Permit', 'GPS navigation', 'fuel policy', 'full-to-full', 'deposit'],
@@ -3543,6 +3981,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'technical-presentation',
     duration: 6,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3629,6 +4071,16 @@ export const scenarios: Scenario[] = [
           { text: 'Here\'s our catalogue. Prices depend on configuration. Give me your email and I\'ll send a quote this week.', score: 90 }
         ],
         acceptableKeywords: ['brochure', 'specifications', 'quotation', 'card', 'email', 'catalogue']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['sliding roof', 'curtain tensioning', 'ratchet system', 'crossmembers', 'galvanised', 'spec sheet'],
@@ -3644,6 +4096,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'small-talk',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3730,6 +4186,16 @@ export const scenarios: Scenario[] = [
           { text: 'Yes, let\'s get started. Good to chat with you.', score: 85 }
         ],
         acceptableKeywords: ['yes', 'go', 'nice', 'chatting', 'started', 'perfect']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['dreadful', 'roadworks', 'notorious', 'rush hour', 'roundabouts', 'adjustment'],
@@ -3745,6 +4211,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'A2',
     category: 'hotel',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3831,6 +4301,16 @@ export const scenarios: Scenario[] = [
           { text: 'That\'s all, thanks. I\'ll be waiting.', score: 85 }
         ],
         acceptableKeywords: ['perfect', 'thank', 'room', 'bill', 'everything', 'charge']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['room service', 'side salad', 'still water', 'sparkling water', 'room bill', 'pot of tea'],
@@ -3849,6 +4329,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'phone-call',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -3935,6 +4419,16 @@ export const scenarios: Scenario[] = [
           { text: 'Yes, I\'ll send that right after this call. Morning appointment confirmed. Thanks for your patience, James.', score: 90 }
         ],
         acceptableKeywords: ['book', 'email', 'confirmation', 'details', 'morning', 'send']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['warranty claim', 'reference number', 'replacement parts', 'service partner', 'depot', 'technician'],
@@ -3950,6 +4444,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'factory-visit',
     duration: 7,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4036,6 +4534,16 @@ export const scenarios: Scenario[] = [
           { text: 'Of course. We track everything from raw materials to final assembly. All records are kept for 15 years. Let me pull up an example.', score: 90 }
         ],
         acceptableKeywords: ['traceability', 'build file', 'serial', 'records', 'component', 'documentation']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['quality assurance', 'weld consistency', 'QC checkpoints', 'destructive testing', 'traceability', 'anomaly'],
@@ -4051,6 +4559,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'restaurant',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4137,6 +4649,16 @@ export const scenarios: Scenario[] = [
           { text: 'Good idea. The food looks fantastic. Please, start - and let me know if you\'d like anything else.', score: 90 }
         ],
         acceptableKeywords: ['enjoy', 'meal', 'contract', 'details', 'later', 'dig in']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['invitation', 'specialise', 'tempting', 'generous', 'dig in', 'contract details'],
@@ -4155,6 +4677,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'business-meeting',
     duration: 6,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4241,6 +4767,16 @@ export const scenarios: Scenario[] = [
           { text: 'We\'d like a partner who knows the UK market well. We can discuss exclusivity, territories, and terms. What would work best for you?', score: 90 }
         ],
         acceptableKeywords: ['flexible', 'distributor', 'partner', 'training', 'support', 'arrangements']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['collaboration', 'competitive advantage', 'lead times', 'after-sales support', 'distributor', 'dealer margins'],
@@ -4256,6 +4792,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'small-talk',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4342,6 +4882,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thanks for the tip! Yes, nice chatting. I\'ve learned a lot. See you after the session.', score: 90 }
         ],
         acceptableKeywords: ['cream tea', 'recommendation', 'lovely', 'enjoyable', 'continue', 'chatting']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['queueing', 'self-deprecating', 'cream tea', 'full English', 'cultural differences', 'light-hearted'],
@@ -4357,6 +4907,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'A2',
     category: 'airport',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4443,6 +4997,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thank you. Goodbye.', score: 85 }
         ],
         acceptableKeywords: ['thank', 'sorry', 'trouble', 'careful', 'goodbye', 'cheers']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['security checkpoint', 'scanner', 'tray', 'flagged', 'liquids', 'clear bag'],
@@ -4461,6 +5025,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'factory-visit',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4547,6 +5115,16 @@ export const scenarios: Scenario[] = [
           { text: 'Insurance covers everything in transit. If there\'s a problem, we sort it out. We pride ourselves on reliable delivery.', score: 90 }
         ],
         acceptableKeywords: ['insured', 'insurance', 'damage', 'claim', 'delays', 'covered']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['RoRo ferry', 'customs clearance', 'documentation', 'transit insurance', 'logistics', 'dispatch'],
@@ -4562,6 +5140,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B2',
     category: 'technical-presentation',
     duration: 6,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4648,6 +5230,16 @@ export const scenarios: Scenario[] = [
           { text: 'Anytime. Just secure that cable properly and you should be fine. Call us if you need anything else.', score: 90 }
         ],
         acceptableKeywords: ['happy', 'help', 'call', 'technician', 'welcome', 'resolve']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['EBS', 'warning light', 'wheel speed sensor', 'ABS', 'modulator', 'diagnostics'],
@@ -4663,6 +5255,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'A2',
     category: 'phone-call',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4749,6 +5345,16 @@ export const scenarios: Scenario[] = [
           { text: 'Great. I\'ll send everything today. Thank you for calling. Goodbye!', score: 90 }
         ],
         acceptableKeywords: ['delivery', 'quote', 'thank', 'soon', 'afternoon', 'touch']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['lead time', 'quotation', 'specification', 'curtainsider', 'brochure', 'follow-up'],
@@ -4767,6 +5373,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'A2',
     category: 'hotel',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4853,6 +5463,16 @@ export const scenarios: Scenario[] = [
           { text: 'Thanks, I\'ll check it out later. The WiFi card is enough for now.', score: 90 }
         ],
         acceptableKeywords: ['thank', 'great', 'appreciate', 'find', 'first floor', 'help']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['WiFi', 'ethernet', 'business centre', 'complimentary', 'private pods', 'high-speed'],
@@ -4868,6 +5488,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'restaurant',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -4954,6 +5578,16 @@ export const scenarios: Scenario[] = [
           { text: 'That\'s everything. Thank you very much. See you Friday.', score: 90 }
         ],
         acceptableKeywords: ['correct', 'thank', 'vegetarian', 'cancellation', 'Friday', 'perfect']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['reservation', 'party of four', 'private area', 'set menu', 'cancellation policy', 'confirmation'],
@@ -4969,6 +5603,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'business-meeting',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -5055,6 +5693,16 @@ export const scenarios: Scenario[] = [
           { text: 'I think we\'re all set. I\'ll send a summary email after this call. Let\'s schedule another update in two weeks?', score: 90 }
         ],
         acceptableKeywords: ['delivery', 'address', 'photos', 'email', 'schedule', 'confirm']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['video conference', 'frozen', 'production schedule', 'dispatch', 'specification', 'wrap up'],
@@ -5073,6 +5721,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'factory-visit',
     duration: 5,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -5159,6 +5811,16 @@ export const scenarios: Scenario[] = [
           { text: 'I\'ll prepare a quotation and send it this week. You can review it with your team, and we can schedule a follow-up call to discuss any questions.', score: 90 }
         ],
         acceptableKeywords: ['quotation', 'proposal', 'specifications', 'Friday', 'follow-up', 'order']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['boardroom', 'coating process', 'corrosion protection', 'after-sales support', 'service partners', 'formal quotation'],
@@ -5174,6 +5836,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'B1',
     category: 'technical-presentation',
     duration: 6,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -5260,6 +5926,16 @@ export const scenarios: Scenario[] = [
           { text: 'Call our support number - it\'s on the trailer documentation. We have breakdown cover included in the warranty for the first year.', score: 90 }
         ],
         acceptableKeywords: ['helpline', '24-hour', 'technician', 'breakdown', 'support', 'emergency']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['walk-around check', 'tyre pressure', 'sliding roof', 'service schedule', 'lubrication', 'breakdown cover'],
@@ -5275,6 +5951,10 @@ export const scenarios: Scenario[] = [
     difficulty: 'A2',
     category: 'small-talk',
     duration: 4,
+    terminationConfig: {
+      keywords: ['go back', 'return to', 'scared', 'afraid', 'cancel', 'don\'t want to', 'withdraw', 'change my mind', 'help me', 'I can\'t find my passport', 'lost passport'],
+      targetTurnId: 'turn_abort'
+    },
     objectives: [
       {
         id: 'obj_1',
@@ -5361,6 +6041,16 @@ export const scenarios: Scenario[] = [
           { text: 'Yes, let\'s do that. Good chat! Now, what\'s next on the agenda?', score: 90 }
         ],
         acceptableKeywords: ['dinner', 'derby', 'business', 'work', 'schedule', 'agenda']
+      },
+      {
+        id: 'turn_abort',
+        role: 'agent',
+        text: 'I understand. The conversation has ended. An assistant will help you with your concerns.',
+        hints: ['Follow instructions'],
+        expectedResponses: [
+          { text: 'Thank you.', score: 100 },
+          { text: 'Okay, I understand.', score: 100 }
+        ]
       }
     ],
     vocabulary: ['match', 'score', 'fan', 'derby', 'atmosphere', 'Premier League'],
