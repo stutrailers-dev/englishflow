@@ -3,6 +3,12 @@
 // Initialize Gemini API Key
 const API_KEY = (import.meta.env.VITE_GEMINI_API_KEY || '').trim();
 
+// DEBUG: Log API key status on load
+console.log('🔑 AI Service initialized');
+console.log('🔑 API Key present:', !!API_KEY);
+console.log('🔑 API Key preview:', API_KEY ? API_KEY.substring(0, 10) + '...' : 'EMPTY');
+console.log('🔑 All VITE env vars:', Object.keys(import.meta.env).filter(k => k.startsWith('VITE_')));
+
 // List of models to try in order of preference (Updated for 2026 availability)
 const MODELS_TO_TRY = [
     "gemini-2.5-flash",
