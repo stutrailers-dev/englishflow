@@ -19,7 +19,7 @@ export default function TabBar() {
   const isPracticeActive = ['/practice', '/chunks', '/shadowing'].includes(location.pathname)
 
   return (
-    <nav 
+    <nav
       className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
       style={{
         paddingBottom: 'env(safe-area-inset-bottom)'
@@ -56,11 +56,11 @@ export default function TabBar() {
             <NavLink
               key={tab.path}
               to={tab.path}
-              className={`flex flex-col items-center justify-center flex-1 py-2 transition-colors ${
-                isActive
+              className={`flex flex-col items-center justify-center flex-1 py-2 transition-colors cursor-pointer ${isActive
                   ? 'text-[#004225] dark:text-[#86efac]'
                   : 'text-[#8E8E93] dark:text-neutral-400'
-              }`}
+                }`}
+              style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
               <Icon
                 className="w-6 h-6 mb-1"

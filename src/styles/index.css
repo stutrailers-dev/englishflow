@@ -622,3 +622,59 @@ body.dark {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ========================================
+   iOS PWA TOUCH OPTIMIZATIONS
+   ======================================== */
+
+/* Remove 300ms tap delay on iOS */
+* {
+  touch-action: manipulation;
+}
+
+/* Remove tap highlight */
+a, button, [role="button"], input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Prevent text selection on navigation elements */
+nav, .tab-bar, button, a {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* GPU acceleration for smoother transitions */
+.nav-link,
+.btn-primary,
+.btn-secondary,
+.btn-accent,
+.btn-icon,
+.card-hover {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Faster transitions on mobile */
+@media (max-width: 767px) {
+  .transition-all,
+  .transition-colors {
+    transition-duration: 150ms !important;
+  }
+}
+
+/* Prevent overscroll on iOS PWA */
+html, body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure proper click targets on mobile */
+@media (max-width: 767px) {
+  a, button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
