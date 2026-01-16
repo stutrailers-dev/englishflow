@@ -630,3 +630,100 @@ terminationConfig: {
 | 11 Ocak 2026 | Atlanan turn'lerin render edilmemesi düzeltmesi |
 | 11 Ocak 2026 | Başlık güncelleme: "AI Destekli Konuşma Pratiği" |
 | 11 Ocak 2026 | **51 senaryoya terminationConfig ve turn_abort eklendi** |
+| 14 Ocak 2026 | SPA Routing düzeltmesi (`vercel.json` rewrites) |
+| 14 Ocak 2026 | iOS PWA Touch Optimizasyonları |
+| 14 Ocak 2026 | **Code-Splitting ile %85 bundle küçültme** |
+
+---
+
+## 🔧 Performans Optimizasyonları (14 Ocak 2026)
+
+### SPA Routing Düzeltmesi
+
+**Problem:** Sayfa yenilendiğinde 404 hatası (örn: `/settings` → 404)
+
+**Çözüm:** `vercel.json` ile tüm istekleri `index.html`'e yönlendirme:
+```json
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
+
+### iOS PWA Touch Optimizasyonları
+
+**Problem:** iPhone Safari/PWA'da menü geçişlerinde 5-6 saniye gecikme
+
+**Çözümler:**
+
+| Optimizasyon | Açıklama |
+|--------------|----------|
+| `touch-action: manipulation` | 300ms iOS tap delay kaldırıldı |
+| `-webkit-tap-highlight-color: transparent` | Dokunma highlight'ı kaldırıldı |
+| `user-scalable=no` | Yanlışlıkla zoom engellendi |
+| `apple-mobile-web-app-capable` | PWA standalone mode |
+| `transform: translateZ(0)` | GPU hızlandırma |
+| `transition-duration: 150ms` | Mobilde daha hızlı geçişler |
+| `overscroll-behavior: none` | iOS rubber-band scroll engeli |
+| `min-height/width: 44px` | Apple HIG uyumlu dokunma hedefleri |
+
+**Eklenen Meta Taglar:**
+```html
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="EnglishFlow" />
+<meta name="format-detection" content="telephone=no" />
+```
+
+### Code-Splitting (React.lazy)
+
+**Problem:** 1.3MB tek bundle → yavaş yükleme ve navigasyon
+
+**Çözüm:** `React.lazy()` ile sayfa bazlı code-splitting
+
+| Metrik | Önce | Şimdi |
+|--------|------|-------|
+| Ana bundle | **1,335 KB** | **199 KB** |
+| Küçülme | - | **%85** |
+
+**Sayfa Chunk Boyutları:**
+```
+index.js                    199 KB (ana bundle)
+Dashboard.js                 25 KB
+Settings.js                  25 KB
+TenseTrainer.js              27 KB
+ChunkLibrary.js              95 KB
+ShadowingStudio.js          126 KB
+ConversationSimulator.js    262 KB
+VocabularyLibrary.js        459 KB
+```
+
+**Nasıl çalışıyor:**
+1.  `/` açıldığında: Sadece `index.js` + `Dashboard.js` yüklenir
+2.  Başka sayfaya gidince: O sayfa chunk'ı o an yüklenir
+3.  Loading spinner gösterilir → anında sayfa render
+
+**Uygulama:**
+```tsx
+import { Suspense, lazy } from 'react'
+
+const Dashboard = lazy(() => import('./pages/Dashboard'))
+const Settings = lazy(() => import('./pages/Settings'))
+// ... diğer sayfalar
+
+function App() {
+  return (
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/settings" element={<Settings />} />
+        {/* ... */}
+      </Routes>
+    </Suspense>
+  )
+}
+```
