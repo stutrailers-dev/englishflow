@@ -633,6 +633,7 @@ terminationConfig: {
 | 14 Ocak 2026 | SPA Routing düzeltmesi (`vercel.json` rewrites) |
 | 14 Ocak 2026 | iOS PWA Touch Optimizasyonları |
 | 14 Ocak 2026 | **Code-Splitting ile %85 bundle küçültme** |
+| 24 Ocak 2026 | iOS Premium Voice kılavuzu eklendi (Settings sayfası) |
 
 ---
 
