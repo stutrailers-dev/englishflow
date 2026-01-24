@@ -100,7 +100,7 @@ export default function Settings() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { settings, updateSettings, resetSettings } = useSettingsStore()
   const { progress, resetProgress } = useProgressStore()
-  const { speak, voices, selectedVoice, setVoice, britishVoices, americanVoices } = useSpeechSynthesis()
+  const { speak, voices, selectedVoice, setVoice, britishVoices, americanVoices, refreshVoices } = useSpeechSynthesis()
 
   // Destructure settings for easier access
   const {
@@ -449,12 +449,20 @@ export default function Settings() {
               </>
             )}
           </button>
-          <p className="text-xs text-navy-400 text-center mt-2">
-            {preferredAccent === 'british'
-              ? `British voices: ${britishVoices.length}`
-              : `American voices: ${americanVoices.length}`
-            } / Total: {voices.length}
-          </p>
+          <div className="flex items-center justify-center gap-4 mt-2">
+            <p className="text-xs text-navy-400">
+              {preferredAccent === 'british'
+                ? `British voices: ${britishVoices.length}`
+                : `American voices: ${americanVoices.length}`
+              } / Total: {voices.length}
+            </p>
+            <button
+              onClick={refreshVoices}
+              className="text-xs text-racing-600 hover:text-racing-700 underline"
+            >
+              🔄 Sesleri Yenile
+            </button>
+          </div>
         </div>
 
         <ToggleSetting

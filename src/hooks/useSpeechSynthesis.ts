@@ -22,6 +22,7 @@ interface UseSpeechSynthesisReturn {
   americanVoices: SpeechSynthesisVoice[]
   selectedVoice: SpeechSynthesisVoice | null
   setVoice: (voice: SpeechSynthesisVoice) => void
+  refreshVoices: () => void
   error: string | null
 }
 
@@ -331,6 +332,35 @@ export function useSpeechSynthesis(
     setSelectedVoice(voice)
   }, [])
 
+  // Manual voice refresh for iOS (voices may not update automatically)
+  const refreshVoices = useCallback(() => {
+    if (!isSupported) return
+
+    // Force reload voices by calling getVoices multiple times
+    // This is a workaround for iOS Safari where voices don't update immediately
+    const loadVoicesWithRetry = () => {
+      const availableVoices = window.speechSynthesis.getVoices()
+      console.log('🔄 Refreshing voices, found:', availableVoices.length)
+      setVoices(availableVoices)
+
+      if (availableVoices.length > 0) {
+        const accent = settings.preferredAccent || 'british'
+        const bestVoice = findBestVoice(availableVoices, accent)
+        if (bestVoice) {
+          setSelectedVoice(bestVoice)
+          lastAccentRef.current = accent
+        }
+      }
+    }
+
+    // Try immediately
+    loadVoicesWithRetry()
+
+    // Also try after a short delay (iOS sometimes needs this)
+    setTimeout(loadVoicesWithRetry, 100)
+    setTimeout(loadVoicesWithRetry, 500)
+  }, [isSupported, settings.preferredAccent, findBestVoice])
+
   return {
     speak,
     cancel,
@@ -344,6 +374,7 @@ export function useSpeechSynthesis(
     americanVoices,
     selectedVoice,
     setVoice,
+    refreshVoices,
     error,
   }
 }
