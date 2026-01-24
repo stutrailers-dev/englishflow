@@ -27,9 +27,9 @@ export default function TabBar() {
     >
       {/* Blur background - explicit light/dark mode support */}
       <div
-        className="absolute inset-0 backdrop-blur-xl border-t"
+        className="absolute inset-0 backdrop-blur-md border-t"
         style={{
-          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
           borderColor: 'rgba(229, 231, 235, 0.5)'
         }}
       />
@@ -57,8 +57,8 @@ export default function TabBar() {
               key={tab.path}
               to={tab.path}
               className={`flex flex-col items-center justify-center flex-1 py-2 transition-colors cursor-pointer ${isActive
-                  ? 'text-[#004225] dark:text-[#86efac]'
-                  : 'text-[#8E8E93] dark:text-neutral-400'
+                ? 'text-[#004225] dark:text-[#86efac]'
+                : 'text-[#8E8E93] dark:text-neutral-400'
                 }`}
               style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
