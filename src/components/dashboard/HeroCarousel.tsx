@@ -122,7 +122,7 @@ export default function HeroCarousel() {
 
     return (
         <div
-            className="relative w-full overflow-hidden rounded-2xl"
+            className="relative w-full overflow-hidden"
             style={{ aspectRatio: '16/10' }}
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
@@ -204,8 +204,8 @@ export default function HeroCarousel() {
                         key={index}
                         onClick={() => handleDotClick(index)}
                         className={`transition-all duration-300 rounded-full ${index === currentIndex
-                                ? 'w-6 h-2 bg-white'
-                                : 'w-2 h-2 bg-white/40 hover:bg-white/60'
+                            ? 'w-6 h-2 bg-white'
+                            : 'w-2 h-2 bg-white/40 hover:bg-white/60'
                             }`}
                         aria-label={`Go to slide ${index + 1}`}
                     />
