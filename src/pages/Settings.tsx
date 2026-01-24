@@ -27,6 +27,7 @@ import { useSettingsStore } from '@/stores/settingsStore'
 import { useProgressStore } from '@/stores/progressStore'
 import { useSRSStore } from '@/stores/srsStore'
 import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis'
+import { useUnifiedTTS } from '@/hooks/useUnifiedTTS'
 import { isCloudTTSAvailable, speakWithCloudTTS } from '@/services/cloudTTSService'
 
 // Settings Section component
@@ -105,7 +106,14 @@ export default function Settings() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { settings, updateSettings, resetSettings } = useSettingsStore()
   const { progress, resetProgress } = useProgressStore()
-  const { speak, voices, selectedVoice, setVoice, britishVoices, americanVoices, refreshVoices } = useSpeechSynthesis()
+
+  // Use useSpeechSynthesis for getting voice list ONLY
+  const synthesis = useSpeechSynthesis()
+  const { voices, selectedVoice, setVoice, britishVoices, americanVoices, refreshVoices } = synthesis
+
+  // Use useUnifiedTTS for actual speaking (supports Google/ElevenLabs)
+  const unifiedTTS = useUnifiedTTS()
+  const speak = unifiedTTS.speak
 
   // Destructure settings for easier access
   const {

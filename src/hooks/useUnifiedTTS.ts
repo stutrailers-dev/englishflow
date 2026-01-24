@@ -7,7 +7,7 @@ import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis'
 import { speakWithCloudTTS, stopCloudTTS } from '@/services/cloudTTSService'
 
 interface UseUnifiedTTSReturn {
-    speak: (text: string, options?: { onEnd?: () => void; onError?: (e: Error) => void }) => void
+    speak: (text: string, options?: { onStart?: () => void; onEnd?: () => void; onError?: (e: Error) => void }) => void
     cancel: () => void
     isSpeaking: boolean
     isPremium: boolean
@@ -26,19 +26,21 @@ export function useUnifiedTTS(): UseUnifiedTTSReturn {
         activeProvider = 'elevenlabs'
     }
 
-    const speak = useCallback((text: string, options?: { onEnd?: () => void; onError?: (e: Error) => void }) => {
+    const speak = useCallback((text: string, options?: { onStart?: () => void; onEnd?: () => void; onError?: (e: Error) => void }) => {
         if (activeProvider !== 'local') {
             // Use Cloud TTS (ElevenLabs or Google)
             speakWithCloudTTS(text, {
                 provider: activeProvider as 'elevenlabs' | 'google',
                 accent: preferredAccent || 'british',
                 speakingRate: speechRate || 1.0,
+                onStart: options?.onStart,
                 onEnd: options?.onEnd,
                 onError: options?.onError,
             })
         } else {
             // Use local device voice
             localTTS.speak(text, {
+                onStart: options?.onStart,
                 onEnd: options?.onEnd,
                 onError: (e) => options?.onError?.(new Error(e)),
             })
