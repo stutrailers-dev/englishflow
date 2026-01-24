@@ -728,3 +728,43 @@ function App() {
   )
 }
 ```
+
+---
+
+## 🌐 Cloud TTS & Ses Motoru Güncellemesi (25 Ocak 2026)
+
+### Genel Bakış
+Uygulamaya yüksek kaliteli, doğal ve insansı sesler eklemek için Google Cloud TTS ve ElevenLabs entegrasyonu yapılmıştır. "Unified TTS" mimarisi sayesinde uygulama, seçilen sağlayıcıya (Google/ElevenLabs/Local) göre otomatik olarak en iyi ses deneyimini sunar.
+
+### Yeni Özellikler
+
+#### 1. Çoklu Ses Sağlayıcı (Multi-Provider) Desteği
+- **Google Cloud TTS:** Saf, net ve yüksek kaliteli Neural2 sesleri (Safari uyumlu).
+- **ElevenLabs Premium:** Ultra gerçekçi, nefes alan ve tonlama yapan yapay zeka sesleri.
+- **Local (Device):** Çevrimdışı kullanım için cihazın kendi ses motoru.
+
+#### 2. Unified TTS Mimarisi (`useUnifiedTTS` Hook)
+- Tek bir hook üzerinden tüm ses motorlarını yönetir.
+- `speak(text)` çağrıldığında, ayarlarda seçili olan sağlayıcıya (Google/ElevenLabs) otomatik yönlendirme yapar.
+- Cloud servislerinde hata olması durumunda kullanıcıya görsel geri bildirim verir.
+- **Echo Prevention:** Aynı metnin üst üste binerek (yankı) çalmasını engelleyen akıllı kontrol mekanizması (`useRef` logic).
+
+#### 3. Conversation Simulator Entegrasyonu
+- Simülasyon artık seçilen Cloud ses motorunu kullanıyor.
+- Karakterler (Agent) çok daha doğal ve akıcı konuşuyor.
+- Dudak/Dalga animasyonları Cloud TTS ile senkronize edildi (`isSpeaking` state yönetimi).
+- Hata durumunda (Quota, API hatası) kullanıcı uyarı sistemi.
+
+### Teknik Detaylar
+- **Vercel Edge Functions:** API anahtarlarını (Google & ElevenLabs) gizlemek için sunucu taraflı proxy endpointleri (`/api/google-tts`, `/api/tts`).
+- **Settings UI:** Basitleştirilmiş ses motoru seçimi. Gereksiz dropdownlar kaldırıldı.
+- **Güvenlik:** API anahtarları client-side kodunda değil, Vercel Environment Variables içinde saklanır.
+
+### Versiyon Geçmişi Eklemesi
+| Tarih | Değişiklik |
+|-------|------------|
+| 25 Ocak 2026 | Google Cloud TTS Entegrasyonu (Neural2) |
+| 25 Ocak 2026 | ElevenLabs API Entegrasyonu (Proxy) |
+| 25 Ocak 2026 | Unified TTS Mimarisi ve Provider Selection UI |
+| 25 Ocak 2026 | Conversation Simulator Cloud Ses Desteği |
+| 25 Ocak 2026 | Ses yankı (echo) ve animasyon senkronizasyon düzeltmeleri |

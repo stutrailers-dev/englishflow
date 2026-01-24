@@ -26,7 +26,6 @@ import {
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useProgressStore } from '@/stores/progressStore'
 import { useSRSStore } from '@/stores/srsStore'
-import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis'
 import { useUnifiedTTS } from '@/hooks/useUnifiedTTS'
 
 
@@ -106,10 +105,6 @@ export default function Settings() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { settings, updateSettings, resetSettings } = useSettingsStore()
   const { progress, resetProgress } = useProgressStore()
-
-  // Use useSpeechSynthesis for getting voice list ONLY
-  const synthesis = useSpeechSynthesis()
-  const { voices, britishVoices, americanVoices, refreshVoices } = synthesis
 
   // Use useUnifiedTTS for actual speaking (supports Google/ElevenLabs)
   const unifiedTTS = useUnifiedTTS()
@@ -472,20 +467,7 @@ export default function Settings() {
               </>
             )}
           </button>
-          <div className="flex items-center justify-center gap-4 mt-2">
-            <p className="text-xs text-navy-400">
-              {preferredAccent === 'british'
-                ? `British voices: ${britishVoices.length}`
-                : `American voices: ${americanVoices.length}`
-              } / Total: {voices.length}
-            </p>
-            <button
-              onClick={refreshVoices}
-              className="text-xs text-racing-600 hover:text-racing-700 underline"
-            >
-              🔄 Sesleri Yenile
-            </button>
-          </div>
+
 
 
         </div>
