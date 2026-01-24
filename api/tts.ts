@@ -58,7 +58,7 @@ export default async function handler(req: Request) {
 
     try {
         const body: TTSRequest = await req.json()
-        const { text, accent = 'british', gender = 'female', speakingRate = 1.0 } = body
+        const { text, accent = 'british', gender = 'female', speakingRate = 0.85 } = body
 
         if (!text) {
             return new Response(JSON.stringify({ error: 'Text is required' }), {
@@ -72,9 +72,9 @@ export default async function handler(req: Request) {
         const voiceId = gender === 'male' ? voices.male : voices.female
 
         // Adjust stability based on speaking rate
-        // Lower rate = higher stability (slower, more stable speech)
-        // Rate 0.5 -> stability 0.9, Rate 1.0 -> stability 0.7, Rate 1.5 -> stability 0.5
-        const stability = Math.max(0.3, Math.min(0.95, 1.1 - (speakingRate * 0.4)))
+        // Higher stability = slower, more deliberate speech (good for language learning)
+        // Rate 0.5 -> stability 0.95, Rate 0.85 -> stability 0.80, Rate 1.0 -> stability 0.70
+        const stability = Math.max(0.5, Math.min(0.95, 1.2 - (speakingRate * 0.5)))
 
         // Call ElevenLabs API
         const response = await fetch(`${ELEVENLABS_API_URL}/${voiceId}`, {
