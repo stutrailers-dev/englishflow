@@ -20,7 +20,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   speechRate: 0.9, // Slightly slower for learning
   fontSize: 'small',
   usePremiumVoice: false, // ElevenLabs premium voice disabled by default
-  ttsProvider: 'local', // Default TTS provider
+  ttsProvider: 'google', // Default TTS provider
 }
 
 export const useSettingsStore = create<SettingsState>()(
