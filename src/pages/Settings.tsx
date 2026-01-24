@@ -480,6 +480,7 @@ export default function Settings() {
                   onEnd: () => setTestVoicePlaying(false),
                   onError: (e) => {
                     console.error('Cloud TTS Error:', e)
+                    alert('Cloud TTS Hatası: ' + e.message)
                     setTestVoicePlaying(false)
                   }
                 })
