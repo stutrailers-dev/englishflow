@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import Layout from './components/common/Layout'
 import ThemeProvider from './components/common/ThemeProvider'
 import ScrollToTop from './components/common/ScrollToTop'
+import { useAudioStore } from './stores'
 
 // Lazy load pages for faster initial load and navigation
 const Dashboard = lazy(() => import('./pages/Dashboard'))
@@ -26,6 +27,11 @@ function PageLoader() {
 }
 
 function App() {
+  // Initialize audio store once
+  useEffect(() => {
+    useAudioStore.getState().init()
+  }, [])
+
   return (
     <ThemeProvider>
       <ScrollToTop />

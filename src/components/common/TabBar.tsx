@@ -27,9 +27,9 @@ export default function TabBar() {
     >
       {/* Blur background - explicit light/dark mode support */}
       <div
-        className="absolute inset-0 backdrop-blur-md border-t"
+        className="absolute inset-0 backdrop-blur-xl border-t"
         style={{
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
           borderColor: 'rgba(229, 231, 235, 0.5)'
         }}
       />

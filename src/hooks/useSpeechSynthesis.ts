@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { useSettingsStore } from '@/stores'
+import { useSettingsStore, useAudioStore } from '@/stores'
 
 interface UseSpeechSynthesisOptions {
   onEnd?: () => void
@@ -115,7 +115,7 @@ export function useSpeechSynthesis(
 
   const [isSpeaking, setIsSpeaking] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
-  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([])
+  const { voices } = useAudioStore()
   const [selectedVoice, setSelectedVoice] = useState<SpeechSynthesisVoice | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -193,45 +193,30 @@ export function useSpeechSynthesis(
 
   // Load available voices and select based on saved preference or accent
   useEffect(() => {
-    if (!isSupported) return
+    if (!isSupported || voices.length === 0) return
 
-    const loadVoices = () => {
-      const availableVoices = window.speechSynthesis.getVoices()
-      setVoices(availableVoices)
+    const accent = settings.preferredAccent || 'british'
+    const savedVoiceName = settings.selectedVoiceName
 
-      if (availableVoices.length > 0) {
-        const accent = settings.preferredAccent || 'british'
-        const savedVoiceName = settings.selectedVoiceName
-
-        // First, try to use the saved voice name
-        if (savedVoiceName) {
-          const savedVoice = availableVoices.find(v => v.name === savedVoiceName)
-          if (savedVoice) {
-            setSelectedVoice(savedVoice)
-            lastAccentRef.current = accent
-            return
-          }
-        }
-
-        // If no saved voice or saved voice not available, auto-select best voice
-        if (!selectedVoice || lastAccentRef.current !== accent) {
-          const bestVoice = findBestVoice(availableVoices, accent)
-          if (bestVoice) {
-            setSelectedVoice(bestVoice)
-            lastAccentRef.current = accent
-          }
-        }
+    // First, try to use the saved voice name
+    if (savedVoiceName) {
+      const savedVoice = voices.find(v => v.name === savedVoiceName)
+      if (savedVoice) {
+        setSelectedVoice(savedVoice)
+        lastAccentRef.current = accent
+        return
       }
     }
 
-    // Load voices (may be async)
-    loadVoices()
-    window.speechSynthesis.onvoiceschanged = loadVoices
-
-    return () => {
-      window.speechSynthesis.onvoiceschanged = null
+    // If no saved voice or saved voice not available, auto-select best voice
+    if (!selectedVoice || lastAccentRef.current !== accent) {
+      const bestVoice = findBestVoice(voices, accent)
+      if (bestVoice) {
+        setSelectedVoice(bestVoice)
+        lastAccentRef.current = accent
+      }
     }
-  }, [isSupported, settings.preferredAccent, settings.selectedVoiceName, findBestVoice, selectedVoice])
+  }, [isSupported, voices, settings.preferredAccent, settings.selectedVoiceName, findBestVoice, selectedVoice])
 
   // Re-select voice when accent preference changes (but not if user has a saved voice for new accent)
   useEffect(() => {
@@ -335,31 +320,8 @@ export function useSpeechSynthesis(
   // Manual voice refresh for iOS (voices may not update automatically)
   const refreshVoices = useCallback(() => {
     if (!isSupported) return
-
-    // Force reload voices by calling getVoices multiple times
-    // This is a workaround for iOS Safari where voices don't update immediately
-    const loadVoicesWithRetry = () => {
-      const availableVoices = window.speechSynthesis.getVoices()
-      console.log('🔄 Refreshing voices, found:', availableVoices.length)
-      setVoices(availableVoices)
-
-      if (availableVoices.length > 0) {
-        const accent = settings.preferredAccent || 'british'
-        const bestVoice = findBestVoice(availableVoices, accent)
-        if (bestVoice) {
-          setSelectedVoice(bestVoice)
-          lastAccentRef.current = accent
-        }
-      }
-    }
-
-    // Try immediately
-    loadVoicesWithRetry()
-
-    // Also try after a short delay (iOS sometimes needs this)
-    setTimeout(loadVoicesWithRetry, 100)
-    setTimeout(loadVoicesWithRetry, 500)
-  }, [isSupported, settings.preferredAccent, findBestVoice])
+    useAudioStore.getState().init()
+  }, [isSupported])
 
   return {
     speak,
