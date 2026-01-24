@@ -1,7 +1,7 @@
 // Unified TTS Hook
 // Uses ElevenLabs when usePremiumVoice is enabled, otherwise uses local device voices
 
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis'
 import { speakWithCloudTTS, stopCloudTTS } from '@/services/cloudTTSService'
@@ -18,6 +18,9 @@ export function useUnifiedTTS(): UseUnifiedTTSReturn {
     const { ttsProvider, usePremiumVoice, preferredAccent, speechRate } = settings
     const localTTS = useSpeechSynthesis()
 
+    // State to track cloud TTS speaking status
+    const [isCloudSpeaking, setIsCloudSpeaking] = useState(false)
+
     // Determine actual provider (fallback to legacy usePremiumVoice if ttsProvider is not set/local but premium toggle is on)
     let activeProvider = ttsProvider
 
@@ -28,14 +31,24 @@ export function useUnifiedTTS(): UseUnifiedTTSReturn {
 
     const speak = useCallback((text: string, options?: { onStart?: () => void; onEnd?: () => void; onError?: (e: Error) => void }) => {
         if (activeProvider !== 'local') {
+            setIsCloudSpeaking(true)
             // Use Cloud TTS (ElevenLabs or Google)
             speakWithCloudTTS(text, {
                 provider: activeProvider as 'elevenlabs' | 'google',
                 accent: preferredAccent || 'british',
                 speakingRate: speechRate || 1.0,
-                onStart: options?.onStart,
-                onEnd: options?.onEnd,
-                onError: options?.onError,
+                onStart: () => {
+                    setIsCloudSpeaking(true)
+                    options?.onStart?.()
+                },
+                onEnd: () => {
+                    setIsCloudSpeaking(false)
+                    options?.onEnd?.()
+                },
+                onError: (e) => {
+                    setIsCloudSpeaking(false)
+                    options?.onError?.(e)
+                },
             })
         } else {
             // Use local device voice
@@ -50,6 +63,7 @@ export function useUnifiedTTS(): UseUnifiedTTSReturn {
     const cancel = useCallback(() => {
         if (activeProvider !== 'local') {
             stopCloudTTS()
+            setIsCloudSpeaking(false)
         } else {
             localTTS.cancel()
         }
@@ -58,8 +72,8 @@ export function useUnifiedTTS(): UseUnifiedTTSReturn {
     return {
         speak,
         cancel,
-        isSpeaking: localTTS.isSpeaking, // For local TTS only, cloud TTS doesn't have this state
-        isPremium: usePremiumVoice,
+        isSpeaking: activeProvider !== 'local' ? isCloudSpeaking : localTTS.isSpeaking,
+        isPremium: activeProvider !== 'local',
     }
 }
 
