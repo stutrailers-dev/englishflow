@@ -1,134 +1,27 @@
-// Google Cloud Text-to-Speech Service
-// Uses Google Cloud TTS API for high-quality voice synthesis
-// Free tier: 1 million characters/month for standard, 1 million for WaveNet
+// Cloud TTS Service via Vercel API Proxy
+// Uses Vercel Edge Function to securely call Google Cloud TTS
 
-const TTS_API_KEY = (import.meta.env.VITE_GOOGLE_TTS_API_KEY || '').trim()
-const TTS_API_URL = 'https://texttospeech.googleapis.com/v1/text:synthesize'
-
-export interface TTSVoice {
-    name: string
-    languageCode: string
-    ssmlGender: 'MALE' | 'FEMALE' | 'NEUTRAL'
-}
-
-// British English voices (ordered by quality)
-export const BRITISH_VOICES: TTSVoice[] = [
-    { name: 'en-GB-Wavenet-B', languageCode: 'en-GB', ssmlGender: 'MALE' },     // High quality male
-    { name: 'en-GB-Wavenet-A', languageCode: 'en-GB', ssmlGender: 'FEMALE' },   // High quality female
-    { name: 'en-GB-Neural2-B', languageCode: 'en-GB', ssmlGender: 'MALE' },     // Neural male
-    { name: 'en-GB-Neural2-A', languageCode: 'en-GB', ssmlGender: 'FEMALE' },   // Neural female
-    { name: 'en-GB-Standard-B', languageCode: 'en-GB', ssmlGender: 'MALE' },    // Standard male
-    { name: 'en-GB-Standard-A', languageCode: 'en-GB', ssmlGender: 'FEMALE' },  // Standard female
-]
-
-// American English voices (ordered by quality)
-export const AMERICAN_VOICES: TTSVoice[] = [
-    { name: 'en-US-Wavenet-D', languageCode: 'en-US', ssmlGender: 'MALE' },     // High quality male
-    { name: 'en-US-Wavenet-C', languageCode: 'en-US', ssmlGender: 'FEMALE' },   // High quality female
-    { name: 'en-US-Neural2-D', languageCode: 'en-US', ssmlGender: 'MALE' },     // Neural male
-    { name: 'en-US-Neural2-C', languageCode: 'en-US', ssmlGender: 'FEMALE' },   // Neural female
-    { name: 'en-US-Standard-D', languageCode: 'en-US', ssmlGender: 'MALE' },    // Standard male
-    { name: 'en-US-Standard-C', languageCode: 'en-US', ssmlGender: 'FEMALE' },  // Standard female
-]
-
-interface SynthesizeRequest {
-    input: {
-        text?: string
-        ssml?: string
-    }
-    voice: {
-        languageCode: string
-        name: string
-        ssmlGender?: string
-    }
-    audioConfig: {
-        audioEncoding: 'MP3' | 'LINEAR16' | 'OGG_OPUS'
-        speakingRate?: number
-        pitch?: number
-        volumeGainDb?: number
-    }
-}
-
-interface SynthesizeResponse {
-    audioContent: string // Base64 encoded audio
-}
+// API endpoint - uses Vercel serverless function
+const TTS_API_ENDPOINT = '/api/tts'
 
 // Audio element for playback
 let audioElement: HTMLAudioElement | null = null
 let currentAudioUrl: string | null = null
 
 /**
- * Check if Google Cloud TTS is available (API key is set)
+ * Check if Cloud TTS API is available
+ * Always returns true since we use server-side API key
  */
 export function isCloudTTSAvailable(): boolean {
-    return !!TTS_API_KEY
+    return true
 }
 
 /**
- * Synthesize text to speech using Google Cloud TTS
- */
-export async function synthesizeSpeech(
-    text: string,
-    options: {
-        voice?: TTSVoice
-        accent?: 'british' | 'american'
-        speakingRate?: number
-        pitch?: number
-    } = {}
-): Promise<string> {
-    if (!TTS_API_KEY) {
-        throw new Error('Google Cloud TTS API key not configured')
-    }
-
-    const { accent = 'british', speakingRate = 1.0, pitch = 0 } = options
-
-    // Select voice based on accent if not specified
-    const voice = options.voice || (accent === 'british' ? BRITISH_VOICES[0] : AMERICAN_VOICES[0])
-
-    const request: SynthesizeRequest = {
-        input: { text },
-        voice: {
-            languageCode: voice.languageCode,
-            name: voice.name,
-            ssmlGender: voice.ssmlGender,
-        },
-        audioConfig: {
-            audioEncoding: 'MP3',
-            speakingRate,
-            pitch,
-        },
-    }
-
-    try {
-        const response = await fetch(`${TTS_API_URL}?key=${TTS_API_KEY}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(request),
-        })
-
-        if (!response.ok) {
-            const error = await response.json()
-            console.error('TTS API Error:', error)
-            throw new Error(error.error?.message || 'TTS synthesis failed')
-        }
-
-        const data: SynthesizeResponse = await response.json()
-        return data.audioContent // Base64 audio
-    } catch (error) {
-        console.error('Cloud TTS Error:', error)
-        throw error
-    }
-}
-
-/**
- * Speak text using Google Cloud TTS
+ * Speak text using Cloud TTS via Vercel API
  */
 export async function speakWithCloudTTS(
     text: string,
     options: {
-        voice?: TTSVoice
         accent?: 'british' | 'american'
         speakingRate?: number
         onStart?: () => void
@@ -136,7 +29,7 @@ export async function speakWithCloudTTS(
         onError?: (error: Error) => void
     } = {}
 ): Promise<void> {
-    const { onStart, onEnd, onError } = options
+    const { accent = 'british', speakingRate = 1.0, onStart, onEnd, onError } = options
 
     try {
         // Stop any currently playing audio
@@ -144,10 +37,30 @@ export async function speakWithCloudTTS(
 
         onStart?.()
 
-        const audioContent = await synthesizeSpeech(text, options)
+        // Call our Vercel API proxy
+        const response = await fetch(TTS_API_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                text,
+                accent,
+                speakingRate,
+            }),
+        })
+
+        if (!response.ok) {
+            const error = await response.json()
+            throw new Error(error.error || 'TTS request failed')
+        }
+
+        const data = await response.json()
+
+        if (!data.audioContent) {
+            throw new Error('No audio content received')
+        }
 
         // Create audio URL from base64
-        const audioBlob = base64ToBlob(audioContent, 'audio/mp3')
+        const audioBlob = base64ToBlob(data.audioContent, 'audio/mp3')
         currentAudioUrl = URL.createObjectURL(audioBlob)
 
         // Create and play audio
@@ -214,10 +127,7 @@ function base64ToBlob(base64: string, mimeType: string): Blob {
 
 export default {
     isCloudTTSAvailable,
-    synthesizeSpeech,
     speakWithCloudTTS,
     stopCloudTTS,
     isCloudTTSPlaying,
-    BRITISH_VOICES,
-    AMERICAN_VOICES,
 }
