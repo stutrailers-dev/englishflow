@@ -46,6 +46,10 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
   const [expandedChunk, setExpandedChunk] = useState<string | null>(null)
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
 
+  // Pagination
+  const [displayLimit, setDisplayLimit] = useState(20)
+  const LOAD_INCREMENT = 20
+
   // Scroll to show buttons when chunk expands
   useEffect(() => {
     if (expandedChunk) {
@@ -126,6 +130,17 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
       return matchesCategory && matchesSearch
     })
   }, [selectedCategory, searchQuery, reviewMode, dueItems])
+
+  // Reset display limit when filters change
+  useEffect(() => {
+    setDisplayLimit(LOAD_INCREMENT)
+  }, [selectedCategory, searchQuery])
+
+  // Visible chunks based on pagination
+  const visibleChunks = useMemo(() => {
+    if (reviewMode) return filteredChunks
+    return filteredChunks.slice(0, displayLimit)
+  }, [filteredChunks, displayLimit, reviewMode])
 
   const handleSpeak = (text: string) => {
     if (isSpeaking) {
@@ -290,7 +305,7 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
       {/* Chunks List */}
       <div className="space-y-3">
         <AnimatePresence mode="popLayout">
-          {(reviewMode ? [filteredChunks[currentReviewIndex]].filter(Boolean) : filteredChunks).map((chunk, index) => {
+          {(reviewMode ? [filteredChunks[currentReviewIndex]].filter(Boolean) : visibleChunks).map((chunk, index) => {
             const isExpanded = expandedChunk === chunk.id
             const inSRS = isInSRS(chunk.id)
             const learned = isLearned(chunk.id)
@@ -300,7 +315,6 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
             return (
               <motion.div
                 key={chunk.id}
-                layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -520,6 +534,18 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
           </div>
         )}
       </div>
+
+      {/* Load More Button */}
+      {!reviewMode && visibleChunks.length < filteredChunks.length && (
+        <div className="text-center pt-4">
+          <button
+            onClick={() => setDisplayLimit(prev => prev + LOAD_INCREMENT)}
+            className="btn-secondary text-sm px-6 py-2"
+          >
+            Show More ({filteredChunks.length - visibleChunks.length} remaining)
+          </button>
+        </div>
+      )}
     </motion.div>
   )
 }
