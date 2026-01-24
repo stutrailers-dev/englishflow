@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Mic,
@@ -47,9 +47,11 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
   const mainCardRef = useRef<HTMLDivElement>(null)
 
   // Filter content by category
-  const filteredContent = categoryFilter === 'all'
-    ? shadowingContent
-    : shadowingContent.filter(item => item.category === categoryFilter)
+  const filteredContent = useMemo(() => {
+    return categoryFilter === 'all'
+      ? shadowingContent
+      : shadowingContent.filter(item => item.category === categoryFilter)
+  }, [categoryFilter])
 
   const currentItem = filteredContent[currentIndex]
 

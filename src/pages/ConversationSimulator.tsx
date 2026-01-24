@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { generateDynamicResponse, AIResponse } from '../services/aiService'
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition'
 import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis'
-import { useUnifiedTTS } from '../hooks/useUnifiedTTS'
+import { useUnifiedTTS, useIntersectionObserver } from '../hooks'
 import { scenarios } from '../data/scenarios'
 import { Scenario, ScenarioCategory } from '../types'
 import { useProgressStore } from '../stores/progressStore'
@@ -164,6 +164,25 @@ export default function ConversationSimulator() {
       return aCompleted ? 1 : -1
     })
   }, [categoryFilter, isScenarioCompleted, shouldDelaySort])
+
+  const [displayLimit, setDisplayLimit] = useState(10)
+  const LOAD_INCREMENT = 10
+  const { containerRef: loadMoreRef, isVisible: isLoadMoreVisible } = useIntersectionObserver({
+    threshold: 0.1,
+    enabled: !selectedScenarioId
+  })
+
+  // Infinite Scroll Handler
+  useEffect(() => {
+    if (isLoadMoreVisible && displayLimit < filteredScenarios.length) {
+      setDisplayLimit(prev => Math.min(prev + LOAD_INCREMENT, filteredScenarios.length))
+    }
+  }, [isLoadMoreVisible, filteredScenarios.length, displayLimit])
+
+  // Visible scenarios based on pagination
+  const visibleScenarios = useMemo(() => {
+    return filteredScenarios.slice(0, displayLimit)
+  }, [filteredScenarios, displayLimit])
 
   // Helper to personalize text
   const personalizeText = useCallback((text: string) => {
@@ -854,7 +873,7 @@ export default function ConversationSimulator() {
           transition={{ delay: 0.2 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          {filteredScenarios.map((scenario, index) => {
+          {visibleScenarios.map((scenario, index) => {
             const savedProgress = getScenarioProgress(scenario.id)
             const hasProgress = savedProgress && savedProgress.currentTurnIndex > 0
             const completed = isScenarioCompleted(scenario.id)
@@ -921,13 +940,22 @@ export default function ConversationSimulator() {
           })}
         </motion.div>
 
-        {filteredScenarios.length === 0 && (
-          <div className="text-center py-12">
-            <MessageCircle className="w-12 h-12 text-navy-300 mx-auto mb-4" />
-            <p className="text-navy-500">No scenarios found matching your criteria.</p>
+        {/* Infinite Scroll Trigger */}
+        {visibleScenarios.length < filteredScenarios.length && (
+          <div ref={loadMoreRef} className="py-8 text-center">
+            <div className="w-6 h-6 border-2 border-navy-200 border-t-navy-600 rounded-full animate-spin mx-auto" />
           </div>
         )}
-      </div>
+
+        {
+          filteredScenarios.length === 0 && (
+            <div className="text-center py-12">
+              <MessageCircle className="w-12 h-12 text-navy-300 mx-auto mb-4" />
+              <p className="text-navy-500">No scenarios found matching your criteria.</p>
+            </div>
+          )
+        }
+      </div >
     )
   }
 

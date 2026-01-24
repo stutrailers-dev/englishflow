@@ -13,7 +13,7 @@ import {
   Play,
   Check
 } from 'lucide-react'
-import { useUnifiedTTS } from '@/hooks'
+import { useUnifiedTTS, useIntersectionObserver } from '@/hooks'
 import { useSRSStore } from '@/stores'
 import { ChunkCategory } from '@/types'
 import { clsx } from 'clsx'
@@ -47,8 +47,12 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
 
   // Pagination
-  const [displayLimit, setDisplayLimit] = useState(20)
-  const LOAD_INCREMENT = 20
+  const [displayLimit, setDisplayLimit] = useState(10)
+  const LOAD_INCREMENT = 10
+  const { containerRef: loadMoreRef, isVisible: isLoadMoreVisible } = useIntersectionObserver({
+    threshold: 0.1,
+    enabled: !reviewMode
+  })
 
   // Scroll to show buttons when chunk expands
   useEffect(() => {
@@ -135,6 +139,13 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
   useEffect(() => {
     setDisplayLimit(LOAD_INCREMENT)
   }, [selectedCategory, searchQuery])
+
+  // Infinite Scroll Handler
+  useEffect(() => {
+    if (isLoadMoreVisible && displayLimit < filteredChunks.length) {
+      setDisplayLimit(prev => Math.min(prev + LOAD_INCREMENT, filteredChunks.length))
+    }
+  }, [isLoadMoreVisible, filteredChunks.length, displayLimit])
 
   // Visible chunks based on pagination
   const visibleChunks = useMemo(() => {
@@ -535,15 +546,10 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
         )}
       </div>
 
-      {/* Load More Button */}
+      {/* Infinite Scroll Trigger */}
       {!reviewMode && visibleChunks.length < filteredChunks.length && (
-        <div className="text-center pt-4">
-          <button
-            onClick={() => setDisplayLimit(prev => prev + LOAD_INCREMENT)}
-            className="btn-secondary text-sm px-6 py-2"
-          >
-            Show More ({filteredChunks.length - visibleChunks.length} remaining)
-          </button>
+        <div ref={loadMoreRef} className="py-8 text-center">
+          <div className="w-6 h-6 border-2 border-navy-200 border-t-navy-600 rounded-full animate-spin mx-auto" />
         </div>
       )}
     </motion.div>
