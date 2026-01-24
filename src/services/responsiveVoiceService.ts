@@ -39,11 +39,12 @@ export const AMERICAN_VOICES = [
 
 /**
  * Check if ResponsiveVoice is available
+ * Note: voiceSupport() may return false on iOS Safari even when TTS works
  */
 export function isResponsiveVoiceAvailable(): boolean {
     return typeof window !== 'undefined' &&
         typeof window.responsiveVoice !== 'undefined' &&
-        window.responsiveVoice.voiceSupport()
+        typeof window.responsiveVoice.speak === 'function'
 }
 
 /**

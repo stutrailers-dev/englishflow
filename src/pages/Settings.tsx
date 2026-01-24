@@ -515,34 +515,6 @@ export default function Settings() {
           value={autoPlayAudio}
           onChange={setAutoPlayAudio}
         />
-
-        {/* iOS Premium Voice Guide */}
-        {(britishVoices.length <= 3 || americanVoices.length <= 3) && (
-          <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border border-amber-200 dark:border-amber-700">
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-800 flex items-center justify-center flex-shrink-0">
-                <Info className="w-4 h-4 text-amber-700 dark:text-amber-300" />
-              </div>
-              <div>
-                <p className="font-medium text-amber-900 dark:text-amber-100 text-sm">
-                  📱 Daha İyi Sesler İçin (iOS)
-                </p>
-                <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">
-                  iPhone'unuzda daha doğal sesler indirin:
-                </p>
-                <ol className="text-xs text-amber-700 dark:text-amber-300 mt-2 space-y-1 list-decimal list-inside">
-                  <li><strong>Ayarlar</strong> &gt; <strong>Erişilebilirlik</strong></li>
-                  <li><strong>Sözlü İçerik</strong> &gt; <strong>Sesler</strong></li>
-                  <li><strong>İngilizce</strong> &gt; <strong>Daniel (Enhanced)</strong></li>
-                  <li>İndirme tamamlandığında bu sayfayı yenileyin</li>
-                </ol>
-                <p className="text-xs text-amber-600 dark:text-amber-400 mt-2 italic">
-                  Enhanced sesler ~150MB yer kaplar ama çok daha doğal konuşur.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
       </SettingsSection>
 
       {/* Display Settings */}
