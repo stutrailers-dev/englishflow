@@ -3,7 +3,7 @@ import { Mic, RotateCcw, Volume2, X, ChevronRight, Target, Lock as Clock, Trophy
 import { motion, AnimatePresence } from 'framer-motion'
 import { generateDynamicResponse, AIResponse } from '../services/aiService'
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition'
-import { useUnifiedTTS } from '../hooks/useUnifiedTTS'
+import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis'
 import { scenarios } from '../data/scenarios'
 import { Scenario, ScenarioCategory } from '../types'
 import { useProgressStore } from '../stores/progressStore'
@@ -93,7 +93,7 @@ export default function ConversationSimulator() {
     error: speechError
   } = useSpeechRecognition()
 
-  const { speak, cancel, isSpeaking } = useUnifiedTTS()
+  const { speak, cancel, isSpeaking, voices, setVoice } = useSpeechSynthesis()
   const {
     incrementScenariosCompleted,
     addStudyTime,
@@ -114,6 +114,35 @@ export default function ConversationSimulator() {
   const dialogueAreaRef = useRef<HTMLDivElement>(null)
   // Ref for conversation history scroll container
   const conversationHistoryRef = useRef<HTMLDivElement>(null)
+
+  // Auto-select a female voice for the agent if available
+  // This addresses the user's preference for the "natural female voice"
+  useEffect(() => {
+    if (voices.length > 0) {
+      // Filter for female voices
+      const femaleVoices = voices.filter(v =>
+        v.name.includes('Female') ||
+        v.name.includes('Samantha') ||
+        v.name.includes('Siri') ||
+        v.name.includes('Zira') ||
+        v.name.includes('Eva')
+      )
+
+      // Try to find premium/enhanced female voices first
+      const premiumFemale = femaleVoices.find(v =>
+        v.name.includes('Premium') ||
+        v.name.includes('Enhanced') ||
+        v.name.includes('Google') ||
+        v.name.includes('Online')
+      )
+
+      if (premiumFemale) {
+        setVoice(premiumFemale)
+      } else if (femaleVoices.length > 0) {
+        setVoice(femaleVoices[0])
+      }
+    }
+  }, [voices, setVoice])
 
   // Filter and sort scenarios (completed ones go to bottom, with delay for just-completed)
   const filteredScenarios = useMemo(() => {
