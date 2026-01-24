@@ -10,7 +10,7 @@ import {
   ChevronRight,
   AlertCircle
 } from 'lucide-react'
-import { useSpeechRecognition, useSpeechSynthesis } from '@/hooks'
+import { useSpeechRecognition, useUnifiedTTS } from '@/hooks'
 import { clsx } from 'clsx'
 import { shadowingContent } from '@/data/shadowingContent'
 
@@ -64,7 +64,7 @@ export default function ShadowingStudio({ embedded = false }: ShadowingStudioPro
     speak,
     cancel,
     isSpeaking
-  } = useSpeechSynthesis()
+  } = useUnifiedTTS()
 
   const {
     isListening,

@@ -9,7 +9,7 @@ import {
   ChevronLeft,
   ChevronRight
 } from 'lucide-react'
-import { useSpeechSynthesis } from '@/hooks'
+import { useUnifiedTTS } from '@/hooks'
 import { useSRSStore, useProgressStore } from '@/stores'
 import { vocabulary } from '@/data/vocabulary'
 import type { ChunkCategory, DifficultyLevel } from '@/types'
@@ -86,7 +86,7 @@ export default function VocabularyLibrary({ embedded = false }: VocabularyLibrar
   const [flippedCards, setFlippedCards] = useState<Set<string>>(new Set())
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
 
-  const { speak, isSpeaking, cancel } = useSpeechSynthesis()
+  const { speak, isSpeaking, cancel } = useUnifiedTTS()
   const { addItem, getItemByItemId, getDueItems, reviewItem } = useSRSStore()
   const { incrementVocabularyLearned } = useProgressStore()
 

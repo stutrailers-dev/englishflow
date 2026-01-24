@@ -13,7 +13,7 @@ import {
   Play,
   Check
 } from 'lucide-react'
-import { useSpeechSynthesis } from '@/hooks'
+import { useUnifiedTTS } from '@/hooks'
 import { useSRSStore } from '@/stores'
 import { ChunkCategory } from '@/types'
 import { clsx } from 'clsx'
@@ -92,7 +92,7 @@ export default function ChunkLibrary({ embedded = false }: ChunkLibraryProps) {
     }
   }, [learnedChunks])
 
-  const { speak, isSpeaking, cancel } = useSpeechSynthesis()
+  const { speak, isSpeaking, cancel } = useUnifiedTTS()
   const { addItem, getItemByItemId, getDueItems, reviewItem } = useSRSStore()
 
   // Get due items for review mode

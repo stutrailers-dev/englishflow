@@ -9,7 +9,7 @@ import {
   ArrowLeft,
   ArrowRight
 } from 'lucide-react'
-import { useSpeechSynthesis } from '@/hooks'
+import { useUnifiedTTS } from '@/hooks'
 import { clsx } from 'clsx'
 
 interface TenseData {
@@ -631,7 +631,7 @@ export default function TenseTrainer({ embedded = false }: TenseTrainerProps) {
   const [activeTab, setActiveTab] = useState<'structure' | 'examples' | 'mistakes'>('structure')
   const detailCardRef = useRef<HTMLDivElement>(null)
 
-  const { speak, isSpeaking } = useSpeechSynthesis()
+  const { speak, isSpeaking } = useUnifiedTTS()
 
   const handleSpeak = (text: string) => {
     speak(text)
