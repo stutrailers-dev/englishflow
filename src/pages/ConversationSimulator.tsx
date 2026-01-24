@@ -627,13 +627,21 @@ export default function ConversationSimulator() {
       cancel()
       isSubmittingRef.current = false
       wasListeningRef.current = false
+      lastSpokenTextRef.current = ''
     }
   }, [selectedScenario, resetTranscript, cancel])
+
+  // Track last spoken text to prevent echo/duplicate calls
+  const lastSpokenTextRef = useRef<string>('')
 
   // Auto-play agent turns
   useEffect(() => {
     if (currentTurn?.role === 'agent' && selectedScenario) {
-      speak(currentTurn.text)
+      // Prevent speaking the same text twice (echo fix)
+      if (lastSpokenTextRef.current !== currentTurn.text) {
+        lastSpokenTextRef.current = currentTurn.text
+        speak(currentTurn.text)
+      }
     }
   }, [currentTurn, selectedScenario, speak])
 
@@ -674,6 +682,7 @@ export default function ConversationSimulator() {
     cancel()
     isSubmittingRef.current = false
     wasListeningRef.current = false
+    lastSpokenTextRef.current = ''
   }, [resetTranscript, cancel, selectedScenario, clearScenarioProgress])
 
   // Load scenario with saved progress
