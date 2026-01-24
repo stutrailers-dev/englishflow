@@ -23,7 +23,7 @@ import { useSettingsStore } from '@/stores/settingsStore'
 import { useProgressStore } from '@/stores/progressStore'
 import { useSRSStore } from '@/stores/srsStore'
 import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis'
-import { isCloudTTSAvailable, speakWithCloudTTS, BRITISH_VOICES, AMERICAN_VOICES as CLOUD_AMERICAN_VOICES } from '@/services/cloudTTSService'
+import { isResponsiveVoiceAvailable, speakWithResponsiveVoice } from '@/services/responsiveVoiceService'
 
 // Settings Section component
 const SettingsSection = ({
@@ -465,22 +465,21 @@ export default function Settings() {
             </button>
           </div>
 
-          {/* Cloud TTS Button */}
-          {isCloudTTSAvailable() && (
+          {/* ResponsiveVoice TTS Button */}
+          {isResponsiveVoiceAvailable() && (
             <button
               onClick={() => {
                 const testText = preferredAccent === 'american'
-                  ? 'Hello! This is Google Cloud Text-to-Speech with WaveNet technology. How does it sound?'
-                  : 'Hello! This is Google Cloud Text-to-Speech with WaveNet technology. How does it sound?'
-                const voice = preferredAccent === 'british' ? BRITISH_VOICES[0] : CLOUD_AMERICAN_VOICES[0]
-                speakWithCloudTTS(testText, {
-                  voice,
-                  speakingRate: speechRate,
+                  ? 'Hello! This is ResponsiveVoice with high quality text to speech. How does it sound to you?'
+                  : 'Hello! This is ResponsiveVoice with high quality text to speech. How does it sound to you?'
+                speakWithResponsiveVoice(testText, {
+                  accent: preferredAccent || 'british',
+                  rate: speechRate,
                   onStart: () => setTestVoicePlaying(true),
                   onEnd: () => setTestVoicePlaying(false),
-                  onError: (e) => {
-                    console.error('Cloud TTS Error:', e)
-                    alert('Cloud TTS Hatası: ' + e.message)
+                  onError: (e: Error) => {
+                    console.error('ResponsiveVoice Error:', e)
+                    alert('ResponsiveVoice Hatası: ' + e.message)
                     setTestVoicePlaying(false)
                   }
                 })
@@ -491,19 +490,19 @@ export default function Settings() {
               {testVoicePlaying ? (
                 <>
                   <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Playing Cloud TTS...
+                  Playing...
                 </>
               ) : (
                 <>
-                  ☁️ Test Cloud TTS (WaveNet)
+                  🔊 Test ResponsiveVoice (HD)
                 </>
               )}
             </button>
           )}
-          {!isCloudTTSAvailable() && (
+          {!isResponsiveVoiceAvailable() && (
             <div className="mt-3 p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700">
               <p className="text-xs text-amber-700 dark:text-amber-300">
-                ☁️ Cloud TTS kullanmak için Vercel'de <code>VITE_GOOGLE_TTS_API_KEY</code> environment variable ekleyin.
+                🔊 ResponsiveVoice yükleniyor... Lütfen sayfayı yenileyin.
               </p>
             </div>
           )}
