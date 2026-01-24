@@ -25,6 +25,7 @@ interface TTSRequest {
     text: string
     accent?: 'british' | 'american'
     gender?: 'male' | 'female'
+    speakingRate?: number // 0.5 to 2.0, default 1.0
 }
 
 export default async function handler(req: Request) {
@@ -57,7 +58,7 @@ export default async function handler(req: Request) {
 
     try {
         const body: TTSRequest = await req.json()
-        const { text, accent = 'british', gender = 'female' } = body
+        const { text, accent = 'british', gender = 'female', speakingRate = 1.0 } = body
 
         if (!text) {
             return new Response(JSON.stringify({ error: 'Text is required' }), {
@@ -69,6 +70,11 @@ export default async function handler(req: Request) {
         // Select voice based on accent and gender
         const voices = accent === 'british' ? BRITISH_VOICES : AMERICAN_VOICES
         const voiceId = gender === 'male' ? voices.male : voices.female
+
+        // Adjust stability based on speaking rate
+        // Lower rate = higher stability (slower, more stable speech)
+        // Rate 0.5 -> stability 0.9, Rate 1.0 -> stability 0.7, Rate 1.5 -> stability 0.5
+        const stability = Math.max(0.3, Math.min(0.95, 1.1 - (speakingRate * 0.4)))
 
         // Call ElevenLabs API
         const response = await fetch(`${ELEVENLABS_API_URL}/${voiceId}`, {
@@ -82,9 +88,9 @@ export default async function handler(req: Request) {
                 text,
                 model_id: 'eleven_multilingual_v2',
                 voice_settings: {
-                    stability: 0.5,
+                    stability: stability,
                     similarity_boost: 0.75,
-                    style: 0.5,
+                    style: 0.3, // Lower style = more consistent pacing
                     use_speaker_boost: true,
                 },
             }),

@@ -3,7 +3,7 @@ import { Mic, RotateCcw, Volume2, X, ChevronRight, Target, Lock as Clock, Trophy
 import { motion, AnimatePresence } from 'framer-motion'
 import { generateDynamicResponse, AIResponse } from '../services/aiService'
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition'
-import { useUnifiedTTS } from '../hooks/useUnifiedTTS'
+import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis'
 import { scenarios } from '../data/scenarios'
 import { Scenario, ScenarioCategory } from '../types'
 import { useProgressStore } from '../stores/progressStore'
@@ -93,7 +93,7 @@ export default function ConversationSimulator() {
     error: speechError
   } = useSpeechRecognition()
 
-  const { speak, cancel, isSpeaking } = useUnifiedTTS()
+  const { speak, cancel, isSpeaking } = useSpeechSynthesis()
   const {
     incrementScenariosCompleted,
     addStudyTime,
