@@ -1,29 +1,30 @@
-// Vercel Serverless Function for Google Cloud TTS
-// This proxy allows secure API key usage from the frontend
+// Vercel Serverless Function for ElevenLabs TTS
+// ElevenLabs provides high-quality neural TTS voices
 
 export const config = {
     runtime: 'edge',
 }
 
-const TTS_API_URL = 'https://texttospeech.googleapis.com/v1/text:synthesize'
+// ElevenLabs API endpoint
+const ELEVENLABS_API_URL = 'https://api.elevenlabs.io/v1/text-to-speech'
+
+// Voice IDs for different accents
+// British English
+const BRITISH_VOICES = {
+    female: 'Xb7hH8MSUJpSbSDYk0k2', // Charlotte - British female
+    male: 'N2lVS1w4EtoT3dr4eOWO', // Callum - British male
+}
+
+// American English
+const AMERICAN_VOICES = {
+    female: 'EXAVITQu4vr4xnSDxMaL', // Bella - American female
+    male: 'VR6AewLTigWG4xSOukaG', // Arnold - American male
+}
 
 interface TTSRequest {
     text: string
-    voice?: string
     accent?: 'british' | 'american'
-    speakingRate?: number
-}
-
-// Voice mapping
-const VOICES = {
-    british: {
-        male: { name: 'en-GB-Wavenet-B', languageCode: 'en-GB', ssmlGender: 'MALE' },
-        female: { name: 'en-GB-Wavenet-A', languageCode: 'en-GB', ssmlGender: 'FEMALE' },
-    },
-    american: {
-        male: { name: 'en-US-Wavenet-D', languageCode: 'en-US', ssmlGender: 'MALE' },
-        female: { name: 'en-US-Wavenet-C', languageCode: 'en-US', ssmlGender: 'FEMALE' },
-    },
+    gender?: 'male' | 'female'
 }
 
 export default async function handler(req: Request) {
@@ -46,9 +47,9 @@ export default async function handler(req: Request) {
         })
     }
 
-    const apiKey = process.env.GOOGLE_TTS_API_KEY
+    const apiKey = process.env.ELEVENLABS_API_KEY
     if (!apiKey) {
-        return new Response(JSON.stringify({ error: 'TTS API key not configured' }), {
+        return new Response(JSON.stringify({ error: 'ElevenLabs API key not configured' }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },
         })
@@ -56,7 +57,7 @@ export default async function handler(req: Request) {
 
     try {
         const body: TTSRequest = await req.json()
-        const { text, accent = 'british', speakingRate = 1.0 } = body
+        const { text, accent = 'british', gender = 'female' } = body
 
         if (!text) {
             return new Response(JSON.stringify({ error: 'Text is required' }), {
@@ -65,41 +66,46 @@ export default async function handler(req: Request) {
             })
         }
 
-        // Select voice
-        const voiceConfig = VOICES[accent]?.female || VOICES.british.female
+        // Select voice based on accent and gender
+        const voices = accent === 'british' ? BRITISH_VOICES : AMERICAN_VOICES
+        const voiceId = gender === 'male' ? voices.male : voices.female
 
-        const ttsRequest = {
-            input: { text },
-            voice: {
-                languageCode: voiceConfig.languageCode,
-                name: voiceConfig.name,
-                ssmlGender: voiceConfig.ssmlGender,
-            },
-            audioConfig: {
-                audioEncoding: 'MP3',
-                speakingRate,
-                pitch: 0,
-            },
-        }
-
-        const response = await fetch(`${TTS_API_URL}?key=${apiKey}`, {
+        // Call ElevenLabs API
+        const response = await fetch(`${ELEVENLABS_API_URL}/${voiceId}`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(ttsRequest),
+            headers: {
+                'Accept': 'audio/mpeg',
+                'Content-Type': 'application/json',
+                'xi-api-key': apiKey,
+            },
+            body: JSON.stringify({
+                text,
+                model_id: 'eleven_multilingual_v2',
+                voice_settings: {
+                    stability: 0.5,
+                    similarity_boost: 0.75,
+                    style: 0.5,
+                    use_speaker_boost: true,
+                },
+            }),
         })
 
         if (!response.ok) {
-            const error = await response.json()
-            console.error('Google TTS Error:', error)
-            return new Response(JSON.stringify({ error: error.error?.message || 'TTS failed' }), {
+            const errorText = await response.text()
+            console.error('ElevenLabs Error:', errorText)
+            return new Response(JSON.stringify({ error: 'TTS synthesis failed' }), {
                 status: response.status,
                 headers: { 'Content-Type': 'application/json' },
             })
         }
 
-        const data = await response.json()
+        // Get audio as ArrayBuffer and convert to base64
+        const audioBuffer = await response.arrayBuffer()
+        const base64Audio = btoa(
+            new Uint8Array(audioBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
+        )
 
-        return new Response(JSON.stringify({ audioContent: data.audioContent }), {
+        return new Response(JSON.stringify({ audioContent: base64Audio }), {
             status: 200,
             headers: {
                 'Content-Type': 'application/json',

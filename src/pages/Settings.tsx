@@ -465,13 +465,13 @@ export default function Settings() {
             </button>
           </div>
 
-          {/* Cloud TTS Button - via Vercel API proxy */}
+          {/* ElevenLabs TTS Button - via Vercel API proxy */}
           {isCloudTTSAvailable() && (
             <button
               onClick={() => {
                 const testText = preferredAccent === 'american'
-                  ? 'Hello! This is Google Cloud Text-to-Speech with WaveNet technology. The voice quality is much more natural!'
-                  : 'Hello! This is Google Cloud Text-to-Speech with WaveNet technology. The voice quality is much more natural!'
+                  ? 'Hello! This is ElevenLabs neural text to speech. The voice quality is incredibly natural and lifelike!'
+                  : 'Hello! This is ElevenLabs neural text to speech. The voice quality is incredibly natural and lifelike!'
                 speakWithCloudTTS(testText, {
                   accent: preferredAccent || 'british',
                   speakingRate: speechRate,
@@ -490,11 +490,11 @@ export default function Settings() {
               {testVoicePlaying ? (
                 <>
                   <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Playing Cloud TTS...
+                  Playing ElevenLabs...
                 </>
               ) : (
                 <>
-                  ☁️ Test Cloud TTS (WaveNet - HD)
+                  🎙️ Test Premium Voice (ElevenLabs)
                 </>
               )}
             </button>
