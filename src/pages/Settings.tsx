@@ -212,7 +212,11 @@ export default function Settings() {
       : 'Hello! This is a test of the British English voice. How does it sound to you?'
     speak(testText, {
       onEnd: () => setTestVoicePlaying(false),
-      onError: () => setTestVoicePlaying(false)
+      onError: (e) => {
+        setTestVoicePlaying(false)
+        console.error('TTS Test Error:', e)
+        alert(`Ses hatası: ${e.message || 'Bilinmeyen hata'}`)
+      }
     })
   }
 
