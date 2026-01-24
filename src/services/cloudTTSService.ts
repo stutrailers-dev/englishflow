@@ -2,7 +2,8 @@
 // Uses Vercel Edge Function to securely call Google Cloud TTS
 
 // API endpoint - uses Vercel serverless function
-const TTS_API_ENDPOINT = '/api/tts'
+// API endpoint - uses Vercel serverless function (provider based)
+
 
 // Audio element for playback
 let audioElement: HTMLAudioElement | null = null
@@ -22,6 +23,7 @@ export function isCloudTTSAvailable(): boolean {
 export async function speakWithCloudTTS(
     text: string,
     options: {
+        provider?: 'elevenlabs' | 'google'
         accent?: 'british' | 'american'
         speakingRate?: number
         onStart?: () => void
@@ -29,7 +31,7 @@ export async function speakWithCloudTTS(
         onError?: (error: Error) => void
     } = {}
 ): Promise<void> {
-    const { accent = 'british', speakingRate = 1.0, onStart, onEnd, onError } = options
+    const { provider = 'elevenlabs', accent = 'british', speakingRate = 1.0, onStart, onEnd, onError } = options
 
     try {
         // Stop any currently playing audio
@@ -37,15 +39,39 @@ export async function speakWithCloudTTS(
 
         onStart?.()
 
-        // Call our Vercel API proxy
-        const response = await fetch(TTS_API_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
+        // Prepare request based on provider
+        let endpoint = '/api/tts' // Default ElevenLabs
+        let body = {}
+
+        if (provider === 'google') {
+            endpoint = '/api/google-tts'
+            // Map accent to Google Voice ID
+            // Google UK Female: en-GB-Neural2-A (High quality)
+            // Google US Female: en-US-Neural2-C (High quality)
+            const languageCode = accent === 'british' ? 'en-GB' : 'en-US'
+            const name = accent === 'british' ? 'en-GB-Neural2-A' : 'en-US-Neural2-C' // Neural2 is premium quality
+
+            body = {
+                text,
+                languageCode,
+                name,
+                speakingRate
+            }
+        } else {
+            // ElevenLabs
+            endpoint = '/api/tts'
+            body = {
                 text,
                 accent,
-                speakingRate,
-            }),
+                speakingRate
+            }
+        }
+
+        // Call Vercel API proxy
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
         })
 
         if (!response.ok) {

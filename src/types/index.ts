@@ -232,6 +232,8 @@ export interface WeeklyStat {
 }
 
 // --- Settings Types ---
+export type TTSProvider = 'local' | 'elevenlabs' | 'google'
+
 export interface UserSettings {
   preferredAccent: 'british' | 'american'
   selectedVoiceName?: string // User's preferred voice name
@@ -243,7 +245,8 @@ export interface UserSettings {
   theme: 'light' | 'dark' | 'system'
   speechRate: number // 0.5 - 2.0
   fontSize: 'small' | 'medium' | 'large'
-  usePremiumVoice: boolean // Use ElevenLabs premium TTS instead of local voices
+  usePremiumVoice: boolean // Legacy flag, now synced with ttsProvider === 'elevenlabs'
+  ttsProvider: TTSProvider
 }
 
 // --- Speech Recognition Types ---

@@ -17,7 +17,11 @@ import {
   Info,
   ChevronRight,
   Languages,
-  User
+  User,
+  Check,
+  Cloud,
+  Zap,
+  Smartphone
 } from 'lucide-react'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useProgressStore } from '@/stores/progressStore'
@@ -114,7 +118,8 @@ export default function Settings() {
     theme,
     speechRate,
     fontSize,
-    usePremiumVoice
+    usePremiumVoice,
+    ttsProvider
   } = settings
 
   // Destructure progress for easier access
@@ -143,7 +148,6 @@ export default function Settings() {
   const setAutoPlayAudio = (value: boolean) => updateSettings({ autoPlayAudio: value })
   const setShowIPA = (value: boolean) => updateSettings({ showIPA: value })
   const setShowTurkishTranslations = (value: boolean) => updateSettings({ showTurkishTranslations: value })
-  const setUsePremiumVoice = (value: boolean) => updateSettings({ usePremiumVoice: value })
   const setTheme = (value: 'light' | 'dark' | 'system') => updateSettings({ theme: value })
   const setSpeechRate = (value: number) => updateSettings({ speechRate: value })
   const setFontSize = (value: 'small' | 'medium' | 'large') => updateSettings({ fontSize: value })
@@ -353,6 +357,66 @@ export default function Settings() {
           </div>
         </div>
 
+        {/* Voice Engine Selection */}
+        <div className="mb-6">
+          <label className="block font-medium text-navy-900 mb-2">
+            Voice Engine
+          </label>
+          <div className="grid grid-cols-1 gap-2">
+            {[
+              {
+                id: 'local',
+                name: 'Device Default',
+                desc: 'Offline, fast, standard quality',
+                icon: Smartphone
+              },
+              {
+                id: 'elevenlabs',
+                name: 'ElevenLabs Premium',
+                desc: 'Ultra-realistic AI voices (Requires internet)',
+                icon: Zap
+              },
+              {
+                id: 'google',
+                name: 'Google Cloud',
+                desc: 'High quality Neural voices (Safari compatible)',
+                icon: Cloud
+              }
+            ].map((provider) => (
+              <button
+                key={provider.id}
+                onClick={() => {
+                  updateSettings({
+                    ttsProvider: provider.id as any,
+                    // Sync legacy flag for compatibility
+                    usePremiumVoice: provider.id !== 'local'
+                  })
+                }}
+                className={`flex items-center p-3 rounded-lg border text-left transition-all ${(ttsProvider || (usePremiumVoice ? 'elevenlabs' : 'local')) === provider.id
+                  ? 'border-navy-600 bg-navy-50 ring-1 ring-navy-600'
+                  : 'border-gray-200 hover:border-navy-300 bg-white'
+                  }`}
+              >
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${(ttsProvider || (usePremiumVoice ? 'elevenlabs' : 'local')) === provider.id
+                  ? 'bg-navy-100 text-navy-700'
+                  : 'bg-gray-100 text-gray-500'
+                  }`}>
+                  <provider.icon className="w-4 h-4" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <p className="font-medium text-sm text-navy-900">{provider.name}</p>
+                    {(ttsProvider || (usePremiumVoice ? 'elevenlabs' : 'local')) === provider.id && (
+                      <Check className="w-4 h-4 text-navy-600" />
+                    )}
+                  </div>
+                  <p className="text-xs text-navy-500">{provider.desc}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Voice selection */}
         <div>
           <label className="block font-medium text-navy-900 mb-1">
@@ -503,13 +567,7 @@ export default function Settings() {
           )}
         </div>
 
-        <ToggleSetting
-          label="Premium Voice (ElevenLabs)"
-          labelTr="Premium Ses (ElevenLabs)"
-          description="Use high-quality ElevenLabs voices instead of local device voices"
-          value={usePremiumVoice}
-          onChange={setUsePremiumVoice}
-        />
+
 
         <ToggleSetting
           label="Auto-play Audio"

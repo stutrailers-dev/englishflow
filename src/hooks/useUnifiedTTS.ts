@@ -15,13 +15,22 @@ interface UseUnifiedTTSReturn {
 
 export function useUnifiedTTS(): UseUnifiedTTSReturn {
     const { settings } = useSettingsStore()
-    const { usePremiumVoice, preferredAccent, speechRate } = settings
+    const { ttsProvider, usePremiumVoice, preferredAccent, speechRate } = settings
     const localTTS = useSpeechSynthesis()
 
+    // Determine actual provider (fallback to legacy usePremiumVoice if ttsProvider is not set/local but premium toggle is on)
+    let activeProvider = ttsProvider
+
+    // Legacy compatibility: If user has premium enabled but provider is local, set to elevenlabs
+    if (usePremiumVoice && ttsProvider === 'local') {
+        activeProvider = 'elevenlabs'
+    }
+
     const speak = useCallback((text: string, options?: { onEnd?: () => void; onError?: (e: Error) => void }) => {
-        if (usePremiumVoice) {
-            // Use ElevenLabs via Vercel API proxy
+        if (activeProvider !== 'local') {
+            // Use Cloud TTS (ElevenLabs or Google)
             speakWithCloudTTS(text, {
+                provider: activeProvider as 'elevenlabs' | 'google',
                 accent: preferredAccent || 'british',
                 speakingRate: speechRate || 1.0,
                 onEnd: options?.onEnd,
@@ -34,15 +43,15 @@ export function useUnifiedTTS(): UseUnifiedTTSReturn {
                 onError: (e) => options?.onError?.(new Error(e)),
             })
         }
-    }, [usePremiumVoice, preferredAccent, speechRate, localTTS])
+    }, [activeProvider, preferredAccent, speechRate, localTTS])
 
     const cancel = useCallback(() => {
-        if (usePremiumVoice) {
+        if (activeProvider !== 'local') {
             stopCloudTTS()
         } else {
             localTTS.cancel()
         }
-    }, [usePremiumVoice, localTTS])
+    }, [activeProvider, localTTS])
 
     return {
         speak,
