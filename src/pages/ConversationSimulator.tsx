@@ -497,7 +497,8 @@ export default function ConversationSimulator() {
 
               // Trigger TTS for the TERMINATE response
               console.log('🔊 Speaking TERMINATE response:', text.substring(0, 50) + '...')
-              speak(text)
+              console.log('🔊 Speaking TERMINATE response:', text.substring(0, 50) + '...')
+              speak(text, { onError: (e) => alert(`Konuşma hatası: ${e.message}`) })
 
               // Set early termination flag - this shows completion button without rendering skipped turns
               setIsTerminatedEarly(true)
@@ -543,7 +544,8 @@ export default function ConversationSimulator() {
 
                 // Trigger TTS for the AI response
                 console.log('🔊 Speaking dynamic AI response:', text.substring(0, 50) + '...')
-                speak(text)
+                console.log('🔊 Speaking dynamic AI response:', text.substring(0, 50) + '...')
+                speak(text, { onError: (e) => alert(`Konuşma hatası: ${e.message}`) })
 
                 responseIndex = -1 // Don't save to aiResponses for STAY
               }
@@ -640,7 +642,15 @@ export default function ConversationSimulator() {
       // Prevent speaking the same text twice (echo fix)
       if (lastSpokenTextRef.current !== currentTurn.text) {
         lastSpokenTextRef.current = currentTurn.text
-        speak(currentTurn.text)
+        speak(currentTurn.text, {
+          onError: (e) => {
+            console.error('Conversation TTS Error:', e)
+            // Only alert for cloud errors
+            if (currentTurn?.role === 'agent') {
+              alert(`Konuşma hatası: ${e.message}`)
+            }
+          }
+        })
       }
     }
   }, [currentTurn, selectedScenario, speak])
