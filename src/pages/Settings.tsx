@@ -28,7 +28,7 @@ import { useProgressStore } from '@/stores/progressStore'
 import { useSRSStore } from '@/stores/srsStore'
 import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis'
 import { useUnifiedTTS } from '@/hooks/useUnifiedTTS'
-import { isCloudTTSAvailable, speakWithCloudTTS } from '@/services/cloudTTSService'
+
 
 // Settings Section component
 const SettingsSection = ({
@@ -109,7 +109,7 @@ export default function Settings() {
 
   // Use useSpeechSynthesis for getting voice list ONLY
   const synthesis = useSpeechSynthesis()
-  const { voices, selectedVoice, setVoice, britishVoices, americanVoices, refreshVoices } = synthesis
+  const { voices, britishVoices, americanVoices, refreshVoices } = synthesis
 
   // Use useUnifiedTTS for actual speaking (supports Google/ElevenLabs)
   const unifiedTTS = useUnifiedTTS()
@@ -429,63 +429,7 @@ export default function Settings() {
           </div>
         </div>
 
-        {/* Voice selection */}
-        <div>
-          <label className="block font-medium text-navy-900 mb-1">
-            Voice
-          </label>
-          <p className="text-sm text-navy-500 mb-2">Seslendirici (Online sesler daha doğal)</p>
-          <select
-            value={selectedVoice?.name || ''}
-            onChange={(e) => {
-              const availableVoices = preferredAccent === 'british' ? britishVoices : americanVoices
-              const voice = availableVoices.find(v => v.name === e.target.value)
-              if (voice) {
-                setVoice(voice)
-                // Save the selected voice name to persist across sessions
-                updateSettings({ selectedVoiceName: voice.name })
-              }
-            }}
-            className="w-full px-4 py-3 rounded-xl bg-cream-50 dark:bg-neutral-800 border border-cream-300 dark:border-neutral-600 text-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent"
-          >
-            {/* Online voices first (more natural) */}
-            {(preferredAccent === 'british' ? britishVoices : americanVoices)
-              .filter(v => !v.localService)
-              .length > 0 && (
-                <optgroup label="🌐 Online Sesler (Önerilen)">
-                  {(preferredAccent === 'british' ? britishVoices : americanVoices)
-                    .filter(v => !v.localService)
-                    .map((voice) => (
-                      <option key={voice.name} value={voice.name}>
-                        {voice.name}
-                      </option>
-                    ))}
-                </optgroup>
-              )}
-            {/* Local voices */}
-            {(preferredAccent === 'british' ? britishVoices : americanVoices)
-              .filter(v => v.localService)
-              .length > 0 && (
-                <optgroup label="💾 Yerel Sesler">
-                  {(preferredAccent === 'british' ? britishVoices : americanVoices)
-                    .filter(v => v.localService)
-                    .map((voice) => (
-                      <option key={voice.name} value={voice.name}>
-                        {voice.name}
-                      </option>
-                    ))}
-                </optgroup>
-              )}
-            {(preferredAccent === 'british' ? britishVoices : americanVoices).length === 0 && (
-              <option value="">Ses bulunamadı</option>
-            )}
-          </select>
-          {selectedVoice && (
-            <p className="text-xs text-navy-400 mt-1">
-              {selectedVoice.localService ? '💾 Yerel' : '🌐 Online'} • {selectedVoice.lang}
-            </p>
-          )}
-        </div>
+
 
         {/* Speech rate */}
         <div>
@@ -543,40 +487,7 @@ export default function Settings() {
             </button>
           </div>
 
-          {/* ElevenLabs TTS Button - via Vercel API proxy */}
-          {isCloudTTSAvailable() && (
-            <button
-              onClick={() => {
-                const testText = preferredAccent === 'american'
-                  ? 'Hello! This is ElevenLabs neural text to speech. The voice quality is incredibly natural and lifelike!'
-                  : 'Hello! This is ElevenLabs neural text to speech. The voice quality is incredibly natural and lifelike!'
-                speakWithCloudTTS(testText, {
-                  accent: preferredAccent || 'british',
-                  speakingRate: speechRate,
-                  onStart: () => setTestVoicePlaying(true),
-                  onEnd: () => setTestVoicePlaying(false),
-                  onError: (e: Error) => {
-                    console.error('Cloud TTS Error:', e)
-                    alert('Cloud TTS Hatası: ' + e.message)
-                    setTestVoicePlaying(false)
-                  }
-                })
-              }}
-              disabled={testVoicePlaying}
-              className="btn-accent w-full flex items-center justify-center gap-2 mt-3"
-            >
-              {testVoicePlaying ? (
-                <>
-                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Playing ElevenLabs...
-                </>
-              ) : (
-                <>
-                  🎙️ Test Premium Voice (ElevenLabs)
-                </>
-              )}
-            </button>
-          )}
+
         </div>
 
 
