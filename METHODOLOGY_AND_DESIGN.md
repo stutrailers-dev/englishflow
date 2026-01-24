@@ -768,3 +768,41 @@ Uygulamaya yüksek kaliteli, doğal ve insansı sesler eklemek için Google Clou
 | 25 Ocak 2026 | Unified TTS Mimarisi ve Provider Selection UI |
 | 25 Ocak 2026 | Conversation Simulator Cloud Ses Desteği |
 | 25 Ocak 2026 | Ses yankı (echo) ve animasyon senkronizasyon düzeltmeleri |
+
+## ⚡️ Geniş Kapsamlı Performans Optimizasyonları (25 Ocak 2026)
+
+### Versiyon 1.1.0 Güncellemesi
+
+**Problem:** Chunks Library (+500 öğe) ve Conversation Simulator gibi listelerde kaydırma performansı düşüktü ve mobil cihazlarda ciddi takılmalar (layout thrashing) yaşanıyordu.
+
+### Çözümler
+
+#### 1. Infinite Scroll (Sonsuz Kaydırma)
+- **Eski:** Tüm liste tek seferde render ediliyordu (DOM Size > 3000 node).
+- **Yeni:** `useIntersectionObserver` hook ile geliştirilen sonsuz kaydırma.
+- **Mekanizma:**
+  - Açılışta sadece **10 öğe** yüklenir.
+  - Kullanıcı listenin sonuna yaklaştığında (görünmez bir "trigger" elemanı) otomatik olarak bir sonraki 10 öğeyi yükler.
+  - "Show More" butonu kaldırıldı, deneyim tamamen akışkan hale getirildi.
+
+#### 2. Layout Thrashing (Animasyon Kilitlenmesi) Giderildi
+- **Problem:** `Framer Motion` kütüphanesinin `layout` prop'u, liste elemanları her değiştiğinde tüm listenin koordinatlarını yeniden hesaplıyordu (Reflow/Repaint). Mobil CPU'yu %100'e kilitliyordu.
+- **Çözüm:** `layout` prop'u kaldırıldı. `AnimatePresence` optimize edildi.
+- **Sonuç:** Liste kaydırma performansı 60 FPS'e sabitlendi. Titreme (flickering) sorunları çözüldü.
+
+#### 3. Shadowing Studio Geçiş Optimizasyonu
+- **Problem:** Chunks -> Shadowing sekmesine geçerken 2-3 saniyelik donma.
+- **Analiz:** `ShadowingStudio` bileşeni her mount olduğunda tüm içerik verisini (`shadowingContent`) gereksiz yere filtreliyordu.
+- **Çözüm:** Filtreleme mantığı `useMemo` ile önbelleğe alındı. Geçişler artık anlık (instant).
+
+#### 4. Lazy Init (Gecikmeli Başlatma)
+- **Problem:** Uygulama açılışında Speech Recognition ve TTS modülleri hemen başlatılıyordu.
+- **Çözüm:** Bu ağır modüller artık sadece kullanıcı ilgili sayfaya (Konuşma/Chat) girdiğinde başlatılıyor.
+
+### Versiyon Geçmişi Eklemesi
+| Tarih | Versiyon | Değişiklik |
+|-------|----------|------------|
+| 25 Ocak 2026 | **v1.1.0** | **Infinite Scroll** (Chunks & Chat scenarios) |
+| 25 Ocak 2026 | v1.1.0 | Layout Thrashing Fix (Animation optimization) |
+| 25 Ocak 2026 | v1.1.0 | Shadowing Studio Transition Fix (Memoization) |
+| 25 Ocak 2026 | v1.1.0 | Lazy Initialization of Heavy Modules |

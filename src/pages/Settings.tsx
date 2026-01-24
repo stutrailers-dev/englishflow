@@ -792,7 +792,7 @@ export default function Settings() {
           </div>
           <div>
             <h2 className="font-display font-bold text-xl">EnglishFlow</h2>
-            <p className="text-navy-200 text-sm">Version 1.0.0</p>
+            <p className="text-navy-200 text-sm">Version 1.1.0</p>
           </div>
         </div>
         <p className="text-navy-200 text-sm">
