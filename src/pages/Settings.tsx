@@ -23,6 +23,7 @@ import { useSettingsStore } from '@/stores/settingsStore'
 import { useProgressStore } from '@/stores/progressStore'
 import { useSRSStore } from '@/stores/srsStore'
 import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis'
+import { isCloudTTSAvailable, speakWithCloudTTS, BRITISH_VOICES, AMERICAN_VOICES as CLOUD_AMERICAN_VOICES } from '@/services/cloudTTSService'
 
 // Settings Section component
 const SettingsSection = ({
@@ -463,6 +464,48 @@ export default function Settings() {
               🔄 Sesleri Yenile
             </button>
           </div>
+
+          {/* Cloud TTS Button */}
+          {isCloudTTSAvailable() && (
+            <button
+              onClick={() => {
+                const testText = preferredAccent === 'american'
+                  ? 'Hello! This is Google Cloud Text-to-Speech with WaveNet technology. How does it sound?'
+                  : 'Hello! This is Google Cloud Text-to-Speech with WaveNet technology. How does it sound?'
+                const voice = preferredAccent === 'british' ? BRITISH_VOICES[0] : CLOUD_AMERICAN_VOICES[0]
+                speakWithCloudTTS(testText, {
+                  voice,
+                  speakingRate: speechRate,
+                  onStart: () => setTestVoicePlaying(true),
+                  onEnd: () => setTestVoicePlaying(false),
+                  onError: (e) => {
+                    console.error('Cloud TTS Error:', e)
+                    setTestVoicePlaying(false)
+                  }
+                })
+              }}
+              disabled={testVoicePlaying}
+              className="btn-accent w-full flex items-center justify-center gap-2 mt-3"
+            >
+              {testVoicePlaying ? (
+                <>
+                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Playing Cloud TTS...
+                </>
+              ) : (
+                <>
+                  ☁️ Test Cloud TTS (WaveNet)
+                </>
+              )}
+            </button>
+          )}
+          {!isCloudTTSAvailable() && (
+            <div className="mt-3 p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700">
+              <p className="text-xs text-amber-700 dark:text-amber-300">
+                ☁️ Cloud TTS kullanmak için Vercel'de <code>VITE_GOOGLE_TTS_API_KEY</code> environment variable ekleyin.
+              </p>
+            </div>
+          )}
         </div>
 
         <ToggleSetting
