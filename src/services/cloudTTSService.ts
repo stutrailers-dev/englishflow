@@ -76,8 +76,19 @@ export async function speakWithCloudTTS(
 
         if (!response.ok) {
             const errorText = await response.text()
-            console.error('Cloud TTS API Error:', errorText)
-            throw new Error(`API Error ${response.status}: ${errorText.slice(0, 100)}`)
+            console.error('Cloud TTS API Error Raw:', errorText)
+
+            let cleanMessage = errorText
+            try {
+                const errorJson = JSON.parse(errorText)
+                if (errorJson.error && errorJson.error.message) {
+                    cleanMessage = errorJson.error.message
+                }
+            } catch (e) {
+                // Keep raw text if parse fails
+            }
+
+            throw new Error(cleanMessage)
         }
 
         const data = await response.json()
