@@ -113,7 +113,8 @@ export default function Settings() {
     showTurkishTranslations,
     theme,
     speechRate,
-    fontSize
+    fontSize,
+    usePremiumVoice
   } = settings
 
   // Destructure progress for easier access
@@ -142,6 +143,7 @@ export default function Settings() {
   const setAutoPlayAudio = (value: boolean) => updateSettings({ autoPlayAudio: value })
   const setShowIPA = (value: boolean) => updateSettings({ showIPA: value })
   const setShowTurkishTranslations = (value: boolean) => updateSettings({ showTurkishTranslations: value })
+  const setUsePremiumVoice = (value: boolean) => updateSettings({ usePremiumVoice: value })
   const setTheme = (value: 'light' | 'dark' | 'system') => updateSettings({ theme: value })
   const setSpeechRate = (value: number) => updateSettings({ speechRate: value })
   const setFontSize = (value: 'small' | 'medium' | 'large') => updateSettings({ fontSize: value })
@@ -500,6 +502,14 @@ export default function Settings() {
             </button>
           )}
         </div>
+
+        <ToggleSetting
+          label="Premium Voice (ElevenLabs)"
+          labelTr="Premium Ses (ElevenLabs)"
+          description="Use high-quality ElevenLabs voices instead of local device voices"
+          value={usePremiumVoice}
+          onChange={setUsePremiumVoice}
+        />
 
         <ToggleSetting
           label="Auto-play Audio"

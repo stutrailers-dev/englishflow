@@ -19,6 +19,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   theme: 'light',
   speechRate: 0.9, // Slightly slower for learning
   fontSize: 'small',
+  usePremiumVoice: true, // ElevenLabs premium voice by default
 }
 
 export const useSettingsStore = create<SettingsState>()(

@@ -243,6 +243,7 @@ export interface UserSettings {
   theme: 'light' | 'dark' | 'system'
   speechRate: number // 0.5 - 2.0
   fontSize: 'small' | 'medium' | 'large'
+  usePremiumVoice: boolean // Use ElevenLabs premium TTS instead of local voices
 }
 
 // --- Speech Recognition Types ---
