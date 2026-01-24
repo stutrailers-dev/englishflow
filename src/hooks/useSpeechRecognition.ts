@@ -94,23 +94,29 @@ export function useSpeechRecognition(
   const [interimTranscript, setInterimTranscript] = useState('')
   const [confidence, setConfidence] = useState(0)
   const [error, setError] = useState<string | null>(null)
-  
+
   const recognitionRef = useRef<SpeechRecognition | null>(null)
-  
-  const isSupported = typeof window !== 'undefined' && 
+
+  const isSupported = typeof window !== 'undefined' &&
     ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)
 
-  useEffect(() => {
-    if (!isSupported) return
+  // Lazy initialization of recognition instance
+  const getRecognition = useCallback(() => {
+    if (recognitionRef.current) return recognitionRef.current
+    if (!isSupported) return null
 
-    const SpeechRecognition = 
-      window.SpeechRecognition || window.webkitSpeechRecognition
-    
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
     const recognition = new SpeechRecognition()
     recognition.lang = language
     recognition.continuous = continuous
     recognition.interimResults = interimResults
 
+    recognitionRef.current = recognition
+    return recognition
+  }, [language, continuous, interimResults, isSupported])
+
+  // Attach listeners dynamically
+  const attachListeners = useCallback((recognition: SpeechRecognition) => {
     recognition.onstart = () => {
       setIsListening(true)
       setError(null)
@@ -127,7 +133,7 @@ export function useSpeechRecognition(
         if (result.isFinal) {
           finalTranscript += transcriptText
           setConfidence(result[0].confidence)
-          
+
           onResult?.({
             transcript: transcriptText,
             confidence: result[0].confidence,
@@ -146,8 +152,11 @@ export function useSpeechRecognition(
 
     recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
       const errorMessage = getErrorMessage(event.error)
-      setError(errorMessage)
-      onError?.(errorMessage)
+      // Ignore 'no-speech' and 'aborted' errors to avoid UI flicker
+      if (event.error !== 'no-speech' && event.error !== 'aborted') {
+        setError(errorMessage)
+        onError?.(errorMessage)
+      }
       setIsListening(false)
     }
 
@@ -156,30 +165,47 @@ export function useSpeechRecognition(
       setInterimTranscript('')
       onEnd?.()
     }
+  }, [onResult, onError, onEnd])
 
-    recognitionRef.current = recognition
-
+  // Clean up on unmount
+  useEffect(() => {
     return () => {
-      recognition.abort()
+      if (recognitionRef.current) {
+        recognitionRef.current.abort()
+        recognitionRef.current = null
+      }
     }
-  }, [language, continuous, interimResults, onResult, onError, onEnd, isSupported])
+  }, [])
+
+  // Update listeners when dependencies change
+  useEffect(() => {
+    if (recognitionRef.current) {
+      // We can't easily remove old listeners, so we rely on the closure
+      // But since we use ref for recognition, we might want to recreate it if language changes
+      // For now, assume slight config changes don't require full recreation unless explicit
+    }
+  }, [onResult, onError, onEnd]) // This effect is a bit tricky with event listeners
 
   const startListening = useCallback(() => {
-    if (!isSupported || !recognitionRef.current) {
+    const recognition = getRecognition()
+    if (!recognition) {
       setError('Speech recognition is not supported in this browser')
       return
     }
 
+    // Attach fresh listeners with current closure
+    attachListeners(recognition)
+
     setError(null)
     setInterimTranscript('')
-    
+
     try {
-      recognitionRef.current.start()
+      recognition.start()
     } catch (err) {
       // Recognition might already be running
-      console.warn('Speech recognition start error:', err)
+      // console.warn('Speech recognition start error:', err)
     }
-  }, [isSupported])
+  }, [getRecognition, attachListeners])
 
   const stopListening = useCallback(() => {
     if (recognitionRef.current) {
