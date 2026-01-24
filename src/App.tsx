@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
+
 import { Suspense, lazy } from 'react'
 import Layout from './components/common/Layout'
 import ThemeProvider from './components/common/ThemeProvider'
@@ -30,23 +30,21 @@ function App() {
     <ThemeProvider>
       <ScrollToTop />
       <Layout>
-        <AnimatePresence mode="wait">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              {/* New unified pages for mobile tab bar */}
-              <Route path="/learn" element={<Learn />} />
-              <Route path="/practice" element={<Practice />} />
-              {/* Keep existing routes for deep linking */}
-              <Route path="/chunks" element={<ChunkLibrary />} />
-              <Route path="/vocabulary" element={<VocabularyLibrary />} />
-              <Route path="/shadowing" element={<ShadowingStudio />} />
-              <Route path="/tenses" element={<TenseTrainer />} />
-              <Route path="/conversation" element={<ConversationSimulator />} />
-              <Route path="/settings" element={<Settings />} />
-            </Routes>
-          </Suspense>
-        </AnimatePresence>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            {/* New unified pages for mobile tab bar */}
+            <Route path="/learn" element={<Learn />} />
+            <Route path="/practice" element={<Practice />} />
+            {/* Keep existing routes for deep linking */}
+            <Route path="/chunks" element={<ChunkLibrary />} />
+            <Route path="/vocabulary" element={<VocabularyLibrary />} />
+            <Route path="/shadowing" element={<ShadowingStudio />} />
+            <Route path="/tenses" element={<TenseTrainer />} />
+            <Route path="/conversation" element={<ConversationSimulator />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </ThemeProvider>
   )
