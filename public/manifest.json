@@ -1,0 +1,17 @@
+{
+    "name": "EnglishFlow",
+    "short_name": "EnglishFlow",
+    "description": "Master British English with immersive learning",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

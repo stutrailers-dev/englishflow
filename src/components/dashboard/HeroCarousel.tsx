@@ -47,7 +47,6 @@ const heroSlides: HeroSlide[] = [
     }
 ]
 
-const swipeConfidenceThreshold = 10000
 const swipePower = (offset: number, velocity: number) => Math.abs(offset) * velocity
 
 export default function HeroCarousel() {
@@ -69,29 +68,28 @@ export default function HeroCarousel() {
 
     const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, { offset, velocity }: PanInfo) => {
         const swipe = swipePower(offset.x, velocity.x)
-        if (swipe < -swipeConfidenceThreshold) paginate(1)
-        else if (swipe > swipeConfidenceThreshold) paginate(-1)
+        if (swipe < -10000) paginate(1)
+        else if (swipe > 10000) paginate(-1)
         setIsAutoPlaying(true)
     }
 
     const handleDotClick = (index: number) => {
-        const diff = index - currentIndex
-        setPage([index, diff > 0 ? 1 : -1])
+        setPage([index, index > currentIndex ? 1 : -1])
         setIsAutoPlaying(true)
     }
 
     const currentSlide = heroSlides[currentIndex]
 
     const variants = {
-        enter: (d: number) => ({ x: d > 0 ? '100%' : '-100%', opacity: 0.5 }),
+        enter: (d: number) => ({ x: d > 0 ? '100%' : '-100%', opacity: 0 }),
         center: { zIndex: 1, x: 0, opacity: 1 },
-        exit: (d: number) => ({ zIndex: 0, x: d < 0 ? '100%' : '-100%', opacity: 0.5 })
+        exit: (d: number) => ({ zIndex: 0, x: d < 0 ? '100%' : '-100%', opacity: 0 })
     }
 
     return (
         <div
             className="relative w-full"
-            style={{ height: '62vh' }}
+            style={{ height: '60vh' }}
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
         >
@@ -103,69 +101,63 @@ export default function HeroCarousel() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    transition={{ x: { type: 'spring', stiffness: 300, damping: 30 }, opacity: { duration: 0.3 } }}
+                    transition={{ x: { type: 'spring', stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
                     drag="x"
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={1}
                     onDragEnd={handleDragEnd}
-                    className="absolute inset-0 cursor-grab active:cursor-grabbing"
+                    className="absolute inset-0"
                 >
                     <img
                         src={currentSlide.image}
                         alt={currentSlide.title}
                         className="w-full h-full object-cover"
-                        loading="eager"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
                 </motion.div>
             </AnimatePresence>
 
-            {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center pb-4 px-4">
-                <motion.h1
-                    key={`t-${currentIndex}`}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+            {/* Content overlay */}
+            <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center px-6 pb-4">
+                {/* Title */}
+                <h1
                     className="text-2xl font-serif text-white text-center mb-1"
-                    style={{ fontFamily: 'Georgia, serif' }}
+                    style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
                 >
                     {currentSlide.title}
-                </motion.h1>
+                </h1>
 
-                <motion.p
-                    key={`s-${currentIndex}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-white/60 text-xs mb-3"
-                >
+                {/* Subtitle */}
+                <p className="text-white/60 text-xs mb-4">
                     {currentSlide.category} . {currentSlide.duration}
-                </motion.p>
+                </p>
 
-                {/* CTA Buttons */}
-                <div className="flex items-center gap-2 mb-2">
+                {/* Buttons - EXACT mockup style */}
+                <div className="flex items-center gap-3 mb-3">
                     <Link
                         to={currentSlide.ctaLink}
-                        className="px-5 py-2 bg-white text-black font-semibold rounded-full text-sm"
-                        style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }}
+                        className="px-6 py-2.5 bg-white text-black font-semibold text-sm rounded-full"
                     >
                         Start Learning
                     </Link>
-                    <button
-                        className="w-9 h-9 bg-neutral-600/80 rounded-full flex items-center justify-center"
-                        style={{ backdropFilter: 'blur(8px)' }}
-                    >
-                        <Plus className="w-4 h-4 text-white" />
+                    <button className="w-10 h-10 bg-neutral-600 rounded-full flex items-center justify-center">
+                        <Plus className="w-5 h-5 text-white" />
                     </button>
                 </div>
 
-                {/* Tiny dot indicators */}
-                <div className="flex items-center gap-1">
+                {/* TINY dot indicators - matching mockup exactly */}
+                <div className="flex items-center gap-1.5">
                     {heroSlides.map((_, i) => (
                         <button
                             key={i}
                             onClick={() => handleDotClick(i)}
-                            className={`transition-all duration-200 rounded-full ${i === currentIndex ? 'w-4 h-1 bg-white' : 'w-1 h-1 bg-white/40'
-                                }`}
+                            className="transition-all"
+                            style={{
+                                width: i === currentIndex ? '16px' : '5px',
+                                height: '5px',
+                                borderRadius: '2.5px',
+                                backgroundColor: i === currentIndex ? 'white' : 'rgba(255,255,255,0.3)'
+                            }}
                         />
                     ))}
                 </div>

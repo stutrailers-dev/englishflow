@@ -16,17 +16,16 @@ export default function TabBar() {
   const isPracticeActive = ['/practice', '/chunks', '/shadowing'].includes(location.pathname)
 
   return (
-    <nav
-      className="fixed bottom-4 left-4 right-4 z-50 md:hidden"
-      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-    >
-      {/* Floating glass container */}
+    <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+      {/* Full oval/pill TabBar - matching mockup */}
       <div
-        className="flex justify-around items-center h-[56px] rounded-2xl backdrop-blur-xl"
+        className="mx-3 mb-3 flex justify-around items-center h-14"
         style={{
-          background: 'rgba(40, 40, 40, 0.85)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
+          borderRadius: '28px',
+          background: 'rgba(30, 30, 30, 0.95)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)'
         }}
       >
         {tabs.map((tab) => {
@@ -41,27 +40,33 @@ export default function TabBar() {
             <NavLink
               key={tab.path}
               to={tab.path}
-              className="flex flex-col items-center justify-center flex-1"
-              style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
+              className="flex items-center justify-center"
+              style={{
+                flex: isActive && isHome ? 'none' : 1,
+                touchAction: 'manipulation'
+              }}
             >
               {isActive && isHome ? (
-                /* Home Active - Red pill with icon + label */
+                /* Home Active - Red oval pill with icon + label */
                 <div
-                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl"
-                  style={{ background: 'rgba(232, 93, 93, 0.9)' }}
+                  className="flex items-center gap-1.5 px-4 py-2"
+                  style={{
+                    borderRadius: '20px',
+                    background: '#E74C3C'
+                  }}
                 >
                   <Icon className="w-4 h-4 text-white" strokeWidth={2} fill="white" />
                   <span className="text-xs font-semibold text-white">{tab.label}</span>
                 </div>
               ) : (
                 /* Other tabs */
-                <div className="flex flex-col items-center gap-0.5 py-1">
+                <div className="flex flex-col items-center gap-0.5">
                   <Icon
-                    className={`w-5 h-5 ${isActive ? 'text-white' : 'text-neutral-400'}`}
+                    className={`w-5 h-5 ${isActive ? 'text-white' : 'text-neutral-500'}`}
                     strokeWidth={1.5}
                     fill={isActive ? 'currentColor' : 'none'}
                   />
-                  <span className={`text-[10px] ${isActive ? 'text-white' : 'text-neutral-400'}`}>
+                  <span className={`text-[9px] ${isActive ? 'text-white' : 'text-neutral-500'}`}>
                     {tab.label}
                   </span>
                 </div>
