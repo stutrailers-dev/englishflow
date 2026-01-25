@@ -1,0 +1,118 @@
+/* HeroCarousel - Mockup-exact styling */
+
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    cursor: grab;
+}
+
+.hero-slide:active {
+    cursor: grabbing;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 100%);
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px 16px 24px;
+}
+
+.hero-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: white !important;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.hero-subtitle {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6) !important;
+    margin-bottom: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* CTA Button - MUST be white with black text */
+.hero-cta-button {
+    padding: 10px 24px;
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 9999px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero-plus-button {
+    width: 40px;
+    height: 40px;
+    background-color: #4a4a4a !important;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dot indicators container */
+.hero-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Individual dots - TINY size */
+.hero-dot {
+    width: 6px !important;
+    height: 6px !important;
+    min-width: 6px !important;
+    min-height: 6px !important;
+    max-width: 6px !important;
+    max-height: 6px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 3px !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Active dot - pill shape */
+.hero-dot-active {
+    width: 18px !important;
+    max-width: 18px !important;
+    background-color: #FFFFFF !important;
+}

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Plus } from 'lucide-react'
+import './HeroCarousel.css'
 
 interface HeroSlide {
     id: string
@@ -88,8 +89,7 @@ export default function HeroCarousel() {
 
     return (
         <div
-            className="relative w-full"
-            style={{ height: '60vh' }}
+            className="hero-carousel"
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
         >
@@ -106,58 +106,39 @@ export default function HeroCarousel() {
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={1}
                     onDragEnd={handleDragEnd}
-                    className="absolute inset-0"
+                    className="hero-slide"
                 >
                     <img
                         src={currentSlide.image}
                         alt={currentSlide.title}
-                        className="w-full h-full object-cover"
+                        className="hero-image"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                    <div className="hero-gradient" />
                 </motion.div>
             </AnimatePresence>
 
             {/* Content overlay */}
-            <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center px-6 pb-4">
-                {/* Title */}
-                <h1
-                    className="text-2xl font-serif text-white text-center mb-1"
-                    style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-                >
-                    {currentSlide.title}
-                </h1>
+            <div className="hero-content">
+                <h1 className="hero-title">{currentSlide.title}</h1>
+                <p className="hero-subtitle">{currentSlide.category} . {currentSlide.duration}</p>
 
-                {/* Subtitle */}
-                <p className="text-white/60 text-xs mb-4">
-                    {currentSlide.category} . {currentSlide.duration}
-                </p>
-
-                {/* Buttons - EXACT mockup style */}
-                <div className="flex items-center gap-3 mb-3">
-                    <Link
-                        to={currentSlide.ctaLink}
-                        className="px-6 py-2.5 bg-white text-black font-semibold text-sm rounded-full"
-                    >
+                {/* Buttons */}
+                <div className="hero-buttons">
+                    <Link to={currentSlide.ctaLink} className="hero-cta-button">
                         Start Learning
                     </Link>
-                    <button className="w-10 h-10 bg-neutral-600 rounded-full flex items-center justify-center">
-                        <Plus className="w-5 h-5 text-white" />
+                    <button className="hero-plus-button">
+                        <Plus size={20} color="white" />
                     </button>
                 </div>
 
-                {/* TINY dot indicators - matching mockup exactly */}
-                <div className="flex items-center gap-1.5">
+                {/* TINY dot indicators */}
+                <div className="hero-dots">
                     {heroSlides.map((_, i) => (
                         <button
                             key={i}
                             onClick={() => handleDotClick(i)}
-                            className="transition-all"
-                            style={{
-                                width: i === currentIndex ? '16px' : '5px',
-                                height: '5px',
-                                borderRadius: '2.5px',
-                                backgroundColor: i === currentIndex ? 'white' : 'rgba(255,255,255,0.3)'
-                            }}
+                            className={`hero-dot ${i === currentIndex ? 'hero-dot-active' : ''}`}
                         />
                     ))}
                 </div>

@@ -1,0 +1,81 @@
+/* TabBar - Full oval pill design */
+
+.tabbar-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 12px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+}
+
+.tabbar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 56px;
+    border-radius: 28px !important;
+    background: rgba(30, 30, 30, 0.95) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.tabbar-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Home active state - red pill */
+.tabbar-home-active {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px !important;
+    background-color: #E74C3C !important;
+}
+
+.tabbar-home-active span {
+    font-size: 12px;
+    font-weight: 600;
+    color: white !important;
+}
+
+/* Regular tab */
+.tabbar-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.tabbar-icon {
+    color: #6b7280 !important;
+}
+
+.tabbar-icon-active {
+    color: white !important;
+}
+
+.tabbar-label {
+    font-size: 9px;
+    color: #6b7280 !important;
+}
+
+.tabbar-label-active {
+    font-size: 9px;
+    color: white !important;
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+    .tabbar-nav {
+        display: none;
+    }
+}
