@@ -4,8 +4,6 @@ import {
   Volume2,
   Bell,
   Type,
-  Moon,
-  Sun,
   Monitor,
   Mic,
   BookOpen,
@@ -151,7 +149,6 @@ export default function Settings() {
   const setAutoPlayAudio = (value: boolean) => updateSettings({ autoPlayAudio: value })
   const setShowIPA = (value: boolean) => updateSettings({ showIPA: value })
   const setShowTurkishTranslations = (value: boolean) => updateSettings({ showTurkishTranslations: value })
-  const setTheme = (value: 'light' | 'dark' | 'system') => updateSettings({ theme: value })
   const setSpeechRate = (value: number) => updateSettings({ speechRate: value })
   const setFontSize = (value: 'small' | 'medium' | 'large') => updateSettings({ fontSize: value })
 
@@ -485,67 +482,14 @@ export default function Settings() {
 
       {/* Display Settings */}
       <SettingsSection title="Display" titleTr="Görünüm" icon={Monitor}>
-        {/* Theme */}
+        {/* Theme - Dark mode only */}
         <div>
           <label className="block font-medium text-navy-900 mb-1">
             Theme
           </label>
           <p className="text-sm text-navy-500 mb-2">Tema</p>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                setTheme('light')
-              }}
-              onMouseDown={(e) => {
-                e.preventDefault()
-              }}
-              className={`flex-1 py-2 px-3 rounded-lg border-2 transition-all flex items-center justify-center gap-2 ${theme === 'light'
-                ? 'border-racing-700 bg-racing-700/5'
-                : 'border-navy-200 hover:border-navy-300'
-                }`}
-            >
-              <Sun className="w-4 h-4" />
-              Light
-            </button>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                setTheme('dark')
-              }}
-              onMouseDown={(e) => {
-                e.preventDefault()
-              }}
-              className={`flex-1 py-2 px-3 rounded-lg border-2 transition-all flex items-center justify-center gap-2 ${theme === 'dark'
-                ? 'border-racing-700 bg-racing-700/5'
-                : 'border-navy-200 hover:border-navy-300'
-                }`}
-            >
-              <Moon className="w-4 h-4" />
-              Dark
-            </button>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                setTheme('system')
-              }}
-              onMouseDown={(e) => {
-                e.preventDefault()
-              }}
-              className={`flex-1 py-2 px-3 rounded-lg border-2 transition-all flex items-center justify-center gap-2 ${theme === 'system'
-                ? 'border-racing-700 bg-racing-700/5'
-                : 'border-navy-200 hover:border-navy-300'
-                }`}
-            >
-              <Monitor className="w-4 h-4" />
-              System
-            </button>
+          <div className="py-2 px-3 rounded-lg bg-navy-800/50 border border-white/10 text-center">
+            <span className="text-white/80 text-sm">🌙 Dark Mode Only</span>
           </div>
         </div>
 
